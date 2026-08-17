@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Gibson Clark Teaches Longevity — Live Masterclass · Longevity Life Academy</title>
+<meta name="description" content="A live, 10-week masterclass with Julie Gibson Clark — ranked #2 in the world on the Rejuvenation Olympics. Sleep, nutrition and supplementation, live and in a small room. Exclusive to Longevity Life Academy students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#006EFF; --blue-strong:#0051CC; --blue-light:#E8F1FF;
+    --ink:#111111; --navy:#060e1a; --navy-2:#0a1628;
+    --navy-grad:linear-gradient(180deg,#0e1f48 0%,#081634 100%);
+    --gold:#E9C46A; --sky:#7EC8FF;
+    --r-sm:16px; --r-md:24px; --r-lg:32px;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+    --w:1200px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--navy);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img,video{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:var(--w);margin:0 auto;padding:0 24px;}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--sky);}
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-0.02em;}
+  em.serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:0;}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,14,26,0.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07);}
+  .nav-inner{max-width:var(--w);margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .nav-logo img{height:44px;width:auto;}
+  .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.85);}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{background:var(--blue);color:#fff;padding:11px 22px;border-radius:100px;font-weight:700;font-size:14px;transition:background .3s var(--ease),transform .3s var(--ease);white-space:nowrap;}
+  .nav-cta:hover{background:var(--blue-strong);transform:translateY(-1px);}
+  .nav-burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px;}
+  .mobile-menu{display:none;position:fixed;inset:76px 0 0 0;z-index:99;background:var(--navy);padding:32px 24px;flex-direction:column;gap:8px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:20px;font-weight:700;font-family:'Bricolage Grotesque',sans-serif;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  @media(max-width:960px){.nav-links{display:none;}.nav-burger{display:block;}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;}
+  .hero-media{position:absolute;inset:0;z-index:-2;}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:72% 22%;}
+  .hero-scrim{position:absolute;inset:0;z-index:-1;background:
+    linear-gradient(180deg,rgba(6,14,26,0.62) 0%,rgba(6,14,26,0.10) 34%,rgba(6,14,26,0.55) 68%,var(--navy) 100%),
+    linear-gradient(90deg,rgba(6,14,26,0.88) 0%,rgba(6,14,26,0.42) 46%,rgba(6,14,26,0.05) 100%);}
+  .hero-inner{max-width:var(--w);margin:0 auto;padding:170px 24px 88px;width:100%;}
+  .hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.22);background:rgba(6,14,26,0.45);backdrop-filter:blur(8px);border-radius:100px;padding:9px 18px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#FF4757;animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,71,87,0.55);}50%{box-shadow:0 0 0 7px rgba(255,71,87,0);}}
+  .hero h1{font-size:clamp(44px,7.2vw,96px);font-weight:800;margin:26px 0 10px;max-width:13ch;}
+  .hero h1 .teaches{display:block;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:0.42em;letter-spacing:0.01em;color:var(--sky);margin:10px 0 6px;}
+  .hero-sub{font-size:clamp(17px,1.6vw,21px);color:rgba(255,255,255,0.85);max-width:560px;margin:18px 0 34px;font-weight:500;}
+  .hero-sub strong{color:#fff;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;border-radius:100px;padding:17px 34px;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease);cursor:pointer;border:0;}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 40px rgba(0,110,255,0.35);}
+  .btn-primary:hover{background:var(--blue-strong);transform:translateY(-2px);}
+  .btn-ghost{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.28);color:#fff;backdrop-filter:blur(8px);}
+  .btn-ghost:hover{background:rgba(255,255,255,0.14);transform:translateY(-2px);}
+  .hero-stats{display:flex;gap:0;margin-top:52px;border-top:1px solid rgba(255,255,255,0.16);max-width:760px;}
+  .hero-stat{padding:22px 34px 0 0;margin-right:34px;border-right:1px solid rgba(255,255,255,0.12);}
+  .hero-stat:last-child{border-right:0;margin-right:0;}
+  .hero-stat .n{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(24px,2.6vw,34px);font-weight:800;}
+  .hero-stat .n span{color:var(--sky);}
+  .hero-stat .l{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px;}
+  @media(max-width:720px){
+    .hero-media img{object-position:68% 18%;}
+    .hero-inner{padding:150px 24px 64px;}
+    .hero-stats{flex-wrap:wrap;border-top:0;gap:0;}
+    .hero-stat{border-right:0;margin-right:0;width:50%;padding:18px 8px 0 0;border-top:1px solid rgba(255,255,255,0.14);}
+  }
+
+  /* ---------- PRESS MARQUEE ---------- */
+  .press-strip{background:var(--navy);padding:40px 0 8px;overflow:hidden;}
+  .press-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:26px;}
+  .marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+  .marquee-track{display:flex;align-items:center;gap:64px;padding-right:64px;flex-shrink:0;animation:scroll 38s linear infinite;}
+  @keyframes scroll{to{transform:translateX(-100%);}}
+  .marquee-track span{font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.5);white-space:nowrap;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:120px 0;}
+  .sec-head{max-width:820px;margin-bottom:64px;}
+  .sec-head h2{font-size:clamp(34px,4.6vw,58px);font-weight:800;margin-top:16px;}
+  .sec-head p.lead{font-size:18px;color:rgba(255,255,255,0.7);margin-top:18px;max-width:640px;}
+
+  /* ---------- OFFER ---------- */
+  .offer{background:var(--navy-grad);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .offer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .offer-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:34px 28px;transition:transform .4s var(--ease),border-color .4s var(--ease);}
+  .offer-card:hover{transform:translateY(-4px);border-color:rgba(124,200,255,0.4);}
+  .offer-card .ic{width:46px;height:46px;border-radius:14px;background:rgba(0,110,255,0.18);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--sky);}
+  .offer-card h3{font-size:19px;font-weight:700;margin-bottom:8px;}
+  .offer-card p{font-size:14.5px;color:rgba(255,255,255,0.65);}
+  @media(max-width:960px){.offer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.offer-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROOF / ANIMATIONS ---------- */
+  .proof{background:var(--navy);}
+  .proof-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;}
+  .proof-card{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:#04101f;grid-column:span 2;}
+  .proof-card:nth-child(1),.proof-card:nth-child(2){grid-column:span 3;}
+  .proof-card video{width:100%;aspect-ratio:16/9;object-fit:cover;}
+  .proof-cap{padding:20px 22px 24px;}
+  .proof-cap .t{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;font-weight:700;}
+  .proof-cap .s{font-size:13.5px;color:var(--sky);font-weight:600;margin-top:4px;}
+  @media(max-width:960px){.proof-grid{grid-template-columns:1fr 1fr;}.proof-card,.proof-card:nth-child(1),.proof-card:nth-child(2){grid-column:span 1;}}
+  @media(max-width:640px){.proof-grid{grid-template-columns:1fr;}}
+
+  /* ---------- STORY ---------- */
+  .story{background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.06);}
+  .story-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:center;}
+  .story-photo{border-radius:var(--r-lg);overflow:hidden;position:relative;}
+  .story-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;}
+  .story-photo .tag{position:absolute;left:20px;bottom:20px;background:rgba(6,14,26,0.78);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:12px 18px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.9);}
+  .story-photo .tag b{display:block;font-size:14px;color:#fff;}
+  .story-copy h2{font-size:clamp(30px,3.8vw,46px);font-weight:800;margin:16px 0 22px;}
+  .story-copy p{color:rgba(255,255,255,0.75);margin-bottom:16px;font-size:16.5px;}
+  .story-copy p strong{color:#fff;}
+  .story-quote{border-left:3px solid var(--gold);padding:6px 0 6px 22px;margin:28px 0;}
+  .story-quote .q{font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;line-height:1.35;color:#fff;}
+  .story-quote .a{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:10px;}
+  @media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:40px;}}
+
+  /* ---------- PILLARS ---------- */
+  .pillars{background:var(--navy);}
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pillar{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:480px;display:flex;align-items:flex-end;border:1px solid rgba(255,255,255,0.08);}
+  .pillar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+  .pillar:hover img{transform:scale(1.05);}
+  .pillar::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,14,26,0.05) 30%,rgba(6,14,26,0.92) 100%);}
+  .pillar-copy{position:relative;z-index:1;padding:32px;}
+  .pillar-copy .num{font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;color:var(--gold);}
+  .pillar-copy h3{font-size:28px;font-weight:800;margin:8px 0 10px;}
+  .pillar-copy p{font-size:14.5px;color:rgba(255,255,255,0.78);}
+  @media(max-width:900px){.pillar-grid{grid-template-columns:1fr;}.pillar{min-height:380px;}}
+
+  /* ---------- CURRICULUM ---------- */
+  .curriculum{background:linear-gradient(180deg,#030a16 0%,#0a1628 40%,#0d1b2e 100%);border-top:1px solid rgba(255,255,255,0.06);}
+  .week{border-bottom:1px solid rgba(255,255,255,0.1);}
+  .week-head{display:flex;align-items:center;gap:28px;padding:26px 8px;cursor:pointer;transition:background .3s var(--ease);}
+  .week-head:hover{background:rgba(255,255,255,0.03);}
+  .week-num{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;color:rgba(255,255,255,0.4);min-width:64px;}
+  .week-title{flex:1;}
+  .week-title .pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:7px;border:1px solid;}
+  .pill.sleep{color:#9BB8FF;border-color:rgba(155,184,255,0.4);background:rgba(155,184,255,0.08);}
+  .pill.nutrition{color:#8FE3B0;border-color:rgba(143,227,176,0.4);background:rgba(143,227,176,0.08);}
+  .pill.supp{color:var(--gold);border-color:rgba(233,196,106,0.4);background:rgba(233,196,106,0.08);}
+  .pill.aging{color:var(--sky);border-color:rgba(124,200,255,0.4);background:rgba(124,200,255,0.08);}
+  .pill.protocol{color:#FF9BB3;border-color:rgba(255,155,179,0.4);background:rgba(255,155,179,0.08);}
+  .week-title h3{font-size:clamp(18px,2.2vw,24px);font-weight:700;}
+  .week-toggle{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .4s var(--ease),background .3s var(--ease);}
+  .week.open .week-toggle{transform:rotate(45deg);background:rgba(0,110,255,0.2);border-color:var(--blue);}
+  .week-body{max-height:0;overflow:hidden;transition:max-height .55s var(--ease);}
+  .week-body-inner{padding:2px 8px 30px 92px;max-width:800px;}
+  .week-body p{color:rgba(255,255,255,0.72);font-size:15.5px;margin-bottom:12px;}
+  .week-body .live{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sky);}
+  .week-body .live .dot{width:7px;height:7px;border-radius:50%;background:#FF4757;}
+  @media(max-width:640px){.week-body-inner{padding-left:8px;}.week-head{gap:16px;}}
+
+  /* ---------- PROTOCOL DAY ---------- */
+  .day{background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.06);}
+  .day-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:72px;align-items:center;}
+  .timeline{border-left:2px solid rgba(124,200,255,0.25);padding-left:32px;display:flex;flex-direction:column;gap:26px;}
+  .tl-item{position:relative;}
+  .tl-item::before{content:"";position:absolute;left:-39px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(0,110,255,0.2);}
+  .tl-item .t{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky);}
+  .tl-item .d{font-size:15.5px;color:rgba(255,255,255,0.82);margin-top:3px;}
+  .day-photo{border-radius:var(--r-lg);overflow:hidden;}
+  .day-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+  @media(max-width:900px){.day-grid{grid-template-columns:1fr;gap:44px;}}
+
+  /* ---------- PR WALL ---------- */
+  .pr{background:var(--navy);}
+  .pr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .pr-card{border-radius:var(--r-sm);overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:#fff;transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+  .pr-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+  .pr-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;}
+  @media(max-width:960px){.pr-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:640px){.pr-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- QUOTES ---------- */
+  .quotes{background:var(--navy-grad);border-top:1px solid rgba(255,255,255,0.06);text-align:center;}
+  .quote-big{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(28px,4.4vw,52px);line-height:1.2;max-width:900px;margin:0 auto;}
+  .quote-big .mark{color:var(--gold);}
+  .quote-attr{margin-top:28px;font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--navy);}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .cta-card{border-radius:var(--r-lg);padding:52px 44px;border:1px solid rgba(255,255,255,0.1);position:relative;overflow:hidden;}
+  .cta-card.member{background:linear-gradient(135deg,#0e2a5c 0%,#081634 100%);border-color:rgba(0,110,255,0.45);}
+  .cta-card.new{background:rgba(255,255,255,0.03);}
+  .cta-card .eyebrow{margin-bottom:14px;display:block;}
+  .cta-card h3{font-size:clamp(24px,2.8vw,34px);font-weight:800;margin-bottom:14px;}
+  .cta-card p{color:rgba(255,255,255,0.72);margin-bottom:30px;max-width:420px;}
+  @media(max-width:860px){.cta-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.06);}
+  .faq-list{max-width:820px;}
+  .faq-item{border-bottom:1px solid rgba(255,255,255,0.1);}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;cursor:pointer;font-weight:700;font-size:17px;font-family:'Bricolage Grotesque',sans-serif;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease);}
+  .faq-a p{padding:0 4px 24px;color:rgba(255,255,255,0.7);font-size:15.5px;max-width:700px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#040b14;padding:64px 0 40px;border-top:1px solid rgba(255,255,255,0.07);}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:36px;}
+  .foot-top img{height:48px;}
+  .foot-links{display:flex;gap:26px;font-size:14px;color:rgba(255,255,255,0.65);flex-wrap:wrap;}
+  .foot-links a:hover{color:var(--sky);}
+  .foot-note{text-align:center;font-size:13px;color:rgba(255,255,255,0.45);}
+  .disclaimer{max-width:880px;margin:18px auto 0;font-size:11.5px;line-height:1.6;color:rgba(255,255,255,0.35);text-align:center;}
+
+  /* ---------- STICKY BAR ---------- */
+  .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(6,14,26,0.85);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,0.12);transform:translateY(110%);transition:transform .5s var(--ease);}
+  .sticky-bar.show{transform:none;}
+  .sticky-inner{max-width:var(--w);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;}
+  .sticky-inner .txt b{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;display:block;}
+  .sticky-inner .txt span{font-size:12.5px;color:rgba(255,255,255,0.6);}
+  .sticky-inner .btn{padding:13px 26px;font-size:14.5px;}
+  @media(max-width:640px){.sticky-inner .txt span{display:none;}}
+
+  /* ---------- TRAILER MODAL ---------- */
+  .modal{position:fixed;inset:0;z-index:200;background:rgba(2,6,12,0.9);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:24px;}
+  .modal.open{display:flex;}
+  .modal-box{width:min(960px,100%);position:relative;}
+  .modal-box video{width:100%;border-radius:var(--r-sm);box-shadow:0 40px 120px rgba(0,0,0,0.7);}
+  .modal-close{position:absolute;top:-48px;right:0;background:none;border:0;color:#fff;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://www.longevitylifeacademy.com" aria-label="Longevity Life Academy">
+      <img src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy">
+    </a>
+    <div class="nav-links">
+      <a href="#masterclass">The Masterclass</a>
+      <a href="#julie">About Julie</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#press">Press</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#reserve">Reserve Your Seat</a>
+    </div>
+    <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="#masterclass" onclick="this.parentNode.classList.remove('open')">The Masterclass</a>
+  <a href="#julie" onclick="this.parentNode.classList.remove('open')">About Julie</a>
+  <a href="#curriculum" onclick="this.parentNode.classList.remove('open')">Curriculum</a>
+  <a href="#press" onclick="this.parentNode.classList.remove('open')">Press</a>
+  <a href="#faq" onclick="this.parentNode.classList.remove('open')">FAQ</a>
+  <a href="#reserve" onclick="this.parentNode.classList.remove('open')" style="color:var(--sky)">Reserve Your Seat</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width:720px)" srcset="assets/instructors/julie-hero-mobile.jpg">
+      <img src="assets/instructors/julie-hero.jpg" alt="Julie Gibson Clark" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <span class="hero-badge"><span class="dot"></span> Live Masterclass · Students Only</span>
+    <h1>
+      Julie Gibson Clark
+      <span class="teaches">teaches</span>
+      Taking Control of How You Age
+    </h1>
+    <p class="hero-sub">Learn longevity from the <strong>second slowest ager on Earth</strong>. Ten weeks. Live. In a small room — reserved exclusively for Longevity Life Academy students.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#reserve">Reserve Your Seat
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="btn btn-ghost" onclick="openTrailer()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Watch the Trailer
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">#2 <span>in the world</span></div><div class="l">Rejuvenation Olympics</div></div>
+      <div class="hero-stat"><div class="n">0.665</div><div class="l">DunedinPACE score</div></div>
+      <div class="hero-stat"><div class="n">10</div><div class="l">Live weekly sessions</div></div>
+      <div class="hero-stat"><div class="n">50</div><div class="l">Seats per session</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- PRESS MARQUEE -->
+<div class="press-strip">
+  <p class="press-label">As featured in</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>FORTUNE</span><span>BUSINESS INSIDER</span><span>USA TODAY</span><span>YAHOO! FINANCE</span><span>YAHOO! LIFE</span><span>DAILY MAIL</span><span>THE SUN</span><span>TIMES NOW</span><span>NEWSBREAK</span><span>NOVOS</span><span>NAD.COM</span><span>EIN PRESSWIRE</span>
+    </div>
+    <div class="marquee-track">
+      <span>FORTUNE</span><span>BUSINESS INSIDER</span><span>USA TODAY</span><span>YAHOO! FINANCE</span><span>YAHOO! LIFE</span><span>DAILY MAIL</span><span>THE SUN</span><span>TIMES NOW</span><span>NEWSBREAK</span><span>NOVOS</span><span>NAD.COM</span><span>EIN PRESSWIRE</span>
+    </div>
+  </div>
+</div>
+
+<!-- OFFER -->
+<section class="offer" id="masterclass">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A New Kind of Class</span>
+      <h2>Not a recording. Not a webinar.<br>A <em class="serif">live</em> masterclass.</h2>
+      <p class="lead">In addition to our regular courses — and unique to our students — Longevity Life Academy now offers a live masterclass with our founding faculty member, Julie Gibson Clark.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Live, once a week</h3>
+        <p>Ten weekly live sessions with Julie — real teaching, real questions, real answers. Nothing pre-taped.</p>
+      </div>
+      <div class="offer-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>A small room</h3>
+        <p>Capped at 50 seats per live session — close enough to ask, small enough to matter.</p>
+      </div>
+      <div class="offer-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Students only</h3>
+        <p>Every person in the room is an enrolled Longevity Life Academy student. An add-on with enormous value — exclusive to our community.</p>
+      </div>
+      <div class="offer-card reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.9H21l-5.4 4.2 2 7-5.6-4.3L6.4 20l2-7L3 8.9h6.6z"/></svg></div>
+        <h3>Taught by #2 on Earth</h3>
+        <p>Julie is ranked #2 in the world on the Rejuvenation Olympics — proof first, teaching second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Numbers Behind the Name</span>
+      <h2>Why the world is <em class="serif">watching her</em></h2>
+      <p class="lead">Verified pace-of-aging results, publicly logged on the Rejuvenation Olympics leaderboard and covered by Fortune, Business Insider and more.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <video muted loop playsinline preload="metadata" src="assets/anim/PLAY_V3_LLA_A_PACE.mp4"></video>
+        <div class="proof-cap"><div class="t">Ten years pass. She ages six.</div><div class="s">3.35 years she never aged</div></div>
+      </div>
+      <div class="proof-card reveal">
+        <video muted loop playsinline preload="metadata" src="assets/anim/PLAY_V3_LLA_B_CURVE.mp4"></video>
+        <div class="proof-cap"><div class="t">Everyone ages at 1.00. Julie measured 0.665.</div><div class="s">33.5% slower than the average adult</div></div>
+      </div>
+      <div class="proof-card reveal">
+        <video muted loop playsinline preload="metadata" src="assets/anim/PLAY_V6_LLA_RANK.mp4"></video>
+        <div class="proof-cap"><div class="t">Second slowest aging woman on Earth.</div><div class="s">No. 2 out of everyone who tested</div></div>
+      </div>
+      <div class="proof-card reveal">
+        <video muted loop playsinline preload="metadata" src="assets/anim/PLAY_V6_LLA_MONEY.mp4"></video>
+        <div class="proof-cap"><div class="t">She beat two-million-dollar protocols.</div><div class="s">$100 a month, that is hers</div></div>
+      </div>
+      <div class="proof-card reveal">
+        <video muted loop playsinline preload="metadata" src="assets/anim/PLAY_V6_LLA_PROTOCOL.mp4"></video>
+        <div class="proof-cap"><div class="t">No lab, no clinic, just a protocol.</div><div class="s">A single mom with a full-time job</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="julie">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-photo reveal">
+        <img src="assets/instructors/julie-purple.jpg" alt="Julie Gibson Clark">
+        <div class="tag">Founding Faculty<b>Julie Gibson Clark</b></div>
+      </div>
+      <div class="story-copy reveal">
+        <span class="eyebrow">Ranked #2 · Rejuvenation Olympics</span>
+        <h2>One of the slowest-aging people <em class="serif">ever measured.</em></h2>
+        <p>Julie Gibson Clark is the <strong>#2 slowest-aging person in the world</strong> on the Rejuvenation Olympics — a leading voice in accessible, evidence-based longevity, and Founding Faculty at Longevity Life Academy.</p>
+        <p>Her DunedinPACE score of <strong>0.665</strong> means she accrues roughly eight months of biological aging per calendar year — about a third slower than the average adult.</p>
+        <p>A former structural engineer turned recruiter and a single mom in Phoenix, Arizona, Julie's wake-up call was a heavy-metal poisoning diagnosis. Her answer wasn't a million-dollar lab. It was <strong>fundamentals, executed with total consistency</strong> — the same 2023 leaderboard where she out-aged Bryan Johnson and his ~$2M-a-year protocol, as covered by Fortune and Business Insider.</p>
+        <div class="story-quote">
+          <div class="q">"We don't need millions of dollars to live long, vibrant lives."</div>
+          <div class="a">— Julie Gibson Clark</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Focus</span>
+      <h2>Three pillars. One theme:<br><em class="serif">you control how you age.</em></h2>
+      <p class="lead">The masterclass takes the Academy's curriculum and concentrates it on the levers Julie credits most — made accessible to everyone.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar reveal">
+        <img src="assets/pillars/img-sleep.jpg" alt="Sleep">
+        <div class="pillar-copy">
+          <span class="num">No. 1</span>
+          <h3>Sleep</h3>
+          <p>The true non-negotiable. Architecture, circadian rhythm, and the protocol for protecting it — every single night.</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <img src="assets/pillars/img-nutrition.jpg" alt="Nutrition">
+        <div class="pillar-copy">
+          <span class="num">No. 2</span>
+          <h3>Nutrition</h3>
+          <p>Plate architecture, eating rhythm, and a pound of colorful vegetables a day — sustainable, not extreme.</p>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <img src="assets/pillars/img-supplements.jpg" alt="Supplementation">
+        <div class="pillar-copy">
+          <span class="num">No. 3</span>
+          <h3>Supplementation</h3>
+          <p>Smart, minimal, tested. What earns a place in a ~$100-a-month stack — and what stays out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The Curriculum</span>
+      <h2>Ten weeks, <em class="serif">live.</em></h2>
+      <p class="lead">Built from the Academy's flagship curriculum and re-focused around Julie's three pillars — with a key emphasis on taking control of your aging process. Every session ends with live Q&amp;A.</p>
+    </div>
+    <div class="weeks reveal">
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 01</span>
+          <div class="week-title"><span class="pill aging">Aging, Decoded</span><h3>The Pace of Aging Is a Choice</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Aging as a modifiable trajectory, not an inevitability. How pace of aging is actually measured, what DunedinPACE 0.665 means, and Julie's story — from heavy-metal diagnosis to the world leaderboard.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 02</span>
+          <div class="week-title"><span class="pill sleep">Sleep</span><h3>The Non-Negotiable</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Sleep architecture and the metabolic cost of a single bad night. Why Julie says you cannot biohack your way out of a good night's sleep — and where your sleep actually breaks.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 03</span>
+          <div class="week-title"><span class="pill sleep">Sleep</span><h3>Circadian Rhythm &amp; the Evening Protocol</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Light, temperature, timing, alcohol, caffeine. Fixed wake time, morning light, last meal three hours before bed — building the one-week sleep protocol you'll actually keep.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 04</span>
+          <div class="week-title"><span class="pill nutrition">Nutrition</span><h3>Eat Like the Slowest Ager</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Plate architecture: the protein floor, the fiber lever, the processing penalty. Julie's daily pound of colorful vegetables — and how to build plates from your own kitchen.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 05</span>
+          <div class="week-title"><span class="pill nutrition">Nutrition</span><h3>Meal Timing &amp; Eating Rhythm</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>What the evidence actually shows on time-restricted eating, why Julie eats dinner three hours before bed, and how to design an eating window that fits a real life.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 06</span>
+          <div class="week-title"><span class="pill supp">Supplementation</span><h3>The Minimal Stack</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Smart, minimal supplementation on roughly $100 a month. What earns a place in the stack, what the evidence supports, and what she deliberately leaves out.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 07</span>
+          <div class="week-title"><span class="pill supp">Supplementation</span><h3>Test, Don't Guess</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>Biomarker tracking as the feedback loop: bloodwork, pace-of-aging testing, and how to know whether anything you take or do is actually working.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 08</span>
+          <div class="week-title"><span class="pill aging">Amplifiers</span><h3>Movement &amp; Recovery Multipliers</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>The amplifiers around the pillars: strength training, Norwegian 4×4 cardio, post-meal walks, sauna and cold exposure — and how they compound sleep and nutrition.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 09</span>
+          <div class="week-title"><span class="pill aging">Stress</span><h3>Meditation, Stress &amp; the Aging Loop</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>The stress–aging loop and how Julie has used Transcendental Meditation daily since 2019. Practical regulation tools you can run in under ten minutes.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+      <div class="week">
+        <div class="week-head" onclick="toggleWeek(this)">
+          <span class="week-num">Week 10</span>
+          <div class="week-title"><span class="pill protocol">Your Protocol</span><h3>Build Your Personal Protocol — Live</h3></div>
+          <span class="week-toggle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="week-body"><div class="week-body-inner">
+          <p>The capstone. Sleep, nutrition and supplementation assembled into your own written protocol — reviewed live in session, the way Julie built hers: no lab, no clinic, just a protocol.</p>
+          <span class="live"><span class="dot"></span> Live session + Q&amp;A with Julie</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY -->
+<section class="day">
+  <div class="container">
+    <div class="day-grid">
+      <div class="reveal">
+        <span class="eyebrow">The Proof of Practice</span>
+        <h2 style="font-size:clamp(30px,3.8vw,46px);font-weight:800;margin:16px 0 34px;">A day in the life of the<br><em class="serif">second slowest ager on Earth</em></h2>
+        <div class="timeline">
+          <div class="tl-item"><div class="t">5:00 AM</div><div class="d">Rise, meditate, green tea.</div></div>
+          <div class="tl-item"><div class="t">7:00 AM</div><div class="d">Strength training + Norwegian 4×4 cardio, then sauna and a cold shower.</div></div>
+          <div class="tl-item"><div class="t">Late morning</div><div class="d">Greens, plus roughly a pound of colorful vegetables through the day.</div></div>
+          <div class="tl-item"><div class="t">1:00 PM</div><div class="d">Transcendental Meditation, 20 minutes — a daily practice since 2019.</div></div>
+          <div class="tl-item"><div class="t">Early dinner</div><div class="d">Roughly three hours before bed.</div></div>
+          <div class="tl-item"><div class="t">9:00 PM</div><div class="d">Evening walk. Lights out.</div></div>
+        </div>
+      </div>
+      <div class="day-photo reveal">
+        <img src="assets/instructors/julie-goldenhour.jpg" alt="Julie Gibson Clark at golden hour">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quotes">
+  <div class="container reveal">
+    <p class="quote-big"><span class="mark">"</span>You cannot biohack your way out of a good night's sleep.<span class="mark">"</span></p>
+    <p class="quote-attr">Julie Gibson Clark · Founding Faculty, Longevity Life Academy</p>
+  </div>
+</section>
+
+<!-- PRESS WALL -->
+<section class="pr" id="press">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">In the Press</span>
+      <h2>The story the world <em class="serif">keeps telling</em></h2>
+      <p class="lead">From Fortune to Business Insider to USA Today — Julie's results have been covered across the world's press.</p>
+    </div>
+    <div class="pr-grid reveal">
+      <a class="pr-card" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener"><img src="assets/press/fortune.jpg" alt="Fortune coverage of Julie Gibson Clark" loading="lazy"></a>
+      <a class="pr-card" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener"><img src="assets/press/business-insider.jpg" alt="Business Insider coverage of Julie Gibson Clark" loading="lazy"></a>
+      <div class="pr-card"><img src="assets/press/usa-today.jpg" alt="USA Today coverage" loading="lazy"></div>
+      <div class="pr-card"><img src="assets/press/yahoo-finance.jpg" alt="Yahoo Finance coverage" loading="lazy"></div>
+      <div class="pr-card"><img src="assets/press/daily-mail.jpg" alt="Daily Mail coverage" loading="lazy"></div>
+      <div class="pr-card"><img src="assets/press/the-sun.jpg" alt="The Sun coverage" loading="lazy"></div>
+      <div class="pr-card"><img src="assets/press/times-now.jpg" alt="Times Now coverage" loading="lazy"></div>
+      <div class="pr-card"><img src="assets/press/yahoo-life.jpg" alt="Yahoo Life coverage" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="reserve">
+  <div class="container">
+    <div class="sec-head reveal" style="text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Reserve Your Seat</span>
+      <h2>The room is <em class="serif">small</em> on purpose.</h2>
+      <p class="lead" style="margin-left:auto;margin-right:auto;">Ten live sessions. Fifty seats. Every one of them a Longevity Life Academy student.</p>
+    </div>
+    <div class="cta-grid">
+      <div class="cta-card member reveal">
+        <span class="eyebrow">Already a Student?</span>
+        <h3>Reserve your masterclass seat</h3>
+        <p>The live masterclass is an exclusive add-on for enrolled Academy students. Seats are limited to 50 per live session — reserve yours now.</p>
+        <a class="btn btn-primary" href="https://www.longevitylifeacademy.com/#lead-gen">Reserve Your Seat
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="cta-card new reveal">
+        <span class="eyebrow">New to the Academy?</span>
+        <h3>Start with The Longevity Blueprint</h3>
+        <p>The masterclass is reserved for our students. Enroll in the Academy's flagship live course — then add the masterclass and learn directly from Julie.</p>
+        <a class="btn btn-ghost" href="https://www.longevitylifeacademy.com/pricing.html">Explore the Course
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, <em class="serif">answered.</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Who can join the masterclass?<span>+</span></div>
+        <div class="faq-a"><p>The live masterclass is exclusive to enrolled Longevity Life Academy students. It's an add-on to our regular courses — every person in the room is part of the Academy community.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is it really live?<span>+</span></div>
+        <div class="faq-a"><p>Yes. Julie teaches live, once a week, for ten weeks. Every session includes live Q&amp;A — you can ask her directly.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How big are the sessions?<span>+</span></div>
+        <div class="faq-a"><p>Each live session is capped at 50 seats, so the room stays small enough for real interaction.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What will I learn?<span>+</span></div>
+        <div class="faq-a"><p>Julie's longevity routines with a key focus on sleep, nutrition and supplementation — plus the amplifiers around them — under one theme: how you can take control of your aging process, without a lab or a millionaire's budget.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this medical advice?<span>+</span></div>
+        <div class="faq-a"><p>No. The Academy's programs are educational and are not a substitute for medical advice. Always consult your physician before making changes to your health routine.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <a href="https://www.longevitylifeacademy.com"><img src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy"></a>
+      <div class="foot-links">
+        <a href="https://www.longevitylifeacademy.com">Home</a>
+        <a href="https://www.longevitylifeacademy.com/teachers/julie-gibson-clark.html">Julie Gibson Clark</a>
+        <a href="https://www.longevitylifeacademy.com/pricing.html">Pricing</a>
+        <a href="https://www.rejuvenationolympics.com/dunedin-pace" target="_blank" rel="noopener">The Science</a>
+      </div>
+    </div>
+    <p class="foot-note">© Longevity Life Academy · by eTeacher Group</p>
+    <p class="disclaimer">Julie Gibson Clark's pace-of-aging score (DunedinPACE ~0.665) and #2 world ranking reflect her publicly reported results on the Rejuvenation Olympics leaderboard, as covered by Fortune, Business Insider and others. Leaderboard positions change over time as new tests are logged, and epigenetic-clock scores are estimates, not medical diagnoses. Individual results vary; the Academy's programs are educational and not a substitute for medical advice.</p>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-inner">
+    <div class="txt">
+      <b>Julie Gibson Clark · Live Masterclass</b>
+      <span>10 weekly live sessions · 50 seats · Academy students only</span>
+    </div>
+    <a class="btn btn-primary" href="#reserve">Reserve Your Seat</a>
+  </div>
+</div>
+
+<!-- TRAILER MODAL -->
+<div class="modal" id="trailerModal" onclick="if(event.target===this)closeTrailer()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeTrailer()">Close
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <video id="trailerVideo" controls playsinline src="assets/OPENER_V24_1080.mp4"></video>
+  </div>
+</div>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Autoplay proof videos when visible
+  const vio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const v=e.target;
+      if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
+    });
+  },{threshold:0.35});
+  document.querySelectorAll('.proof-card video').forEach(v=>vio.observe(v));
+
+  // Curriculum accordion
+  function toggleWeek(head){
+    const week=head.parentNode, body=week.querySelector('.week-body'), open=week.classList.contains('open');
+    document.querySelectorAll('.week.open').forEach(w=>{ w.classList.remove('open'); w.querySelector('.week-body').style.maxHeight=null; });
+    if(!open){ week.classList.add('open'); body.style.maxHeight=body.scrollHeight+'px'; }
+  }
+  // FAQ
+  function toggleFaq(q){
+    const a=q.nextElementSibling, open=a.style.maxHeight;
+    document.querySelectorAll('.faq-a').forEach(x=>x.style.maxHeight=null);
+    document.querySelectorAll('.faq-q span').forEach(s=>s.textContent='+');
+    if(!open){ a.style.maxHeight=a.scrollHeight+'px'; q.querySelector('span').textContent='–'; }
+  }
+  // Sticky bar
+  const bar=document.getElementById('stickyBar'), hero=document.querySelector('.hero');
+  window.addEventListener('scroll',()=>{
+    bar.classList.toggle('show', window.scrollY > hero.offsetHeight*0.9 && window.scrollY < document.body.scrollHeight-window.innerHeight-600);
+  },{passive:true});
+  // Trailer
+  const modal=document.getElementById('trailerModal'), tv=document.getElementById('trailerVideo');
+  function openTrailer(){ modal.classList.add('open'); tv.currentTime=0; tv.play().catch(()=>{}); }
+  function closeTrailer(){ modal.classList.remove('open'); tv.pause(); }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeTrailer(); });
+</script>
+</body>
+</html>
