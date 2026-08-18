@@ -39,8 +39,8 @@ section{position:relative}
 .nav-links a{font-size:11px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:#cdd4df;transition:color .3s}
 .nav-links a:hover{color:var(--white)}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:0;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;text-indent:.32em;padding:21px 48px;cursor:pointer;border:1px solid transparent;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease);white-space:nowrap}
-.btn-blue{background:var(--white);color:#000;border-color:var(--white)}
-.btn-blue:hover{background:transparent;color:var(--white)}
+.btn-blue{background:linear-gradient(135deg,#2b7fe8,#57a7f5);color:#fff;border-color:transparent;border-radius:100px;box-shadow:0 10px 34px rgba(47,127,232,.45),inset 0 1px 0 rgba(255,255,255,.28)}
+.btn-blue:hover{background:linear-gradient(135deg,#3d8ef2,#6cb4fa);color:#fff}
 .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
 .btn-ghost:hover{background:var(--white);color:#000;border-color:var(--white)}
 .nav .btn{padding:15px 30px;font-size:10.5px;letter-spacing:.28em;text-indent:.28em}
@@ -310,7 +310,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 .lr-frame{box-shadow:0 40px 120px rgba(159,203,255,.08)}
 .cta{position:relative;background:linear-gradient(180deg,#000,#060b14)}
 .cta::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(159,203,255,.4),transparent)}
-.btn-blue{box-shadow:0 14px 50px rgba(159,203,255,.18)}
+
 
 /* ---------- HERO RANK ---------- */
 .hero-rank{margin:26px 0 0;display:flex;align-items:center;gap:20px;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:#dceafd;font-weight:500}
@@ -337,6 +337,50 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 .m-nad{font-weight:600;font-size:20px;letter-spacing:.08em;color:#59c9f0}
 @media(max-width:760px){.mq-track{gap:52px;padding-right:52px}.hero-rank{letter-spacing:.22em;gap:12px}.hero-rank::after{width:30px}}
 @media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
+
+/* ---------- TRUSTPILOT CHIP ---------- */
+.tp-chip{display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:9px 18px;background:rgba(255,255,255,.045);font-size:12.5px;letter-spacing:.02em;color:#d3dae4;margin-bottom:26px}
+.tp-stars{display:inline-flex;gap:2.5px}
+.tp-stars i{width:16px;height:16px;background:#00b67a;display:inline-block;position:relative}
+.tp-stars i::after{content:"\2605";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-style:normal}
+.tp-sm{margin-bottom:0;padding:7px 14px;font-size:11.5px}
+.tp-sm .tp-stars i{width:13px;height:13px}
+.tp-sm .tp-stars i::after{font-size:9px}
+
+/* ---------- PRICE FLOATER ---------- */
+.floater{position:fixed;right:26px;bottom:26px;z-index:95;display:flex;align-items:center;gap:20px;background:rgba(5,11,22,.92);backdrop-filter:blur(14px);border:1px solid rgba(159,203,255,.3);border-radius:100px;padding:9px 9px 9px 26px;box-shadow:0 22px 70px rgba(0,0,0,.65);opacity:0;pointer-events:none;transform:translateY(18px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.floater.on{opacity:1;pointer-events:auto;transform:none}
+.fl-txt{display:flex;flex-direction:column;gap:3px;text-align:left}
+.fl-ey{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--sky);font-weight:500}
+.fl-nm{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:19px;color:#fff;line-height:1}
+.fl-btn{display:inline-flex;align-items:center;background:linear-gradient(135deg,#2b7fe8,#57a7f5);color:#fff;border-radius:100px;padding:14px 26px;font-size:14px;font-weight:600;letter-spacing:.04em;box-shadow:0 10px 30px rgba(47,127,232,.5),inset 0 1px 0 rgba(255,255,255,.28);transition:filter .3s}
+.fl-btn:hover{filter:brightness(1.12)}
+.fl-btn{white-space:nowrap}
+@media(max-width:760px){.floater{right:14px;left:14px;bottom:14px;justify-content:space-between;padding-left:20px}.fl-opt{display:none}.fl-nm{font-size:17px}.fl-btn{padding:12px 22px}}
+
+/* ---------- PRESS ARTICLE CARDS ---------- */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:70px}
+.art{display:flex;flex-direction:column;align-items:flex-start;gap:22px;border:1px solid var(--hair);padding:52px 44px;background:linear-gradient(180deg,rgba(159,203,255,.045),transparent 55%);transition:border-color .45s,transform .45s;text-align:left}
+.art:hover{border-color:rgba(159,203,255,.45);transform:translateY(-4px)}
+.art-mast{font-size:24px}
+.m-ro{font-weight:600;font-size:15px;letter-spacing:.22em;color:#ffd873}
+.art-line{font-size:16px;line-height:1.75;color:var(--body)}
+.art-cta{margin-top:auto;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--sky);font-weight:500;border-bottom:1px solid rgba(159,203,255,.4);padding-bottom:6px}
+@media(max-width:1100px){.art-grid{grid-template-columns:1fr;gap:22px}.art{padding:40px 32px}}
+
+/* ---------- CHECKOUT CARD ---------- */
+.co-card{background:linear-gradient(180deg,#08101f,#040810);border-color:rgba(159,203,255,.3)}
+.co-top{display:flex;justify-content:space-between;align-items:center;width:100%;flex-wrap:wrap;gap:14px}
+.co-price{display:flex;align-items:baseline;gap:16px;margin:26px 0 8px}
+.co-num{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:76px;color:#fff;line-height:1}
+.co-per{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sky)}
+.co-list{list-style:none;margin:22px 0 34px;width:100%}
+.co-list li{position:relative;padding:13px 0 13px 34px;font-size:15.5px;color:var(--body);border-bottom:1px solid var(--hair-soft)}
+.co-list li::before{content:"";position:absolute;left:2px;top:19px;width:14px;height:8px;border-left:1.5px solid var(--sky);border-bottom:1.5px solid var(--sky);transform:rotate(-45deg)}
+.co-steps{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+.co-steps span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.co-steps b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid rgba(159,203,255,.5);border-radius:50%;color:var(--sky);font-weight:500;font-size:10.5px;margin-right:8px}
+.co-micro{margin-top:18px;font-size:12px;color:var(--faint)}
 
 /* ---------- MORE COLOR ---------- */
 .num:nth-child(3) .n{color:var(--sky)}
@@ -374,6 +418,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-copy">
+      <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
       <p class="eyebrow sky">A Longevity Life Academy Live Event</p>
       <p class="hero-rank"><span>Ranked #2 · Rejuvenation Olympics</span></p>
       <h1 class="anton hero-name">Julie<br>Gibson Clark</h1>
@@ -429,6 +474,25 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
       <div class="num"><div class="n">0.665</div><div class="l"><strong>DunedinPACE</strong> — roughly eight months of aging per calendar year</div></div>
       <div class="num"><div class="n">$59</div><div class="l"><strong>One seat</strong> — the complete protocol, revealed live in one sitting</div></div>
       <div class="num"><div class="n">2</div><div class="l"><strong>Dates remain</strong> — choose yours when you reserve; then the room closes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE REVEAL -->
+<section class="rev" id="reveal">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow sky">The Reveal</p>
+      <h2 class="anton">In one sitting,<br><span class="serif-i">everything.</span></h2>
+      <p>No modules. No drip content. One live masterclass where the complete protocol is uncovered, explained, and handed to you — with the reasoning behind every choice.</p>
+    </div>
+    <div class="rev-list">
+      <div class="rev-row reveal"><div class="rev-no">01</div><div><p class="rev-verb">Uncover</p><h3>The levers behind 0.665</h3><p>Why Julie ages roughly eight months per calendar year — and the handful of daily levers that actually move the number.</p></div></div>
+      <div class="rev-row reveal"><div class="rev-no">02</div><div><p class="rev-verb">Master</p><h3>Her complete sleep protocol</h3><p>The fixed wake time, the light and temperature rules, and the exact evening sequence she has kept for years.</p></div></div>
+      <div class="rev-row reveal"><div class="rev-no">03</div><div><p class="rev-verb">Master</p><h3>Plate architecture</h3><p>The protein floor, the fiber lever, and the daily pound of colorful vegetables — built from a normal kitchen, nothing extreme.</p></div></div>
+      <div class="rev-row reveal"><div class="rev-no">04</div><div><p class="rev-verb">Revealed</p><h3>The ~$100-a-month stack</h3><p>Item by item: what earns a place, what the evidence supports, and what she deliberately leaves out.</p></div></div>
+      <div class="rev-row reveal"><div class="rev-no">05</div><div><p class="rev-verb">Uncover</p><h3>Test, don't guess</h3><p>The biomarker loop — bloodwork and pace-of-aging testing — that proves the protocol is working on you.</p></div></div>
+      <div class="rev-row reveal"><div class="rev-no">06</div><div><p class="rev-verb">Ask</p><h3>Open live Q&amp;A</h3><p>Your questions, answered by Julie in the room. Come with your goals; leave with your answers.</p></div></div>
     </div>
   </div>
 </section>
@@ -494,21 +558,26 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <!-- PRESS -->
 <section class="press" id="press">
   <div class="container reveal">
-    <span class="eyebrow">As Featured In</span>
-    <div class="press-grid">
-      <a class="wf" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">FORTUNE</a>
-      <a href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">BUSINESS INSIDER</a>
-      <span>USA TODAY</span>
-      <span>YAHOO FINANCE</span>
-      <span>YAHOO LIFE</span>
-      <span class="wf">Daily Mail</span>
-      <span>THE SUN</span>
-      <span>TIMES NOW</span>
-      <span>NEWSBREAK</span>
-      <span>NOVOS</span>
-      <span>NAD.COM</span>
+    <span class="eyebrow">The Coverage</span>
+    <h2 class="anton" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px;text-align:center">The story the world <span class="serif-i">picked up.</span></h2>
+    <div class="art-grid">
+      <a class="art" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
+        <span class="art-mast m-fortune">FORTUNE</span>
+        <p class="art-line">The women out-aging the world&rsquo;s most famous biohackers &mdash; on everyday fundamentals.</p>
+        <span class="art-cta">Read the story &rarr;</span>
+      </a>
+      <a class="art" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
+        <span class="art-mast m-bi">BUSINESS INSIDER</span>
+        <p class="art-line">She spends a fraction of what Bryan Johnson does &mdash; and out-ranked his $2M-a-year protocol.</p>
+        <span class="art-cta">Read the story &rarr;</span>
+      </a>
+      <a class="art" href="https://rejuvenationolympics.com/dunedin-pace/" target="_blank" rel="noopener">
+        <span class="art-mast m-ro">REJUVENATION OLYMPICS</span>
+        <p class="art-line">The official DunedinPACE leaderboard where Julie ranked #2 in the world &mdash; verified by epigenetic testing.</p>
+        <span class="art-cta">See the leaderboard &rarr;</span>
+      </a>
     </div>
-    <p class="press-note">Read the coverage: <a href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">Fortune</a> and <a href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">Business Insider</a> on how Julie out-ranked a $2M-a-year protocol.</p>
+    <p class="press-note">Also covered by USA Today, Yahoo Finance, Daily Mail, The Sun, Times Now, NewsBreak, NOVOS and NAD.com.</p>
   </div>
 </section>
 
@@ -533,25 +602,6 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
         <img src="assets/pillars/img-supplements.jpg" alt="Supplementation" loading="lazy">
         <div class="pillar-copy"><p class="no">No. 3</p><h3>Supplementation</h3><p>Smart, minimal, tested. What earns a place in a ~$100-a-month stack — and what stays out.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE REVEAL -->
-<section class="rev" id="reveal">
-  <div class="container">
-    <div class="shead reveal">
-      <p class="eyebrow sky">The Reveal</p>
-      <h2 class="anton">In one sitting,<br><span class="serif-i">everything.</span></h2>
-      <p>No modules. No drip content. One live masterclass where the complete protocol is uncovered, explained, and handed to you — with the reasoning behind every choice.</p>
-    </div>
-    <div class="rev-list">
-      <div class="rev-row reveal"><div class="rev-no">01</div><div><p class="rev-verb">Uncover</p><h3>The levers behind 0.665</h3><p>Why Julie ages roughly eight months per calendar year — and the handful of daily levers that actually move the number.</p></div></div>
-      <div class="rev-row reveal"><div class="rev-no">02</div><div><p class="rev-verb">Master</p><h3>Her complete sleep protocol</h3><p>The fixed wake time, the light and temperature rules, and the exact evening sequence she has kept for years.</p></div></div>
-      <div class="rev-row reveal"><div class="rev-no">03</div><div><p class="rev-verb">Master</p><h3>Plate architecture</h3><p>The protein floor, the fiber lever, and the daily pound of colorful vegetables — built from a normal kitchen, nothing extreme.</p></div></div>
-      <div class="rev-row reveal"><div class="rev-no">04</div><div><p class="rev-verb">Revealed</p><h3>The ~$100-a-month stack</h3><p>Item by item: what earns a place, what the evidence supports, and what she deliberately leaves out.</p></div></div>
-      <div class="rev-row reveal"><div class="rev-no">05</div><div><p class="rev-verb">Uncover</p><h3>Test, don't guess</h3><p>The biomarker loop — bloodwork and pace-of-aging testing — that proves the protocol is working on you.</p></div></div>
-      <div class="rev-row reveal"><div class="rev-no">06</div><div><p class="rev-verb">Ask</p><h3>Open live Q&amp;A</h3><p>Your questions, answered by Julie in the room. Come with your goals; leave with your answers.</p></div></div>
     </div>
   </div>
 </section>
@@ -589,11 +639,19 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <section class="cta" id="reserve">
   <div class="container">
     <div class="cta-grid">
-      <div class="cta-card reveal">
-        <p class="eyebrow sky">Reserve</p>
-        <h3>Your seat — $59</h3>
-        <p>One live masterclass with the #2 slowest-aging person in the world. Two dates remain — choose yours when you reserve. When the seats are gone, the room closes.</p>
+      <div class="cta-card co-card reveal">
+        <div class="co-top"><p class="eyebrow sky">Live Masterclass</p><div class="tp-chip tp-sm"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot</div></div>
+        <h3>Julie Gibson Clark &mdash; Live</h3>
+        <div class="co-price"><span class="co-num">$59</span><span class="co-per">one seat &middot; two dates remain</span></div>
+        <ul class="co-list">
+          <li>Live online &mdash; not a recording</li>
+          <li>The complete protocol, uncovered end to end</li>
+          <li>Open Q&amp;A &mdash; ask Julie directly</li>
+          <li>Open to everyone &mdash; no course enrollment required</li>
+        </ul>
         <a class="btn btn-blue" href="https://www.longevitylifeacademy.com/#lead-gen" target="_blank" rel="noopener">Reserve Your Seat — $59</a>
+        <div class="co-steps"><span><b>1</b> Register</span><span><b>2</b> Select date</span><span><b>3</b> Place order</span></div>
+        <p class="co-micro">Secure checkout via longevitylifeacademy.com</p>
       </div>
       <div class="cta-card reveal">
         <p class="eyebrow">Go Deeper</p>
@@ -637,6 +695,12 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   </div>
 </footer>
 
+<!-- PRICE FLOATER -->
+<div class="floater" id="floater">
+  <div class="fl-txt"><span class="fl-ey">Live Masterclass<span class="fl-opt"> &middot; Two Dates Remain</span></span><span class="fl-nm">Julie Gibson Clark</span></div>
+  <a class="fl-btn" href="#reserve">$59 &nbsp;&rarr;</a>
+</div>
+
 <!-- TRAILER MODAL -->
 <div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer">
   <button class="modal-close" id="modalClose">Close</button>
@@ -646,6 +710,10 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <script>
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>40)},{passive:true});
+const fl=document.getElementById('floater'),rsv=document.getElementById('reserve');let rsvIn=false;
+new IntersectionObserver(es=>es.forEach(e=>{rsvIn=e.isIntersecting;flUp()}),{threshold:.1}).observe(rsv);
+function flUp(){fl.classList.toggle('on',scrollY>innerHeight*.85&&!rsvIn)}
+addEventListener('scroll',flUp,{passive:true});
 
 const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');document.body.style.overflow=menu.classList.contains('open')?'hidden':''});
