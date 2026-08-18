@@ -80,7 +80,7 @@ section{position:relative}
 /* ---------- FILM ---------- */
 .film{padding:0 0 40px}
 .film-frame{position:relative;overflow:hidden}
-.film-frame video{width:100%;max-height:86vh;object-fit:cover}
+.film-frame video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 .film-cap{display:flex;justify-content:space-between;align-items:center;padding:26px 64px;border-bottom:1px solid var(--hair-soft)}
 .film-cap span{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--dim);font-weight:500}
 .film-frame{cursor:pointer}
@@ -129,7 +129,7 @@ section{position:relative}
 /* ---------- PROOF FILMS ---------- */
 .proof{padding:40px 0 170px}
 .proof-hero{margin-bottom:80px}
-.proof-hero video{width:100%;aspect-ratio:16/7.4;object-fit:cover}
+.proof-hero video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px 64px}
 .pcard video{width:100%;aspect-ratio:16/9;object-fit:cover}
 .pcap{padding:30px 0 0;border-top:1px solid var(--hair);margin-top:0}
@@ -261,7 +261,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   .about-grid,.day-grid,.cta-grid{grid-template-columns:1fr;gap:64px}
   .about-media img{min-height:0;aspect-ratio:4/4.6}
   .proof-grid{grid-template-columns:1fr;gap:64px}
-  .proof-hero video{aspect-ratio:16/9}
+  .proof-hero video{aspect-ratio:16/9;width:100%}
   .pillars-grid{grid-template-columns:1fr;gap:36px}
   .pillar img{aspect-ratio:16/10}
   .day-media{position:static}
@@ -294,6 +294,24 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   .hero-micro{line-height:1.9}
 }
 
+/* ---------- COLOR DEPTH ---------- */
+.statement{position:relative;overflow:hidden}
+.statement::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:1200px;height:900px;background:radial-gradient(closest-side,rgba(159,203,255,.10),transparent 70%);pointer-events:none}
+.statement>*{position:relative}
+.numbers{position:relative;background:linear-gradient(180deg,#000 0%,#060b14 55%,#000 100%)}
+.numbers::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(159,203,255,.35),transparent)}
+.liveroom{position:relative}
+.liveroom::before{content:"";position:absolute;top:6%;right:-10%;width:900px;height:700px;background:radial-gradient(closest-side,rgba(159,203,255,.08),transparent 70%);pointer-events:none}
+.rev{position:relative;background:linear-gradient(180deg,#000,#050a12 50%,#000)}
+.rev-row:hover .rev-no{-webkit-text-stroke:1px rgba(159,203,255,.7)}
+.rev-row{transition:background .5s var(--ease)}
+.rev-row:hover{background:linear-gradient(90deg,rgba(159,203,255,.045),transparent 60%)}
+.playbtn{box-shadow:0 0 80px rgba(159,203,255,.25)}
+.playbtn:hover{box-shadow:0 0 110px rgba(159,203,255,.45)}
+.lr-frame{box-shadow:0 40px 120px rgba(159,203,255,.08)}
+.cta{position:relative;background:linear-gradient(180deg,#000,#060b14)}
+.cta::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(159,203,255,.4),transparent)}
+.btn-blue{box-shadow:0 14px 50px rgba(159,203,255,.18)}
 </style>
 </head>
 <body>
@@ -358,7 +376,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <section class="film">
   <div class="film-cap"><span>The Film</span><span>90 Seconds — Watch With Sound</span></div>
   <div class="film-frame openFilm">
-    <video id="openerVideo" src="assets/JULIE_90S_BAND.mp4" muted loop playsinline preload="metadata"></video>
+    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" muted loop playsinline preload="metadata"></video>
     <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
   </div>
 </section>
