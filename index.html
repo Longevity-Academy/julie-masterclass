@@ -425,6 +425,65 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 .foot-about{font-size:15.5px;line-height:1.8;color:var(--dim);max-width:420px;margin-top:22px}
 @media(max-width:900px){.date-grid{grid-template-columns:1fr}.foot-cols{grid-template-columns:1fr;gap:44px}.band-cta{padding:44px 30px}.dcard{padding:44px 30px}.dcard .tz{grid-template-columns:1fr}}
 
+
+/* ---------- V10 LAYERED HERO ---------- */
+.hero{display:block;min-height:100dvh;height:100dvh;overflow:hidden;position:relative;background:#000;grid-template-columns:none}
+.hero-glow{position:absolute;right:-12vw;bottom:-22vh;width:64vw;height:92vh;background:radial-gradient(closest-side,rgba(43,127,232,.30),rgba(43,127,232,.08) 55%,transparent 72%);z-index:0;pointer-events:none}
+.hero-glow2{position:absolute;right:10vw;top:2vh;width:34vw;height:44vh;background:radial-gradient(closest-side,rgba(159,203,255,.16),transparent 70%);z-index:0;pointer-events:none}
+.hero-meta{position:absolute;left:64px;top:112px;z-index:5}
+.hero-meta .eyebrow{margin-top:22px}
+.hero-giant{position:absolute;left:64px;top:24%;z-index:1;font-size:clamp(96px,12vw,190px);line-height:.88;display:flex;flex-direction:column}
+.hg-line{display:block;overflow:hidden}
+.hg-in{display:inline-block;transform:translateY(0)}
+.hg-2{margin-left:16vw}
+.hg-2 .hg-in{background:linear-gradient(115deg,#ffffff 30%,#57a7f5 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hg-3{margin-left:6vw;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55)}
+.hero-cut{position:absolute;right:6vw;bottom:0;height:92%;width:auto;z-index:2;filter:drop-shadow(0 40px 90px rgba(0,0,0,.75)) drop-shadow(0 0 120px rgba(43,127,232,.18))}
+.hero-floor{position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(to top,#000 6%,rgba(0,0,0,.55) 45%,transparent);z-index:3;pointer-events:none}
+.hero-fore{position:absolute;left:64px;bottom:110px;z-index:4;max-width:600px}
+.hero-fore .hero-teaches{margin-top:0}
+.hero-fore .hero-topic{font-size:clamp(26px,2.4vw,40px)}
+.hero-fore .hero-desc{margin-top:20px;font-size:19px;max-width:540px}
+.hero-fore .hero-actions{margin-top:32px}
+.hero-bar{position:absolute;left:50%;transform:translateX(-50%);bottom:30px;z-index:6;display:flex;align-items:center;gap:22px;padding:16px 34px;border-radius:100px;background:rgba(10,14,22,.55);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);font-size:15.5px;font-weight:600;color:#e8eef8;white-space:nowrap;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.hero-bar i{width:4px;height:4px;border-radius:50%;background:rgba(159,203,255,.7)}
+.hero-bar span:first-child{color:var(--sky)}
+.grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+@media(max-width:1180px){.hero-giant{font-size:clamp(80px,11vw,150px)}.hero-cut{right:2vw}}
+@media(max-width:900px){
+  .hero{height:auto;min-height:0;padding:104px 0 0}
+  .hero-meta{position:static;padding:0 28px}
+  .hero-giant{position:static;padding:26px 28px 0;font-size:clamp(64px,17.5vw,110px)}
+  .hg-2{margin-left:8vw}.hg-3{margin-left:3vw}
+  .hero-cut{position:relative;display:block;right:auto;margin:-6vw auto 0;height:auto;width:min(78vw,420px)}
+  .hero-floor{display:none}
+  .hero-fore{position:static;padding:34px 28px 0;max-width:100%}
+  .hero-bar{position:static;transform:none;margin:38px 28px 46px;white-space:normal;flex-wrap:wrap;justify-content:center;gap:12px;row-gap:8px;font-size:14px}
+}
+
+
+/* v10.1 composition fixes */
+.hero-meta{top:96px}
+.hero-giant{top:20%;font-size:clamp(88px,10.5vw,170px)}
+.hg-2{margin-left:15vw}
+.hg-3{margin-left:34vw}
+.hero-fore{bottom:104px;max-width:560px}
+.hero-fore .hero-rank{margin:0 0 18px}
+.hero-fore .hero-teaches{font-size:clamp(24px,1.9vw,30px)}
+.hero-fore .hero-topic{font-size:clamp(24px,2.2vw,36px);margin-top:8px}
+.hero-fore .hero-desc{max-width:480px;font-size:17.5px;line-height:1.7}
+.hero-fore .hero-actions{margin-top:28px}
+@media(max-width:900px){
+  .hg-2{margin-left:8vw}.hg-3{margin-left:16vw}
+  .hero-fore .hero-rank{margin-top:6px}
+}
+
+
+/* v10.2 micro-tune */
+.hero-meta{top:84px}
+.hero-giant{top:23%;font-size:clamp(84px,10vw,162px)}
+.hero-fore{bottom:92px}
+
 </style>
 </head>
 <body>
@@ -455,23 +514,36 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <div class="hero-copy">
-      <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
-      <p class="eyebrow sky">A Longevity Life Academy live event</p>
-      <p class="hero-rank"><span>Ranked No.2 · Rejuvenation Olympics</span></p>
-      <h1 class="anton hero-name">Julie<br>Gibson Clark</h1>
-      <p class="hero-teaches">reveals</p>
-      <p class="hero-topic grad-w">The complete longevity protocol</p>
-      <div class="hero-rule"></div>
-      <p class="hero-desc">One live masterclass. The <strong>second slowest ager on Earth</strong> uncovers the exact protocol that out-aged two-million-dollar regimens, on about $100 a month.</p>
-      <div class="hero-actions">
-        <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
-        <a class="hero-trailer openFilm" href="#" id="trailerLink">Watch the film</a>
-      </div>
-      <p class="hero-micro">$59&nbsp;&nbsp;·&nbsp;&nbsp;September 16 or September 27&nbsp;&nbsp;·&nbsp;&nbsp;Live online&nbsp;&nbsp;·&nbsp;&nbsp;Open Q&amp;A</p>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-meta">
+    <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
+    <p class="eyebrow sky">A Longevity Life Academy live event</p>
   </div>
-  <div class="hero-photo">
-    <img src="assets/instructors/julie-standing-hd.jpg" alt="Julie Gibson Clark" fetchpriority="high">
+
+  <h1 class="anton hero-giant" aria-label="Julie Gibson Clark">
+    <span class="hg-line"><span class="hg-in">Julie</span></span>
+    <span class="hg-line hg-2"><span class="hg-in">Gibson</span></span>
+    <span class="hg-line hg-3"><span class="hg-in">Clark</span></span>
+  </h1>
+
+  <img class="hero-cut" src="assets/instructors/julie-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
+  <div class="hero-floor"></div>
+
+  <div class="hero-fore">
+    <p class="hero-rank"><span>Ranked No.2 · Rejuvenation Olympics</span></p>
+    <p class="hero-teaches">reveals</p>
+    <p class="hero-topic grad-w">The complete longevity protocol</p>
+    <p class="hero-desc">One live masterclass. The <strong>second slowest ager on Earth</strong> uncovers the exact protocol that out-aged two-million-dollar regimens, on about $100 a month.</p>
+    <div class="hero-actions">
+      <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
+      <a class="hero-trailer openFilm" href="#" id="trailerLink">Watch the film</a>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <span>$59</span><i></i><span>September 16 or September 27</span><i></i><span>Live online</span><i></i><span>Open Q&amp;A</span>
   </div>
 </header>
 
@@ -831,6 +903,31 @@ function closeModal(){modal.classList.remove('open');tv.pause()}
 document.getElementById('modalClose').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+<div class="grain" aria-hidden="true"></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+try{
+  if(window.Lenis){const lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+    if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
+  if(window.gsap&&window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.hg-in',{yPercent:112,duration:1.1,stagger:.12,ease:'power4.out',delay:.15});
+    gsap.from('.hero-cut',{opacity:0,y:60,scale:1.03,duration:1.3,ease:'power3.out',delay:.35});
+    gsap.from('.hero-fore',{opacity:0,y:40,duration:1,ease:'power3.out',delay:.75});
+    gsap.from('.hero-bar',{opacity:0,y:24,duration:.9,ease:'power3.out',delay:1});
+    gsap.to('.hero-giant',{yPercent:-16,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('.hero-cut',{yPercent:7,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    document.querySelectorAll('section .anton, .band-cta p').forEach(el=>{
+      gsap.from(el,{opacity:0,y:54,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    document.querySelectorAll('.pillars-grid img, .art').forEach(el=>{
+      gsap.from(el,{opacity:0,y:44,scale:1.02,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+    });
+  }
+}catch(e){}
 </script>
 </body>
 </html>
