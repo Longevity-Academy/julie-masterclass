@@ -312,6 +312,27 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 .cta{position:relative;background:linear-gradient(180deg,#000,#060b14)}
 .cta::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(159,203,255,.4),transparent)}
 .btn-blue{box-shadow:0 14px 50px rgba(159,203,255,.18)}
+
+/* ---------- HERO TRUST ---------- */
+.hero-rank{margin:26px 0 6px;display:flex;align-items:center;justify-content:center;gap:22px;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:#dceafd;font-weight:500}
+.hero-rank::before,.hero-rank::after{content:"";width:64px;height:1px;background:linear-gradient(90deg,transparent,rgba(159,203,255,.65));display:block}
+.hero-rank::after{background:linear-gradient(90deg,rgba(159,203,255,.65),transparent)}
+.hero-trust{margin-top:54px;padding-top:30px;border-top:1px solid rgba(255,255,255,.16)}
+.hero-feat{font-size:10px;letter-spacing:.44em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px;font-weight:500}
+.hero-mast{display:flex;align-items:baseline;justify-content:center;gap:44px;flex-wrap:wrap;color:rgba(255,255,255,.82)}
+.hero-mast span{white-space:nowrap}
+.m-fortune{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;letter-spacing:.1em}
+.m-bi{font-family:Georgia,serif;font-weight:700;font-size:14.5px;letter-spacing:.06em}
+.m-usa{font-weight:700;font-size:15px;letter-spacing:.12em;font-style:italic}
+.m-yahoo{font-weight:600;font-size:16px;letter-spacing:.01em}
+.m-dm{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:19px}
+@media(max-width:760px){.hero-mast{gap:22px}.hero-rank{letter-spacing:.22em;gap:12px}.hero-rank::before,.hero-rank::after{width:30px}.hero-trust{margin-top:40px}}
+
+/* ---------- MORE COLOR ---------- */
+.num:nth-child(3) .n{color:var(--sky)}
+.quote{background:radial-gradient(ellipse 62% 56% at 50% 50%,#0c1526 0%,#000 80%)}
+.rev-verb{text-shadow:0 0 34px rgba(159,203,255,.5)}
+.hero-shade{background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.18) 30%,rgba(2,6,14,.62) 62%,rgba(0,0,0,.94) 100%)}
 </style>
 </head>
 <body>
@@ -349,6 +370,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="hero-content container">
     <div class="hero-inner">
       <p class="eyebrow sky">A Longevity Life Academy Live Event</p>
+      <p class="hero-rank"><span>Ranked #2 · Rejuvenation Olympics</span></p>
       <h1 class="anton hero-name">Julie<br>Gibson Clark</h1>
       <p class="hero-teaches">reveals</p>
       <p class="hero-topic">The Complete Longevity Protocol</p>
@@ -359,6 +381,10 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
         <a class="hero-trailer openFilm" href="#" id="trailerLink">Watch the Film</a>
       </div>
       <p class="hero-micro">$59&nbsp;&nbsp;·&nbsp;&nbsp;Two Dates Remain&nbsp;&nbsp;·&nbsp;&nbsp;Live Online&nbsp;&nbsp;·&nbsp;&nbsp;Open Q&amp;A</p>
+      <div class="hero-trust">
+        <p class="hero-feat">As Featured In</p>
+        <div class="hero-mast"><span class="m-fortune">FORTUNE</span><span class="m-bi">BUSINESS INSIDER</span><span class="m-usa">USA TODAY</span><span class="m-yahoo">yahoo!finance</span><span class="m-dm">Daily Mail</span></div>
+      </div>
     </div>
   </div>
 </header>
@@ -404,7 +430,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
       <p>A live room, kept small on purpose — Julie on screen, your name on a tile, and your questions answered in the session, not in the comments.</p>
     </div>
     <div class="lr-frame reveal">
-      <img src="assets/live-room.jpg" alt="The live masterclass room — Julie Gibson Clark live on screen with the class" loading="lazy">
+      <img src="assets/live-room-real.jpg" alt="The live masterclass room — Julie Gibson Clark live on screen with the class" loading="lazy">
     </div>
     <div class="lr-cap reveal"><span>Live &amp; Interactive</span><span>Open Q&amp;A In Session</span><span>Two Dates Remain</span></div>
   </div>
