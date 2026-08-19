@@ -559,6 +559,84 @@ body{letter-spacing:0;line-height:1.72}
 .anim-cap span{font-size:17px;color:var(--body)}
 @media(max-width:900px){.anim-sec{padding:20px 0 80px}.anim-cap span{font-size:15px}}
 
+
+/* ---------- V13 HERO ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px}
+.hero-grid{position:relative;z-index:5;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:min(1360px,94vw);margin:0 auto}
+.hero-left .tp-chip{margin-bottom:34px}
+.hero-wordmark{width:min(320px,70vw);height:auto;display:block;margin-bottom:38px}
+.hero-head{font-size:clamp(44px,3.9vw,64px);line-height:1.12;letter-spacing:-.01em}
+.hero-head .serif-i{font-size:clamp(38px,3.4vw,56px)}
+.hero-left .hero-desc{margin-top:26px;max-width:560px;font-size:21px;line-height:1.65}
+.hero-left .hero-actions{margin-top:38px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero-left .hero-bar{position:static;transform:none;margin-top:40px;display:inline-flex}
+.hero-right{position:relative;height:min(78vh,760px)}
+.hero-cut{position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:none;filter:drop-shadow(0 40px 90px rgba(0,0,0,.8)) drop-shadow(0 0 130px rgba(43,127,232,.22))}
+.hero-zoomcard{position:absolute;left:-30px;bottom:34px;width:min(400px,58%);border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#15181e;transform:perspective(1300px) rotateY(14deg) rotateX(4deg) rotateZ(-2deg);transform-origin:right center;box-shadow:-40px 60px 110px rgba(0,0,0,.75),0 0 90px rgba(43,127,232,.28),0 0 0 1px rgba(120,180,255,.14);animation:zcFloat 7s ease-in-out infinite}
+@keyframes zcFloat{0%,100%{transform:perspective(1300px) rotateY(14deg) rotateX(4deg) rotateZ(-2deg) translateY(0)}50%{transform:perspective(1300px) rotateY(14deg) rotateX(4deg) rotateZ(-2deg) translateY(-14px)}}
+.hero-zoomcard img{display:block;width:100%}
+.zc-top{display:flex;align-items:center;gap:9px;background:#171b22;padding:11px 16px;font-size:14px;color:#aeb6c2;font-weight:500}
+.zc-top .dots{display:flex;gap:6px}
+.zc-top .dots i{width:10px;height:10px;border-radius:50%}
+.zc-top .dots i:nth-child(1){background:#ff5f57}.zc-top .dots i:nth-child(2){background:#febc2e}.zc-top .dots i:nth-child(3){background:#28c840}
+.zc-top .rec{margin-left:auto;display:flex;align-items:center;gap:7px;color:#e8eef8}
+.zc-top .rec i{width:8px;height:8px;border-radius:50%;background:#ff4b4b;animation:blink 1.6s infinite}
+@media(max-width:1080px){
+  .hero{padding:120px 0 60px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .hero-right{height:auto;min-height:520px;margin-top:10px}
+  .hero-cut{position:relative;display:block;margin:0 auto;height:auto;width:min(78vw,420px)}
+  .hero-zoomcard{left:6px;bottom:-64px;width:min(330px,72%);transform:perspective(1100px) rotateY(10deg) rotateX(3deg) rotateZ(-1.5deg)}
+  .hero-right{margin-bottom:70px}
+  .hero-wordmark{width:min(280px,74vw)}
+  .hero-head{font-size:clamp(38px,10vw,52px)}
+  .hero-head .serif-i{font-size:clamp(32px,8.6vw,46px)}
+  .hero-left .hero-bar{display:inline-flex;flex-wrap:wrap;white-space:normal;font-size:16px}
+}
+/* ---------- V13 FLOATER (homepage replica) ---------- */
+.lla-float-cta{position:fixed;top:96px;right:32px;z-index:9999;display:inline-flex;align-items:stretch;cursor:pointer;text-decoration:none;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 0 0 1px rgba(120,180,255,.18),0 14px 36px rgba(8,30,60,.28),0 0 28px rgba(120,190,255,.18);opacity:0;transform:translateY(-12px);pointer-events:none;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease}
+.lla-float-cta.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.lla-float-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(140,200,255,.35),0 18px 44px rgba(8,30,60,.34),0 0 44px rgba(120,190,255,.42)}
+.lla-cta-text{display:flex;flex-direction:column;justify-content:center;padding:14px 18px 14px 20px;gap:4px}
+.lla-cta-eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.18em;color:#8FB9F0}
+.lla-cta-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7);animation:llaDot 2.2s ease-in-out infinite}
+@keyframes llaDot{0%,100%{opacity:1}50%{opacity:.4}}
+.lla-cta-title{font-size:17px;font-weight:700;color:#fff;line-height:1.1}
+.lla-cta-pill{display:flex;align-items:center;gap:8px;padding:0 22px;margin:8px 8px 8px 6px;border-radius:12px;background:linear-gradient(180deg,#5EB6FF 0%,#2E8BE6 100%);color:#06243F;font-weight:800;font-size:16px;box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 8px 20px rgba(46,139,230,.32)}
+.lla-cta-pill .arr{transition:transform .25s ease}
+.lla-float-cta:hover .arr{transform:translateX(3px)}
+@media(max-width:760px){.lla-float-cta{top:auto;bottom:14px;right:12px;left:12px;border-radius:14px;justify-content:space-between}.lla-cta-text{padding:11px 12px 11px 16px}.lla-cta-title{font-size:16px}}
+/* ---------- V13 standardization ---------- */
+.film-wrap{max-width:980px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 16px rgba(94,182,255,.7);flex:none}
+
+
+/* ---------- V13 type standardization: no small text ---------- */
+.btn{font-size:17px}
+.nav-links a{font-size:17px}
+.pillar-copy .no,.acc-week,.acc-inner .live,.quote .a,.pull .a{font-size:17px}
+.about-copy .rank{font-size:18px}
+.tp-chip{font-size:15px}
+.zc-top{font-size:14.5px}
+@media(max-width:900px){
+  .btn{font-size:16.5px}
+  .hero-bar{font-size:15.5px}
+  .tp-chip{font-size:13.5px;white-space:nowrap}
+}
+
+
+/* v13.1 */
+.hero{align-items:flex-start;padding:140px 0 70px}
+.hero-grid{align-items:end}
+@media(max-width:1080px){
+  .dbr{display:none}
+  .tp-chip{font-size:12px;padding:8px 14px;gap:8px}
+  .hero{padding-top:120px}
+}
+
 </style>
 </head>
 <body>
@@ -592,33 +670,30 @@ body{letter-spacing:0;line-height:1.72}
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
 
-  <div class="hero-meta">
-    <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
-    <p class="eyebrow sky">A Longevity Life Academy live event</p>
-    <p class="hero-rank"><span>Ranked No.2 · Rejuvenation Olympics</span></p>
-  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
+      <img class="hero-wordmark" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" fetchpriority="high" width="397" height="253">
+      <h1 class="anton hero-head">Learn longevity<br><span class="serif-i sky">from the second slowest-aging <br class="dbr">woman on Earth.</span></h1>
+      <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass.</p>
+      <div class="hero-actions">
+        <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
+        <a class="btn btn-ghost openFilm" href="#" id="trailerLink">Watch the film</a>
+      </div>
+      <div class="hero-bar">
+        <span>$59</span><i></i><span>September 16 or September 27</span><i></i><span>Live online</span><i></i><span>Open Q&amp;A</span>
+      </div>
+    </div>
 
-  <h1 class="anton hero-giant" aria-label="Julie Gibson Clark">
-    <span class="hg-line"><span class="hg-in">Julie</span></span>
-    <span class="hg-line hg-2"><span class="hg-in">Gibson Clark</span></span>
-  </h1>
-
-  <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
-  <div class="hero-floor"></div>
-
-  <div class="hero-fore">
-    <p class="hero-teaches">reveals</p>
-    <p class="hero-topic grad-w">The complete longevity protocol</p>
-    <p class="hero-desc">One live masterclass. The <strong>second slowest ager on Earth</strong> uncovers the exact protocol that out-aged two-million-dollar regimens, on about $100 a month.</p>
-    <div class="hero-actions">
-      <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
-      <a class="hero-trailer openFilm" href="#" id="trailerLink">Watch the film</a>
+    <div class="hero-right">
+      <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
+      <div class="hero-zoomcard" aria-label="The live masterclass room on Zoom">
+        <div class="zc-top"><span class="dots"><i></i><i></i><i></i></span><span>Live masterclass</span><span class="rec"><i></i>REC</span></div>
+        <img src="assets/zoom-gallery.jpg" alt="Julie Gibson Clark hosting the live class on Zoom" loading="eager">
+      </div>
     </div>
   </div>
-
-  <div class="hero-bar">
-    <span>$59</span><i></i><span>September 16 or September 27</span><i></i><span>Live online</span><i></i><span>Open Q&amp;A</span>
-  </div>
+  <div class="hero-floor"></div>
 </header>
 
 <!-- PRESS MARQUEE -->
@@ -647,7 +722,6 @@ body{letter-spacing:0;line-height:1.72}
     <div class="anim-win reveal">
       <video autoplay muted loop playsinline preload="metadata" src="assets/anim/ANIM_PACE_1080.mp4" aria-label="Animation: 3.35 years she never aged"></video>
     </div>
-    <div class="anim-cap reveal"><span>Measured by DunedinPACE</span><span>Rejuvenation Olympics leaderboard</span></div>
   </div>
 </section>
 
@@ -680,10 +754,11 @@ body{letter-spacing:0;line-height:1.72}
 </section>
 <!-- THE FILM -->
 <section class="film">
-  <div class="film-cap"><span>The film</span><span>90 seconds, watch with sound</span></div>
+  <div class="film-wrap">
   <div class="film-frame openFilm">
     <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" muted loop playsinline preload="metadata"></video>
     <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
+  </div>
   </div>
 </section>
 
@@ -764,7 +839,6 @@ body{letter-spacing:0;line-height:1.72}
         </div>
       </div>
     </div>
-    <div class="lr-cap reveal"><span>Live and interactive</span><span>Open Q&amp;A in session</span><span>September 16 and 27</span></div>
   </div>
 </section>
 
@@ -956,10 +1030,10 @@ body{letter-spacing:0;line-height:1.72}
 </footer>
 
 <!-- PRICE FLOATER -->
-<div class="floater" id="floater">
-  <div class="fl-txt"><span class="fl-ey">Live masterclass<span class="fl-opt"> &middot; September 16 or 27</span></span><span class="fl-nm">Julie Gibson Clark</span></div>
-  <a class="fl-btn" href="#reserve">$59 &nbsp;&rarr;</a>
-</div>
+<a class="lla-float-cta" id="floater" href="#reserve">
+  <span class="lla-cta-text"><span class="lla-cta-eyebrow">RESERVE NOW</span><span class="lla-cta-title">Julie Gibson Clark Live</span></span>
+  <span class="lla-cta-pill">$59 <span class="arr">&rarr;</span></span>
+</a>
 
 <!-- TRAILER MODAL -->
 <div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer">
@@ -972,7 +1046,7 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>40)},{passive:true});
 const fl=document.getElementById('floater'),rsv=document.getElementById('reserve');let rsvIn=false;
 new IntersectionObserver(es=>es.forEach(e=>{rsvIn=e.isIntersecting;flUp()}),{threshold:.1}).observe(rsv);
-function flUp(){fl.classList.toggle('on',scrollY>innerHeight*.85&&!rsvIn)}
+function flUp(){fl.classList.toggle('is-visible',scrollY>innerHeight*.85&&!rsvIn)}
 addEventListener('scroll',flUp,{passive:true});
 
 const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
@@ -1011,12 +1085,12 @@ try{
     if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
   if(window.gsap&&window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from('.hg-in',{yPercent:112,duration:1.1,stagger:.12,ease:'power4.out',delay:.15});
+    gsap.from('.hero-wordmark',{opacity:0,y:26,duration:.9,ease:'power3.out',delay:.1});
+    gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.25});
+    gsap.from('.hero-left .hero-desc, .hero-left .hero-actions, .hero-left .hero-bar',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.55});
     gsap.from('.hero-cut',{opacity:0,y:60,scale:1.03,duration:1.3,ease:'power3.out',delay:.35});
-    gsap.from('.hero-fore',{opacity:0,y:40,duration:1,ease:'power3.out',delay:.75});
-    gsap.from('.hero-bar',{opacity:0,y:24,duration:.9,ease:'power3.out',delay:1});
-    gsap.to('.hero-giant',{yPercent:-16,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-    gsap.to('.hero-cut',{yPercent:7,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.from('.hero-zoomcard',{opacity:0,y:70,duration:1.2,ease:'power3.out',delay:.85});
+    gsap.to('.hero-cut',{yPercent:6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
     document.querySelectorAll('section .anton, .band-cta p').forEach(el=>{
       gsap.from(el,{opacity:0,y:54,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
     });
