@@ -878,12 +878,13 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   h2.anton{font-size:clamp(44px,10.5vw,58px)!important}
 }
 
-/* ===== V18: MasterClass reference system — black / cream / signature red ===== */
-:root{--red:#e0263d;--redbright:#ff4d5e;--cream:#f3ede3;--ink:#16110b;--inksub:#4d463b;--sky:#ff4d5e}
+/* ===== V19: LLA brand system — navy ink / brand blue / cream posters ===== */
+:root{--red:#006EFF;--redbright:#5EB6FF;--cream:#f3ede3;--ink:#0e1a30;--inksub:#4a566e;--sky:#5EB6FF}
 
 /* hero */
-.h18{min-height:94vh;display:flex;align-items:center;padding:150px 0 100px;position:relative;overflow:hidden;background:#000}
-.h18 .hero-glow{background:radial-gradient(closest-side,rgba(224,38,61,.18),rgba(224,38,61,.05) 55%,transparent 75%);left:50%;top:40%;transform:translate(-50%,-50%)}
+.h18{min-height:94vh;display:flex;align-items:center;padding:150px 0 100px;position:relative;overflow:hidden;background:#050b14}
+.h18 .hero-glow{background:radial-gradient(closest-side,rgba(0,110,255,.2),rgba(0,110,255,.06) 55%,transparent 75%);left:50%;top:40%;transform:translate(-50%,-50%)}
+.h18-brand{display:block;margin:0 auto 26px;height:84px;width:auto}
 .h18-wrap{display:grid;grid-template-columns:1fr minmax(520px,720px) 1fr;gap:38px;align-items:center;width:100%;max-width:1560px;margin:0 auto;padding:0 30px;position:relative;z-index:2}
 .h18-side{display:flex;flex-direction:column;gap:24px}
 .h18-side img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.09);box-shadow:0 30px 70px rgba(0,0,0,.6)}
@@ -901,22 +902,22 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 .h18-center .hero-actions{justify-content:center}
 .h18-center .hero-bar{margin:34px auto 0;justify-content:center}
 
-/* red CTA system */
-.btn-blue{background:linear-gradient(120deg,#e8354b,#b1121f);box-shadow:0 14px 38px rgba(224,38,61,.38)}
-.btn-blue:hover{background:linear-gradient(120deg,#f04458,#c31a29)}
-.ph-cta{background:linear-gradient(120deg,#e8354b,#b1121f)}
-.grad{background:linear-gradient(90deg,#ff6b78,#e0263d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+/* brand blue CTA system */
+.btn-blue{background:linear-gradient(135deg,#006EFF,#338BFF);box-shadow:0 14px 38px rgba(0,110,255,.38)}
+.btn-blue:hover{background:linear-gradient(135deg,#1a7dff,#4d9aff)}
+.ph-cta{background:linear-gradient(135deg,#006EFF,#338BFF)}
+.grad{background:linear-gradient(90deg,#7EC8FF,#338BFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero-desc strong{color:var(--redbright)}
 
-/* chapter chips: red or cream only */
-.chap.c1,.chap.c4,.chap.c5,.chap.c8,.chap.c10{background:linear-gradient(120deg,#e8354b,#b1121f);box-shadow:0 12px 30px rgba(224,38,61,.32);color:#fff}
+/* chapter chips: brand blue or cream only */
+.chap.c1,.chap.c4,.chap.c5,.chap.c8,.chap.c10,.chap.c11,.chap.c12{background:linear-gradient(135deg,#006EFF,#338BFF);box-shadow:0 12px 30px rgba(0,110,255,.32);color:#fff}
 .chap.c2,.chap.c3,.chap.c6,.chap.c7,.chap.c9{background:var(--cream);box-shadow:0 12px 30px rgba(0,0,0,.35);color:var(--ink)}
 
 /* cream poster folds */
 .statement{background:var(--cream)}
 .statement .anton{color:var(--ink)}
 .statement .serif-i{color:var(--red)}
-.statement .grad{background:linear-gradient(90deg,#e0263d,#8f0f1c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.statement .grad{background:linear-gradient(90deg,#006EFF,#0047b3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .statement p{color:var(--inksub)}
 .statement p strong{color:var(--ink)}
 
@@ -934,18 +935,18 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 .numbers .num{border-color:rgba(0,0,0,.14)}
 .numbers .anim-win{border-color:rgba(0,0,0,.2);box-shadow:0 30px 70px rgba(0,0,0,.28)}
 
-/* red bands */
-.band-cta{background:linear-gradient(120deg,#e0263d,#a30e1d);border:0;box-shadow:0 30px 80px rgba(224,38,61,.32)}
+/* navy brand bands */
+.band-cta{background:linear-gradient(120deg,#12386b 0%,#0A2240 60%,#081c38 100%);border:1px solid rgba(140,190,255,.28);box-shadow:0 30px 80px rgba(4,16,40,.6),0 0 70px rgba(0,110,255,.18)}
 .band-cta p{color:#fff}
-.band-cta p span{color:#ffd6c4}
-.band-cta .btn-blue{background:#14100c;box-shadow:0 14px 34px rgba(0,0,0,.5)}
-.band-cta .btn-blue:hover{background:#241d15}
+.band-cta p span{color:#7EC8FF}
+.band-cta .btn-blue{background:linear-gradient(135deg,#006EFF,#338BFF);box-shadow:0 14px 34px rgba(0,110,255,.4)}
+.band-cta .btn-blue:hover{background:linear-gradient(135deg,#1a7dff,#4d9aff)}
 
 /* cream date + checkout cards */
 .dcard{background:#fbf7ee;border:1px solid rgba(0,0,0,.08);box-shadow:0 34px 90px rgba(0,0,0,.45);color:var(--inksub)}
 .dcard h3{color:var(--ink)}
 .dcard .ses{color:var(--red)}
-.dcard .yr{color:#a1988a}
+.dcard .yr{color:#8e99ad}
 .dcard .tz span{color:var(--inksub)}
 .dcard .tz strong{color:var(--ink)}
 .dcard .dmeta{color:var(--inksub)}
@@ -957,41 +958,72 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 .co-card .co-list li::before{filter:none;border-left-color:var(--red);border-bottom-color:var(--red)}
 .co-card .co-steps span{color:var(--inksub)}
 .co-card .co-steps b{color:var(--red)}
-.co-card .co-micro{color:#a1988a}
+.co-card .co-micro{color:#8e99ad}
 .co-card .badge{color:var(--inksub);border-color:rgba(0,0,0,.16)}
 .co-card .tp-chip{border-color:rgba(0,0,0,.16);color:var(--ink)}
 
-/* floating reserve card: black + red */
-.lla-float-cta{background:linear-gradient(180deg,#191310 0%,#0d0a08 100%);border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 1px rgba(224,38,61,.25),0 14px 36px rgba(0,0,0,.5),0 0 28px rgba(224,38,61,.18)}
-.lla-float-cta:hover{box-shadow:0 0 0 1px rgba(255,77,94,.4),0 18px 44px rgba(0,0,0,.55),0 0 44px rgba(224,38,61,.4)}
-.lla-cta-eyebrow{color:#ff97a1}
-.lla-cta-eyebrow::before{background:#ff4d5e;box-shadow:0 0 8px #ff4d5e,0 0 14px rgba(255,77,94,.7)}
-.lla-cta-pill{background:linear-gradient(180deg,#e8354b 0%,#b1121f 100%);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 20px rgba(224,38,61,.35)}
+/* floating reserve card: brand navy + blue */
+.lla-float-cta{background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);border:1px solid rgba(140,190,255,.3);box-shadow:0 0 0 1px rgba(0,110,255,.25),0 14px 36px rgba(0,0,0,.5),0 0 28px rgba(0,110,255,.18)}
+.lla-float-cta:hover{box-shadow:0 0 0 1px rgba(94,182,255,.4),0 18px 44px rgba(0,0,0,.55),0 0 44px rgba(0,110,255,.4)}
+.lla-cta-eyebrow{color:#8FB9F0}
+.lla-cta-eyebrow::before{background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 14px rgba(94,182,255,.7)}
+.lla-cta-pill{background:linear-gradient(180deg,#5EB6FF 0%,#2b7fe8 100%);color:#06243F;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 20px rgba(0,110,255,.35)}
 
 /* cta-card accents */
 .cta-card .eyebrow{color:var(--redbright)}
 
-/* eyebrow dots: red system */
-.eyebrow::before{background:#ff4d5e;box-shadow:0 0 8px #ff4d5e,0 0 16px rgba(255,77,94,.6)}
-.chap.c1::before,.chap.c4::before,.chap.c5::before,.chap.c8::before,.chap.c10::before{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8)}
+/* eyebrow dots: brand blue system */
+.eyebrow::before{background:#5EB6FF;box-shadow:0 0 8px #5EB6FF,0 0 16px rgba(94,182,255,.6)}
+.chap.c1::before,.chap.c4::before,.chap.c5::before,.chap.c8::before,.chap.c10::before,.chap.c11::before,.chap.c12::before{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8)}
 .chap.c2::before,.chap.c3::before,.chap.c6::before,.chap.c7::before,.chap.c9::before{background:var(--red);box-shadow:none}
 
-/* dates + quote: kill navy radials */
-.dates{background:radial-gradient(ellipse 75% 65% at 50% 40%,#1a0509 0%,#000 75%)}
-.quote{background:radial-gradient(ellipse 62% 56% at 50% 50%,#170608 0%,#000 80%)}
+/* dates + quote: brand navy radials */
+.dates{background:radial-gradient(ellipse 75% 65% at 50% 40%,#0e2246 0%,#03060e 75%)}
+.quote{background:radial-gradient(ellipse 62% 56% at 50% 50%,#0c1d3c 0%,#03060e 80%)}
 
-/* fold backgrounds: black with red heat, no blue/teal/plum */
-.rev{background:radial-gradient(900px 620px at 88% 8%,rgba(224,38,61,.14),transparent 60%),#000}
+/* fold backgrounds: navy ink with brand blue light */
+.rev{background:radial-gradient(900px 620px at 88% 8%,rgba(0,110,255,.16),transparent 60%),#02060d}
 .rev .rev-verb{color:var(--redbright)}
-.rev .rev-no{color:rgba(255,77,94,.4);-webkit-text-stroke:1px rgba(255,77,94,.5)}
-.press{background:linear-gradient(180deg,#000,#120607 55%,#000)}
-.press .grad{background:linear-gradient(90deg,#ff6b78,#e0263d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.devices{background:radial-gradient(1100px 660px at 50% 8%,rgba(224,38,61,.1),transparent 62%),linear-gradient(180deg,#050505,#0c0b0b 55%,#000)}
+.rev .rev-no{color:rgba(94,182,255,.4);-webkit-text-stroke:1px rgba(94,182,255,.5)}
+.press{background:linear-gradient(180deg,#02060d,#081426 55%,#02060d)}
+.press .grad{background:linear-gradient(90deg,#7EC8FF,#338BFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.devices{background:radial-gradient(1100px 660px at 50% 8%,rgba(0,110,255,.12),transparent 62%),linear-gradient(180deg,#03070f,#0a1424 55%,#02060d)}
 .devices .sky{color:var(--redbright)}
 .ccs .sky{color:var(--redbright)}
 .cc-lesson{color:var(--redbright)}
 .liveroom .sky{color:var(--redbright)}
 .statement + section .sky{color:var(--redbright)}
+
+/* six pillars: cream poster fold with brand footage */
+.pillars6{background:var(--cream);padding:130px 0}
+.pillars6 .shead{text-align:center;margin-bottom:56px}
+.pillars6 .anton{color:var(--ink);font-size:clamp(44px,4.4vw,80px)}
+.pillars6 .grad{background:linear-gradient(90deg,#006EFF,#0047b3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.p6-sub{color:var(--inksub);max-width:640px;margin:20px auto 0;font-size:17px;line-height:1.65}
+.p6-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.p6-card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;margin:0;box-shadow:0 30px 70px rgba(10,22,40,.3);transform:translateZ(0)}
+.p6-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p6-card figcaption{position:absolute;inset:auto 0 0 0;padding:90px 26px 26px;background:linear-gradient(to top,rgba(2,10,24,.92) 0%,rgba(2,10,24,.55) 55%,transparent 100%)}
+.p6-no{display:block;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;letter-spacing:.12em;color:#7EC8FF;margin-bottom:8px}
+.p6-card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:27px;color:#fff;letter-spacing:-.01em;margin-bottom:8px}
+.p6-card p{font-size:14.5px;line-height:1.55;color:rgba(233,242,255,.85)}
+
+/* the school: cream fold, navy brand card */
+.school{background:var(--cream);padding:130px 0}
+.school .shead{text-align:center;margin-bottom:52px}
+.school .anton{color:var(--ink);font-size:clamp(44px,4.4vw,80px)}
+.school .grad{background:linear-gradient(90deg,#006EFF,#0047b3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sc-card{max-width:1020px;margin:0 auto;padding:66px 60px;border-radius:24px;text-align:center;background:linear-gradient(180deg,#0e1f48 0%,#081634 100%);border:1px solid rgba(140,190,255,.28);box-shadow:0 40px 100px rgba(10,22,40,.45)}
+.sc-logo{display:block;margin:0 auto 30px;height:96px;width:auto}
+.sc-copy{max-width:640px;margin:0 auto;font-size:17.5px;line-height:1.7;color:rgba(222,235,255,.88)}
+.sc-copy strong{color:#7EC8FF;font-weight:700}
+.sc-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;padding-top:40px;border-top:1px solid rgba(140,190,255,.2)}
+.sc-stats b{display:block;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,2.3vw,38px);color:#7EC8FF;letter-spacing:-.01em}
+.sc-stats span{display:block;margin-top:6px;font-size:13.5px;line-height:1.4;color:rgba(222,235,255,.62)}
+@media(max-width:1000px){.p6-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.pillars6{padding:96px 0}.school{padding:96px 0}.sc-card{padding:48px 26px}.sc-stats{grid-template-columns:repeat(2,1fr);gap:26px 14px}.sc-stats>div:last-child{grid-column:1/-1}}
+@media(max-width:620px){.p6-grid{grid-template-columns:1fr}.h18-brand{height:60px}}
+.zoom-stack .zoom-win:nth-child(2) img{transform:scale(1.045)}
 
 @media(max-width:1180px){
   .h18-wrap{grid-template-columns:1fr minmax(420px,600px) 1fr;gap:24px}
@@ -1041,9 +1073,10 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
       <img src="assets/instructors/julie-coffee.jpg" alt="Julie Gibson Clark at home">
     </div>
     <div class="h18-center">
+      <img class="h18-brand" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" width="397" height="253">
       <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
       <h1 class="anton hero-head h18-head">She slowed aging itself.<br><span class="serif-i h18-red">Now you.</span></h1>
-      <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass.</p>
+      <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass from <strong>Longevity Life Academy</strong> by eTeacher Group.</p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
         <a class="btn btn-ghost openFilm" href="#" id="trailerLink">Watch the film</a>
@@ -1171,11 +1204,30 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 </section>
 
 <!-- CLASS CARDS SLIDER -->
+<!-- SIX PILLARS -->
+<section class="pillars6">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow chap c11">05 · What you'll master</p>
+      <h2 class="anton">Six pillars. <span class="grad">One longer life.</span></h2>
+      <p class="p6-sub">The six systems taught across Longevity Life Academy. In this masterclass, Julie shows how she runs all six on a normal budget, in a normal life.</p>
+    </div>
+    <div class="p6-grid reveal">
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/v2-nutrition-greens-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">01</span><h3>Nutrition</h3><p>Plate architecture: the protein floor, the fiber lever, a daily pound of vegetables.</p></figcaption></figure>
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/sleep-blog-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">02</span><h3>Sleep</h3><p>The non-negotiable schedule that does the heaviest lifting in her protocol.</p></figcaption></figure>
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/exercise-yoga-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">03</span><h3>Exercise &amp; movement</h3><p>Strength plus Norwegian 4&times;4, the training that compounds everything else.</p></figcaption></figure>
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/supplements-wearables-know-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">04</span><h3>Supplements &amp; testing</h3><p>The ~$100-a-month stack, and the bloodwork loop that proves it works.</p></figcaption></figure>
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/stress-management-cold-plunge-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">05</span><h3>Stress management</h3><p>Twenty minutes of meditation, daily since 2019. Stress is an aging accelerant.</p></figcaption></figure>
+      <figure class="p6-card"><video src="https://www.longevitylifeacademy.com/assets/daily-protocol-v2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="p6-no">06</span><h3>Your protocol</h3><p>How the pieces become one system you can actually live, starting the next morning.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="ccs">
   <div class="container">
     <div class="ccs-head reveal">
       <div>
-        <p class="eyebrow chap c5">05 · The classes</p>
+        <p class="eyebrow chap c5">06 · The classes</p>
         <h2 class="anton">One class. <span class="serif-i sky">Every lever that matters.</span></h2>
       </div>
       <div class="cc-nav">
@@ -1216,7 +1268,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 <section class="day" id="day">
   <div class="container">
     <div class="shead reveal">
-      <p class="eyebrow chap c6">06 · Her actual day</p>
+      <p class="eyebrow chap c6">07 · Her actual day</p>
       <h2 class="anton">Her actual daily routine, <span class="grad">hour by hour.</span></h2>
     </div>
     <div class="day-grid">
@@ -1252,7 +1304,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 <section class="devices">
   <div class="container">
     <div class="dev-head">
-      <p class="eyebrow chap c7 reveal">07 · Live on every screen</p>
+      <p class="eyebrow chap c7 reveal">08 · Live on every screen</p>
       <h2 class="anton">One evening.<br><span class="serif-i sky">Wherever you are.</span></h2>
       <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
     </div>
@@ -1307,7 +1359,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 <section class="dates" id="dates">
   <div class="wrap">
     <div style="text-align:center">
-      <p class="eyebrow chap c8 reveal">08 · Dates and times</p>
+      <p class="eyebrow chap c8 reveal">09 · Dates and times</p>
       <h2 class="anton reveal" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px">Two live sessions. <span class="serif-i">Choose yours.</span></h2>
     </div>
     <div class="date-grid">
@@ -1347,7 +1399,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   <div class="container">
     <div class="lr-head reveal">
       <div>
-        <p class="eyebrow chap c9">09 · The live room</p>
+        <p class="eyebrow chap c9">10 · The live room</p>
         <h2 class="anton">This is the room. <span class="grad">You are in it live.</span></h2>
       </div>
       <p>A live room, kept small on purpose. Julie on screen, your name on a tile, and your questions answered in the session, not in the comments.</p>
@@ -1367,6 +1419,26 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   </div>
 </section>
 
+<!-- THE SCHOOL -->
+<section class="school">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow chap c12">11 · The school</p>
+      <h2 class="anton">Taught at <span class="grad">Longevity Life Academy.</span></h2>
+    </div>
+    <div class="sc-card reveal">
+      <img class="sc-logo" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" loading="lazy" width="397" height="253">
+      <p class="sc-copy">Longevity Life Academy is the longevity school built by <strong>eTeacher Group</strong>, live online education since 2000. This masterclass is taught on the same platform, by the same faculty standard, as the Academy's flagship programs.</p>
+      <div class="sc-stats">
+        <div><b>Live</b><span>format, real instructors</span></div>
+        <div><b>400k+</b><span>students globally</span></div>
+        <div><b>197</b><span>countries</span></div>
+        <div><b>25 yrs</b><span>of online education</span></div>
+        <div><b>5</b><span>online schools</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section style="padding:0 0 150px">
   <div class="band-cta reveal">
@@ -1380,7 +1452,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   <div class="container">
     <div class="cta-grid">
       <div class="cta-card co-card reveal">
-        <div class="co-top"><p class="eyebrow chap c10">10 · Reserve your seat</p><div class="tp-chip tp-sm"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot</div></div>
+        <div class="co-top"><p class="eyebrow chap c10">12 · Reserve your seat</p><div class="tp-chip tp-sm"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot</div></div>
         <h3>Julie Gibson Clark, live</h3>
         <div class="co-price"><span class="co-num">$59</span><span class="co-per">one seat &middot; September 16 or September 27</span></div>
         <ul class="co-list">
