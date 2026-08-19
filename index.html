@@ -1120,6 +1120,19 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 .zoom-top{gap:18px;justify-content:space-between}
 @media(max-width:900px){.mc-brandimg{height:24px}.zoom-brandimg{height:20px!important}.h18-brand{height:70px}}
 @media(max-width:620px){.h18-brand{height:58px}.mc-brandimg{height:18px}}
+/* ===== V26: one logo per screen, mobile hero image first, tighter animations ===== */
+.mc-bar{justify-content:flex-end}
+.anim-win,.anim-cap,.numbers .anim-win{max-width:620px}
+.zoom-body{position:relative}
+.zoom-body .zoom-name{position:absolute;left:16px;bottom:14px;background:rgba(2,4,9,.86);color:#fff;font-family:'Playfair Display',serif;font-size:15px;padding:6px 14px;border-radius:5px;letter-spacing:.01em}
+.ph-a .ph-media img{object-position:50% 10%}
+@media(max-width:620px){
+  .h18{padding:96px 0 70px}
+  .h18-wrap{display:flex;flex-direction:column}
+  .h20-stage{order:-1;margin:0 0 42px}
+  .anim-win,.anim-cap{max-width:86vw}
+  .zoom-body .zoom-name{font-size:11px;padding:3px 8px;left:9px;bottom:8px}
+}
 </style>
 </head>
 <body>
@@ -1153,7 +1166,6 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   <div class="hero-glow"></div>
   <div class="h18-wrap">
     <div class="h18-center">
-      <img class="h18-brand" src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" width="1314" height="596">
       <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
       <h1 class="anton hero-head h18-head">She slowed aging itself.<br><span class="serif-i h18-red">Now you.</span></h1>
       <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass from <strong>Longevity Life Academy</strong> by eTeacher Group.</p>
@@ -1167,7 +1179,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
     </div>
     <div class="h20-stage">
       <div class="mc-room">
-        <div class="mc-bar"><img class="mc-brandimg" src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group"><span class="mc-live"><i></i>Live</span></div>
+        <div class="mc-bar"><span class="mc-live"><i></i>Live</span></div>
         <div class="mc-grid">
           <div class="mc-tile mc-julie"><span class="mc-name">Julie Gibson Clark, Host</span></div>
           <div class="mc-tile mc-logo mc-la"><img src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy"></div>
@@ -1395,7 +1407,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 <section class="devices">
   <div class="container">
     <div class="dev-head">
-      <p class="eyebrow chap c7 reveal">08 · Live on every screen</p>
+      <p class="eyebrow chap c7 reveal">08 · Any device</p>
       <h2 class="anton">Join from <span class="serif-i sky">any device.</span></h2>
       <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
     </div>
@@ -1406,7 +1418,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
       </div>
       <div class="dev-phones">
       <div class="phone ph-a">
-        <div class="ph-media"><img src="assets/instructors/julie-desert.jpg" alt="Julie Gibson Clark" loading="lazy">
+        <div class="ph-media"><img src="assets/instructors/julie-standing-hd.jpg" alt="Julie Gibson Clark" loading="lazy">
           <div class="ph-meta"><p class="ph-name">Julie Gibson Clark</p><p class="ph-teaches serif-i">Teaches longevity, live</p></div>
         </div>
         <div class="ph-body">
@@ -1445,7 +1457,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
       <div class="zoom-stack">
         <div class="zoom-win reveal">
           <div class="zoom-top"><img class="zoom-brandimg" src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group"><span class="rec"><i></i>Live open Q&amp;A</span></div>
-          <img src="assets/zoom-speaker-clean.jpg" alt="Speaker view: Julie Gibson Clark teaching live" loading="lazy">
+          <div class="zoom-body"><img src="assets/zoom-speaker-clean.jpg" alt="Speaker view: Julie Gibson Clark teaching live" loading="lazy"><span class="zoom-name">Julie Gibson Clark, Host</span></div>
         </div>
       </div>
     </div>
