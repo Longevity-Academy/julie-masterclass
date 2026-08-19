@@ -838,6 +838,45 @@ html,body{overflow-x:clip}
   .dev-phones .phone.ph-b{transform:rotate(2.5deg)}
   .devices{padding:110px 0 120px}
 }
+
+/* ===== V17: chapters, wayfinding, rich color ===== */
+.eyebrow.chap{display:inline-flex;align-items:center;padding:11px 24px;border-radius:999px;font-size:15px;font-weight:700;letter-spacing:.03em;color:#fff;border:0}
+.chap.c1,.chap.c4,.chap.c8{background:linear-gradient(120deg,#2b7fe8,#57a7f5);box-shadow:0 12px 30px rgba(43,127,232,.35)}
+.chap.c2,.chap.c6{background:linear-gradient(120deg,#a8641c,#d99a3f);box-shadow:0 12px 30px rgba(217,154,63,.3)}
+.chap.c3,.chap.c9{background:linear-gradient(120deg,#5b45c9,#8a6cf0);box-shadow:0 12px 30px rgba(122,90,230,.32)}
+.chap.c5,.chap.c10{background:linear-gradient(120deg,#c2452f,#e0642f);box-shadow:0 12px 30px rgba(224,100,47,.32)}
+.chap.c7{background:linear-gradient(120deg,#0f8a7a,#1fb59c);box-shadow:0 12px 30px rgba(31,181,156,.3)}
+
+h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
+
+.statement{background:linear-gradient(180deg,#000 0%,#0a2050 50%,#071433 100%)}
+.about{background:radial-gradient(1100px 700px at 85% 18%,rgba(217,154,63,.16),transparent 62%),linear-gradient(180deg,#000,#140c03 55%,#000)}
+.press{background:linear-gradient(180deg,#000,#0e0a28 55%,#000)}
+.rev{background:linear-gradient(180deg,#000,#081b42 50%,#000)}
+.ccs{background:radial-gradient(1000px 620px at 82% 0%,rgba(224,100,47,.2),transparent 60%),linear-gradient(180deg,#070202,#190a04 55%,#000)}
+.day{background:radial-gradient(900px 620px at 14% 18%,rgba(217,154,63,.16),transparent 60%),linear-gradient(180deg,#000,#150d04 55%,#000)}
+.devices{background:radial-gradient(1100px 660px at 50% 8%,rgba(31,181,156,.14),transparent 62%),linear-gradient(180deg,#020f0d,#041a17 55%,#020908)}
+.numbers{background:linear-gradient(180deg,#000,#0a2050 55%,#000)}
+.quote{border-color:rgba(255,205,140,.14)}
+
+.band-cta{background:linear-gradient(120deg,#12386b 0%,#0A2240 60%,#081c38 100%);border:1px solid rgba(140,190,255,.28);box-shadow:0 30px 80px rgba(4,16,40,.6)}
+.dcard{background:linear-gradient(165deg,#12386b 0%,#0A2240 55%,#071a33 100%);border:1px solid rgba(140,190,255,.3);box-shadow:0 34px 90px rgba(3,10,26,.7)}
+.co-card{background:linear-gradient(165deg,#0f2d52 0%,#0A2240 55%,#071a33 100%);border-color:rgba(140,190,255,.34);box-shadow:0 36px 96px rgba(3,10,26,.75)}
+.btn-blue{background:linear-gradient(120deg,#2b7fe8,#57a7f5);box-shadow:0 14px 38px rgba(43,127,232,.38)}
+.btn-blue:hover{background:linear-gradient(120deg,#3a8bf0,#6ab2f8)}
+.ph-cta{background:linear-gradient(120deg,#2b7fe8,#57a7f5)}
+.hero-glow{background:radial-gradient(closest-side,rgba(43,127,232,.28),rgba(43,127,232,.07) 55%,transparent 72%)}
+
+.about .grad{background:linear-gradient(90deg,#ffca8a,#d99a3f);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.day .grad{background:linear-gradient(90deg,#ffca8a,#e0642f);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ccs .sky{color:#ffb27a}
+.devices .sky{color:#7fe0d0}
+.press .grad{background:linear-gradient(90deg,#b9a4ff,#8a6cf0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+@media(max-width:760px){
+  .eyebrow.chap{font-size:14px;padding:10px 20px}
+  h2.anton{font-size:clamp(44px,10.5vw,58px)!important}
+}
 </style>
 </head>
 <body>
@@ -888,10 +927,6 @@ html,body{overflow-x:clip}
     <div class="hero-right">
       <img class="hero-stage-logo" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" fetchpriority="high" width="397" height="253">
       <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
-      <div class="hero-zoomcard" aria-label="The live masterclass room on Zoom">
-        <div class="zc-top"><span class="dots"><i></i><i></i><i></i></span><span>Live masterclass</span><span class="rec"><i></i>REC</span></div>
-        <img src="assets/zoom-gallery.jpg" alt="Julie Gibson Clark hosting the live class on Zoom" loading="eager">
-      </div>
     </div>
   </div>
   <div class="hero-floor"></div>
@@ -911,7 +946,7 @@ html,body{overflow-x:clip}
 <!-- STATEMENT -->
 <section class="statement">
   <div class="container reveal">
-    <p class="eyebrow sky">One live masterclass · Two dates remain</p>
+    <p class="eyebrow chap c1">01 · The story</p>
     <h2 class="anton" style="margin-top:30px"><span class="grad">Two-million-dollar</span> results.<br><span class="serif-i">A $59 seat.</span></h2>
     <p>The <strong>No.2 slowest-aging person in the world</strong> uncovers her complete protocol, live. The exact sleep system. The plates. The ~$100 stack. Two dates in September. When they fill, the room closes.</p>
   </div>
@@ -926,12 +961,68 @@ html,body{overflow-x:clip}
   </div>
 </section>
 
+<!-- ABOUT JULIE -->
+<section class="about" id="julie">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal"><img src="assets/instructors/julie-purple.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
+      <div class="about-copy reveal">
+        <p class="eyebrow chap c2">02 · Meet Julie</p>
+        <div class="rank" style="margin-top:24px">Ranked No.2 · Rejuvenation Olympics</div>
+        <h2 class="anton" style="margin-bottom:34px">Who is <span class="grad">Julie Gibson Clark?</span></h2>
+        <p>Julie Gibson Clark is the <strong>No.2 slowest-aging person in the world</strong> on the Rejuvenation Olympics, a leading voice in accessible, evidence-based longevity, and Founding Faculty at Longevity Life Academy.</p>
+        <p>Her DunedinPACE score of <strong>0.665</strong> means she accrues roughly eight months of biological aging per calendar year, about a third slower than the average adult.</p>
+        <p>Julie is a recruiter and single mom in Phoenix, Arizona. A heavy-metal poisoning diagnosis was her wake-up call. Her answer was <strong>fundamentals, executed with total consistency</strong>. On the 2023 leaderboard she out-aged Bryan Johnson and his ~$2M-a-year protocol. Fortune and Business Insider covered it.</p>
+        <div class="pull">
+          <p class="q">&ldquo;We don't need millions of dollars to live long, vibrant lives.&rdquo;</p>
+          <p class="a">Julie Gibson Clark</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press" id="press">
+  <div class="container reveal">
+    <span class="eyebrow chap c3">03 · In the press</span>
+    <h2 class="anton" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px;text-align:center">The press <span class="grad">already covered her.</span></h2>
+    <div class="art-grid">
+      <a class="art" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
+        <span class="art-mast m-fortune">FORTUNE</span>
+        <p class="art-line">The women out-aging the world&rsquo;s most famous biohackers, on everyday fundamentals.</p>
+        <span class="art-cta">Read the story &rarr;</span>
+      </a>
+      <a class="art" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
+        <span class="art-mast m-bi">BUSINESS INSIDER</span>
+        <p class="art-line">She spends a fraction of what Bryan Johnson does, and out-ranked his $2M-a-year protocol.</p>
+        <span class="art-cta">Read the story &rarr;</span>
+      </a>
+      <a class="art" href="https://rejuvenationolympics.com/dunedin-pace/" target="_blank" rel="noopener">
+        <span class="art-mast m-ro">REJUVENATION OLYMPICS</span>
+        <p class="art-line">The official DunedinPACE leaderboard where Julie ranked No.2 in the world, verified by epigenetic testing.</p>
+        <span class="art-cta">See the leaderboard &rarr;</span>
+      </a>
+    </div>
+    <p class="press-note">Also covered by USA Today, Yahoo Finance, Daily Mail, The Sun, Times Now, NewsBreak, NOVOS and NAD.com.</p>
+  </div>
+</section>
+
+<!-- THE FILM -->
+<section class="film">
+  <div class="film-wrap">
+  <div class="film-frame openFilm">
+    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" muted loop playsinline preload="metadata"></video>
+    <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
+  </div>
+  </div>
+</section>
 
 <!-- THE REVEAL -->
 <section class="rev" id="reveal">
   <div class="container">
     <div class="shead reveal">
-      <p class="eyebrow sky">What you'll learn</p>
+      <p class="eyebrow chap c4">04 · What you'll learn</p>
       <h2 class="anton">What you will learn,<br><span class="serif-i">live in one sitting.</span></h2>
       <p>No modules. No drip content. One live masterclass where the complete protocol is uncovered, explained, and handed to you, with the reasoning behind every choice.</p>
     </div>
@@ -952,20 +1043,12 @@ html,body{overflow-x:clip}
   </div>
 </section>
 
-
-<section style="padding:0 0 150px">
-  <div class="band-cta reveal">
-    <p>The complete protocol, revealed live. <span>One seat is $59.</span></p>
-    <a class="btn btn-blue" href="#reserve">Reserve your seat</a>
-  </div>
-</section>
-
 <!-- CLASS CARDS SLIDER -->
 <section class="ccs">
   <div class="container">
     <div class="ccs-head reveal">
       <div>
-        <p class="eyebrow sky">Inside the masterclass</p>
+        <p class="eyebrow chap c5">05 · The classes</p>
         <h2 class="anton">One class. <span class="serif-i sky">Every lever that matters.</span></h2>
       </div>
       <div class="cc-nav">
@@ -1002,13 +1085,39 @@ html,body{overflow-x:clip}
   </div>
 </section>
 
-<!-- THE FILM -->
-<section class="film">
-  <div class="film-wrap">
-  <div class="film-frame openFilm">
-    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" muted loop playsinline preload="metadata"></video>
-    <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
+<!-- DAY IN THE LIFE -->
+<section class="day" id="day">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow chap c6">06 · Her actual day</p>
+      <h2 class="anton">Her actual daily routine, <span class="grad">hour by hour.</span></h2>
+    </div>
+    <div class="day-grid">
+      <div class="tl reveal">
+        <div class="tl-row"><div class="tl-time">5:00 AM</div><div><h4>Rise, meditate, green tea</h4><p>The same wake time every day, the anchor of her circadian rhythm.</p></div></div>
+        <div class="tl-row"><div class="tl-time">7:00 AM</div><div><h4>Strength + Norwegian 4×4</h4><p>Followed by sauna and a cold rinse. Training that compounds everything else.</p></div></div>
+        <div class="tl-row"><div class="tl-time">11:00 AM</div><div><h4>A pound of colorful vegetables</h4><p>Plate architecture in practice. Fiber first, protein floor, nothing extreme.</p></div></div>
+        <div class="tl-row"><div class="tl-time">1:00 PM</div><div><h4>Transcendental Meditation, 20 minutes</h4><p>Daily since 2019. Stress is an aging accelerant; this is the brake.</p></div></div>
+        <div class="tl-row"><div class="tl-time">6:00 PM</div><div><h4>Early dinner</h4><p>Roughly three hours before bed, every night.</p></div></div>
+        <div class="tl-row"><div class="tl-time">9:00 PM</div><div><h4>Evening walk, lights out</h4><p>The day ends the way it began: on schedule.</p></div></div>
+      </div>
+      <div class="day-media reveal"><img src="assets/instructors/julie-coffee.jpg" alt="Julie Gibson Clark, morning routine" loading="lazy"></div>
+    </div>
   </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="container reveal">
+    <p class="q">&ldquo;You cannot biohack your way out of a good night's sleep.&rdquo;</p>
+    <p class="a">Julie Gibson Clark</p>
+  </div>
+</section>
+
+<section style="padding:0 0 150px">
+  <div class="band-cta reveal">
+    <p>Two September dates. <span>Reserve yours before the room fills.</span></p>
+    <a class="btn btn-blue" href="#dates">See dates and times</a>
   </div>
 </section>
 
@@ -1016,7 +1125,7 @@ html,body{overflow-x:clip}
 <section class="devices">
   <div class="container">
     <div class="dev-head">
-      <p class="eyebrow sky reveal">Live on every screen</p>
+      <p class="eyebrow chap c7 reveal">07 · Live on every screen</p>
       <h2 class="anton">One evening.<br><span class="serif-i sky">Wherever you are.</span></h2>
       <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
     </div>
@@ -1071,7 +1180,7 @@ html,body{overflow-x:clip}
 <section class="dates" id="dates">
   <div class="wrap">
     <div style="text-align:center">
-      <p class="eyebrow sky reveal">Dates and times</p>
+      <p class="eyebrow chap c8 reveal">08 · Dates and times</p>
       <h2 class="anton reveal" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px">Two live sessions. <span class="serif-i">Choose yours.</span></h2>
     </div>
     <div class="date-grid">
@@ -1111,7 +1220,7 @@ html,body{overflow-x:clip}
   <div class="container">
     <div class="lr-head reveal">
       <div>
-        <p class="eyebrow sky">The live room</p>
+        <p class="eyebrow chap c9">09 · The live room</p>
         <h2 class="anton">This is the room. <span class="grad">You are in it live.</span></h2>
       </div>
       <p>A live room, kept small on purpose. Julie on screen, your name on a tile, and your questions answered in the session, not in the comments.</p>
@@ -1131,111 +1240,11 @@ html,body{overflow-x:clip}
   </div>
 </section>
 
-<!-- ABOUT JULIE -->
-<section class="about" id="julie">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-media reveal"><img src="assets/instructors/julie-purple.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">Founding Faculty</p>
-        <div class="rank" style="margin-top:24px">Ranked No.2 · Rejuvenation Olympics</div>
-        <h2 class="anton" style="margin-bottom:34px">Who is <span class="grad">Julie Gibson Clark?</span></h2>
-        <p>Julie Gibson Clark is the <strong>No.2 slowest-aging person in the world</strong> on the Rejuvenation Olympics, a leading voice in accessible, evidence-based longevity, and Founding Faculty at Longevity Life Academy.</p>
-        <p>Her DunedinPACE score of <strong>0.665</strong> means she accrues roughly eight months of biological aging per calendar year, about a third slower than the average adult.</p>
-        <p>Julie is a recruiter and single mom in Phoenix, Arizona. A heavy-metal poisoning diagnosis was her wake-up call. Her answer was <strong>fundamentals, executed with total consistency</strong>. On the 2023 leaderboard she out-aged Bryan Johnson and his ~$2M-a-year protocol. Fortune and Business Insider covered it.</p>
-        <div class="pull">
-          <p class="q">&ldquo;We don't need millions of dollars to live long, vibrant lives.&rdquo;</p>
-          <p class="a">Julie Gibson Clark</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRESS -->
 
 <section style="padding:0 0 150px">
   <div class="band-cta reveal">
-    <p>Two September dates. <span>Reserve yours before the room fills.</span></p>
-    <a class="btn btn-blue" href="#dates">See dates and times</a>
-  </div>
-</section>
-<section class="press" id="press">
-  <div class="container reveal">
-    <span class="eyebrow">The coverage</span>
-    <h2 class="anton" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px;text-align:center">The press <span class="grad">already covered her.</span></h2>
-    <div class="art-grid">
-      <a class="art" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
-        <span class="art-mast m-fortune">FORTUNE</span>
-        <p class="art-line">The women out-aging the world&rsquo;s most famous biohackers, on everyday fundamentals.</p>
-        <span class="art-cta">Read the story &rarr;</span>
-      </a>
-      <a class="art" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
-        <span class="art-mast m-bi">BUSINESS INSIDER</span>
-        <p class="art-line">She spends a fraction of what Bryan Johnson does, and out-ranked his $2M-a-year protocol.</p>
-        <span class="art-cta">Read the story &rarr;</span>
-      </a>
-      <a class="art" href="https://rejuvenationolympics.com/dunedin-pace/" target="_blank" rel="noopener">
-        <span class="art-mast m-ro">REJUVENATION OLYMPICS</span>
-        <p class="art-line">The official DunedinPACE leaderboard where Julie ranked No.2 in the world, verified by epigenetic testing.</p>
-        <span class="art-cta">See the leaderboard &rarr;</span>
-      </a>
-    </div>
-    <p class="press-note">Also covered by USA Today, Yahoo Finance, Daily Mail, The Sun, Times Now, NewsBreak, NOVOS and NAD.com.</p>
-  </div>
-</section>
-
-<!-- PILLARS -->
-<section class="pillars">
-  <div class="container">
-    <div class="shead reveal">
-      <p class="eyebrow sky">The focus</p>
-      <h2 class="anton">Sleep. Nutrition. Supplements. <span class="grad">The three levers.</span></h2>
-      <p>In one sitting, you'll master the three levers Julie credits most: sleep, nutrition and supplementation, made accessible to everyone.</p>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <img src="assets/pillars/sleep-warm.jpg" alt="Sleep" loading="lazy">
-        <div class="pillar-copy"><p class="no">No. 1</p><h3>Sleep</h3><p>The true non-negotiable. Architecture, circadian rhythm, and the protocol for protecting it, every single night.</p></div>
-      </div>
-      <div class="pillar reveal">
-        <img src="assets/pillars/nutrition-warm.jpg" alt="Nutrition" loading="lazy">
-        <div class="pillar-copy"><p class="no">No. 2</p><h3>Nutrition</h3><p>Plate architecture, eating rhythm, and a pound of colorful vegetables a day. Sustainable, not extreme.</p></div>
-      </div>
-      <div class="pillar reveal">
-        <img src="assets/pillars/supplements-warm.jpg" alt="Supplementation" loading="lazy">
-        <div class="pillar-copy"><p class="no">No. 3</p><h3>Supplementation</h3><p>Smart, minimal, tested. What earns a place in a ~$100-a-month stack, and what stays out.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY IN THE LIFE -->
-<section class="day" id="day">
-  <div class="container">
-    <div class="shead reveal">
-      <p class="eyebrow sky">The standard</p>
-      <h2 class="anton">Her actual daily routine, <span class="grad">hour by hour.</span></h2>
-    </div>
-    <div class="day-grid">
-      <div class="tl reveal">
-        <div class="tl-row"><div class="tl-time">5:00 AM</div><div><h4>Rise, meditate, green tea</h4><p>The same wake time every day, the anchor of her circadian rhythm.</p></div></div>
-        <div class="tl-row"><div class="tl-time">7:00 AM</div><div><h4>Strength + Norwegian 4×4</h4><p>Followed by sauna and a cold rinse. Training that compounds everything else.</p></div></div>
-        <div class="tl-row"><div class="tl-time">11:00 AM</div><div><h4>A pound of colorful vegetables</h4><p>Plate architecture in practice. Fiber first, protein floor, nothing extreme.</p></div></div>
-        <div class="tl-row"><div class="tl-time">1:00 PM</div><div><h4>Transcendental Meditation, 20 minutes</h4><p>Daily since 2019. Stress is an aging accelerant; this is the brake.</p></div></div>
-        <div class="tl-row"><div class="tl-time">6:00 PM</div><div><h4>Early dinner</h4><p>Roughly three hours before bed, every night.</p></div></div>
-        <div class="tl-row"><div class="tl-time">9:00 PM</div><div><h4>Evening walk, lights out</h4><p>The day ends the way it began: on schedule.</p></div></div>
-      </div>
-      <div class="day-media reveal"><img src="assets/instructors/julie-coffee.jpg" alt="Julie Gibson Clark, morning routine" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<section class="quote">
-  <div class="container reveal">
-    <p class="q">&ldquo;You cannot biohack your way out of a good night's sleep.&rdquo;</p>
-    <p class="a">Julie Gibson Clark</p>
+    <p>The complete protocol, revealed live. <span>One seat is $59.</span></p>
+    <a class="btn btn-blue" href="#reserve">Reserve your seat</a>
   </div>
 </section>
 
@@ -1244,7 +1253,7 @@ html,body{overflow-x:clip}
   <div class="container">
     <div class="cta-grid">
       <div class="cta-card co-card reveal">
-        <div class="co-top"><p class="eyebrow sky">Live masterclass</p><div class="tp-chip tp-sm"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot</div></div>
+        <div class="co-top"><p class="eyebrow chap c10">10 · Reserve your seat</p><div class="tp-chip tp-sm"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot</div></div>
         <h3>Julie Gibson Clark, live</h3>
         <div class="co-price"><span class="co-num">$59</span><span class="co-per">one seat &middot; September 16 or September 27</span></div>
         <ul class="co-list">
