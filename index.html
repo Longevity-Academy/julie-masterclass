@@ -1180,6 +1180,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   .mc-name{font-size:12px;padding:3px 9px}
 }
 /* ===== V28: fuller zoom room, devices slider, clean film poster ===== */
+/* V29: cache bust marker */
 @media(max-width:760px){
   .dev-stage{display:block}
   .dev-phones{display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:10px 2px 28px;margin-top:30px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -1285,7 +1286,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   </div>
   <div class="film-wrap">
   <div class="film-frame openFilm">
-    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg?v=29" autoplay muted loop playsinline preload="metadata"></video>
     <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
   </div>
   </div>
