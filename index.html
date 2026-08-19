@@ -1133,6 +1133,51 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   .anim-win,.anim-cap{max-width:86vw}
   .zoom-body .zoom-name{font-size:11px;padding:3px 8px;left:9px;bottom:8px}
 }
+/* ===== V27: mobile rebuild — sliders, overflow kill, contrast, film poster ===== */
+.playbtn{top:auto;left:auto;right:20px;bottom:20px;transform:none;width:64px;height:64px}
+.playbtn svg{width:20px;height:20px;margin-left:4px}
+.mc-barlogo{height:20px;width:auto;display:none}
+@media(max-width:760px){
+  .playbtn{width:52px;height:52px;right:12px;bottom:12px}
+  .numbers-grid{grid-template-columns:1fr;gap:48px;text-align:center}
+  .numbers-grid .num{border-left:0;padding:0}
+  .num .n{font-size:clamp(58px,17vw,76px)}
+  .num .l{max-width:320px;margin:16px auto 0;font-size:17px}
+  .band-cta{flex-direction:column;text-align:center;gap:26px;padding:44px 24px}
+  .band-cta p{font-size:22px;line-height:1.5;max-width:100%}
+  .about-copy h2{font-size:clamp(36px,9.6vw,44px)}
+  .about-copy p{font-size:18px;line-height:1.75;color:#cbd6e8}
+  .about-copy .rank{margin:20px 0 24px}
+  .tl-time{font-size:20px}
+  .tl-row h4{font-size:19.5px;color:#fff}
+  .tl-row p{font-size:16.5px;color:#aab7cc}
+  .statement h2{font-size:clamp(40px,10.5vw,54px)}
+  .statement p{font-size:18.5px}
+  .rev-row{grid-template-columns:1fr;gap:8px;padding:40px 0}
+  .rev-row h3{font-size:clamp(28px,7.6vw,36px)}
+  .rev-row > div > p:last-child{font-size:17.5px;color:#c3cfe2}
+  .p6-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:6px 2px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .p6-grid::-webkit-scrollbar{display:none}
+  .p6-card{flex:0 0 78vw;scroll-snap-align:center;aspect-ratio:4/5}
+  .art{padding:34px 28px}
+  .lla-cta-eyebrow{display:none}
+  .lla-cta-title{font-size:15.5px;white-space:nowrap}
+  .lla-cta-text{padding:12px 10px 12px 16px}
+  .lla-cta-pill{padding:0 16px;font-size:15px;margin:6px 6px 6px 4px}
+  .lla-float-cta{bottom:10px;right:10px;left:10px}
+  .anim-cap{font-size:16.5px;color:#c7d3e6}
+}
+@media(max-width:620px){
+  .h20-stage{width:100%}
+  .mc-barlogo{display:block;height:22px}
+  .mc-bar{justify-content:space-between;padding:11px 14px}
+  .mc-name{white-space:nowrap}
+  .mc-grid{grid-template-columns:repeat(4,1fr)}
+  .mc-julie{grid-column:1/5;grid-row:1/3;aspect-ratio:16/9.6}
+  .mc-la,.mc-lb{display:none}
+  .mc-grid .mc-p:nth-child(n+12){display:none}
+  .mc-name{font-size:12px;padding:3px 9px}
+}
 </style>
 </head>
 <body>
@@ -1179,7 +1224,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
     </div>
     <div class="h20-stage">
       <div class="mc-room">
-        <div class="mc-bar"><span class="mc-live"><i></i>Live</span></div>
+        <div class="mc-bar"><img class="mc-barlogo" src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy"><span class="mc-live"><i></i>Live</span></div>
         <div class="mc-grid">
           <div class="mc-tile mc-julie"><span class="mc-name">Julie Gibson Clark, Host</span></div>
           <div class="mc-tile mc-logo mc-la"><img src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy"></div>
@@ -1231,7 +1276,7 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   </div>
   <div class="film-wrap">
   <div class="film-frame openFilm">
-    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
     <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
   </div>
   </div>
@@ -1676,6 +1721,9 @@ try{
     });
     var _rt;document.querySelectorAll('img[loading="lazy"]').forEach(function(im){im.addEventListener('load',function(){clearTimeout(_rt);_rt=setTimeout(function(){ScrollTrigger.refresh()},250)})});
   }
+  var kick=function(){document.querySelectorAll('video[autoplay]').forEach(function(v){if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}})};
+  document.addEventListener('touchstart',kick,{once:true,passive:true});
+  window.addEventListener('scroll',kick,{once:true,passive:true});
 }catch(e){}
 </script>
 </body>
