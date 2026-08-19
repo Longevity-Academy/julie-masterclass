@@ -690,6 +690,106 @@ body{letter-spacing:0;line-height:1.72}
 /* checkout */
 .co-card{border-radius:22px;background:linear-gradient(165deg,#0f2d52 0%,#0A2240 55%,#071a33 100%);border-color:rgba(140,190,255,.34);box-shadow:0 0 0 1px rgba(120,180,255,.16),0 36px 96px rgba(3,10,26,.75),0 0 90px rgba(43,127,232,.2)}
 
+/* ===== V15: stage hero, class-card slider, device collage, mobile overhaul ===== */
+.hero-stage-logo{position:absolute;right:-2vw;top:-2%;width:min(560px,44vw);height:auto;z-index:1;opacity:.98;filter:drop-shadow(0 24px 70px rgba(0,0,0,.65))}
+.hero-cut{z-index:2}
+.hero-right{height:min(82vh,800px)}
+.hero-head{font-size:clamp(52px,4.6vw,78px)}
+
+/* class cards slider */
+.ccs{padding:150px 0;background:radial-gradient(1000px 560px at 82% 0%,rgba(43,127,232,.12),transparent 62%),#000}
+.ccs-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:52px}
+.cc-nav{display:flex;gap:12px}
+.cc-nav button{width:56px;height:56px;border-radius:50%;border:1px solid rgba(159,203,255,.35);background:rgba(18,56,107,.35);color:#cfe4ff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
+.cc-nav button:hover{background:rgba(43,127,232,.45);transform:scale(1.06)}
+.cc-nav button svg{width:24px;height:24px}
+.cc-slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 30px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cc-slider::-webkit-scrollbar{display:none}
+.cc-card{position:relative;flex:0 0 min(330px,80vw);aspect-ratio:3/4.25;border-radius:20px;overflow:hidden;scroll-snap-align:start;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 40px rgba(43,127,232,.1);display:block}
+.cc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.cc-card:hover img{transform:scale(1.06)}
+.cc-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 4%,rgba(0,0,0,.42) 34%,transparent 62%)}
+.cc-meta{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.cc-lesson{font-size:15px;color:#ffca8a;margin-bottom:8px}
+.cc-name{font-family:'Playfair Display',serif;font-weight:700;font-size:33px;line-height:1.08;color:#fff;letter-spacing:-.01em}
+.cc-teaches{font-size:17.5px;color:var(--sky);margin-top:7px}
+
+/* devices collage */
+.devices{padding:160px 0 170px;position:relative;overflow:hidden;background:radial-gradient(900px 540px at 16% 32%,rgba(255,170,80,.13),transparent 60%),radial-gradient(1100px 640px at 84% 62%,rgba(43,127,232,.2),transparent 62%),linear-gradient(180deg,#04060b,#02040a)}
+.dev-sub{max-width:620px;margin-top:24px;font-size:20px}
+.dev-stage{position:relative;margin-top:80px;height:680px;perspective:1700px}
+.laptop{position:absolute;left:50%;top:30px;transform:translateX(-50%);width:min(780px,62vw);z-index:1}
+.lap-screen{border:11px solid #1c222b;border-bottom-width:15px;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 60px 130px rgba(0,0,0,.75),0 0 90px rgba(43,127,232,.2)}
+.lap-screen img{display:block;width:100%}
+.lap-base{height:17px;background:linear-gradient(180deg,#333b48,#151a23);border-radius:3px 3px 20px 20px;width:114%;margin-left:-7%;box-shadow:0 34px 70px rgba(0,0,0,.65)}
+.phone{position:absolute;width:256px;border-radius:38px;background:#0b0e14;border:3px solid #2a3140;overflow:hidden;z-index:2;box-shadow:0 60px 130px rgba(0,0,0,.8),0 0 80px rgba(43,127,232,.22),inset 0 0 0 2px rgba(0,0,0,.8)}
+.ph-a{left:4%;bottom:0;transform:rotateY(15deg) rotateZ(-3.5deg)}
+.ph-b{right:4%;bottom:14px;transform:rotateY(-15deg) rotateZ(3.5deg)}
+.ph-media{position:relative}
+.ph-media img{display:block;width:100%;height:300px;object-fit:cover;object-position:top}
+.ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,16,.98) 2%,rgba(8,10,16,.3) 42%,transparent 70%)}
+.ph-meta{position:absolute;left:18px;right:18px;bottom:12px;z-index:2}
+.ph-name{font-family:'Playfair Display',serif;font-weight:700;font-size:21.5px;color:#fff;line-height:1.12}
+.ph-teaches{font-size:14.5px;color:var(--sky);margin-top:4px}
+.ph-body{padding:14px 16px 22px}
+.ph-cta{display:block;text-align:center;background:linear-gradient(120deg,#2b7fe8,#57a7f5);color:#fff;font-weight:600;font-size:15px;border-radius:999px;padding:12px 10px;box-shadow:0 10px 26px rgba(43,127,232,.4)}
+.ph-row{display:flex;align-items:center;gap:12px;padding:12.5px 2px;border-bottom:1px solid rgba(255,255,255,.09);font-size:14.5px;color:#d7dde8}
+.ph-row:last-child{border-bottom:0}
+.ph-row span{font-family:'Playfair Display',serif;font-style:italic;color:#ffca8a;font-size:14px}
+.ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:12px}
+.ph-grid img{display:block;width:100%;height:118px;object-fit:cover;border-radius:12px}
+.ph-cap{padding:4px 16px 18px;font-size:14.5px;color:#d7dde8;text-align:center}
+.ph-cap .serif-i{color:#ffca8a}
+@media(max-width:1180px){.laptop{width:min(640px,58vw)}.phone{width:225px}.ph-media img{height:260px}.ph-grid img{height:100px}}
+@media(max-width:900px){
+  .dev-stage{height:auto;perspective:1200px;display:flex;flex-direction:column;align-items:center;gap:44px}
+  .laptop{position:static;transform:none;width:min(92vw,560px)}
+  .phone{position:static;width:min(44vw,240px)}
+  .dev-phones{display:flex;gap:5vw;justify-content:center;align-items:flex-start}
+  .ph-a{transform:rotateY(10deg) rotateZ(-2.5deg)}
+  .ph-b{transform:rotateY(-10deg) rotateZ(2.5deg)}
+}
+
+/* ===== V15 mobile overhaul ===== */
+@media(max-width:1080px){
+  .hero-right{height:auto;min-height:0;padding-top:12vw}
+  .hero-stage-logo{right:auto;left:50%;top:0;transform:translateX(-50%);width:min(88vw,430px)}
+  .hero-cut{margin-top:6vw}
+}
+@media(max-width:760px){
+  .hero-head{font-size:clamp(42px,11.5vw,54px)}
+  .hero-desc{font-size:19.5px}
+  p{font-size:18px}
+  .eyebrow{font-size:17px}
+  h2.anton{font-size:clamp(42px,10.5vw,58px)}
+  .statement p,.dev-sub{font-size:19px;line-height:1.7}
+  .ccs{padding:110px 0}
+  .ccs-head{flex-direction:column;align-items:flex-start;gap:26px}
+  .cc-card{flex:0 0 78vw}
+  .cc-name{font-size:36px}
+  .cc-teaches{font-size:18.5px}
+  .cc-lesson{font-size:16px}
+  .pillars-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding:6px 2px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pillars-grid::-webkit-scrollbar{display:none}
+  .pillar{flex:0 0 80vw;scroll-snap-align:center}
+  .pillar-copy h3{font-size:40px}
+  .pillar-copy p{font-size:19px}
+  .art-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding:6px 2px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .art-grid::-webkit-scrollbar{display:none}
+  .art{flex:0 0 80vw;scroll-snap-align:center}
+  .date-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding:6px 2px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .date-grid::-webkit-scrollbar{display:none}
+  .dcard{flex:0 0 86vw;scroll-snap-align:center}
+  .rev h3{font-size:34px}
+  .rev .num p,.rev-item p{font-size:18px}
+  .day-item h4{font-size:24px}
+  .day-item p{font-size:17.5px}
+  .quote .q{font-size:clamp(30px,8.6vw,40px)}
+  .faq-q{font-size:20px}
+  .faq-a{font-size:17.5px}
+  .co-card .price{font-size:74px}
+  .foot-cols p,.foot-cols a{font-size:17px}
+}
 </style>
 </head>
 <body>
@@ -726,7 +826,6 @@ body{letter-spacing:0;line-height:1.72}
   <div class="hero-grid">
     <div class="hero-left">
       <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
-      <img class="hero-wordmark" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" fetchpriority="high" width="397" height="253">
       <h1 class="anton hero-head">Learn longevity<br><span class="serif-i sky">from the second slowest-aging <br class="dbr">woman on Earth.</span></h1>
       <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass.</p>
       <div class="hero-actions">
@@ -739,6 +838,7 @@ body{letter-spacing:0;line-height:1.72}
     </div>
 
     <div class="hero-right">
+      <img class="hero-stage-logo" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" fetchpriority="high" width="397" height="253">
       <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
       <div class="hero-zoomcard" aria-label="The live masterclass room on Zoom">
         <div class="zc-top"><span class="dots"><i></i><i></i><i></i></span><span>Live masterclass</span><span class="rec"><i></i>REC</span></div>
@@ -811,6 +911,49 @@ body{letter-spacing:0;line-height:1.72}
     <a class="btn btn-blue" href="#reserve">Reserve your seat</a>
   </div>
 </section>
+
+<!-- CLASS CARDS SLIDER -->
+<section class="ccs">
+  <div class="container">
+    <div class="ccs-head reveal">
+      <div>
+        <p class="eyebrow sky">Inside the masterclass</p>
+        <h2 class="anton">One class. <span class="serif-i sky">Every lever that matters.</span></h2>
+      </div>
+      <div class="cc-nav">
+        <button class="cc-prev" aria-label="Previous cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="cc-next" aria-label="Next cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="cc-slider reveal" id="ccSlider">
+      <a class="cc-card" href="#julie">
+        <img src="assets/instructors/julie-desert.jpg" alt="Julie Gibson Clark" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Your instructor</p><p class="cc-name">Julie Gibson Clark</p><p class="cc-teaches serif-i">Ranked No.2 · Rejuvenation Olympics</p></div>
+      </a>
+      <a class="cc-card" href="#reveal">
+        <img src="assets/pillars/sleep-warm.jpg" alt="The sleep system" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Part one</p><p class="cc-name">Sleep</p><p class="cc-teaches serif-i">The night, protected</p></div>
+      </a>
+      <a class="cc-card" href="#reveal">
+        <img src="assets/pillars/nutrition-warm.jpg" alt="Plate architecture" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Part two</p><p class="cc-name">Nutrition</p><p class="cc-teaches serif-i">Plate architecture, daily</p></div>
+      </a>
+      <a class="cc-card" href="#reveal">
+        <img src="assets/pillars/supplements-warm.jpg" alt="The supplement stack" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Part three</p><p class="cc-name">The stack</p><p class="cc-teaches serif-i">About $100 a month</p></div>
+      </a>
+      <a class="cc-card" href="#day">
+        <img src="assets/instructors/julie-coffee.jpg" alt="Julie's daily routine" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Part four</p><p class="cc-name">The routine</p><p class="cc-teaches serif-i">Her day, hour by hour</p></div>
+      </a>
+      <a class="cc-card" href="#dates">
+        <img src="assets/zoom-gallery.jpg" alt="Live open Q&A" loading="lazy">
+        <div class="cc-meta"><p class="cc-lesson">Part five</p><p class="cc-name">Live Q&amp;A</p><p class="cc-teaches serif-i">Your questions, answered</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- THE FILM -->
 <section class="film">
   <div class="film-wrap">
@@ -818,6 +961,45 @@ body{letter-spacing:0;line-height:1.72}
     <video id="openerVideo" src="assets/JULIE_90S_V25.mp4" poster="assets/film-poster.jpg" muted loop playsinline preload="metadata"></video>
     <button class="playbtn" aria-label="Watch the film with sound"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5-13-7.5z"/></svg></button>
   </div>
+  </div>
+</section>
+
+<!-- DEVICES -->
+<section class="devices">
+  <div class="container">
+    <p class="eyebrow sky reveal">Live on every screen</p>
+    <h2 class="anton">One evening.<br><span class="serif-i sky">Wherever you are.</span></h2>
+    <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
+    <div class="dev-stage reveal">
+      <div class="laptop">
+        <div class="lap-screen"><img src="assets/zoom-gallery.jpg" alt="The live masterclass room" loading="lazy"></div>
+        <div class="lap-base"></div>
+      </div>
+      <div class="dev-phones">
+      <div class="phone ph-a">
+        <div class="ph-media"><img src="assets/instructors/julie-desert.jpg" alt="Julie Gibson Clark" loading="lazy">
+          <div class="ph-meta"><p class="ph-name">Julie Gibson Clark</p><p class="ph-teaches serif-i">Teaches longevity, live</p></div>
+        </div>
+        <div class="ph-body">
+          <span class="ph-cta">Reserve your seat · $59</span>
+          <div class="ph-row"><span>01</span>The sleep system</div>
+          <div class="ph-row"><span>02</span>Plate architecture</div>
+          <div class="ph-row"><span>03</span>The ~$100 stack</div>
+        </div>
+      </div>
+      <div class="phone ph-b">
+        <div class="ph-grid">
+          <img src="assets/pillars/sleep-warm.jpg" alt="" loading="lazy">
+          <img src="assets/instructors/julie-coffee.jpg" alt="" loading="lazy">
+          <img src="assets/pillars/nutrition-warm.jpg" alt="" loading="lazy">
+          <img src="assets/instructors/julie-goldenhour-crop.jpg" alt="" loading="lazy">
+          <img src="assets/pillars/supplements-warm.jpg" alt="" loading="lazy">
+          <img src="assets/instructors/julie-lifestyle.jpg" alt="" loading="lazy">
+        </div>
+        <div class="ph-cap"><span class="serif-i">The complete protocol</span> · Live Q&amp;A</div>
+      </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -981,7 +1163,7 @@ body{letter-spacing:0;line-height:1.72}
 </section>
 
 <!-- DAY IN THE LIFE -->
-<section class="day">
+<section class="day" id="day">
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow sky">The standard</p>
@@ -1144,7 +1326,8 @@ try{
     if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
   if(window.gsap&&window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from('.hero-wordmark',{opacity:0,y:26,duration:.9,ease:'power3.out',delay:.1});
+    gsap.from('.hero-stage-logo',{opacity:0,y:26,duration:1.1,ease:'power3.out',delay:.15});
+    (function(){var sl=document.getElementById('ccSlider');if(sl){var st=function(){var c=sl.querySelector('.cc-card');return c?c.getBoundingClientRect().width+24:354};var p=document.querySelector('.cc-prev'),n=document.querySelector('.cc-next');if(p)p.addEventListener('click',function(){sl.scrollBy({left:-st(),behavior:'smooth'})});if(n)n.addEventListener('click',function(){sl.scrollBy({left:st(),behavior:'smooth'})});}})();
     gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.25});
     gsap.from('.hero-left .hero-desc, .hero-left .hero-actions, .hero-left .hero-bar',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.55});
     gsap.from('.hero-cut',{opacity:0,y:60,scale:1.03,duration:1.3,ease:'power3.out',delay:.35});
@@ -1156,6 +1339,7 @@ try{
     document.querySelectorAll('.pillars-grid img, .art').forEach(el=>{
       gsap.from(el,{opacity:0,y:44,scale:1.02,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
     });
+    var _rt;document.querySelectorAll('img[loading="lazy"]').forEach(function(im){im.addEventListener('load',function(){clearTimeout(_rt);_rt=setTimeout(function(){ScrollTrigger.refresh()},250)})});
   }
 }catch(e){}
 </script>
