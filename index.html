@@ -790,6 +790,54 @@ body{letter-spacing:0;line-height:1.72}
   .co-card .price{font-size:74px}
   .foot-cols p,.foot-cols a{font-size:17px}
 }
+
+/* ===== V16: premium refinement — no glows, hairlines, Apple-grade hardware ===== */
+html,body{overflow-x:clip}
+.hero-glow{background:radial-gradient(closest-side,rgba(43,127,232,.13),rgba(43,127,232,.03) 55%,transparent 72%)}
+.hero-cut{filter:drop-shadow(0 40px 90px rgba(0,0,0,.8))}
+.hero-zoomcard{border:1px solid rgba(255,255,255,.12);box-shadow:-30px 50px 100px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05)}
+.anim-win{border-color:rgba(255,255,255,.08);box-shadow:0 50px 120px rgba(0,0,0,.7)}
+.band-cta{background:linear-gradient(140deg,#0c1626,#070d18);border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.dcard{background:linear-gradient(165deg,#0d1a2e,#081120);border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.co-card{background:linear-gradient(165deg,#0d1a2e,#081120);border-color:rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(0,0,0,.6)}
+.about-media,.day-media img{border-color:rgba(255,255,255,.1);box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.rm-card{border-color:rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(0,0,0,.65)}
+.ccs{background:#000}
+.cc-card{border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.cc-nav button{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#e8edf5}
+.cc-nav button:hover{background:rgba(255,255,255,.12);transform:scale(1.04)}
+.cc-lesson{color:#d9bd94}
+.btn-blue{background:#2472d8;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.btn-blue:hover{background:#2b7fe8}
+
+/* devices — thin, elegant */
+.devices{background:#030508;padding:150px 0 160px}
+.dev-head{text-align:center}
+.dev-head .eyebrow{justify-content:center}
+.dev-sub{margin:24px auto 0}
+.dev-stage{margin-top:84px;height:640px}
+.laptop{top:16px}
+.lap-screen{border:3px solid #17191d;border-bottom-width:4px;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.06),0 60px 120px rgba(0,0,0,.7)}
+.lap-base{height:10px;background:linear-gradient(180deg,#22252b,#0d0f13);width:107%;margin-left:-3.5%;border-radius:2px 2px 12px 12px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.phone{border:2px solid #23252b;background:#07080b;border-radius:44px;box-shadow:0 0 0 1px rgba(255,255,255,.05),0 50px 110px rgba(0,0,0,.75)}
+.ph-cta{background:#2472d8;box-shadow:none}
+.ph-row span{color:#d9bd94}
+.ph-bb{padding:24px 22px 26px}
+.ph-bb .ph-name{font-size:22px}
+.ph-sess{padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.ph-sess:last-of-type{border-bottom:0}
+.ph-day{font-size:13.5px;color:#d9bd94}
+.ph-date{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#fff;margin-top:2px;line-height:1.15}
+.ph-time{font-size:13.5px;color:#a7b1c2;margin-top:3px}
+.ph-still{width:100%;height:132px;object-fit:cover;border-radius:16px;margin-top:14px;display:block}
+.ph-bb .ph-teaches{margin-bottom:6px}
+@media(max-width:900px){.dev-stage{height:auto}}
+@media(max-width:760px){
+  .dev-phones{flex-direction:column;align-items:center;gap:38px;margin-top:38px}
+  .dev-phones .phone{width:min(312px,80vw);transform:rotate(-2.5deg)}
+  .dev-phones .phone.ph-b{transform:rotate(2.5deg)}
+  .devices{padding:110px 0 120px}
+}
 </style>
 </head>
 <body>
@@ -967,9 +1015,11 @@ body{letter-spacing:0;line-height:1.72}
 <!-- DEVICES -->
 <section class="devices">
   <div class="container">
-    <p class="eyebrow sky reveal">Live on every screen</p>
-    <h2 class="anton">One evening.<br><span class="serif-i sky">Wherever you are.</span></h2>
-    <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
+    <div class="dev-head">
+      <p class="eyebrow sky reveal">Live on every screen</p>
+      <h2 class="anton">One evening.<br><span class="serif-i sky">Wherever you are.</span></h2>
+      <p class="dev-sub reveal">Join from a laptop, a tablet or a phone. One link, one live room, open Q&amp;A.</p>
+    </div>
     <div class="dev-stage reveal">
       <div class="laptop">
         <div class="lap-screen"><img src="assets/zoom-gallery.jpg" alt="The live masterclass room" loading="lazy"></div>
@@ -988,15 +1038,13 @@ body{letter-spacing:0;line-height:1.72}
         </div>
       </div>
       <div class="phone ph-b">
-        <div class="ph-grid">
-          <img src="assets/pillars/sleep-warm.jpg" alt="" loading="lazy">
-          <img src="assets/instructors/julie-coffee.jpg" alt="" loading="lazy">
-          <img src="assets/pillars/nutrition-warm.jpg" alt="" loading="lazy">
-          <img src="assets/instructors/julie-goldenhour-crop.jpg" alt="" loading="lazy">
-          <img src="assets/pillars/supplements-warm.jpg" alt="" loading="lazy">
-          <img src="assets/instructors/julie-lifestyle.jpg" alt="" loading="lazy">
+        <div class="ph-bb">
+          <p class="ph-name">Two live dates</p>
+          <p class="ph-teaches serif-i">Choose your evening</p>
+          <div class="ph-sess"><p class="ph-day">Wednesday</p><p class="ph-date">September 16</p><p class="ph-time">4:00 PM Eastern · 1:00 PM Pacific</p></div>
+          <div class="ph-sess"><p class="ph-day">Sunday</p><p class="ph-date">September 27</p><p class="ph-time">6:00 PM Eastern · 3:00 PM Pacific</p></div>
+          <img class="ph-still" src="assets/instructors/julie-coffee.jpg" alt="Julie Gibson Clark" loading="lazy">
         </div>
-        <div class="ph-cap"><span class="serif-i">The complete protocol</span> · Live Q&amp;A</div>
       </div>
       </div>
     </div>
