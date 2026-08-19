@@ -168,7 +168,7 @@ section{position:relative}
 .pillar{position:relative;overflow:hidden}
 .pillar img{width:100%;aspect-ratio:3/3.7;object-fit:cover;transition:transform 1.6s var(--ease)}
 .pillar:hover img{transform:scale(1.05)}
-.pillar::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 8%,rgba(0,0,0,.28) 45%,transparent 70%)}
+
 .pillar-copy{position:absolute;left:38px;right:38px;bottom:36px;z-index:2}
 .pillar-copy .no{font-size:15px;letter-spacing:0;color:var(--sky);font-weight:600}
 .pillar-copy h3{font-family:'Playfair Display',serif;font-weight:400;color:var(--white);font-size:42px;margin:14px 0 12px;line-height:1}
@@ -637,6 +637,59 @@ body{letter-spacing:0;line-height:1.72}
   .hero{padding-top:120px}
 }
 
+
+/* ================= V14: COLOR + IMAGERY ================= */
+/* ambient washes */
+.statement{background:radial-gradient(ellipse 70% 60% at 50% 8%,#0c1c36 0%,#04080f 60%,#000 100%)}
+.statement::before{background:radial-gradient(closest-side,rgba(90,160,255,.16),transparent 70%)}
+.rev{background:linear-gradient(180deg,#000,#071226 45%,#04080f 80%,#000)}
+.pillars{background:radial-gradient(ellipse 80% 70% at 50% 100%,#0a1830 0%,#000 70%);padding-bottom:40px}
+.day{background:linear-gradient(180deg,#000,#071226 55%,#000)}
+.dates{background:radial-gradient(ellipse 75% 65% at 50% 40%,#0b1a33 0%,#03060c 75%)}
+.numbers{background:linear-gradient(180deg,#000,#050d1c 40%,#000)}
+
+/* premium rounded media everywhere */
+.anim-win,.film-frame,.about-media,.day-media img,.pillar,.zoomwin,.rm-card{border-radius:20px;overflow:hidden}
+.about-media,.day-media img{border:1px solid rgba(159,203,255,.16);box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 60px rgba(43,127,232,.12)}
+
+/* rev fold: photo column */
+.rev-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:70px;align-items:start}
+.rev-media{position:sticky;top:110px;display:flex;flex-direction:column;gap:28px}
+.rm-card{border:1px solid rgba(159,203,255,.18);box-shadow:0 34px 90px rgba(0,0,0,.7),0 0 70px rgba(43,127,232,.14);transform:rotate(.6deg)}
+.rm-card.rm-b{transform:rotate(-.8deg)}
+.rm-card img{display:block;width:100%;object-fit:cover}
+.rm-card:first-child img{aspect-ratio:3/3.6}
+.rm-card.rm-b img{aspect-ratio:16/9.5}
+@media(max-width:1080px){.rev-grid{grid-template-columns:1fr;gap:50px}.rev-media{position:static;flex-direction:row}.rm-card.rm-b{display:none}.rm-card:first-child{width:100%}.rm-card:first-child img{aspect-ratio:4/3.4}}
+
+/* pillars: warm editorial cards */
+.pillar{border:1px solid rgba(255,205,140,.14);background:#0a0d13;box-shadow:0 30px 80px rgba(0,0,0,.65)}
+.pillar img{aspect-ratio:3/2.6}
+.pillar-copy{position:static;left:auto;right:auto;bottom:auto;padding:30px 30px 38px;background:linear-gradient(180deg,#0b101a,#080c14)}
+.pillar-copy .no{color:#ffca8a}
+@media(max-width:900px){.pillar img{aspect-ratio:16/9}}
+
+/* quote: full-bleed warm imagery */
+.quote{position:relative;background:linear-gradient(rgba(2,4,9,.72),rgba(2,4,9,.78)),url("assets/pillars/sleep-warm.jpg") center/cover no-repeat;border-top:1px solid rgba(255,205,140,.12);border-bottom:1px solid rgba(255,205,140,.12)}
+.quote .q{text-shadow:0 6px 60px rgba(0,0,0,.8)}
+.quote .a{color:#e8d9c2}
+
+/* CTA bands: navy brand panels */
+.band-cta{border-radius:22px;border:1px solid rgba(140,190,255,.28);background:linear-gradient(120deg,#12386b 0%,#0A2240 60%,#081c38 100%);box-shadow:0 0 0 1px rgba(120,180,255,.15),0 30px 80px rgba(4,16,40,.6),0 0 70px rgba(43,127,232,.22)}
+
+/* dates: navy gradient cards */
+.dcard{border-radius:22px;border:1px solid rgba(140,190,255,.3);background:linear-gradient(165deg,#12386b 0%,#0A2240 55%,#071a33 100%);box-shadow:0 0 0 1px rgba(120,180,255,.14),0 34px 90px rgba(3,10,26,.7),0 0 80px rgba(43,127,232,.16)}
+
+/* numbers: colored numerals */
+.num .n{background:linear-gradient(120deg,#8fc2ff,#57a7f5 55%,#2b7fe8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num{border-left:1px solid rgba(140,190,255,.25);padding-left:26px}
+
+/* press article cards */
+.art{border-radius:18px;border:1px solid rgba(159,203,255,.16);background:linear-gradient(170deg,rgba(159,203,255,.06),rgba(0,0,0,0) 55%),#070b12;padding:34px 32px;box-shadow:0 22px 60px rgba(0,0,0,.5)}
+
+/* checkout */
+.co-card{border-radius:22px;background:linear-gradient(165deg,#0f2d52 0%,#0A2240 55%,#071a33 100%);border-color:rgba(140,190,255,.34);box-shadow:0 0 0 1px rgba(120,180,255,.16),0 36px 96px rgba(3,10,26,.75),0 0 90px rgba(43,127,232,.2)}
+
 </style>
 </head>
 <body>
@@ -734,6 +787,7 @@ body{letter-spacing:0;line-height:1.72}
       <h2 class="anton">What you will learn,<br><span class="serif-i">live in one sitting.</span></h2>
       <p>No modules. No drip content. One live masterclass where the complete protocol is uncovered, explained, and handed to you, with the reasoning behind every choice.</p>
     </div>
+    <div class="rev-grid">
     <div class="rev-list">
       <div class="rev-row reveal"><div class="rev-no">01</div><div><p class="rev-verb">Uncover</p><h3>The levers behind 0.665</h3><p>Why Julie ages roughly eight months per calendar year, and the handful of daily levers that actually move the number.</p></div></div>
       <div class="rev-row reveal"><div class="rev-no">02</div><div><p class="rev-verb">Master</p><h3>Her complete sleep protocol</h3><p>The fixed wake time, the light and temperature rules, and the exact evening sequence she has kept for years.</p></div></div>
@@ -741,6 +795,11 @@ body{letter-spacing:0;line-height:1.72}
       <div class="rev-row reveal"><div class="rev-no">04</div><div><p class="rev-verb">Revealed</p><h3>The ~$100-a-month stack</h3><p>Item by item: what earns a place, what the evidence supports, and what she deliberately leaves out.</p></div></div>
       <div class="rev-row reveal"><div class="rev-no">05</div><div><p class="rev-verb">Uncover</p><h3>Test, don't guess</h3><p>The biomarker loop of bloodwork and pace-of-aging testing that proves the protocol is working on you.</p></div></div>
       <div class="rev-row reveal"><div class="rev-no">06</div><div><p class="rev-verb">Ask</p><h3>Open live Q&amp;A</h3><p>Your questions, answered by Julie in the room. Come with your goals; leave with your answers.</p></div></div>
+    </div>
+    <div class="rev-media reveal">
+      <div class="rm-card"><img src="assets/instructors/julie-goldenhour-crop.jpg" alt="Julie Gibson Clark at golden hour" loading="lazy"></div>
+      <div class="rm-card rm-b"><img src="assets/instructors/julie-lifestyle.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
+    </div>
     </div>
   </div>
 </section>
@@ -906,15 +965,15 @@ body{letter-spacing:0;line-height:1.72}
     </div>
     <div class="pillars-grid">
       <div class="pillar reveal">
-        <img src="assets/pillars/img-sleep.jpg" alt="Sleep" loading="lazy">
+        <img src="assets/pillars/sleep-warm.jpg" alt="Sleep" loading="lazy">
         <div class="pillar-copy"><p class="no">No. 1</p><h3>Sleep</h3><p>The true non-negotiable. Architecture, circadian rhythm, and the protocol for protecting it, every single night.</p></div>
       </div>
       <div class="pillar reveal">
-        <img src="assets/pillars/img-nutrition.jpg" alt="Nutrition" loading="lazy">
+        <img src="assets/pillars/nutrition-warm.jpg" alt="Nutrition" loading="lazy">
         <div class="pillar-copy"><p class="no">No. 2</p><h3>Nutrition</h3><p>Plate architecture, eating rhythm, and a pound of colorful vegetables a day. Sustainable, not extreme.</p></div>
       </div>
       <div class="pillar reveal">
-        <img src="assets/pillars/img-supplements.jpg" alt="Supplementation" loading="lazy">
+        <img src="assets/pillars/supplements-warm.jpg" alt="Supplementation" loading="lazy">
         <div class="pillar-copy"><p class="no">No. 3</p><h3>Supplementation</h3><p>Smart, minimal, tested. What earns a place in a ~$100-a-month stack, and what stays out.</p></div>
       </div>
     </div>
