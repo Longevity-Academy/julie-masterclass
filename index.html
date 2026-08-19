@@ -1037,16 +1037,32 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   .h18-head{font-size:clamp(46px,11.5vw,60px)!important}
 }
 /* ===== V20: room-first hero — the masterclass itself is the hero visual ===== */
-.h18{display:block;height:auto;min-height:0;padding:140px 0 190px}
-.h18-wrap{display:block;max-width:1240px}
-.h18-center .hero-bar{position:static;transform:none;display:inline-flex;margin:36px auto 0}
-.h20-stage{position:relative;max-width:1040px;margin:74px auto 0;z-index:3}
+.h18{display:flex;align-items:center;height:auto;min-height:92vh;padding:150px 0 130px}
+.h18-wrap{display:grid;grid-template-columns:minmax(460px,540px) 1fr;gap:70px;align-items:center;max-width:1440px}
+.h18-center{text-align:left}
+.h18-center .tp-chip{margin:0 0 26px}
+.h18-brand{display:block;margin:0 0 24px}
+.h18-head{font-size:clamp(42px,4.3vw,66px)!important;letter-spacing:-.01em}
+.h18-center .hero-desc{margin:24px 0 32px;max-width:500px}
+.h18-center .hero-actions{justify-content:flex-start}
+.h18-center .hero-bar{position:static;transform:none;display:inline-flex;margin:34px 0 0;padding:14px 26px;gap:16px;font-size:14.5px}
+.h20-stage{position:relative;max-width:none;margin:0;z-index:3}
 .h20-main{border-radius:18px;overflow:hidden;border:1px solid rgba(122,178,255,.24);box-shadow:0 70px 150px rgba(0,0,0,.62),0 30px 70px rgba(0,50,130,.42),inset 0 1px 0 rgba(255,255,255,.06);background:#0d1117}
 .h20-main img{display:block;width:100%}
-.h20-spk{position:absolute;right:-44px;bottom:-70px;width:360px;border-radius:14px;overflow:hidden;border:1px solid rgba(122,178,255,.32);box-shadow:0 46px 100px rgba(0,0,0,.72);transform:rotate(2deg);background:#0d1117;z-index:4}
+.h20-spk{position:absolute;left:-46px;bottom:-56px;width:330px;border-radius:14px;overflow:hidden;border:1px solid rgba(122,178,255,.32);box-shadow:0 46px 100px rgba(0,0,0,.72);transform:rotate(-2deg);background:#0d1117;z-index:4}
 .h20-spk img{display:block;width:100%;transform:scale(1.05)}
 .h20-spk .zoom-top{font-size:12.5px;padding:9px 14px}
-@media(max-width:1160px){.h20-spk{width:300px;right:-8px;bottom:-56px}}
+@media(max-width:1160px){
+  .h18{display:block;min-height:0;padding:140px 0 150px}
+  .h18-wrap{display:block;max-width:760px}
+  .h18-center{text-align:center}
+  .h18-center .tp-chip{margin:0 auto 26px}
+  .h18-brand{margin:0 auto 24px}
+  .h18-center .hero-desc{margin:24px auto 32px}
+  .h18-center .hero-actions{justify-content:center}
+  .h20-stage{margin:64px auto 0;max-width:720px}
+  .h20-spk{width:280px;left:-8px;bottom:-48px}
+}
 @media(max-width:620px){
   .h18{height:auto;min-height:0;padding:118px 0 76px}
   .h20-stage{margin-top:46px}
