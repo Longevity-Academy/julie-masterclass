@@ -484,6 +484,69 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 .hero-giant{top:23%;font-size:clamp(84px,10vw,162px)}
 .hero-fore{bottom:92px}
 
+
+/* ---------- V11: clean hero type, larger text, more color ---------- */
+.hero-giant{top:24%;font-size:clamp(76px,9.2vw,148px);line-height:.94}
+.hg-2{margin-left:0}
+.hg-2 .hg-in{background:linear-gradient(110deg,#ffffff 42%,#57a7f5 96%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-cut{right:5vw;height:84%;filter:drop-shadow(0 40px 90px rgba(0,0,0,.8)) drop-shadow(0 0 130px rgba(43,127,232,.22))}
+.hero-fore{bottom:96px}
+.hero-fore .hero-desc{max-width:520px;font-size:20px;line-height:1.65}
+body{font-size:20px}
+.hero-desc strong{color:var(--sky);font-weight:600}
+strong{color:var(--sky);font-weight:600}
+.eyebrow{font-size:18px}
+.about-copy p{font-size:20px;line-height:1.75}
+.pillar-copy p{font-size:19px;line-height:1.7}
+.cta-card p{font-size:19px}
+.faq .acc-title{font-size:21px}
+.lr-cap span,.film-cap span{font-size:17px}
+.pcap .sub{font-size:21px}
+.hero-bar{font-size:16.5px}
+.nav-links a{font-size:16px}
+.acc-week,.acc-inner .live{font-size:16px}
+.quote .a,.pull .a{font-size:16px}
+.hero-rank{font-size:17px}
+/* zoom fold */
+.zoom-stack{display:grid;gap:26px;margin-top:56px}
+.zoom-win{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 40px 110px rgba(0,0,0,.65)}
+.zoom-top{display:flex;align-items:center;gap:10px;background:#15181e;padding:13px 20px;font-size:14.5px;color:#aeb6c2;font-weight:500}
+.zoom-top .dots{display:flex;gap:7px}
+.zoom-top .dots i{width:11px;height:11px;border-radius:50%}
+.zoom-top .dots i:nth-child(1){background:#ff5f57}.zoom-top .dots i:nth-child(2){background:#febc2e}.zoom-top .dots i:nth-child(3){background:#28c840}
+.zoom-top .rec{margin-left:auto;display:flex;align-items:center;gap:8px;color:#e8eef8}
+.zoom-top .rec i{width:9px;height:9px;border-radius:50%;background:#ff4b4b;animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.zoom-win img{display:block;width:100%}
+.zoom-cap{font-size:17px;color:var(--body);padding:16px 4px 0}
+.zoom-cap b{color:var(--sky);font-weight:600}
+@media(max-width:900px){
+  body{font-size:19px}
+  .hero-giant{font-size:clamp(58px,15.5vw,96px)}
+  .hg-2{margin-left:0}
+  .hero-cut{width:min(84vw,440px);margin-top:-4vw}
+  .hero-fore .hero-desc{font-size:19px}
+  .about-copy p{font-size:19px}
+  .pillar-copy p{font-size:18.5px}
+  .eyebrow{font-size:17px}
+}
+
+
+/* v11.1 */
+.hero-meta .hero-rank{margin-top:16px}
+.hero-giant{top:26%}
+.hg-line{overflow:visible}
+@media(max-width:900px){.hero-giant{font-size:clamp(56px,14.5vw,92px)}}
+
+
+/* v11.2 mobile zoom chrome */
+@media(max-width:900px){
+  .zoom-top{font-size:11.5px;padding:10px 12px;gap:8px;flex-wrap:nowrap;white-space:nowrap}
+  .zoom-top>span:nth-child(2){overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .zoom-top .rec{flex:none}
+  .zoom-cap{font-size:16px}
+}
+
 </style>
 </head>
 <body>
@@ -520,19 +583,18 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="hero-meta">
     <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
     <p class="eyebrow sky">A Longevity Life Academy live event</p>
+    <p class="hero-rank"><span>Ranked No.2 · Rejuvenation Olympics</span></p>
   </div>
 
   <h1 class="anton hero-giant" aria-label="Julie Gibson Clark">
     <span class="hg-line"><span class="hg-in">Julie</span></span>
-    <span class="hg-line hg-2"><span class="hg-in">Gibson</span></span>
-    <span class="hg-line hg-3"><span class="hg-in">Clark</span></span>
+    <span class="hg-line hg-2"><span class="hg-in">Gibson Clark</span></span>
   </h1>
 
-  <img class="hero-cut" src="assets/instructors/julie-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
+  <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
   <div class="hero-floor"></div>
 
   <div class="hero-fore">
-    <p class="hero-rank"><span>Ranked No.2 · Rejuvenation Olympics</span></p>
     <p class="hero-teaches">reveals</p>
     <p class="hero-topic grad-w">The complete longevity protocol</p>
     <p class="hero-desc">One live masterclass. The <strong>second slowest ager on Earth</strong> uncovers the exact protocol that out-aged two-million-dollar regimens, on about $100 a month.</p>
@@ -563,7 +625,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="container reveal">
     <p class="eyebrow sky">One live masterclass · Two dates remain</p>
     <h2 class="anton" style="margin-top:30px"><span class="grad">Two-million-dollar</span> results.<br><span class="serif-i">A $59 seat.</span></h2>
-    <p>For the first time, the <strong>No.2 slowest-aging person in the world</strong> uncovers her complete protocol in a single live masterclass: the exact sleep system, plate architecture and ~$100 stack that out-aged the most expensive regimens on Earth. Two dates in September. When they fill, the room closes.</p>
+    <p>The <strong>No.2 slowest-aging person in the world</strong> uncovers her complete protocol, live. The exact sleep system. The plates. The ~$100 stack. Two dates in September. When they fill, the room closes.</p>
   </div>
 </section>
 
@@ -660,12 +722,21 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
     <div class="lr-head reveal">
       <div>
         <p class="eyebrow sky">The live room</p>
-        <h2 class="anton">How the live <span class="grad">session</span> works.</h2>
+        <h2 class="anton">This is the room. <span class="grad">You are in it live.</span></h2>
       </div>
       <p>A live room, kept small on purpose. Julie on screen, your name on a tile, and your questions answered in the session, not in the comments.</p>
     </div>
     <div class="lr-frame reveal">
-      <img src="assets/live-room-real.jpg" alt="The live masterclass room, Julie Gibson Clark live on screen with the class" loading="lazy">
+      <div class="zoom-stack">
+        <div class="zoom-win reveal">
+          <div class="zoom-top"><span class="dots"><i></i><i></i><i></i></span><span>Longevity Life Academy · Live masterclass</span><span class="rec"><i></i>REC · 41 participants</span></div>
+          <img src="assets/zoom-gallery.jpg" alt="The live class: Julie Gibson Clark hosting on Zoom with the full room on camera" loading="lazy">
+        </div>
+        <div class="zoom-win reveal">
+          <div class="zoom-top"><span class="dots"><i></i><i></i><i></i></span><span>Speaker view · Julie Gibson Clark</span><span class="rec"><i></i>Live · Open Q&amp;A</span></div>
+          <img src="assets/zoom-speaker.jpg" alt="Speaker view: Julie Gibson Clark teaching live with participants on camera" loading="lazy">
+        </div>
+      </div>
     </div>
     <div class="lr-cap reveal"><span>Live and interactive</span><span>Open Q&amp;A in session</span><span>September 16 and 27</span></div>
   </div>
@@ -679,10 +750,10 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
       <div class="about-copy reveal">
         <p class="eyebrow">Founding Faculty</p>
         <div class="rank" style="margin-top:24px">Ranked No.2 · Rejuvenation Olympics</div>
-        <h2 class="anton" style="margin-bottom:34px">One of the slowest-aging people <span class="serif-i" style="text-transform:none">ever measured.</span></h2>
+        <h2 class="anton" style="margin-bottom:34px">Who is <span class="grad">Julie Gibson Clark?</span></h2>
         <p>Julie Gibson Clark is the <strong>No.2 slowest-aging person in the world</strong> on the Rejuvenation Olympics, a leading voice in accessible, evidence-based longevity, and Founding Faculty at Longevity Life Academy.</p>
         <p>Her DunedinPACE score of <strong>0.665</strong> means she accrues roughly eight months of biological aging per calendar year, about a third slower than the average adult.</p>
-        <p>A former structural engineer turned recruiter and a single mom in Phoenix, Arizona, Julie's wake-up call was a heavy-metal poisoning diagnosis. Her answer wasn't a million-dollar lab. It was <strong>fundamentals, executed with total consistency</strong>, on the same 2023 leaderboard where she out-aged Bryan Johnson and his ~$2M-a-year protocol, as covered by Fortune and Business Insider.</p>
+        <p>Julie is a recruiter and single mom in Phoenix, Arizona. A heavy-metal poisoning diagnosis was her wake-up call. Her answer was <strong>fundamentals, executed with total consistency</strong>. On the 2023 leaderboard she out-aged Bryan Johnson and his ~$2M-a-year protocol. Fortune and Business Insider covered it.</p>
         <div class="pull">
           <p class="q">&ldquo;We don't need millions of dollars to live long, vibrant lives.&rdquo;</p>
           <p class="a">Julie Gibson Clark</p>
@@ -703,7 +774,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
 <section class="press" id="press">
   <div class="container reveal">
     <span class="eyebrow">The coverage</span>
-    <h2 class="anton" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px;text-align:center">The story the world <span class="serif-i">picked up.</span></h2>
+    <h2 class="anton" style="font-size:clamp(44px,4.6vw,84px);margin-top:26px;text-align:center">The press <span class="grad">already covered her.</span></h2>
     <div class="art-grid">
       <a class="art" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
         <span class="art-mast m-fortune">FORTUNE</span>
@@ -730,7 +801,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow sky">The focus</p>
-      <h2 class="anton">The three levers <span class="serif-i">you will master.</span></h2>
+      <h2 class="anton">Sleep. Nutrition. Supplements. <span class="grad">The three levers.</span></h2>
       <p>In one sitting, you'll master the three levers Julie credits most: sleep, nutrition and supplementation, made accessible to everyone.</p>
     </div>
     <div class="pillars-grid">
@@ -755,7 +826,7 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow sky">The standard</p>
-      <h2 class="anton">One day inside <span class="grad">the protocol.</span></h2>
+      <h2 class="anton">Her actual daily routine, <span class="grad">hour by hour.</span></h2>
     </div>
     <div class="day-grid">
       <div class="tl reveal">
@@ -818,12 +889,12 @@ footer{border-top:1px solid var(--hair-soft);padding:96px 0 72px}
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow sky">Questions</p>
-      <h2 class="anton">Questions, <span class="serif-i">answered.</span></h2>
+      <h2 class="anton">Before you reserve: <span class="grad">your questions.</span></h2>
     </div>
     <div class="acc" id="accFaq">
       <div class="acc-item"><button class="acc-head"><span class="acc-title">What exactly will be revealed?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Julie's complete protocol: her sleep system, her plate architecture, the ~$100-a-month supplement stack item by item, and the testing loop she uses to prove it works, followed by open Q&amp;A.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Is it really live?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Yes. This is a live masterclass, not a recording. Julie teaches in real time and answers questions in the room. Nothing about it is pre-recorded.</p></div></div></div>
-      <div class="acc-item"><button class="acc-head"><span class="acc-title">Which dates can I join?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Session one is Wednesday, September 16, 2026 at 4:00 PM Eastern (3:00 PM Central, 2:00 PM Mountain, 1:00 PM Pacific). Session two is Sunday, September 27, 2026 at 6:00 PM Eastern (5:00 PM Central, 4:00 PM Mountain, 3:00 PM Pacific). You choose your date at checkout. Both sessions cover the full protocol.</p></div></div></div>
+      <div class="acc-item"><button class="acc-head"><span class="acc-title">Which dates can I join?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Session one: Wednesday, September 16, 2026, 4:00 PM Eastern (3:00 Central, 2:00 Mountain, 1:00 Pacific). Session two: Sunday, September 27, 2026 at 6:00 PM Eastern (5:00 PM Central, 4:00 PM Mountain, 3:00 PM Pacific). You choose your date at checkout. Both sessions cover the full protocol.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Do I need to be an Academy student?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. Your $59 seat is all you need. Students of The Longevity Blueprint join the same live room.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Is this medical advice?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. The masterclass is educational. Julie shares her personal protocol and the evidence behind it, but nothing in the program is a substitute for advice from your own physician.</p></div></div></div>
     </div>
