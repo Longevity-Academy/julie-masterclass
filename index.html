@@ -1169,14 +1169,23 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 }
 @media(max-width:620px){
   .h20-stage{width:100%}
-  .mc-barlogo{display:block;height:22px}
+  .mc-barlogo{display:block;height:30px}
   .mc-bar{justify-content:space-between;padding:11px 14px}
   .mc-name{white-space:nowrap}
   .mc-grid{grid-template-columns:repeat(4,1fr)}
   .mc-julie{grid-column:1/5;grid-row:1/3;aspect-ratio:16/9.6}
-  .mc-la,.mc-lb{display:none}
-  .mc-grid .mc-p:nth-child(n+12){display:none}
+  .mc-la{display:none}
+  .mc-lb{display:block;grid-column:1/3;grid-row:5;aspect-ratio:auto}
+  .mc-grid .mc-p:nth-child(n+18){display:none}
   .mc-name{font-size:12px;padding:3px 9px}
+}
+/* ===== V28: fuller zoom room, devices slider, clean film poster ===== */
+@media(max-width:760px){
+  .dev-stage{display:block}
+  .dev-phones{display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:10px 2px 28px;margin-top:30px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .dev-phones::-webkit-scrollbar{display:none}
+  .dev-phones .phone,.dev-phones .phone.ph-b{flex:0 0 74vw;width:auto;position:static;transform:none;scroll-snap-align:center}
+  .film-frame{border-radius:18px}
 }
 </style>
 </head>
