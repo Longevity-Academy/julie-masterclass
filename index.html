@@ -877,6 +877,133 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
   .eyebrow.chap{font-size:14px;padding:10px 20px}
   h2.anton{font-size:clamp(44px,10.5vw,58px)!important}
 }
+
+/* ===== V18: MasterClass reference system — black / cream / signature red ===== */
+:root{--red:#e0263d;--redbright:#ff4d5e;--cream:#f3ede3;--ink:#16110b;--inksub:#4d463b;--sky:#ff4d5e}
+
+/* hero */
+.h18{min-height:94vh;display:flex;align-items:center;padding:150px 0 100px;position:relative;overflow:hidden;background:#000}
+.h18 .hero-glow{background:radial-gradient(closest-side,rgba(224,38,61,.18),rgba(224,38,61,.05) 55%,transparent 75%);left:50%;top:40%;transform:translate(-50%,-50%)}
+.h18-wrap{display:grid;grid-template-columns:1fr minmax(520px,720px) 1fr;gap:38px;align-items:center;width:100%;max-width:1560px;margin:0 auto;padding:0 30px;position:relative;z-index:2}
+.h18-side{display:flex;flex-direction:column;gap:24px}
+.h18-side img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.09);box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.h18-l{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%)}
+.h18-r{-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 40%);mask-image:linear-gradient(270deg,transparent 0,#000 40%)}
+.h18-l img:first-child{transform:translateY(-30px) rotate(-1.5deg);object-position:50% 12%}
+.h18-l img:last-child{transform:translateY(18px) rotate(1deg)}
+.h18-r img:first-child{transform:translateY(24px) rotate(1.5deg)}
+.h18-r img:last-child{transform:translateY(-16px) rotate(-1deg)}
+.h18-center{text-align:center}
+.h18-center .tp-chip{margin:0 auto 30px}
+.h18-head{font-size:clamp(52px,4.6vw,84px)!important;line-height:1.06}
+.h18-red{color:var(--redbright)}
+.h18-center .hero-desc{margin:26px auto 34px;max-width:560px}
+.h18-center .hero-actions{justify-content:center}
+.h18-center .hero-bar{margin:34px auto 0;justify-content:center}
+
+/* red CTA system */
+.btn-blue{background:linear-gradient(120deg,#e8354b,#b1121f);box-shadow:0 14px 38px rgba(224,38,61,.38)}
+.btn-blue:hover{background:linear-gradient(120deg,#f04458,#c31a29)}
+.ph-cta{background:linear-gradient(120deg,#e8354b,#b1121f)}
+.grad{background:linear-gradient(90deg,#ff6b78,#e0263d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc strong{color:var(--redbright)}
+
+/* chapter chips: red or cream only */
+.chap.c1,.chap.c4,.chap.c5,.chap.c8,.chap.c10{background:linear-gradient(120deg,#e8354b,#b1121f);box-shadow:0 12px 30px rgba(224,38,61,.32);color:#fff}
+.chap.c2,.chap.c3,.chap.c6,.chap.c7,.chap.c9{background:var(--cream);box-shadow:0 12px 30px rgba(0,0,0,.35);color:var(--ink)}
+
+/* cream poster folds */
+.statement{background:var(--cream)}
+.statement .anton{color:var(--ink)}
+.statement .serif-i{color:var(--red)}
+.statement .grad{background:linear-gradient(90deg,#e0263d,#8f0f1c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.statement p{color:var(--inksub)}
+.statement p strong{color:var(--ink)}
+
+.mq-band{background:var(--cream);border-top:0;border-bottom:0}
+.mq-band .hero-feat{color:#8a8172}
+.mq-track span{color:#141414!important}
+.mq-track span em{color:#141414!important}
+
+.numbers{background:var(--cream)}
+.numbers .num .n{background:none;color:var(--red);-webkit-text-fill-color:var(--red)}
+.numbers .num:nth-child(3) .n{color:var(--red);-webkit-text-fill-color:var(--red)}
+.numbers .n em{color:var(--red)}
+.numbers .l{color:var(--inksub)}
+.numbers .l strong{color:var(--ink)}
+.numbers .num{border-color:rgba(0,0,0,.14)}
+.numbers .anim-win{border-color:rgba(0,0,0,.2);box-shadow:0 30px 70px rgba(0,0,0,.28)}
+
+/* red bands */
+.band-cta{background:linear-gradient(120deg,#e0263d,#a30e1d);border:0;box-shadow:0 30px 80px rgba(224,38,61,.32)}
+.band-cta p{color:#fff}
+.band-cta p span{color:#ffd6c4}
+.band-cta .btn-blue{background:#14100c;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.band-cta .btn-blue:hover{background:#241d15}
+
+/* cream date + checkout cards */
+.dcard{background:#fbf7ee;border:1px solid rgba(0,0,0,.08);box-shadow:0 34px 90px rgba(0,0,0,.45);color:var(--inksub)}
+.dcard h3{color:var(--ink)}
+.dcard .ses{color:var(--red)}
+.dcard .yr{color:#a1988a}
+.dcard .tz span{color:var(--inksub)}
+.dcard .tz strong{color:var(--ink)}
+.dcard .dmeta{color:var(--inksub)}
+.co-card{background:#fbf7ee;border:1px solid rgba(0,0,0,.08);box-shadow:0 36px 96px rgba(0,0,0,.5);color:var(--inksub)}
+.co-card h3{color:var(--ink)}
+.co-card .co-num{color:var(--red)}
+.co-card .co-per{color:var(--inksub)}
+.co-card .co-list li{color:var(--inksub)}
+.co-card .co-list li::before{filter:none;border-left-color:var(--red);border-bottom-color:var(--red)}
+.co-card .co-steps span{color:var(--inksub)}
+.co-card .co-steps b{color:var(--red)}
+.co-card .co-micro{color:#a1988a}
+.co-card .badge{color:var(--inksub);border-color:rgba(0,0,0,.16)}
+.co-card .tp-chip{border-color:rgba(0,0,0,.16);color:var(--ink)}
+
+/* floating reserve card: black + red */
+.lla-float-cta{background:linear-gradient(180deg,#191310 0%,#0d0a08 100%);border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 1px rgba(224,38,61,.25),0 14px 36px rgba(0,0,0,.5),0 0 28px rgba(224,38,61,.18)}
+.lla-float-cta:hover{box-shadow:0 0 0 1px rgba(255,77,94,.4),0 18px 44px rgba(0,0,0,.55),0 0 44px rgba(224,38,61,.4)}
+.lla-cta-eyebrow{color:#ff97a1}
+.lla-cta-eyebrow::before{background:#ff4d5e;box-shadow:0 0 8px #ff4d5e,0 0 14px rgba(255,77,94,.7)}
+.lla-cta-pill{background:linear-gradient(180deg,#e8354b 0%,#b1121f 100%);color:#fff;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 8px 20px rgba(224,38,61,.35)}
+
+/* cta-card accents */
+.cta-card .eyebrow{color:var(--redbright)}
+
+/* eyebrow dots: red system */
+.eyebrow::before{background:#ff4d5e;box-shadow:0 0 8px #ff4d5e,0 0 16px rgba(255,77,94,.6)}
+.chap.c1::before,.chap.c4::before,.chap.c5::before,.chap.c8::before,.chap.c10::before{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8)}
+.chap.c2::before,.chap.c3::before,.chap.c6::before,.chap.c7::before,.chap.c9::before{background:var(--red);box-shadow:none}
+
+/* dates + quote: kill navy radials */
+.dates{background:radial-gradient(ellipse 75% 65% at 50% 40%,#1a0509 0%,#000 75%)}
+.quote{background:radial-gradient(ellipse 62% 56% at 50% 50%,#170608 0%,#000 80%)}
+
+/* fold backgrounds: black with red heat, no blue/teal/plum */
+.rev{background:radial-gradient(900px 620px at 88% 8%,rgba(224,38,61,.14),transparent 60%),#000}
+.rev .rev-verb{color:var(--redbright)}
+.rev .rev-no{color:rgba(255,77,94,.4);-webkit-text-stroke:1px rgba(255,77,94,.5)}
+.press{background:linear-gradient(180deg,#000,#120607 55%,#000)}
+.press .grad{background:linear-gradient(90deg,#ff6b78,#e0263d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.devices{background:radial-gradient(1100px 660px at 50% 8%,rgba(224,38,61,.1),transparent 62%),linear-gradient(180deg,#050505,#0c0b0b 55%,#000)}
+.devices .sky{color:var(--redbright)}
+.ccs .sky{color:var(--redbright)}
+.cc-lesson{color:var(--redbright)}
+.liveroom .sky{color:var(--redbright)}
+.statement + section .sky{color:var(--redbright)}
+
+@media(max-width:1180px){
+  .h18-wrap{grid-template-columns:1fr minmax(420px,600px) 1fr;gap:24px}
+}
+@media(max-width:900px){
+  .h18{min-height:auto;padding:130px 0 80px}
+  .h18-wrap{display:flex;flex-direction:column;gap:34px}
+  .h18-side{flex-direction:row;gap:14px;order:3;-webkit-mask-image:none;mask-image:none}
+  .h18-side img{transform:none!important;border-radius:12px}
+  .h18-r{display:none}
+  .h18-head{font-size:clamp(46px,11.5vw,60px)!important}
+}
 </style>
 </head>
 <body>
@@ -906,14 +1033,16 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 </div>
 
 <!-- HERO -->
-<header class="hero" id="top">
+<header class="hero h18" id="top">
   <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-
-  <div class="hero-grid">
-    <div class="hero-left">
+  <div class="h18-wrap">
+    <div class="h18-side h18-l">
+      <img src="assets/instructors/julie-desert.jpg" alt="Julie Gibson Clark" fetchpriority="high">
+      <img src="assets/instructors/julie-coffee.jpg" alt="Julie Gibson Clark at home">
+    </div>
+    <div class="h18-center">
       <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
-      <h1 class="anton hero-head">Learn longevity<br><span class="serif-i sky">from the second slowest-aging <br class="dbr">woman on Earth.</span></h1>
+      <h1 class="anton hero-head h18-head">She slowed aging itself.<br><span class="serif-i h18-red">Now you.</span></h1>
       <p class="hero-desc"><strong>Julie Gibson Clark</strong>, ranked No.2 on the Rejuvenation Olympics leaderboard, uncovers her complete protocol in one live masterclass.</p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#reserve">Reserve your seat · $59</a>
@@ -923,13 +1052,11 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
         <span>$59</span><i></i><span>September 16 or September 27</span><i></i><span>Live online</span><i></i><span>Open Q&amp;A</span>
       </div>
     </div>
-
-    <div class="hero-right">
-      <img class="hero-stage-logo" src="assets/lla-wordmark-only-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" fetchpriority="high" width="397" height="253">
-      <img class="hero-cut" src="assets/instructors/julie-jeans-cutout.png" alt="Julie Gibson Clark" fetchpriority="high">
+    <div class="h18-side h18-r">
+      <img src="assets/instructors/julie-portrait.jpg" alt="Julie Gibson Clark portrait" fetchpriority="high">
+      <img src="assets/instructors/julie-purple.jpg" alt="Julie Gibson Clark">
     </div>
   </div>
-  <div class="hero-floor"></div>
 </header>
 
 <!-- PRESS MARQUEE -->
