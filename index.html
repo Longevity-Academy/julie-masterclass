@@ -192,8 +192,25 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 
 /* ---------- learn fold ---------- */
 .rev-media{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:64px}
-.rm-card{border-radius:24px;overflow:hidden;background:#fff;padding:14px;box-shadow:0 30px 70px rgba(14,30,58,.14),0 2px 0 rgba(0,0,0,.03)}
-.rm-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px}
+.rm-card{position:relative;border-radius:24px;overflow:hidden;background:#0b1526;box-shadow:0 30px 70px rgba(14,30,58,.22),0 2px 0 rgba(0,0,0,.03)}
+.rm-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.rm-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(4,10,22,.88) 100%);pointer-events:none}
+.rm-cap{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:26px 30px 30px;text-align:center}
+.rm-cap b{display:block;font-size:clamp(26px,2.1vw,36px);color:#fff;font-weight:800}
+.rm-cap i{display:block;width:36px;height:2px;background:#7fb8ff;margin:12px auto;font-style:normal}
+.rm-cap span{font-size:17px;color:#d5e5fa;font-style:italic}
+/* Power band, masterclass.com stage composition */
+.power{position:relative;background:#000;overflow:hidden;border-bottom:1px solid rgba(127,184,255,.12)}
+.pw-wrap{max-width:1360px;margin:0 auto;padding:96px 48px 0;display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:40px;min-height:560px}
+.pw-left{padding-bottom:100px}
+.pw-logo{width:min(560px,92%);height:auto;display:block;filter:drop-shadow(0 18px 60px rgba(0,110,255,.28))}
+.pw-name{font-size:clamp(44px,4.4vw,78px);line-height:1.04;color:#fff;margin-top:46px}
+.pw-teach{font-style:italic;color:#bcd9ff;font-size:clamp(20px,1.8vw,27px);margin-top:16px}
+.pw-rule{width:64px;height:2px;background:linear-gradient(90deg,#006EFF,#7fb8ff);margin-top:28px}
+.pw-right{position:relative;align-self:end}
+.pw-spot{position:absolute;left:-12%;right:-12%;bottom:-6%;height:88%;background:radial-gradient(ellipse at 50% 78%,rgba(0,110,255,.36),rgba(127,184,255,.10) 46%,transparent 72%);filter:blur(6px)}
+.pw-right img{position:relative;z-index:2;width:min(430px,100%);display:block;margin:0 auto;filter:drop-shadow(0 40px 70px rgba(0,0,0,.65))}
+@media(max-width:900px){.pw-wrap{grid-template-columns:1fr;min-height:0;padding:70px 22px 0;text-align:center}.pw-left{padding-bottom:0}.pw-logo{margin:0 auto;width:min(420px,86%)}.pw-rule{margin:28px auto 0}.pw-right{margin-top:46px}.pw-right img{width:min(320px,80%)}}
 .rm-a img{object-position:38% 32%}
 .rm-b img{object-position:50% 14%}
 
@@ -481,7 +498,9 @@ footer .foot-cols a:hover{color:var(--sky)}
   .sc-copy{font-size:18px}
   .ac-lead{font-size:19px;margin:48px auto 36px}
   .anim-block{margin-top:44px}
-  .rm-card img{aspect-ratio:4/3}
+  .rm-card img{aspect-ratio:4/5}
+  .rm-b img{object-position:50% 0}
+  .rm-card::after{background:linear-gradient(180deg,transparent 52%,rgba(4,10,22,.9) 100%)}
   .about-media img{aspect-ratio:4/5;object-position:50% 8%}
   .pull .q{font-size:23px}
   .dcard{padding:34px 26px 38px}
@@ -608,6 +627,22 @@ footer .foot-cols a:hover{color:var(--sky)}
   </div>
 </section>
 
+<!-- 2b. POWER BAND, Julie beside the brand on black -->
+<section class="power">
+  <div class="pw-wrap">
+    <div class="pw-left">
+      <img class="pw-logo" src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group">
+      <h2 class="anton pw-name">Julie Gibson Clark</h2>
+      <p class="pw-teach">Teaches her live longevity protocol as Founding Faculty</p>
+      <div class="pw-rule"></div>
+    </div>
+    <div class="pw-right reveal">
+      <div class="pw-spot"></div>
+      <img src="assets/instructors/julie-cutout.png" alt="Julie Gibson Clark">
+    </div>
+  </div>
+</section>
+
 <!-- 3. WHAT YOU WILL LEARN, white fold -->
 <section class="fold f-white" id="reveal">
   <div class="container">
@@ -625,8 +660,8 @@ footer .foot-cols a:hover{color:var(--sky)}
       <div class="card k-gold"><div class="cno">06</div><p class="cverb">Ask</p><h3>Open live Q&amp;A</h3><p>Your questions, answered by Julie in the room. Bring your own numbers, constraints and health goals, and ask her directly.</p></div>
     </div>
     <div class="rev-media reveal">
-      <div class="rm-card rm-a"><img src="assets/instructors/julie-goldenhour-crop.jpg" alt="Julie Gibson Clark at golden hour" loading="lazy"></div>
-      <div class="rm-card rm-b"><img src="assets/instructors/julie-portrait.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
+      <div class="rm-card rm-a"><img src="assets/instructors/julie-goldenhour-crop.jpg" alt="Julie Gibson Clark at golden hour" loading="lazy"><div class="rm-cap"><b>Julie Gibson Clark</b><i></i><span>Teaches her live longevity protocol</span></div></div>
+      <div class="rm-card rm-b"><img src="assets/instructors/julie-portrait.jpg" alt="Julie Gibson Clark" loading="lazy"><div class="rm-cap"><b>Founding Faculty</b><i></i><span>Longevity Life Academy by eTeacher Group</span></div></div>
     </div>
   </div>
 </section>
