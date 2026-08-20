@@ -1253,6 +1253,20 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
 /* ===== V33: flow reorder, mockup raised ===== */
 @media(min-width:1101px){.h20-stage{align-self:start;margin-top:-42px}}
 @media(max-width:620px){.h18{padding-top:98px}.h20-stage{margin-top:22px}}
+
+/* ===== V34: Academy pillars from homepage, photo crop fixes ===== */
+img[src*="julie-portrait"]{object-position:50% 14% !important}
+img[src*="julie-coffee"]{object-position:50% 10% !important}
+img[src*="julie-goldenhour-crop"]{object-position:50% 0% !important}
+.ac-lead{max-width:860px;margin:84px auto 0;text-align:center;font-size:21px;line-height:1.75;color:var(--ink)}
+.ac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:54px auto 0}
+.ac-cell{background:#fff;border:1px solid rgba(14,26,48,.1);border-radius:20px;padding:34px 30px;box-shadow:0 18px 44px rgba(14,26,48,.07)}
+.ac-cell b{display:block;font-size:15px;color:var(--red);font-weight:700;margin-bottom:12px}
+.ac-cell h3{font-size:24px;line-height:1.2;color:var(--ink);margin:0 0 12px;font-weight:700}
+.ac-cell p{font-size:16px;line-height:1.7;color:var(--inksub);margin:0}
+.ac-note{max-width:760px;margin:58px auto 0;text-align:center;font-size:18px;line-height:1.8;color:var(--inksub)}
+.ac-note .art-cta{margin-left:10px}
+@media(max-width:900px){.ac-grid{grid-template-columns:1fr;gap:16px}.ac-lead{margin-top:60px;font-size:18px}.ac-cell{padding:28px 22px}}
 </style>
 </head>
 <body>
@@ -1385,6 +1399,19 @@ h2.anton{font-size:clamp(54px,5.2vw,92px)!important;line-height:1.05}
         <div><b>5</b><span>online schools</span></div>
       </div>
     </div>
+
+    <p class="ac-lead reveal">Longevity Life Academy was built on a simple belief, that everyone deserves a science-backed protocol for a longer, healthier life. The Academy pairs the top minds in longevity medicine with eTeacher’s live learning platform, and teaches six pillars of a longer, better life.</p>
+
+    <div class="ac-grid reveal">
+      <div class="ac-cell"><b>01</b><h3>Nutrition</h3><p>Plant-forward, nutrient-dense food patterns that fight inflammation and support cellular rejuvenation.</p></div>
+      <div class="ac-cell"><b>02</b><h3>Sleep</h3><p>Science-backed protocols that optimize sleep architecture, activate cellular repair, and regulate cortisol rhythm.</p></div>
+      <div class="ac-cell"><b>03</b><h3>Exercise <span class="serif-i">and</span> movement</h3><p>Functional strength, Zone 2 endurance, and stability to extend both lifespan and healthspan.</p></div>
+      <div class="ac-cell"><b>04</b><h3>Supplements <span class="serif-i">and</span> wearables</h3><p>Targeted compounds matched to your biomarker gaps, with CGM, HRV, and sleep data closing the feedback loop.</p></div>
+      <div class="ac-cell"><b>05</b><h3>Stress management</h3><p>Breathwork, cold exposure, vagal tone training, and social connection to keep biology resilient, not just relaxed.</p></div>
+      <div class="ac-cell"><b>06</b><h3>Your longevity protocol</h3><p>A personal plan built from your own bloodwork, body composition, and wearable data. Medicine 3.0 in practice.</p></div>
+    </div>
+
+    <p class="ac-note reveal">Julie is Founding Faculty at the Academy. Her live masterclass is a two-hour session, taught on the same platform and to the same faculty standard as the Academy’s flagship programs. <a class="art-cta" href="https://www.longevitylifeacademy.com/" target="_blank" rel="noopener">Explore the Academy</a></p>
   </div>
 </section>
 
