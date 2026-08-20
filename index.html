@@ -54,9 +54,10 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 /* ---------- folds ---------- */
 .fold{padding:140px 0;position:relative;overflow:hidden}
 .f-navy{background:radial-gradient(1200px 600px at 12% 0%,rgba(0,110,255,.20),transparent 60%),radial-gradient(900px 700px at 92% 90%,rgba(0,110,255,.13),transparent 62%),linear-gradient(180deg,#050d1c,#071228 55%,#050d1c)}
-.f-black{background:#000}
-.f-white{background:var(--white);color:#152238}
-.f-cream{background:var(--cream);color:#1b2436}
+.f-black{background:radial-gradient(1000px 560px at 50% 0%,rgba(0,110,255,.14),transparent 62%),#000}
+.f-white{background:radial-gradient(900px 520px at 92% 0%,rgba(0,110,255,.08),transparent 60%),radial-gradient(760px 520px at 4% 100%,rgba(94,182,255,.09),transparent 62%),var(--white);color:#152238}
+.f-cream{background:radial-gradient(900px 520px at 6% 0%,rgba(0,110,255,.07),transparent 60%),radial-gradient(760px 520px at 96% 100%,rgba(201,169,97,.12),transparent 62%),var(--cream);color:#1b2436}
+.f-ink{background:radial-gradient(1100px 640px at 10% 0%,rgba(0,110,255,.24),transparent 60%),radial-gradient(900px 660px at 94% 100%,rgba(94,182,255,.15),transparent 62%),linear-gradient(180deg,#03060d,#060e1e 55%,#03060d);color:#fff}
 .f-warm{background:var(--warm);color:#1c1a12}
 .f-royal{background:radial-gradient(900px 600px at 85% 8%,rgba(255,255,255,.18),transparent 60%),linear-gradient(150deg,#006EFF 0%,#0053c9 46%,#003a8c 100%);color:#fff}
 .f-white h2.anton,.f-cream h2.anton,.f-warm h2.anton{color:#0a1526}
@@ -124,8 +125,8 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .mc-live i{width:8px;height:8px;border-radius:50%;background:#2ee87c;box-shadow:0 0 12px rgba(46,232,124,.9)}
 .mc-grid{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-flow:row dense;gap:6px;padding:6px;background:#05070d}
 .mc-tile{position:relative;aspect-ratio:16/10.2;border-radius:6px;overflow:hidden;background:#000}
-.mc-julie{grid-column:3/6;grid-row:1/4;aspect-ratio:auto;border:2px solid #5EB6FF;border-radius:8px;background-image:url('assets/instructors/julie-lifestyle.jpg');background-size:cover;background-position:44% 22%}
-.mc-name{position:absolute;left:10px;bottom:9px;background:rgba(0,0,0,.68);color:#fff;font-size:14px;padding:4px 11px;border-radius:4px}
+.mc-julie{grid-column:3/6;grid-row:1/4;aspect-ratio:auto;border:2px solid #5EB6FF;border-radius:8px;background-image:url('assets/instructors/julie-lifestyle.jpg');background-size:cover;background-position:44% 16%}
+.mc-name{position:absolute;left:10px;bottom:9px;background:rgba(0,0,0,.68);color:#fff;font-size:13.5px;padding:4px 11px;border-radius:4px;white-space:nowrap}
 .mc-logo{display:flex;align-items:center;justify-content:center;background:#000;aspect-ratio:auto}
 .mc-la{grid-column:6/8;grid-row:1}
 .mc-lb{grid-column:1/3;grid-row:4}
@@ -230,9 +231,11 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 @keyframes enblink{0%,100%{opacity:1}50%{opacity:.25}}
 .en-media .dvx-wrap{margin-top:0}
 .en-media .dvx-cap{margin-top:34px;color:#dcebff}
-.en-media .dvx-laptop{width:min(560px,78%)}
-.en-media .dvx-phone{width:min(150px,20%);margin-left:-52px}
-@media(max-width:900px){.en-wrap{grid-template-columns:1fr;padding:74px 22px;gap:52px;text-align:center}.en-cta{justify-content:center}.en-media .dvx-laptop{width:min(460px,84%)}}
+.en-media .dvx-laptop{width:min(700px,100%)}
+.en-media .dvx-phone{width:min(185px,24%);margin-left:-58px}
+.en-media .dvx{position:relative}
+.en-media .dvx::before{content:"";position:absolute;left:6%;right:6%;bottom:-36px;height:74px;background:radial-gradient(50% 100% at 50% 0%,rgba(0,110,255,.55),transparent 72%);filter:blur(16px);z-index:0;pointer-events:none}
+@media(max-width:900px){.en-wrap{grid-template-columns:1fr;padding:74px 22px;gap:52px;text-align:center}.en-cta{justify-content:center}.en-media .dvx-laptop{width:100%}.en-media .dvx-phone{width:min(150px,26%)}}
 
 /* ---------- film fold ---------- */
 .film-head{text-align:center;margin-bottom:48px}
@@ -396,11 +399,11 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .dvx-wrap{margin-top:96px}
 .dvx{display:flex;justify-content:center;align-items:flex-end}
 .dvx-laptop{width:min(780px,74%);position:relative;z-index:1}
-.dvx-screen{position:relative;border:10px solid #0b0f16;border-bottom:0;border-radius:18px 18px 0 0;overflow:hidden;background:#000;box-shadow:0 60px 140px rgba(0,0,0,.75),0 0 90px rgba(0,110,255,.18);transform:perspective(1600px) rotateX(2deg)}
-.dvx-screen img{width:100%;aspect-ratio:16/9.6;object-fit:cover}
+.dvx-screen{position:relative;border:10px solid #0b0f16;border-bottom:0;border-radius:18px 18px 0 0;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),0 60px 140px rgba(0,0,0,.78),0 30px 70px rgba(0,45,130,.5),0 0 110px rgba(0,110,255,.3);transform:perspective(1600px) rotateX(2deg)}
+.dvx-screen img{width:100%;aspect-ratio:1920/1224;object-fit:cover}
 .dvx-base{height:16px;background:linear-gradient(180deg,#1a2230,#0a0e15);border-radius:0 0 20px 20px;box-shadow:0 24px 50px rgba(0,0,0,.6)}
 .dvx-base::after{content:"";display:block;margin:0 auto;width:96px;height:5px;border-radius:0 0 8px 8px;background:#05070b}
-.dvx-phone{position:relative;z-index:2;width:min(196px,21%);margin-left:-64px;border:8px solid #0b0f16;border-radius:32px;overflow:hidden;box-shadow:0 44px 110px rgba(0,0,0,.8);background:#000}
+.dvx-phone{position:relative;z-index:2;width:min(196px,21%);margin-left:-64px;border:8px solid #0b0f16;border-radius:32px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 44px 110px rgba(0,0,0,.8),0 0 60px rgba(0,110,255,.3);background:#000}
 .dvx-phone img{width:100%;aspect-ratio:9/17.5;object-fit:cover;object-position:50% 8%}
 .dvx-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:17px;border-radius:999px;background:#0b0f16;z-index:3}
 .dvx-live{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px;font-size:14px;color:#fff;backdrop-filter:blur(4px)}
@@ -481,6 +484,43 @@ footer .foot-cols a:hover{color:var(--sky)}
 .modal-close:hover{color:var(--sky)}
 .grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
 
+/* ---------- v41 neon depth ---------- */
+.fold{position:relative}
+.fold::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent 6%,rgba(0,110,255,.6) 32%,rgba(94,182,255,.95) 50%,rgba(0,110,255,.6) 68%,transparent 94%);box-shadow:0 0 16px rgba(0,110,255,.6),0 0 44px rgba(0,110,255,.35);z-index:6}
+.card{box-shadow:0 2px 6px rgba(8,25,60,.10),0 26px 64px rgba(8,30,80,.16)}
+.card,.pcard,.stat-card,.dcard,.pr-card,.pr-flag{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover,.pcard:hover,.stat-card:hover,.dcard:hover,.pr-card:hover,.pr-flag:hover{transform:translateY(-8px)}
+.stat-card{box-shadow:0 2px 8px rgba(0,0,0,.3),0 30px 80px rgba(0,20,70,.45),0 0 44px rgba(0,110,255,.16)}
+.hero-mjulie{display:none}
+/* ---------- press fold ---------- */
+.pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.pr-grid>*{min-width:0}
+.pr-card{position:relative;display:flex;flex-direction:column;border-radius:24px;padding:38px 32px 32px;overflow:hidden;box-shadow:0 2px 6px rgba(0,10,35,.4),0 30px 70px rgba(0,15,60,.5),0 0 0 1px rgba(0,110,255,.28),0 0 40px rgba(0,110,255,.16)}
+.pr-year{position:absolute;right:16px;top:2px;font-weight:800;font-size:96px;line-height:1;opacity:.09;letter-spacing:-.02em;pointer-events:none}
+.pr-mast{display:block;margin-bottom:14px;position:relative;z-index:1}
+.pr-date{display:block;font-style:italic;font-size:16.5px;margin-bottom:14px}
+.pr-head{font-size:22.5px;line-height:1.42;font-weight:700;flex:1}
+.pr-sub{font-size:17px;line-height:1.62;margin-top:12px}
+.pr-cta{margin-top:24px;font-size:16.5px;border-bottom:1px solid currentColor;align-self:flex-start;padding-bottom:2px}
+.pm-fortune{font-weight:400;font-size:29px;letter-spacing:.1em;color:#ff4438}
+.pm-bi{font-weight:700;font-size:19px;letter-spacing:.05em;color:#4ba3e3}
+.prc-white .pm-bi{color:#0f5c8c}
+.pm-sun{display:inline-block;align-self:flex-start;background:#eb1701;color:#fff;font-weight:800;font-size:19px;letter-spacing:.06em;padding:4px 14px}
+.pm-dm{font-weight:900;font-size:25px;color:#004db3}
+.pm-as{display:inline-block;align-self:flex-start;background:#e4021b;color:#fff;font-weight:800;font-size:20px;padding:4px 16px;border-radius:6px}
+.pm-ap{font-weight:900;font-size:23px;color:#fff}.pm-ap b{display:inline-block;background:#ff322e;color:#fff;padding:2px 12px;margin-right:10px}
+.prc-white{background:#fff;color:#13233d}.prc-white .pr-date{color:#5a6a84}.prc-white .pr-sub{color:#43536b}.prc-white .pr-cta{color:var(--royal)}.prc-white .pr-year{color:#006EFF;opacity:.10}
+.prc-navy{background:linear-gradient(160deg,#0c1e3d,#071228);color:#eef5ff}.prc-navy .pr-date{color:#8fb4e8}.prc-navy .pr-sub{color:#c0d2ec}.prc-navy .pr-cta{color:#5EB6FF}.prc-navy .pr-year{color:#5EB6FF;opacity:.14}
+.prc-cream{background:var(--warm);color:#1b2436}.prc-cream .pr-date{color:#77694a}.prc-cream .pr-sub{color:#4a4636}.prc-cream .pr-cta{color:#8f7124}.prc-cream .pr-year{color:#8f7124;opacity:.12}
+.prc-sky{background:linear-gradient(160deg,#e9f2ff,#d8e9ff);color:#0e2246}.prc-sky .pr-date{color:#4a6a9c}.prc-sky .pr-sub{color:#33507e}.prc-sky .pr-cta{color:var(--royal)}.prc-sky .pr-year{color:#006EFF;opacity:.12}
+.prc-gold{background:linear-gradient(160deg,#f9f0d9,#f1e2be);color:#2a2515}.prc-gold .pr-date{color:#8f7124}.prc-gold .pr-sub{color:#5a4d2c}.prc-gold .pr-cta{color:#8f7124}.prc-gold .pr-year{color:#8f7124;opacity:.14}
+.prc-royal{background:linear-gradient(155deg,#006EFF,#0046b5);color:#fff}.prc-royal .pr-date{color:#cfe4ff}.prc-royal .pr-sub{color:#dcebff}.prc-royal .pr-cta{color:#fff}.prc-royal .pr-year{color:#fff;opacity:.16}
+.pr-flag{margin-top:28px;display:grid;grid-template-columns:1.5fr .9fr;gap:44px;align-items:center;border-radius:28px;padding:54px 58px;background:linear-gradient(150deg,#0a2c66,#04122e 72%);box-shadow:0 2px 8px rgba(0,0,0,.5),0 40px 100px rgba(0,20,80,.6),0 0 0 1px rgba(94,182,255,.4),0 0 70px rgba(0,110,255,.35);color:#fff}
+.pf-head{font-size:clamp(24px,2.1vw,32px);font-weight:800;line-height:1.35;margin:16px 0 14px}
+.pf-sub{font-size:18px;line-height:1.7;color:#c8d9f2}
+.pf-left .pr-cta{color:#cfe4ff;margin-top:26px;display:inline-block}
+.pf-logo{display:flex;justify-content:center}.pf-logo img{width:min(320px,100%);filter:drop-shadow(0 20px 50px rgba(0,110,255,.5))}
+.press-foot{text-align:center;margin-top:44px;font-size:18px;color:#a9bbd4}
 /* ---------- responsive ---------- */
 @media(max-width:1240px){
   .h-wrap{grid-template-columns:minmax(0,1fr);gap:56px}
@@ -538,6 +578,14 @@ footer .foot-cols a:hover{color:var(--sky)}
   .acc-inner{padding:0 22px 26px}
   .dvx-wrap{margin-top:56px}
   .dvx-laptop{width:80%}
+  .hero-mjulie{display:block;margin:6px 0 28px;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 60px rgba(0,110,255,.35),0 0 0 1px rgba(94,182,255,.35)}
+  .hero-mjulie img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 24%;display:block}
+  .pr-grid.rail>*{flex:0 0 82vw}
+  .pr-year{font-size:74px}
+  .pr-card{padding:32px 26px 28px}
+  .pr-flag{grid-template-columns:1fr;gap:30px;padding:38px 26px;text-align:center}
+  .pf-left .pr-cta{align-self:center}
+  .pf-logo img{width:min(230px,72%)}
   .dvx-phone{width:100px;margin-left:-40px;border-width:5px;border-radius:22px}
   .dvx-notch{width:44px;height:12px;top:5px}
   .dvx-cap{font-size:18px;padding:0 12px}
@@ -597,6 +645,7 @@ footer .foot-cols a:hover{color:var(--sky)}
       <p class="hero-year reveal">The Longevity Masterclass of the Year <i></i> 60 minutes, live</p>
       <h1 class="anton hero-head">Learn to age slower<br><span class="serif-i">from the 2nd slowest aging human on earth.</span></h1>
       <p class="hero-desc"><strong>Julie Gibson Clark</strong> ages eight months for every year. She teaches you her complete protocol, live on Zoom. 60 minutes. Open Q&amp;A. <strong>$89</strong>.</p>
+      <div class="hero-mjulie reveal"><img src="assets/instructors/julie-goldenhour-crop.jpg?v=41" alt="Julie Gibson Clark" loading="lazy" width="1200" height="800"></div>
       <div class="hero-dates reveal"><span class="hd-chip">Wednesday, September 16 &middot; 4:00 PM ET</span><span class="hd-chip">Sunday, September 27 &middot; 6:00 PM ET</span></div>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#reserve">Enroll now · $89</a>
@@ -607,7 +656,7 @@ footer .foot-cols a:hover{color:var(--sky)}
       <div class="mc-room">
         <div class="mc-bar"><img class="mc-barlogo" src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy"><span class="mc-live"><i></i>Live</span></div>
         <div class="mc-grid">
-          <div class="mc-tile mc-julie"><span class="mc-name">Julie Gibson Clark, Host</span></div>
+          <div class="mc-tile mc-julie"><span class="mc-name">Julie Gibson Clark</span></div>
           <div class="mc-tile mc-logo mc-la"><img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy"></div>
           <div class="mc-tile mc-logo mc-lb"><img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy"></div>
           <div class="mc-tile mc-p" style="background-position:0% 0%"></div>
@@ -730,6 +779,56 @@ footer .foot-cols a:hover{color:var(--sky)}
 
 
 
+<!-- 6B. THE ACADEMY, royal blue fold -->
+<section class="fold f-royal" id="school">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow" style="color:#d8e9ff">The Academy</p>
+      <h2 class="anton">Longevity Life Academy, <span class="serif-i" style="color:#cfe4ff">by eTeacher Group.</span></h2>
+    </div>
+    <div class="sc-card reveal">
+      <span class="sc-plaque"><img class="sc-logo" src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy by eTeacher Group" loading="lazy" width="1314" height="596"></span>
+      <p class="sc-copy">The longevity school built by <strong>eTeacher Group</strong>, live online education since 2000. Julie&rsquo;s masterclass runs on the same platform, to the same faculty standard, as the Academy&rsquo;s flagship programs.</p>
+      <div class="sc-stats rail">
+        <div class="st-royal"><b>Live</b><span>format, real instructors</span></div>
+        <div class="st-navy"><b>400k+</b><span>students globally</span></div>
+        <div class="st-sky"><b>197</b><span>countries</span></div>
+        <div class="st-cream"><b>25 yrs</b><span>of online education</span></div>
+        <div class="st-outline"><b>5</b><span>online schools</span></div>
+      </div>
+    </div>
+    <p class="ac-lead reveal">The Academy teaches six pillars of a longer, better life.</p>
+    <div class="grid3 rail reveal">
+      <div class="pcard p-white">
+        <video src="https://www.longevitylifeacademy.com/assets/v2-nutrition-greens-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>01</b><h3>Nutrition</h3><p>Plant-forward, nutrient-dense food patterns that fight inflammation and support cellular rejuvenation.</p></div>
+      </div>
+      <div class="pcard p-sky">
+        <video src="https://www.longevitylifeacademy.com/assets/sleep-blog-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>02</b><h3>Sleep</h3><p>Science-backed protocols that optimize sleep architecture, activate cellular repair, and regulate cortisol rhythm.</p></div>
+      </div>
+      <div class="pcard p-cream">
+        <video src="https://www.longevitylifeacademy.com/assets/exercise-yoga-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>03</b><h3>Exercise <span class="serif-i">and</span> movement</h3><p>Functional strength, Zone 2 endurance, and stability to extend both lifespan and healthspan.</p></div>
+      </div>
+      <div class="pcard p-outline">
+        <video src="https://www.longevitylifeacademy.com/assets/supplements-wearables-know-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>04</b><h3>Supplements <span class="serif-i">and</span> wearables</h3><p>Targeted compounds matched to your biomarker gaps, with CGM, HRV, and sleep data closing the feedback loop.</p></div>
+      </div>
+      <div class="pcard p-ivory">
+        <video src="https://www.longevitylifeacademy.com/assets/stress-management-cold-plunge-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>05</b><h3>Stress management</h3><p>Breathwork, cold exposure, vagal tone training, and social connection to keep biology resilient, not just relaxed.</p></div>
+      </div>
+      <div class="pcard p-gold">
+        <video src="https://www.longevitylifeacademy.com/assets/daily-protocol-v2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="pcard-body"><b>06</b><h3>Your longevity protocol</h3><p>A personal plan built from your own bloodwork, body composition, and wearable data. Medicine 3.0 in practice.</p></div>
+      </div>
+    </div>
+    <p class="ac-note reveal">Julie is Founding Faculty at the Academy. <a class="art-cta" href="https://www.longevitylifeacademy.com/" target="_blank" rel="noopener">Explore the Academy</a></p>
+  </div>
+</section>
+
+
 <!-- 7. JULIE'S NUMBERS, dark navy fold -->
 <section class="fold f-navy" id="numbers">
   <div class="container">
@@ -751,27 +850,78 @@ footer .foot-cols a:hover{color:var(--sky)}
       <p class="q">&ldquo;We don't need millions of dollars to live long, vibrant lives.&rdquo;</p>
       <p class="a">Julie Gibson Clark</p>
     </div>
-    <div class="press-merge reveal" id="press">
-      <p class="eyebrow">In the press</p>
-      <div class="grid3 rail">
-        <a class="art a-white" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
-          <span class="art-mast m-fortune">FORTUNE</span>
-          <p class="art-line">The women out-aging the world&rsquo;s most famous biohackers, on everyday fundamentals.</p>
-          <span class="art-cta">Read the story &rarr;</span>
-        </a>
-        <a class="art a-navy" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
-          <span class="art-mast m-bi">BUSINESS INSIDER</span>
-          <p class="art-line">She spends a fraction of what Bryan Johnson does, and out-ranked his $2M-a-year protocol.</p>
-          <span class="art-cta">Read the story &rarr;</span>
-        </a>
-        <a class="art a-sky" href="https://rejuvenationolympics.com/dunedin-pace/" target="_blank" rel="noopener">
-          <span class="art-mast m-ro">REJUVENATION OLYMPICS</span>
-          <p class="art-line">The official DunedinPACE leaderboard where Julie ranked No.2 in the world, verified by epigenetic testing.</p>
-          <span class="art-cta">See the leaderboard &rarr;</span>
-        </a>
-      </div>
-      <p class="press-note">Also covered by USA Today, Yahoo Finance, Daily Mail, The Sun, Times Now, NewsBreak, NOVOS and NAD.com.</p>
+  </div>
+</section>
+
+
+<!-- 8. IN THE PRESS, ink fold with real articles -->
+<section class="fold f-ink" id="press">
+  <div class="container">
+    <div class="shead reveal">
+      <p class="eyebrow" style="color:#7fb8ff">In the press</p>
+      <h2 class="anton">Real headlines, <span class="serif-i sky">2023 to 2026.</span></h2>
     </div>
+    <div class="pr-grid rail reveal">
+      <a class="pr-card prc-white" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
+        <span class="pr-year">2023</span>
+        <span class="pr-mast pm-fortune">FORTUNE</span>
+        <span class="pr-date">November 4, 2023</span>
+        <p class="pr-head">Tech bros are spending millions to shoot for immortality. These women are beating them.</p>
+        <p class="pr-sub">Simple regimens of diet and exercise put Julie ahead of the famous biohackers.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+      <a class="pr-card prc-navy" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
+        <span class="pr-year">2023</span>
+        <span class="pr-mast pm-bi">BUSINESS INSIDER</span>
+        <span class="pr-date">November 6, 2023</span>
+        <p class="pr-head">A woman spending around $108 a month is beating Bryan Johnson in the anti-aging ranking he created.</p>
+        <p class="pr-sub">His protocol costs about $2 million a year. Hers, about $100 a month.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+      <a class="pr-card prc-cream" href="https://www.thesun.co.uk/wellness/28036126/budget-biohacker-single-mum-julie-gibson-clark-ageing-backwards/" target="_blank" rel="noopener">
+        <span class="pr-year">2024</span>
+        <span class="pr-mast pm-sun">The Sun</span>
+        <span class="pr-date">Wellness, 2024</span>
+        <p class="pr-head">Budget biohacker mum, 55, is ageing backwards thanks to her secret sauce.</p>
+        <p class="pr-sub">The routine behind the ranking, told to millions of Sun readers.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+      <a class="pr-card prc-sky" href="https://fortune.com/well/article/reverse-aging-habits-daily-routine-single-mom-budget/" target="_blank" rel="noopener">
+        <span class="pr-year">2024</span>
+        <span class="pr-mast pm-fortune">FORTUNE</span>
+        <span class="pr-date">November 22, 2024</span>
+        <p class="pr-head">The reverse-aging routine of a 55-year-old single mom who makes less than six figures.</p>
+        <p class="pr-sub">Fortune returned a year later. The results held.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+      <a class="pr-card prc-gold" href="https://www.dailymail.co.uk/health/article-14523549/biohacking-female-Bryan-Johnson-aging-mom-julie-gibson-clark-regimen.html" target="_blank" rel="noopener">
+        <span class="pr-year">2025</span>
+        <span class="pr-mast pm-dm">Daily Mail</span>
+        <span class="pr-date">March 27, 2025</span>
+        <p class="pr-head">I thought biohacking was for rich nerds, then I knocked 20 years off my age with an easy $3 routine.</p>
+        <p class="pr-sub">Julie, in her own words, to the world&rsquo;s largest English-language news site.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+      <a class="pr-card prc-royal" href="https://en.as.com/latest_news/ageing-34-slower-at-56-julie-gibson-clark-shares-the-habits-behind-her-healthy-lifestyle-f202605-n/" target="_blank" rel="noopener">
+        <span class="pr-year">2026</span>
+        <span class="pr-mast pm-as">AS</span>
+        <span class="pr-date">May 24, 2026</span>
+        <p class="pr-head">Ageing 34% slower at 56? Julie Gibson Clark shares the habits behind her healthy lifestyle.</p>
+        <p class="pr-sub">Three years in, the story keeps getting bigger.</p>
+        <span class="pr-cta">Read the article &rarr;</span>
+      </a>
+    </div>
+    <a class="pr-flag reveal" href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener">
+      <div class="pf-left">
+        <span class="pr-mast pm-ap"><b>AP</b> News</span>
+        <span class="pr-date" style="color:#8fb4e8">July 2026 &middot; syndicated to 600+ outlets</span>
+        <p class="pf-head">eTeacher Group launches Longevity Life Academy to teach the longevity protocol the wealthy pay millions for.</p>
+        <p class="pf-sub">Julie Gibson Clark joins as Founding Faculty. The announcement ran on AP News and across the USA Today network of local newspapers, coast to coast.</p>
+        <span class="pr-cta">Read it on AP News &rarr;</span>
+      </div>
+      <div class="pf-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy" loading="lazy"></div>
+    </a>
+    <p class="press-foot">Also covered by USA Today, Yahoo Finance, Times Now, NewsBreak, NOVOS and NAD.com. Every card above links to the original article.</p>
   </div>
 </section>
 
@@ -939,7 +1089,7 @@ try{
     document.querySelectorAll('section .anton, .band-inner p').forEach(el=>{
       gsap.from(el,{opacity:0,y:52,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
     });
-    document.querySelectorAll('.rm-card, .art, .pcard').forEach(el=>{
+    document.querySelectorAll('.rm-card, .art, .pcard, .pr-card').forEach(el=>{
       gsap.from(el,{opacity:0,y:42,duration:.95,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}});
     });
     var _rt;document.querySelectorAll('img[loading="lazy"]').forEach(function(im){im.addEventListener('load',function(){clearTimeout(_rt);_rt=setTimeout(function(){ScrollTrigger.refresh()},250)})});
