@@ -7,7 +7,7 @@
 <meta name="description" content="Julie Gibson Clark ages eight months for every year. She teaches her complete protocol live on Zoom. 60 minutes. $89.">
 <meta property="og:title" content="The Longevity Masterclass of the Year · Julie Gibson Clark, live">
 <meta property="og:description" content="60 minutes live with the second slowest aging woman on earth. Her complete protocol, revealed live. $89.">
-<meta property="og:image" content="assets/julie-wide-poster.jpg?v=48">
+<meta property="og:image" content="assets/julie-wide-poster.jpg?v=50">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -215,7 +215,7 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .rm-a img{object-position:38% 32%}
 .rm-b img{object-position:50% 14%}
 /* ---------- enroll strip ---------- */
-.enroll{position:relative;overflow:hidden;background:linear-gradient(135deg,#040b19 0%,#081a38 52%,#0b2450 100%);border-top:1px solid rgba(127,184,255,.18);border-bottom:1px solid rgba(127,184,255,.18);scroll-margin-top:104px}
+.enroll{position:relative;overflow:hidden;background:radial-gradient(1100px 760px at 84% 6%,rgba(0,110,255,.4),transparent 62%),radial-gradient(820px 620px at 4% 100%,rgba(94,182,255,.2),transparent 56%),linear-gradient(135deg,#040b19 0%,#081a38 52%,#0b2450 100%);border-top:1px solid rgba(127,184,255,.18);border-bottom:1px solid rgba(127,184,255,.18);scroll-margin-top:104px}
 .enroll::before{content:"";position:absolute;top:0;bottom:0;left:-45%;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-14deg);animation:ensweep 5.6s ease-in-out infinite;pointer-events:none}
 @keyframes ensweep{0%{left:-45%}62%{left:118%}100%{left:118%}}
 .en-wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:78px 48px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
@@ -380,7 +380,7 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .zoom-top .rec{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:15px;color:#a8f0c0;font-style:italic}
 .zoom-top .rec i{width:8px;height:8px;border-radius:50%;background:#2ee87c;box-shadow:0 0 12px rgba(46,232,124,.9)}
 .lr-gal{padding:6px}
-.lr-host{position:relative;aspect-ratio:1894/854;background-image:url('assets/zoom-host.jpg?v=48');background-size:cover;background-position:50% 18%;border:2px solid #5EB6FF;border-radius:9px}
+.lr-host{position:relative;aspect-ratio:1894/854;background-image:url('assets/zoom-host.jpg?v=50');background-size:cover;background-position:50% 18%;border:2px solid #5EB6FF;border-radius:9px}
 .zoom-name{position:absolute;left:14px;bottom:12px;background:rgba(2,4,9,.86);color:#fff;font-size:15px;padding:6px 14px;border-radius:5px}
 .lr-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:6px}
 .lr-t{aspect-ratio:16/9;border-radius:7px;background:#0d1119;overflow:hidden}
@@ -694,13 +694,33 @@ footer .foot-cols a:hover{color:var(--sky)}
 #reveal .k-royal .cno{background-image:linear-gradient(135deg,#ffffff,#bfe0ff)}
 #reveal .cno{font-size:46px;font-weight:700;background:linear-gradient(135deg,#006EFF,#5EB6FF);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
 @media(max-width:900px){.claims{grid-template-columns:minmax(0,1fr)}.pr-grid .pr-card{flex:0 0 84vw}.hero-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* v50: masterclass card fan */
+.mc-row{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 48px 92px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;perspective:2000px}
+.mc-card{position:relative;display:block;aspect-ratio:10/13.6;border-radius:18px;overflow:hidden;border:1px solid rgba(127,184,255,.32);box-shadow:0 46px 100px rgba(0,0,0,.62),0 16px 40px rgba(0,110,255,.28);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;transform-style:preserve-3d}
+.mc-l{transform:rotateY(10deg) rotateX(1.5deg)}
+.mc-c{transform:translateZ(46px) translateY(-14px)}
+.mc-r{transform:rotateY(-10deg) rotateX(1.5deg)}
+.mc-card:hover{transform:translateZ(60px) translateY(-18px);box-shadow:0 60px 130px rgba(0,0,0,.7),0 22px 54px rgba(0,110,255,.4)}
+.mc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.mc-c img{object-position:50% 10%}
+.mc-r img{object-position:50% 0}
+.mc-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,15,.06) 30%,rgba(3,8,15,.6) 62%,rgba(3,8,15,.94) 100%)}
+.mc-meta{position:absolute;left:0;right:0;bottom:0;padding:0 22px 26px;text-align:center;color:#fff}
+.mc-kick{display:block;font-size:13.5px;letter-spacing:.14em;color:#9fc6ff;margin-bottom:10px}
+.mc-meta b{display:block;font-size:clamp(24px,2vw,31px);font-weight:700;line-height:1.14;letter-spacing:-.01em}
+.mc-meta i{display:block;width:30px;height:2px;background:var(--royal);margin:13px auto;box-shadow:0 0 12px var(--royal)}
+.mc-line{display:block;font-size:16.5px;font-style:italic;color:#cfe0f6}
+.mc-play{position:absolute;top:16px;right:16px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:rgba(3,8,15,.55);backdrop-filter:blur(5px);border:1.5px solid rgba(255,255,255,.55)}
+.mc-play svg{margin-left:2px}
+@media(max-width:900px){.mc-row{grid-template-columns:minmax(0,1fr);gap:30px;padding:0 22px 74px;max-width:420px}.mc-l,.mc-c,.mc-r{transform:none}.mc-c{transform:none}}
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <a class="nav-logo" href="#top" aria-label="Longevity Life Academy">
-    <img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy">
+    <img src="assets/lla-logo-exact-transparent@2x.png?v=50" alt="Longevity Life Academy">
   </a>
   <div class="nav-links">
     <a href="#dates">Dates and times</a>
@@ -737,7 +757,7 @@ footer .foot-cols a:hover{color:var(--sky)}
       </div>
       <p class="hero-trust"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 on Trustpilot &middot; 600+ verified reviews</p>
     </div>
-    <div class="hero-media"><video class="hero-film" id="heroFilm" src="assets/julie-hero-cut.mp4?v=49" poster="assets/hero-poster.jpg?v=49" autoplay muted loop playsinline preload="auto"></video>
+    <div class="hero-media"><video class="hero-film" id="heroFilm" src="assets/julie-hero-cut.mp4?v=50" poster="assets/hero-poster.jpg?v=50" autoplay muted loop playsinline preload="auto"></video>
       <span class="hero-live"><i></i>Julie Gibson Clark &middot; Live on Zoom</span>
     </div>
     </div>
@@ -773,11 +793,31 @@ footer .foot-cols a:hover{color:var(--sky)}
     </div>
     <div class="en-media reveal">
       <div class="dvx">
-        <div class="dvx-laptop"><div class="dvx-screen"><img src="assets/zoom-room-v2.jpg?v=48" alt="The live masterclass room on Zoom" loading="lazy"></div><div class="dvx-base"></div></div>
-        <div class="dvx-phone"><img src="assets/phone-zoom.jpg?v=48" alt="The live room on a phone" loading="lazy"></div>
+        <div class="dvx-laptop"><div class="dvx-screen"><img src="assets/zoom-room-v2.jpg?v=50" alt="The live masterclass room on Zoom" loading="lazy"></div><div class="dvx-base"></div></div>
+        <div class="dvx-phone"><img src="assets/phone-zoom.jpg?v=50" alt="The live room on a phone" loading="lazy"></div>
       </div>
       <p class="dvx-cap">One link. Any device. Julie, live.</p>
     </div>
+  </div>
+  <div class="mc-row reveal">
+    <a class="mc-card mc-l" href="https://www.longevitylifeacademy.com/#lead-gen" target="_blank" rel="noopener">
+      <img src="assets/instructors/julie-desert.jpg?v=50" alt="Julie Gibson Clark" loading="lazy">
+      <span class="mc-shade"></span>
+      <span class="mc-play"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span>
+      <span class="mc-meta"><span class="mc-kick">Longevity Life Academy</span><b>Julie Gibson Clark</b><i></i><span class="mc-line">Teaches Longevity</span></span>
+    </a>
+    <a class="mc-card mc-c" href="https://www.longevitylifeacademy.com/#lead-gen" target="_blank" rel="noopener">
+      <img src="assets/instructors/julie-portrait.jpg?v=50" alt="The complete protocol masterclass" loading="lazy">
+      <span class="mc-shade"></span>
+      <span class="mc-play"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span>
+      <span class="mc-meta"><span class="mc-kick">The Masterclass</span><b>The $100 Protocol</b><i></i><span class="mc-line">60 minutes, live on Zoom</span></span>
+    </a>
+    <a class="mc-card mc-r" href="https://www.longevitylifeacademy.com/#lead-gen" target="_blank" rel="noopener">
+      <img src="assets/instructors/julie-sun.jpg?v=50" alt="Two live sessions in September" loading="lazy">
+      <span class="mc-shade"></span>
+      <span class="mc-play"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span>
+      <span class="mc-meta"><span class="mc-kick">Two live dates</span><b>September 16 &middot; 27</b><i></i><span class="mc-line">Your seat, $89</span></span>
+    </a>
   </div>
 </section>
 
@@ -794,11 +834,11 @@ footer .foot-cols a:hover{color:var(--sky)}
       <div class="lr-gal">
         <div class="lr-host"><span class="zoom-name">Julie Gibson Clark</span></div>
         <div class="lr-strip">
-          <div class="lr-t"><img src="assets/strip-1.jpg?v=49" alt="Participant" loading="lazy"></div>
-          <div class="lr-t"><img src="assets/strip-2.jpg?v=49" alt="Participant" loading="lazy"></div>
-          <div class="lr-t"><img src="assets/strip-3.jpg?v=49" alt="Participant" loading="lazy"></div>
-          <div class="lr-t"><img src="assets/strip-4.jpg?v=49" alt="Participant" loading="lazy"></div>
-          <div class="lr-t lr-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy"></div>
+          <div class="lr-t"><img src="assets/strip-1.jpg?v=50" alt="Participant" loading="lazy"></div>
+          <div class="lr-t"><img src="assets/strip-2.jpg?v=50" alt="Participant" loading="lazy"></div>
+          <div class="lr-t"><img src="assets/strip-3.jpg?v=50" alt="Participant" loading="lazy"></div>
+          <div class="lr-t"><img src="assets/strip-4.jpg?v=50" alt="Participant" loading="lazy"></div>
+          <div class="lr-t lr-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=50" alt="Longevity Life Academy"></div>
         </div>
       </div>
     </div>
@@ -867,7 +907,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         </div>
       </a>
       <a class="pr-card" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
-        <div class="pr-media"><img src="assets/instructors/julie-purple.jpg?v=49" alt="Julie Gibson Clark, as featured in Business Insider" style="object-position:50% 30%" loading="lazy"></div>
+        <div class="pr-media"><img src="assets/instructors/julie-purple.jpg?v=50" alt="Julie Gibson Clark, as featured in Business Insider" style="object-position:50% 30%" loading="lazy"></div>
         <div class="pr-body">
         <span class="pr-mast pm-bi">BUSINESS INSIDER</span>
         <span class="pr-date">November 6, 2023</span>
@@ -876,7 +916,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         </div>
       </a>
       <a class="pr-card" href="https://www.thesun.co.uk/wellness/28036126/budget-biohacker-single-mum-julie-gibson-clark-ageing-backwards/" target="_blank" rel="noopener">
-        <div class="pr-media"><img src="assets/instructors/julie-desert.jpg?v=48" alt="Julie Gibson Clark, as featured in The Sun" style="object-position:50% 30%" loading="lazy"></div>
+        <div class="pr-media"><img src="assets/instructors/julie-desert.jpg?v=50" alt="Julie Gibson Clark, as featured in The Sun" style="object-position:50% 30%" loading="lazy"></div>
         <div class="pr-body">
         <span class="pr-mast pm-sun">The Sun</span>
         <span class="pr-date">Wellness, 2024</span>
@@ -926,9 +966,9 @@ footer .foot-cols a:hover{color:var(--sky)}
       <p class="shead-sub" style="color:#33445e">Julie Gibson Clark. 56. A single mom and recruiter from Phoenix, with the second slowest measured pace of aging on Earth. No lab, no staff, no millions.</p>
     </div>
     <div class="claims reveal">
-      <figure class="claim"><video src="assets/anim/ANIM_PACE_1080.mp4?v=48" poster="assets/anim/pace-poster.jpg?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>She ages 8 months a year.</b><span>DunedinPACE 0.665, proven by verified epigenetic testing.</span></figcaption></figure>
-      <figure class="claim"><video src="assets/anim/ANIM_CURVE_1080.mp4?v=48" poster="assets/anim/curve-poster.jpg?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>34% slower than average.</b><span>While most people age one full year, every year.</span></figcaption></figure>
-      <figure class="claim"><video src="assets/anim/PLAY_V6_LLA_RANK.mp4?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>No.2 on Earth.</b><span>Rejuvenation Olympics leaderboard, ahead of Bryan Johnson.</span></figcaption></figure>
+      <figure class="claim"><video src="assets/anim/ANIM_PACE_1080.mp4?v=50" poster="assets/anim/pace-poster.jpg?v=50" autoplay muted loop playsinline preload="auto"></video><figcaption><b>She ages 8 months a year.</b><span>DunedinPACE 0.665, proven by verified epigenetic testing.</span></figcaption></figure>
+      <figure class="claim"><video src="assets/anim/ANIM_CURVE_1080.mp4?v=50" poster="assets/anim/curve-poster.jpg?v=50" autoplay muted loop playsinline preload="auto"></video><figcaption><b>34% slower than average.</b><span>While most people age one full year, every year.</span></figcaption></figure>
+      <figure class="claim"><video src="assets/anim/PLAY_V6_LLA_RANK.mp4?v=50" autoplay muted loop playsinline preload="auto"></video><figcaption><b>No.2 on Earth.</b><span>Rejuvenation Olympics leaderboard, ahead of Bryan Johnson.</span></figcaption></figure>
     </div>
     <div class="jsplit jsplit-claims">
       <div class="jsplit-media reveal"><img src="assets/instructors/julie-goldenhour-crop.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
@@ -1018,7 +1058,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         <div class="pcard-body"><b>03</b><h3>Exercise <span class="serif-i">and</span> movement</h3><p>Functional strength, Zone 2 endurance, and stability to extend both lifespan and healthspan.</p></div>
       </div>
       <div class="pcard p-outline">
-        <img src="assets/pillars/supplements-warm.jpg?v=48" alt="Supplements on a warm morning table" loading="lazy">
+        <img src="assets/pillars/supplements-warm.jpg?v=50" alt="Supplements on a warm morning table" loading="lazy">
         <div class="pcard-body"><b>04</b><h3>Supplements <span class="serif-i">and</span> wearables</h3><p>Targeted compounds matched to your biomarker gaps, with CGM, HRV, and sleep data closing the feedback loop.</p></div>
       </div>
       <div class="pcard p-ivory">
@@ -1026,7 +1066,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         <div class="pcard-body"><b>05</b><h3>Stress management</h3><p>Breathwork, cold exposure, vagal tone training, and social connection to keep biology resilient, not just relaxed.</p></div>
       </div>
       <div class="pcard p-gold">
-        <img src="assets/img-testing.jpg?v=48" alt="Bloodwork vials in a testing lab" loading="lazy">
+        <img src="assets/img-testing.jpg?v=50" alt="Bloodwork vials in a testing lab" loading="lazy">
         <div class="pcard-body"><b>06</b><h3>Your longevity protocol</h3><p>A personal plan built from your own bloodwork, body composition, and wearable data. Medicine 3.0 in practice.</p></div>
       </div>
     </div>
@@ -1087,7 +1127,7 @@ footer .foot-cols a:hover{color:var(--sky)}
   <div class="container">
     <div class="foot-cols">
       <div>
-        <img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy" style="height:54px;width:auto">
+        <img src="assets/lla-logo-exact-transparent@2x.png?v=50" alt="Longevity Life Academy" style="height:54px;width:auto">
         <p class="foot-about">Longevity Life Academy is the longevity education platform of eTeacher Group, a global leader in live online education since 2000. Every program is taught live by leading practitioners and grounded in published, evidence-based research.</p>
       </div>
       <div>
@@ -1114,7 +1154,7 @@ footer .foot-cols a:hover{color:var(--sky)}
 <!-- TRAILER MODAL -->
 <div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer">
   <button class="modal-close" id="modalClose">Close</button>
-  <video id="trailerVideo" src="assets/julie-wide.mp4?v=48" poster="assets/hero-poster.jpg?v=48" controls playsinline></video>
+  <video id="trailerVideo" src="assets/julie-wide.mp4?v=50" poster="assets/hero-poster.jpg?v=50" controls playsinline></video>
 </div>
 
 <script>
