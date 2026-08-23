@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learn to age slower from the 2nd slowest aging human on earth · Julie Gibson Clark, live · $89</title>
-<meta name="description" content="Julie Gibson Clark ages eight months for every year. She teaches her complete protocol live on Zoom. 60 minutes. Open Q&A. $89.">
+<meta name="description" content="Julie Gibson Clark ages eight months for every year. She teaches her complete protocol live on Zoom. 60 minutes. $89.">
 <meta property="og:title" content="The Longevity Masterclass of the Year · Julie Gibson Clark, live">
 <meta property="og:description" content="60 minutes live with the second slowest aging woman on earth. Her complete protocol, revealed live. $89.">
-<meta property="og:image" content="assets/julie-wide-poster.jpg?v=45">
+<meta property="og:image" content="assets/julie-wide-poster.jpg?v=48">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,8 +82,8 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:96px;background:linear-gradient(to bottom,rgba(5,13,28,.92),rgba(5,13,28,.5) 70%,transparent);transition:background .45s var(--ease),height .45s var(--ease)}
-.nav.solid{background:rgba(5,13,28,.97);border-bottom:1px solid var(--hair-soft);height:82px}
-.nav-logo img{height:54px;width:auto}
+.nav.solid{background:rgba(5,13,28,.97);border-bottom:1px solid var(--hair-soft);height:88px}
+.nav-logo img{height:76px;width:auto}
 .nav-links{display:flex;gap:40px;align-items:center}
 .nav-links a{font-size:16.5px;font-weight:500;color:#d6dfec;transition:color .3s}
 .nav-links a:hover{color:var(--sky2)}
@@ -97,7 +97,8 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .mobile-menu a.btn{font-size:18px;line-height:1;border:1px solid var(--white);margin-top:32px}
 
 /* ---------- trustpilot chip ---------- */
-.tp-chip{display:inline-flex;align-items:center;gap:11px;font-size:17px;font-style:italic;color:#dbe4f0;margin-bottom:26px}
+.tp-chip{display:inline-flex;align-items:center;gap:11px;font-size:17px;font-style:normal;color:#dbe4f0;margin-bottom:26px}
+.f-sky .tp-chip{color:#33445e}
 .tp-stars{display:inline-flex;gap:2.5px}
 .tp-stars i{width:17px;height:17px;background:#00b67a;display:inline-block;position:relative}
 .tp-stars i::after{content:"\2605";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-style:normal}
@@ -107,23 +108,30 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:radial-gradient(1100px 700px at 82% 30%,rgba(0,110,255,.22),transparent 62%),radial-gradient(900px 560px at 6% 96%,rgba(0,110,255,.16),transparent 60%),#03080f}
-.hero-inner{position:relative;width:100%;max-width:1520px;margin:0 auto;padding:168px 56px 64px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:center;justify-items:center}
+.hero-inner{position:relative;width:100%;max-width:1520px;margin:0 auto;padding:124px 56px 76px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:38px;align-items:center;justify-items:center}
 .hero-copy{text-align:center;max-width:1060px}
 .hero-copy .tp-chip{margin-left:auto;margin-right:auto}
 .hero-dates,.hero-actions{justify-content:center}
-.hero-media{justify-self:center;border-radius:26px;overflow:hidden;border:1px solid rgba(127,184,255,.5);box-shadow:0 0 0 1px rgba(0,110,255,.25),0 26px 90px rgba(0,110,255,.38),0 8px 30px rgba(0,0,0,.6);line-height:0}
+.hero-media{position:relative;justify-self:center;border-radius:26px;overflow:hidden;border:1px solid rgba(127,184,255,.5);box-shadow:0 0 0 1px rgba(0,110,255,.25),0 26px 90px rgba(0,110,255,.38),0 8px 30px rgba(0,0,0,.6);line-height:0}
 .hero-film{display:block;width:100%;height:auto;aspect-ratio:1080/608}
 .hero-copy{max-width:1060px}
-.hero-year{font-size:18px;color:var(--sky2);font-style:italic;margin-bottom:22px}
-.hero-year i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--royal);margin:0 12px 4px;box-shadow:0 0 10px var(--royal)}
-.hero-head{font-size:clamp(40px,3.7vw,68px)}
+.hero-kick{font-size:19px;color:var(--sky2);letter-spacing:.04em;margin-bottom:24px}
+.hero-when{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;margin-top:28px;font-size:21px;color:#eef4ff}
+.hero-when strong{font-weight:700;color:#fff}
+@media(max-width:900px){.hero-when{flex-direction:column;gap:7px}.hero-when em{display:none}}
+.hero-when em{font-style:normal;color:var(--sky2)}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:24px;font-size:17.5px;color:#b9c6d9}
+.hero-pip{position:absolute;right:26px;bottom:26px;width:min(228px,24%);border-radius:14px;overflow:hidden;border:2px solid rgba(94,182,255,.9);box-shadow:0 18px 46px rgba(0,0,0,.6);line-height:0;z-index:3}
+.hero-pip img{width:100%;height:auto;display:block}
+.hero-pip-name{position:absolute;left:0;bottom:0;background:rgba(3,8,15,.78);color:#fff;font-size:13.5px;line-height:1;padding:7px 11px;border-radius:0 9px 0 0}
+.hero-head{font-size:clamp(44px,4.1vw,76px)}
 .hero-head .serif-i{color:var(--sky)}
-.hero-desc{margin:32px auto 0;font-size:20.5px;line-height:1.8;color:#d3ddec;max-width:720px}
+.hero-desc{margin:26px auto 0;font-size:22px;line-height:1.76;color:#d3ddec;max-width:760px}
 .hero-desc strong{color:#fff}
 .hero-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
 .hd-chip{font-size:19.5px;font-style:italic;color:#e9f1ff}
-.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:34px}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:28px}
 .hero-bar{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:38px;padding-top:28px;border-top:1px solid var(--hair-soft);font-size:17px;color:#b9c6d9}
 .hero-bar i{width:5px;height:5px;border-radius:50%;background:var(--sky);display:inline-block;opacity:.7}
 
@@ -141,9 +149,9 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 
 /* ---------- press marquee ---------- */
 .mq-band{padding:44px 0 48px;text-align:center;background:#000;border-top:1px solid rgba(127,184,255,.14);border-bottom:1px solid rgba(127,184,255,.14)}
-.mq-band .feat{font-size:17px;font-style:italic;color:var(--sky);margin-bottom:26px}
+.mq-band .feat{font-size:18px;color:var(--sky);letter-spacing:.05em;margin-bottom:26px}
 .mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.mq-track{display:flex;align-items:center;gap:92px;width:max-content;padding-right:92px;animation:mqslide 16s linear infinite}
+.mq-track{display:flex;align-items:center;gap:92px;width:max-content;padding-right:92px;animation:mqslide 46s linear infinite}
 @keyframes mqslide{to{transform:translateX(-50%)}}
 .mq-track span{white-space:nowrap;display:inline-flex;align-items:center}
 .m-fortune{font-weight:400;font-size:32px;letter-spacing:.1em;color:#ff4438}
@@ -224,7 +232,7 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 @keyframes enblink{0%,100%{opacity:1}50%{opacity:.25}}
 .en-media .dvx-wrap{margin-top:0}
 .en-media .dvx-cap{margin-top:34px;color:#dcebff}
-.en-media .dvx-laptop{width:min(700px,100%)}
+.en-media .dvx-laptop{transform:perspective(1800px) rotateY(-7deg) rotateX(2.5deg);width:min(700px,100%)}
 .en-media .dvx-phone{width:min(185px,24%);margin-left:-58px}
 .en-media .dvx{position:relative}
 .en-media .dvx::before{content:"";position:absolute;left:6%;right:6%;bottom:-36px;height:74px;background:radial-gradient(50% 100% at 50% 0%,rgba(0,110,255,.55),transparent 72%);filter:blur(16px);z-index:0;pointer-events:none}
@@ -345,11 +353,11 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 
 /* ---------- dates fold ---------- */
 .d-steps{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
-.d-steps span{display:inline-flex;align-items:center;gap:11px;font-size:18.5px;font-style:italic;color:#fff}
-.d-steps b{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#fff;color:var(--royal);font-size:15px;font-weight:700;font-style:normal}
+.d-steps span{display:inline-flex;align-items:center;gap:11px;font-size:19.5px;color:#0d1c33;font-weight:600}
+.d-steps b{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--royal);color:#fff;font-size:15px;font-weight:700;font-style:normal}
 .date-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:48px}
 .dcard{border-radius:28px;padding:44px 40px 48px}
-.dcard .ses{font-size:17px;font-style:italic;margin-bottom:14px}
+.dcard .ses{font-size:16px;margin-bottom:14px;font-weight:700;letter-spacing:.12em}
 .dcard h3{font-size:clamp(30px,2.6vw,42px);font-weight:600;line-height:1.14;letter-spacing:-.02em}
 .dcard .btn{width:100%;white-space:normal;text-align:center;padding:17px 22px;line-height:1.35}
 .dcard .yr{font-size:19px;margin-top:6px;opacity:.75}
@@ -357,10 +365,10 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .tz span{font-size:17.5px}
 .tz strong{font-weight:700}
 .dmeta{font-size:17px;line-height:1.6;margin-bottom:28px}
-.dc-white{background:#fff;color:#0d1c33;box-shadow:0 34px 80px rgba(0,20,60,.28),0 0 0 1px rgba(94,182,255,.35),0 0 60px rgba(0,60,180,.35)}
+.dc-white{background:#fff;color:#0d1c33;border:1px solid #c9dcf5;border-top:5px solid var(--royal);box-shadow:0 24px 60px rgba(10,25,60,.14)}
 .dc-white .ses{color:var(--royal)}.dc-white .dmeta{color:#4a586e}
-.dc-navy{background:linear-gradient(160deg,#0b1a33,#050d1c);color:#eef4fd;box-shadow:0 34px 80px rgba(0,10,40,.42),0 0 0 1px rgba(94,182,255,.35),0 0 60px rgba(0,40,140,.45)}
-.dc-navy .ses{color:var(--sky)}.dc-navy .dmeta{color:#bccce2}
+.dc-navy{background:#0d1c33;color:#fff;border:1px solid #0d1c33;border-top:5px solid #5EB6FF;box-shadow:0 24px 60px rgba(10,25,60,.28)}
+.dc-navy .ses{color:#8fc4ff}.dc-navy .dmeta{color:#d7e4f6}
 .dates-note{text-align:center;margin-top:46px;font-size:18.5px;color:rgba(255,255,255,.9);font-style:italic}
 
 /* ---------- live room fold ---------- */
@@ -373,10 +381,10 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .zoom-top .rec{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:15px;color:#a8f0c0;font-style:italic}
 .zoom-top .rec i{width:8px;height:8px;border-radius:50%;background:#2ee87c;box-shadow:0 0 12px rgba(46,232,124,.9)}
 .lr-gal{padding:6px}
-.lr-host{position:relative;aspect-ratio:1894/854;background-image:url('assets/zoom-speaker-clean.jpg');background-size:cover;background-position:50% 50%;border:2px solid #5EB6FF;border-radius:9px}
+.lr-host{position:relative;aspect-ratio:1894/854;background-image:url('assets/zoom-host.jpg?v=48');background-size:cover;background-position:50% 18%;border:2px solid #5EB6FF;border-radius:9px}
 .zoom-name{position:absolute;left:14px;bottom:12px;background:rgba(2,4,9,.86);color:#fff;font-size:15px;padding:6px 14px;border-radius:5px}
 .lr-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:6px}
-.lr-t{aspect-ratio:16/9;border-radius:7px;background-image:url('assets/zoom-gallery.jpg');background-size:500% 500%;overflow:hidden}
+.lr-t{aspect-ratio:16/9;border-radius:7px;background-image:url('assets/zoom-room-v2.jpg?v=48');background-size:500% 500%;overflow:hidden}
 .lr-logo{display:flex;align-items:center;justify-content:center;background:#000;background-image:none}
 .lr-logo img{width:72%}
 .lr-bar{display:flex;justify-content:center;gap:10px;padding:15px 0 10px}
@@ -386,11 +394,11 @@ h2.anton{font-size:clamp(44px,4.8vw,92px)}
 .dvx{display:flex;justify-content:center;align-items:flex-end}
 .dvx-laptop{width:min(780px,74%);position:relative;z-index:1}
 .dvx-screen{position:relative;border:10px solid #0b0f16;border-bottom:0;border-radius:18px 18px 0 0;overflow:hidden;background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),0 60px 140px rgba(0,0,0,.78),0 30px 70px rgba(0,45,130,.5),0 0 110px rgba(0,110,255,.3);transform:perspective(1600px) rotateX(2deg)}
-.dvx-screen img{width:100%;aspect-ratio:1920/1224;object-fit:cover}
+.dvx-screen img{width:100%;aspect-ratio:1935/1080;object-fit:cover}
 .dvx-base{height:16px;background:linear-gradient(180deg,#1a2230,#0a0e15);border-radius:0 0 20px 20px;box-shadow:0 24px 50px rgba(0,0,0,.6)}
 .dvx-base::after{content:"";display:block;margin:0 auto;width:96px;height:5px;border-radius:0 0 8px 8px;background:#05070b}
-.dvx-phone{position:relative;z-index:2;width:min(196px,21%);margin-left:-64px;border:8px solid #0b0f16;border-radius:32px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 44px 110px rgba(0,0,0,.8),0 0 60px rgba(0,110,255,.3);background:#000}
-.dvx-phone img{width:100%;aspect-ratio:9/17.5;object-fit:cover;object-position:50% 0%}
+.dvx-phone{position:relative;z-index:2;transform:perspective(1500px) rotateY(9deg) rotateX(1.5deg);width:min(196px,21%);margin-left:-64px;border:8px solid #0b0f16;border-radius:32px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 44px 110px rgba(0,0,0,.8),0 0 60px rgba(0,110,255,.3);background:#000}
+.dvx-phone img{width:100%;aspect-ratio:9/17.5;object-fit:cover;object-position:50% 50%}
 .dvx-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:17px;border-radius:999px;background:#0b0f16;z-index:3}
 .dvx-live{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px;font-size:14px;color:#fff;backdrop-filter:blur(4px)}
 .dvx-phone .dvx-live{top:auto;bottom:16px;left:50%;transform:translateX(-50%);padding:4px 10px;font-size:12px}
@@ -478,10 +486,16 @@ footer .foot-cols a:hover{color:var(--sky)}
 .card:hover,.pcard:hover,.stat-card:hover,.dcard:hover,.pr-card:hover,.pr-flag:hover{transform:translateY(-8px)}
 .stat-card{box-shadow:0 2px 8px rgba(0,0,0,.3),0 30px 80px rgba(0,20,70,.45),0 0 44px rgba(0,110,255,.16)}
 /* ---------- press fold ---------- */
-.pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.pr-slider{overflow:hidden;margin:0 -8px;padding:0 8px}
+.pr-grid{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 30px;scrollbar-width:none}
+.pr-grid::-webkit-scrollbar{display:none}
+.pr-grid .pr-card{flex:0 0 440px;scroll-snap-align:start}
+.pr-nav{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.pr-btn{width:58px;height:58px;border-radius:50%;border:1px solid rgba(127,184,255,.5);background:rgba(13,28,51,.6);color:#eaf2ff;font-size:23px;cursor:pointer;transition:.3s}
+.pr-btn:hover{background:var(--royal);border-color:var(--royal)}
 .pr-grid>*{min-width:0}
 .pr-card{position:relative;display:flex;flex-direction:column;border-radius:24px;padding:0;overflow:hidden;box-shadow:0 2px 6px rgba(0,10,35,.4),0 30px 70px rgba(0,15,60,.5),0 0 0 1px rgba(0,110,255,.28),0 0 40px rgba(0,110,255,.22)}
-.pr-media{position:relative;aspect-ratio:16/10;overflow:hidden;flex:0 0 auto}
+.pr-media{position:relative;height:300px;overflow:hidden;flex:0 0 auto}
 .pr-media img{width:100%;height:100%;object-fit:cover;display:block}
 .pr-body{position:relative;display:flex;flex-direction:column;flex:1;padding:28px 30px 30px}
 .pr-year{position:absolute;right:14px;top:-4px;font-weight:600;font-size:88px;line-height:1;opacity:.10;letter-spacing:-.02em;pointer-events:none}
@@ -660,13 +674,31 @@ footer .foot-cols a:hover{color:var(--sky)}
   .zoom-mini .zoom-top{padding:6px 10px}
   .lr-bar{flex-wrap:wrap}
 }
+
+/* v48: claims fold */
+.claims{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:58px}
+.claim{margin:0}
+.claim video{width:100%;border-radius:18px;border:1px solid rgba(13,28,51,.18);box-shadow:0 24px 60px rgba(10,25,60,.16);background:#03080f;display:block}
+.claim figcaption{padding:20px 6px 0}
+.claim b{display:block;font-size:26px;font-weight:700;color:#0d1c33;letter-spacing:-.01em}
+.claim span{display:block;font-size:17.5px;color:#4a586e;margin-top:6px;line-height:1.6}
+.jsplit-claims{margin-top:78px}
+/* v48: navy timeline */
+#hour .tl-card{background:linear-gradient(165deg,rgba(16,33,64,.85),rgba(6,14,28,.92));border:1px solid rgba(127,184,255,.26);color:#e8f0fc}
+#hour .tl-card h4{color:#fff}
+#hour .tl-card p{color:#c2d2e8}
+#hour .tl-time{display:inline-flex;padding:7px 16px;border-radius:10px;background:linear-gradient(135deg,#006EFF,#5EB6FF);color:#fff;font-weight:700;font-size:19px;letter-spacing:.02em}
+/* v48: learn numerals */
+#reveal .k-royal .cno{background-image:linear-gradient(135deg,#ffffff,#bfe0ff)}
+#reveal .cno{font-size:46px;font-weight:700;background:linear-gradient(135deg,#006EFF,#5EB6FF);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+@media(max-width:900px){.claims{grid-template-columns:minmax(0,1fr)}.pr-grid .pr-card{flex:0 0 84vw}.hero-pip{right:12px;bottom:12px;width:31%}}
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <a class="nav-logo" href="#top" aria-label="Longevity Life Academy">
-    <img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy">
+    <img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy">
   </a>
   <div class="nav-links">
     <a href="#dates">Dates and times</a>
@@ -693,22 +725,19 @@ footer .foot-cols a:hover{color:var(--sky)}
   <div class="hero-inner">
     <div class="hero-grid">
     <div class="hero-copy">
-      <div class="tp-chip"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 &middot; Trustpilot &middot; 600+ verified reviews</div>
-      <p class="hero-year">The Longevity Masterclass of the Year <i></i> 60 minutes, live</p>
+      <p class="hero-kick">The Longevity Masterclass of the Year &mdash; 60 minutes, live on Zoom</p>
       <h1 class="anton hero-head">Learn to age slower<br><span class="serif-i">from the 2nd slowest aging human on earth.</span></h1>
-      <p class="hero-desc"><strong>Julie Gibson Clark</strong> ages eight months for every year. She teaches you her complete protocol, live on Zoom. 60 minutes. Open Q&amp;A. <strong>$89</strong>.</p>
-      <div class="hero-dates"><span class="hd-chip">Wednesday, September 16 &middot; 4:00 PM ET</span><span class="hd-chip">Sunday, September 27 &middot; 6:00 PM ET</span></div>
+      <p class="hero-desc"><strong>Julie Gibson Clark</strong> ages eight months for every year. She teaches you her complete protocol, live on Zoom. 60 minutes. <strong>$89</strong>.</p>
+      <p class="hero-when"><strong>Wednesday, September 16 &middot; 4:00 PM ET</strong><em>&middot;</em><strong>Sunday, September 27 &middot; 6:00 PM ET</strong></p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#reserve">Enroll now &middot; $89</a>
         <a class="btn btn-ghost openFilm" href="#" id="trailerLink">Watch with sound</a>
       </div>
+      <p class="hero-trust"><span class="tp-stars"><i></i><i></i><i></i><i></i><i></i></span>4.6 / 5 on Trustpilot &middot; 600+ verified reviews</p>
     </div>
-    <div class="hero-media"><video class="hero-film" src="assets/julie-wide.mp4?v=45" poster="assets/hero-poster.jpg?v=46" autoplay muted loop playsinline preload="auto"></video></div>
+    <div class="hero-media"><video class="hero-film" src="assets/julie-wide.mp4?v=48" poster="assets/hero-poster.jpg?v=48" autoplay muted loop playsinline preload="auto"></video>
+      <div class="hero-pip"><img src="assets/instructors/julie-couch.jpg?v=48" alt="Julie Gibson Clark, host"><span class="hero-pip-name">Julie Gibson Clark &middot; Host</span></div>
     </div>
-    <div class="h-under rail">
-      <div class="hu hu-royal"><b>Sept 16 &middot; 27</b><span>two live dates, choose at checkout</span></div>
-      <div class="hu hu-navy"><b>60 min</b><span>the complete protocol, live open Q&amp;A</span></div>
-      <div class="hu hu-cream"><b>$89</b><span>one seat, enroll in two minutes</span></div>
     </div>
   </div>
 </header>
@@ -718,16 +747,6 @@ footer .foot-cols a:hover{color:var(--sky)}
   <p><strong>Julie Gibson Clark, live on Zoom.</strong> <span>September 16 or 27 &middot; 60 minutes &middot; $89</span></p>
   <a class="btn btn-onwhite" href="#reserve">Enroll now &middot; $89</a>
 </div>
-
-<!-- 2. THE FILM, black cinema fold -->
-<section class="fold f-black">
-  <div class="film-wrap reveal">
-    <div class="anim-block reveal">
-      <h3 class="anton anim-head">Ten years pass. <span class="serif-i sky">She ages six.</span></h3>
-      <video src="assets/anim/ANIM_PACE_1080.mp4?v=46" poster="assets/anim/pace-poster.jpg?v=46" autoplay muted loop playsinline preload="auto"></video>
-    </div>
-  </div>
-</section>
 
 <!-- 3. PRESS MARQUEE, black strip -->
 <section class="mq-band">
@@ -752,20 +771,8 @@ footer .foot-cols a:hover{color:var(--sky)}
     </div>
     <div class="en-media reveal">
       <div class="dvx">
-        <div class="dvx-laptop"><div class="dvx-screen"><div class="zoom-win zoom-mini">
-          <div class="zoom-top"><span class="zoom-brand"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="1" y="4" width="15" height="16" rx="4" fill="#0B5CFF"/><path d="M17 10.5 22 7v10l-5-3.5z" fill="#0B5CFF"/></svg>zoom</span><span class="rec"><i></i>Recording</span></div>
-          <div class="lr-gal">
-            <div class="lr-host"><span class="zoom-name">Julie Gibson Clark</span></div>
-            <div class="lr-strip">
-              <div class="lr-t" style="background-position:0% 25%"></div>
-              <div class="lr-t" style="background-position:75% 25%"></div>
-              <div class="lr-t" style="background-position:25% 50%"></div>
-              <div class="lr-t" style="background-position:100% 75%"></div>
-              <div class="lr-t lr-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy"></div>
-            </div>
-          </div>
-        </div></div><div class="dvx-base"></div></div>
-        <div class="dvx-phone"><img src="assets/phone-live.jpg?v=47" alt="Julie Gibson Clark live on a phone" loading="lazy"></div>
+        <div class="dvx-laptop"><div class="dvx-screen"><img src="assets/zoom-room-v2.jpg?v=48" alt="The live masterclass room on Zoom" loading="lazy"></div><div class="dvx-base"></div></div>
+        <div class="dvx-phone"><img src="assets/phone-zoom.jpg?v=48" alt="The live room on a phone" loading="lazy"></div>
       </div>
       <p class="dvx-cap">One link. Any device. Julie, live.</p>
     </div>
@@ -777,8 +784,8 @@ footer .foot-cols a:hover{color:var(--sky)}
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow" style="color:#7fb8ff">The live room</p>
-      <h2 class="anton">One hour, <span class="serif-i sky">face to face.</span></h2>
-      <p class="shead-sub">A real Zoom room. Julie on screen, teaching live. Open Q&amp;A, cameras optional.</p>
+      <h2 class="anton">You join. <span class="serif-i sky">She teaches, live.</span></h2>
+      <p class="shead-sub">A real Zoom room. Julie on screen, walking you through her complete protocol. Cameras optional.</p>
     </div>
     <div class="zoom-win reveal">
       <div class="zoom-top"><span class="zoom-brand"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="1" y="4" width="15" height="16" rx="4" fill="#0B5CFF"/><path d="M17 10.5 22 7v10l-5-3.5z" fill="#0B5CFF"/></svg>zoom</span><span class="rec"><i></i>Recording</span></div>
@@ -789,10 +796,9 @@ footer .foot-cols a:hover{color:var(--sky)}
           <div class="lr-t" style="background-position:75% 25%"></div>
           <div class="lr-t" style="background-position:25% 50%"></div>
           <div class="lr-t" style="background-position:100% 75%"></div>
-          <div class="lr-t lr-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy"></div>
+          <div class="lr-t lr-logo"><img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy"></div>
         </div>
       </div>
-      <div class="lr-bar"><span class="lr-chip">Unmute</span><span class="lr-chip">Start video</span><span class="lr-chip">Participants · 500</span><span class="lr-chip">Chat</span><span class="lr-chip lr-leave">Leave</span></div>
     </div>
   </div>
 </section>
@@ -802,7 +808,7 @@ footer .foot-cols a:hover{color:var(--sky)}
   <div class="wrap" id="dates" style="scroll-margin-top:104px">
     <div style="text-align:center">
       <p class="eyebrow reveal" style="color:#006EFF">Dates and times</p>
-      <h2 class="anton" style="font-size:clamp(46px,4.6vw,84px);margin-top:22px">Reserve your <span class="serif-i" style="color:#006EFF">live session.</span></h2>
+      <h2 class="anton" style="font-size:clamp(46px,4.6vw,84px);margin-top:22px;color:#0d1c33">Reserve your <span class="serif-i" style="color:#006EFF">live session.</span></h2>
       <div class="d-steps reveal"><span><b>1</b> Choose your date</span><span><b>2</b> Register at checkout</span><span><b>3</b> Join live on Zoom</span></div>
     </div>
     <div class="date-grid rail">
@@ -816,7 +822,7 @@ footer .foot-cols a:hover{color:var(--sky)}
           <span><strong>2:00 PM</strong> Mountain</span>
           <span><strong>1:00 PM</strong> Pacific</span>
         </div>
-        <p class="dmeta">Live online · Open Q&amp;A · The complete protocol in one sitting</p>
+        <p class="dmeta">Live online · The complete protocol in one sitting</p>
         <a class="btn btn-blue" href="https://www.longevitylifeacademy.com/#lead-gen">Reserve September 16 · $89</a>
       </div>
       <div class="dcard dc-navy reveal">
@@ -829,7 +835,7 @@ footer .foot-cols a:hover{color:var(--sky)}
           <span><strong>4:00 PM</strong> Mountain</span>
           <span><strong>3:00 PM</strong> Pacific</span>
         </div>
-        <p class="dmeta">Live online · Open Q&amp;A · The complete protocol in one sitting</p>
+        <p class="dmeta">Live online · The complete protocol in one sitting</p>
         <a class="btn btn-blue" href="https://www.longevitylifeacademy.com/#lead-gen">Reserve September 27 · $89</a>
       </div>
     </div>
@@ -848,7 +854,7 @@ footer .foot-cols a:hover{color:var(--sky)}
       <p class="eyebrow" style="color:#7fb8ff">In the press</p>
       <h2 class="anton">The story the world <span class="serif-i sky">keeps covering.</span></h2>
     </div>
-    <div class="pr-grid rail reveal">
+    <div class="pr-slider reveal"><div class="pr-grid" id="prTrack">
       <a class="pr-card" href="https://fortune.com/well/2023/11/04/longevity-women-biohackers-diet-exercise-bryan-johnson/" target="_blank" rel="noopener">
         <div class="pr-media"><img src="assets/instructors/julie-goldenhour.jpg" alt="Julie Gibson Clark, as featured in Fortune" style="object-position:50% 22%" loading="lazy"></div>
         <div class="pr-body">
@@ -859,7 +865,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         </div>
       </a>
       <a class="pr-card" href="https://www.businessinsider.com/woman-spending-less-than-millionaire-bryan-johnson-anti-aging-ranking-2023-11" target="_blank" rel="noopener">
-        <div class="pr-media"><img src="assets/instructors/julie-sun.jpg?v=46" alt="Julie Gibson Clark, as featured in Business Insider" style="object-position:50% 32%" loading="lazy"></div>
+        <div class="pr-media"><img src="assets/instructors/julie-couch.jpg?v=48" alt="Julie Gibson Clark, as featured in Business Insider" style="object-position:50% 20%" loading="lazy"></div>
         <div class="pr-body">
         <span class="pr-mast pm-bi">BUSINESS INSIDER</span>
         <span class="pr-date">November 6, 2023</span>
@@ -868,7 +874,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         </div>
       </a>
       <a class="pr-card" href="https://www.thesun.co.uk/wellness/28036126/budget-biohacker-single-mum-julie-gibson-clark-ageing-backwards/" target="_blank" rel="noopener">
-        <div class="pr-media"><img src="assets/instructors/julie-desert.jpg?v=46" alt="Julie Gibson Clark, as featured in The Sun" style="object-position:50% 30%" loading="lazy"></div>
+        <div class="pr-media"><img src="assets/instructors/julie-desert.jpg?v=48" alt="Julie Gibson Clark, as featured in The Sun" style="object-position:50% 30%" loading="lazy"></div>
         <div class="pr-body">
         <span class="pr-mast pm-sun">The Sun</span>
         <span class="pr-date">Wellness, 2024</span>
@@ -903,34 +909,31 @@ footer .foot-cols a:hover{color:var(--sky)}
         <span class="pr-cta">Read the article &rarr;</span>
         </div>
       </a>
-    </div>
-    <a class="pr-flag reveal" href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener">
-      <div class="pf-left">
-        <span class="pr-mast pm-ap"><b>AP</b> News</span>
-        <span class="pr-date">July 2026 &middot; syndicated to 600+ outlets</span>
-        <p class="pf-head">eTeacher Group launches Longevity Life Academy to teach the longevity protocol the wealthy pay millions for.</p>
-        <span class="pr-cta">Read it on AP News &rarr;</span>
-      </div>
-    </a>
-    <p class="press-foot">Every card links to the original article. Also covered by USA Today, Yahoo Finance, Times Now, NewsBreak, NOVOS and NAD.com.</p>
+    </div></div>
+    <div class="pr-nav reveal"><button class="pr-btn" id="prPrev" aria-label="Previous articles">&larr;</button><button class="pr-btn" id="prNext" aria-label="Next articles">&rarr;</button></div>
+    <p class="press-foot">Every card links to the original article. Also on <a href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener">AP News</a>, USA Today, Yahoo Finance, Times Now, NewsBreak, NOVOS and NAD.com.</p>
   </div>
 </section>
 
 <!-- 6. ABOUT JULIE, cream fold -->
 <section class="fold f-cream" id="julie">
   <div class="container">
-    <div class="jsplit">
+    <div class="shead reveal">
+      <p class="eyebrow">About Julie</p>
+      <h2 class="anton" style="color:#0d1c33">Ten years pass. <span class="serif-i" style="color:#006EFF">She ages six.</span></h2>
+      <p class="shead-sub" style="color:#33445e">Julie Gibson Clark. 56. A single mom and recruiter from Phoenix, with the second slowest measured pace of aging on Earth. No lab, no staff, no millions.</p>
+    </div>
+    <div class="claims reveal">
+      <figure class="claim"><video src="assets/anim/ANIM_PACE_1080.mp4?v=48" poster="assets/anim/pace-poster.jpg?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>She ages 8 months a year.</b><span>DunedinPACE 0.665, proven by verified epigenetic testing.</span></figcaption></figure>
+      <figure class="claim"><video src="assets/anim/ANIM_CURVE_1080.mp4?v=48" poster="assets/anim/curve-poster.jpg?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>34% slower than average.</b><span>While most people age one full year, every year.</span></figcaption></figure>
+      <figure class="claim"><video src="assets/anim/PLAY_V6_LLA_RANK.mp4?v=48" autoplay muted loop playsinline preload="auto"></video><figcaption><b>No.2 on Earth.</b><span>Rejuvenation Olympics leaderboard, ahead of Bryan Johnson.</span></figcaption></figure>
+    </div>
+    <div class="jsplit jsplit-claims">
       <div class="jsplit-media reveal"><img src="assets/instructors/julie-goldenhour-crop.jpg" alt="Julie Gibson Clark" loading="lazy"></div>
       <div class="jsplit-copy reveal">
-        <p class="eyebrow">About Julie</p>
-        <h2 class="anton">Julie Gibson Clark</h2>
+        <h3 class="anton" style="color:#0d1c33;font-size:clamp(34px,3vw,52px)">Julie Gibson Clark</h3>
         <p class="jrole serif-i">Founding Faculty. She teaches the live masterclass.</p>
-        <p class="jbio">A 56-year-old single mom and recruiter from Phoenix. No lab, no staff, no millions. A protocol anyone can follow, proven by verified epigenetic testing.</p>
-        <div class="jfacts rail">
-          <div class="jf jf-royal"><b>No.2</b><span>Rejuvenation Olympics, ahead of Bryan Johnson</span></div>
-          <div class="jf jf-navy"><b>8 months</b><span>of aging per calendar year</span></div>
-          <div class="jf jf-white"><b>~$100</b><span>a month, her complete stack</span></div>
-        </div>
+        <p class="jbio">She beat two-million-dollar protocols with about $100 a month: a sleep system, plate architecture, a lean supplement stack, and a testing loop that proves it works.</p>
         <p class="jquote">&ldquo;We don't need millions of dollars to live long, vibrant lives.&rdquo;</p>
       </div>
     </div>
@@ -951,7 +954,7 @@ footer .foot-cols a:hover{color:var(--sky)}
       <div class="card k-navy"><div class="cno">03</div><h3>Food, by the numbers</h3><p>Protein targets. A pound of vegetables a day. Dinner three hours before bed.</p></div>
       <div class="card k-white"><div class="cno">04</div><h3>The $100 stack</h3><p>Every supplement, every dose, about $100 a month. And what she skips.</p></div>
       <div class="card k-cream"><div class="cno">05</div><h3>Test, don't guess</h3><p>The bloodwork and the methylation test that prove it works.</p></div>
-      <div class="card k-gold"><div class="cno">06</div><h3>Ask her live</h3><p>Open Q&amp;A. Your questions, answered in the room.</p></div>
+      <div class="card k-gold"><div class="cno">06</div><h3>Her daily schedule</h3><p>The exact order of operations, 5:00 AM to 9:00 PM, ready to copy tomorrow.</p></div>
     </div>
   </div>
 </section>
@@ -960,18 +963,18 @@ footer .foot-cols a:hover{color:var(--sky)}
 
 <!-- 6B. THE ACADEMY, royal blue fold -->
 <!-- 6b. INSIDE YOUR HOUR, timeline fold -->
-<section class="fold f-cream" id="hour">
+<section class="fold f-ink" id="hour">
   <div class="container">
     <div class="shead reveal">
-      <p class="eyebrow" style="color:#006EFF">Inside your hour</p>
-      <h2 class="anton" style="color:#0d1c33">Sixty minutes, <span class="serif-i" style="color:#006EFF">minute by minute.</span></h2>
+      <p class="eyebrow" style="color:#7fb8ff">Inside your hour</p>
+      <h2 class="anton">Sixty minutes, <span class="serif-i sky">minute by minute.</span></h2>
     </div>
     <div class="grid3 rail reveal">
       <div class="tl-card d-white"><div class="tl-time">0:00</div><h4>Doors open</h4><p>You join the Zoom room, Julie welcomes the class and sets the plan for the hour.</p></div>
       <div class="tl-card d-sky"><div class="tl-time">0:05</div><h4>Her pace of aging</h4><p>The DunedinPACE score of 0.665, what it means, and how it is measured and verified.</p></div>
       <div class="tl-card d-navy"><div class="tl-time">0:15</div><h4>Food and sleep</h4><p>Her plate architecture and the sleep system she has refined over years of testing.</p></div>
       <div class="tl-card d-outline"><div class="tl-time">0:30</div><h4>Training and supplements</h4><p>Her weekly training split and the ~$100-a-month supplement stack, item by item.</p></div>
-      <div class="tl-card d-gold"><div class="tl-time">0:45</div><h4>Open Q&amp;A</h4><p>You ask, she answers. Live, unscripted, as long as the questions keep coming.</p></div>
+      <div class="tl-card d-gold"><div class="tl-time">0:45</div><h4>Testing and proof</h4><p>The bloodwork and methylation tests that verify the protocol, and how to run your own baseline.</p></div>
       <div class="tl-card d-ivory"><div class="tl-time">1:00</div><h4>Your next step</h4><p>You leave with her complete protocol and a clear place to start tomorrow morning.</p></div>
     </div>
   </div>
@@ -1013,7 +1016,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         <div class="pcard-body"><b>03</b><h3>Exercise <span class="serif-i">and</span> movement</h3><p>Functional strength, Zone 2 endurance, and stability to extend both lifespan and healthspan.</p></div>
       </div>
       <div class="pcard p-outline">
-        <img src="assets/pillars/supplements-warm.jpg?v=46" alt="Supplements on a warm morning table" loading="lazy">
+        <img src="assets/pillars/supplements-warm.jpg?v=48" alt="Supplements on a warm morning table" loading="lazy">
         <div class="pcard-body"><b>04</b><h3>Supplements <span class="serif-i">and</span> wearables</h3><p>Targeted compounds matched to your biomarker gaps, with CGM, HRV, and sleep data closing the feedback loop.</p></div>
       </div>
       <div class="pcard p-ivory">
@@ -1021,7 +1024,7 @@ footer .foot-cols a:hover{color:var(--sky)}
         <div class="pcard-body"><b>05</b><h3>Stress management</h3><p>Breathwork, cold exposure, vagal tone training, and social connection to keep biology resilient, not just relaxed.</p></div>
       </div>
       <div class="pcard p-gold">
-        <img src="assets/img-testing.jpg?v=46" alt="Bloodwork vials in a testing lab" loading="lazy">
+        <img src="assets/img-testing.jpg?v=48" alt="Bloodwork vials in a testing lab" loading="lazy">
         <div class="pcard-body"><b>06</b><h3>Your longevity protocol</h3><p>A personal plan built from your own bloodwork, body composition, and wearable data. Medicine 3.0 in practice.</p></div>
       </div>
     </div>
@@ -1037,10 +1040,6 @@ footer .foot-cols a:hover{color:var(--sky)}
     <div class="shead reveal">
       <p class="eyebrow">Julie's numbers</p>
       <h2 class="anton">Measured. Verified. <span class="serif-i sky">Public.</span></h2>
-    </div>
-    <div class="anim-block reveal" style="margin:0 auto 76px">
-      <video src="assets/anim/ANIM_CURVE_1080.mp4?v=46" poster="assets/anim/curve-poster.jpg?v=46" autoplay muted loop playsinline preload="auto"></video>
-      <p class="anim-cap">Julie's pace of aging, against the average.</p>
     </div>
     <div class="grid4 rail reveal">
       <div class="stat-card n1"><div class="sc-n">0.665</div><div class="sc-t">DunedinPACE</div><p>Roughly eight months of aging per calendar year, verified by testing.</p></div>
@@ -1064,8 +1063,8 @@ footer .foot-cols a:hover{color:var(--sky)}
       <h2 class="anton">Questions, <span class="grad">answered.</span></h2>
     </div>
     <div class="acc reveal" id="accFaq">
-      <div class="acc-item"><button class="acc-head"><span class="acc-title">What exactly will be revealed?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Julie's complete protocol: her sleep system, her plate architecture, the ~$100-a-month supplement stack item by item, and the testing loop she uses to prove it works, followed by open Q&amp;A.</p></div></div></div>
-      <div class="acc-item"><button class="acc-head"><span class="acc-title">Is it really live?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Yes. This is a live masterclass, not a recording. Julie teaches in real time and answers questions in the room. Nothing about it is pre-recorded.</p></div></div></div>
+      <div class="acc-item"><button class="acc-head"><span class="acc-title">What exactly will be revealed?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Julie's complete protocol: her sleep system, her plate architecture, the ~$100-a-month supplement stack item by item, and and the testing loop she uses to prove it works.</p></div></div></div>
+      <div class="acc-item"><button class="acc-head"><span class="acc-title">Is it really live?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Yes. This is a live masterclass, not a recording. Julie teaches in real time, on camera, in a live Zoom room. Nothing about it is pre-recorded.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Which dates can I join?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Session one: Wednesday, September 16, 2026, 4:00 PM Eastern (3:00 Central, 2:00 Mountain, 1:00 Pacific). Session two: Sunday, September 27, 2026 at 6:00 PM Eastern (5:00 PM Central, 4:00 PM Mountain, 3:00 PM Pacific). You choose your date at checkout. Both sessions cover the full protocol.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Do I need to be an Academy student?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. Your $89 seat is all you need. Students of The Longevity Blueprint join the same live room.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Is this medical advice?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. The masterclass is educational. Julie shares her personal protocol and the evidence behind it, but nothing in the program is a substitute for advice from your own physician.</p></div></div></div>
@@ -1086,7 +1085,7 @@ footer .foot-cols a:hover{color:var(--sky)}
   <div class="container">
     <div class="foot-cols">
       <div>
-        <img src="assets/lla-logo-exact-transparent@2x.png?v=38" alt="Longevity Life Academy" style="height:54px;width:auto">
+        <img src="assets/lla-logo-exact-transparent@2x.png?v=48" alt="Longevity Life Academy" style="height:54px;width:auto">
         <p class="foot-about">Longevity Life Academy is the longevity education platform of eTeacher Group, a global leader in live online education since 2000. Every program is taught live by leading practitioners and grounded in published, evidence-based research.</p>
       </div>
       <div>
@@ -1110,26 +1109,16 @@ footer .foot-cols a:hover{color:var(--sky)}
   </div>
 </footer>
 
-<!-- PRICE FLOATER -->
-<a class="lla-float-cta" id="floater" href="#reserve">
-  <span class="lla-cta-text"><span class="lla-cta-eyebrow">Enroll now</span><span class="lla-cta-title">Julie Gibson Clark Live</span></span>
-  <span class="lla-cta-pill">$89 <span class="arr">&rarr;</span></span>
-</a>
-
 <!-- TRAILER MODAL -->
 <div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer">
   <button class="modal-close" id="modalClose">Close</button>
-  <video id="trailerVideo" src="assets/julie-wide.mp4?v=46" poster="assets/hero-poster.jpg?v=46" controls playsinline></video>
+  <video id="trailerVideo" src="assets/julie-wide.mp4?v=48" poster="assets/hero-poster.jpg?v=48" controls playsinline></video>
 </div>
 
 <script>
-document.querySelectorAll('.anim-block video').forEach(v=>{v.addEventListener('loadedmetadata',()=>{if(v.currentTime<1.4)v.currentTime=1.6;},{once:true});});
+document.querySelectorAll('.anim-block video,.claim video').forEach(v=>{v.addEventListener('loadedmetadata',()=>{if(v.currentTime<1.4)v.currentTime=1.6;},{once:true});});
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>40)},{passive:true});
-const fl=document.getElementById('floater'),rsv=document.getElementById('reserve');let rsvIn=false;
-new IntersectionObserver(es=>es.forEach(e=>{rsvIn=e.isIntersecting;flUp()}),{threshold:.1}).observe(rsv);
-function flUp(){fl.classList.toggle('is-visible',scrollY>innerHeight*.85&&!rsvIn)}
-addEventListener('scroll',flUp,{passive:true});
 
 const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
 burger.addEventListener('click',()=>{menu.classList.toggle('open');document.body.style.overflow=menu.classList.contains('open')?'hidden':''});
@@ -1150,6 +1139,9 @@ document.querySelectorAll('.acc-item').forEach(item=>{
   });
 });
 
+const prT=document.getElementById('prTrack');
+if(prT){const step=()=>Math.min(prT.clientWidth,492);document.getElementById('prPrev').addEventListener('click',()=>prT.scrollBy({left:-step(),behavior:'smooth'}));document.getElementById('prNext').addEventListener('click',()=>prT.scrollBy({left:step(),behavior:'smooth'}));}
+
 const modal=document.getElementById('trailerModal'),tv=document.getElementById('trailerVideo');
 document.querySelectorAll('.openFilm').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();modal.classList.add('open');tv.currentTime=0;tv.muted=false;tv.play().catch(()=>{})}));
 function closeModal(){modal.classList.remove('open');tv.pause()}
@@ -1169,7 +1161,6 @@ try{
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.2});
     gsap.from('.hero-copy .hero-desc, .hero-copy .hero-dates, .hero-copy .hero-actions',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.5});
-    gsap.from('.h-under .hu',{opacity:0,y:40,duration:.9,stagger:.12,ease:'power3.out',delay:.75});
     document.querySelectorAll('section .anton, .band-inner p').forEach(el=>{
       gsap.from(el,{opacity:0,y:52,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
     });
