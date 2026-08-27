@@ -2547,6 +2547,7 @@ var LLA_AC = (function(){
     ck.style.display='block';
     document.body.style.overflow='hidden';
     ck.scrollTop=0;
+    LLA_AC.send('LGV_Abandoned_Cart_No_Payment');
     if(!ckInited){ckInited=true;initAirwallex();}
   }
   function closeCheckout(){
@@ -2583,7 +2584,6 @@ var LLA_AC = (function(){
   async function initAirwallex(){
     try {
       var ids = await ensureLiveOrder();
-      LLA_AC.send('LGV_Abandoned_Cart_No_Payment');
       setStatus('Fetching Airwallex intent for order ' + ids.orderid + '...');
 
       /* Must hit the SAME environment the order was created in, else "Order and student did not match". */
