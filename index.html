@@ -2488,9 +2488,9 @@ var LLA_AC = (function(){
     });
     var url = 'https://lla-ac-events.vercel.app/api/ac/event';
     try {
-      if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([payload], {type:'application/json'}))) return;
+      if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([payload], {type:'text/plain'}))) return;
     } catch(e){}
-    fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: payload, keepalive:true }).catch(function(){});
+    fetch(url, { method:'POST', headers:{'Content-Type':'text/plain'}, body: payload, keepalive:true }).catch(function(){});
   }
   return { saveContact: saveContact, send: send };
 })();
