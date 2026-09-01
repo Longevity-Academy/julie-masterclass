@@ -1430,7 +1430,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
       credentials: 'omit',
       mode: 'cors'
     }).then(function(res){
-      if (res.status === 200) return { ok: true, status: 200 };
+      if (res.status === 200) return res.json().then(function(body){ return { ok: true, status: 200, body: body }; }).catch(function(){ return { ok: true, status: 200 }; });
       if (res.status >= 400 && res.status < 500) return { ok: false, status: res.status, retryable: false };
       // 5xx -> retry
       if (attempt < 3) {
@@ -2100,8 +2100,11 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       if (CFG.mode === 'ecomm') {
         var prefix = CFG.env === 'staging' ? '/staging' : '';
         return postWithRetry(base + prefix + '/api/lead/ecomm', built.payload).then(function(r){
-          if (r.ok && r.body && r.body.stid) {
-            try { sessionStorage.setItem('lla_ecomm_ids', JSON.stringify({ stid: r.body.stid, orderid: r.body.orderid, ts: Date.now() })); } catch(e){}
+          var bb = (r && r.body) || {};
+          var stid = bb.stid || bb.StudentId || bb.studentId || bb.StudentID || '';
+          var orderid = bb.orderid || bb.OrderId || bb.orderId || bb.OrderID || '';
+          if (r.ok && stid && orderid) {
+            try { sessionStorage.setItem('lla_ecomm_ids', JSON.stringify({ stid: String(stid), orderid: String(orderid), ts: Date.now() })); } catch(e){}
           }
           return r;
         });
