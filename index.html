@@ -2481,9 +2481,11 @@ var LLA_AC = (function(){
     if (stage === lastStage) return;         /* de-dupe within the session   */
     lastStage = stage;
     var env = (window.LLA_ECOMM_CONFIG && window.LLA_ECOMM_CONFIG.env === 'staging') ? 'staging' : 'production';
+    var ids = (window.LLA_ECOMM && window.LLA_ECOMM.getCheckoutIds && window.LLA_ECOMM.getCheckoutIds()) || {};
     var payload = JSON.stringify({
       email: c.email, fullName: c.fullName, phone: c.phone,
       sessionDate: c.startDate, stage: stage, env: env,
+      orderId: ids.orderid || '', studentId: ids.stid || '',
       page: location.pathname, ts: new Date().toISOString()
     });
     var url = 'https://lla-ac-events.vercel.app/api/ac/event';
