@@ -2675,6 +2675,7 @@ var LLA_AC = (function(){
 
       dropIn.on('success', function(evt){
         setStatus('\u2713 Payment SUCCEEDED \u2014 intent ' + intentId, '#0a7');
+        try { LLA_AC.send('LGV_Purchased'); } catch(e){}
         window.LLA_ECOMM.reportPayment({
           StudentId: String(ids.stid),
           OrderId: String(ids.orderid),
