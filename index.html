@@ -1380,7 +1380,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
   // ---------- Click-ID + UTM capture ----------
   // Captures gclid/fbclid/etc + utm_* on first landing, persists 30d in localStorage,
   // and surfaces them via window.eTeacherLeads.getAttribution() for inclusion on submit.
-  var ATTR_KEYS = ['gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var ATTR_KEYS = ['cid','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
   var ATTR_STORAGE_KEY = 'lla_attribution_v1';
   function readAttributionStorage(){
@@ -1392,9 +1392,12 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
       return obj;
     } catch(e) { return null; }
   }
+  function normalizedSearch(){
+    return (window.location.search || '').replace(/^\?/, '').replace(/\?/g, '&');
+  }
   function captureAttribution(){
     try {
-      var params = new URLSearchParams(window.location.search || '');
+      var params = new URLSearchParams(normalizedSearch());
       var found = {};
       var hasAny = false;
       ATTR_KEYS.forEach(function(k){
@@ -1495,7 +1498,17 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
           LandingPage: window.location.href,
           UserAgent: navigator.userAgent,
           ReferringSite: document.referrer || window.location.hostname,
-          QueryString: (window.location.search || '').replace(/^\?/, '')
+          QueryString: (function(){
+        var qs = normalizedSearch();
+        try {
+          var p = new URLSearchParams(qs);
+          if (!p.get('cid')) {
+            var saved = getAttribution();
+            if (saved && saved.cid) { p.set('cid', saved.cid); qs = p.toString(); }
+          }
+        } catch(e){}
+        return qs;
+      })()
         };
         // Always report US for the IP-derived country too, so a foreign IP can
         // never re-tag this lead as non-US downstream.
@@ -1583,7 +1596,13 @@ window.LLA_GOOGLE_CAMPAIGN_IDS = window.LLA_GOOGLE_CAMPAIGN_IDS || {
       };
       // US-only site: always attribute to the US Google Ads campaign.
       if (window.LLA_GOOGLE_CAMPAIGN_IDS) {
-        fields.googleCampaignId = window.LLA_GOOGLE_CAMPAIGN_IDS['US'] || '';
+        /* Attach the static Google campaign only for Google-attributed or untagged
+           direct traffic. Never for visits carrying cid or a non-Google source. */
+        var a0 = (window.eTeacherLeads && window.eTeacherLeads.getAttribution && window.eTeacherLeads.getAttribution()) || {};
+        var q0 = null; try { q0 = new URLSearchParams((location.search||'').replace(/^\?/,'').replace(/\?/g,'&')); } catch(e){}
+        var cid0 = a0.cid || (q0 && q0.get('cid'));
+        var nonG = !!(a0.utm_source || a0.fbclid || a0.ttclid) && !a0.gclid;
+        fields.googleCampaignId = (cid0 || nonG) ? '' : (window.LLA_GOOGLE_CAMPAIGN_IDS['US'] || '');
       }
       if (!fields.firstName || !fields.lastName || !fields.email || !fields.phone || !fields.countryIso) {
         showError(form, 'Please fill in all required fields.');
@@ -1931,7 +1950,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   function isValidEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
 
   /* ---------- Click-ID + UTM capture (identical to website integration) ---------- */
-  var ATTR_KEYS = ['gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var ATTR_KEYS = ['cid','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000;
   var ATTR_STORAGE_KEY = 'lla_attribution_v1';
   function readAttributionStorage(){
@@ -1943,9 +1962,12 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       return obj;
     } catch(e) { return null; }
   }
+  function normalizedSearch(){
+    return (window.location.search || '').replace(/^\?/, '').replace(/\?/g, '&');
+  }
   function captureAttribution(){
     try {
-      var params = new URLSearchParams(window.location.search || '');
+      var params = new URLSearchParams(normalizedSearch());
       var found = {}; var hasAny = false;
       ATTR_KEYS.forEach(function(k){ var v = params.get(k); if (v) { found[k] = v; hasAny = true; } });
       if (hasAny) {
@@ -2030,7 +2052,17 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       LandingPage: window.location.href,
       UserAgent: navigator.userAgent,
       ReferringSite: document.referrer || window.location.hostname,
-      QueryString: (window.location.search || '').replace(/^\?/, '')
+      QueryString: (function(){
+        var qs = normalizedSearch();
+        try {
+          var p = new URLSearchParams(qs);
+          if (!p.get('cid')) {
+            var saved = getAttribution();
+            if (saved && saved.cid) { p.set('cid', saved.cid); qs = p.toString(); }
+          }
+        } catch(e){}
+        return qs;
+      })()
     };
     var notes = 'US State: ' + stateCode + ' | SELF-SERVICE ECOMM CHECKOUT: Longevity Masterclass';
     if (fields.startDate) notes += ' · Session: ' + fields.startDate;
@@ -2039,7 +2071,11 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     payload.AdminNotes = notes.slice(0, 4000);
 
     var dyn = buildDynamicParameters(getAttribution());
-    if (CFG.googleCampaignId && /^\d+$/.test(String(CFG.googleCampaignId))) {
+    var attr0 = getAttribution() || {};
+    var qsNow = null; try { qsNow = new URLSearchParams(normalizedSearch()); } catch(e){}
+    var hasCid = !!(attr0.cid || (qsNow && qsNow.get('cid')));
+    var nonGoogleSource = !!(attr0.utm_source || attr0.fbclid || attr0.ttclid) && !attr0.gclid;
+    if (!hasCid && !nonGoogleSource && CFG.googleCampaignId && /^\d+$/.test(String(CFG.googleCampaignId))) {
       dyn = (dyn ? dyn + ';' : '') + 'google_campaign_id=' + String(CFG.googleCampaignId);
     }
     if (dyn) payload.DynamicParameters = dyn.slice(0, 4000);
