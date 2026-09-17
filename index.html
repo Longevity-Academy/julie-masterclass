@@ -935,7 +935,7 @@ window.LLA_META=(function(){
 .et-bump-btn.bump-whatsapp{border-radius:4px;background:#4ecf5e;color:#fff!important;text-decoration:none!important;padding:0 8px;line-height:40px;display:flex;justify-content:center;align-items:center;font-size:15px;font-weight:600;text-transform:none;font-family:"Open Sans","Inter",system-ui,sans-serif;font-style:normal}
 .et-bump-btn.bump-whatsapp img{margin:0 10px -2px 0;width:17px;height:17px}
 #et-bumpyard-widget .et-bump-btn-holder{text-align:right}
-#et-bumpyard-widget .widget-trigger-btn{position:relative;border-radius:500px;background:#025d17;line-height:40px;color:#fff;text-decoration:none;padding:0 20px;font-weight:600;display:inline-flex;align-items:center;box-shadow:0 0 24px rgba(0,0,0,.2);cursor:pointer;font-size:15px;user-select:none}
+#et-bumpyard-widget .widget-trigger-btn{position:relative;color:#fff!important;text-decoration:none!important;border-radius:500px;background:#025d17;line-height:40px;color:#fff;text-decoration:none;padding:0 20px;font-weight:600;display:inline-flex;align-items:center;box-shadow:0 0 24px rgba(0,0,0,.2);cursor:pointer;font-size:15px;user-select:none}
 #et-bumpyard-widget .widget-trigger-btn img{margin-right:10px;height:22px;width:22px}
 #et-bumpyard-widget .widget-trigger-btn::after{content:"";display:block;width:10px;height:10px;background:#f8294d;position:absolute;top:0;right:0;border-radius:50%}
 #et-bumpyard-widget .chat-box header .et-about{background:none!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important;width:auto!important;min-height:0!important;display:block!important;color:#222!important;text-align:left}#et-bumpyard-widget .chat-box header .et-about div{color:#222!important;background:none!important;padding:0!important}#et-bumpyard-widget .chat-box footer{background:#fff!important;color:#454545!important;padding:10px 20px 20px!important;margin:0!important;border:0!important;display:block!important;width:auto!important;min-height:0!important}#et-bumpyard-widget .chat-box footer .title{color:#454545!important;background:none!important}#et-bumpyard-widget .chat-box header{display:flex!important;background:#f9f9f9!important;padding:20px!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;box-shadow:none!important;border:0!important}#et-bumpyard-widget .chat-box main{background:#fff!important;padding:20px!important;width:auto!important;min-height:0!important;margin:0!important}#et-bumpyard-widget img{max-width:none}
@@ -2796,16 +2796,7 @@ var LLA_AC = (function(){
 <!-- ===== /LONGEVITY MASTERCLASS CHECKOUT ===== -->
 
 
-<!-- eTeacher-style WhatsApp widget (design matched to IIBS bumpyard widget; link = LLA WhatsApp) -->
-<div id="et-bumpyard-widget" class="active">
-  <div class="chat-box">
-    <span class="close" role="button" aria-label="Close"></span>
-    <header class="flex"><div class="avatar"><img src="assets/wa/wgt-avatar.jpg" alt="Longevity Life Academy advisor" width="83" height="83"></div><div class="et-about"><div class="name">Longevity Life Academy</div><div class="desc">Typically replies in minutes</div></div></header>
-    <main><div class="time"></div><div class="sw-loader" aria-label="Connecting"><i></i><i></i><i></i></div></main>
-    <footer><div class="title">Start chat with:</div><div class="et-bump-buttons"><a class="et-bump-btn bump-whatsapp" href="https://wa.me/12015023701" target="_blank" rel="noopener"><img src="assets/wa/wapp.png" alt="whatsapp"> <span>Start Chat</span></a></div></footer>
-  </div>
-  <div class="et-bump-btn-holder"><span class="widget-trigger-btn" role="button" tabindex="0" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></span></div>
-</div>
-<script>(function(){var w=document.getElementById('et-bumpyard-widget');if(!w)return;var t=w.querySelector('.widget-trigger-btn'),c=w.querySelector('.close'),tm=w.querySelector('.time');function open(){var d=new Date();tm.textContent=d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});w.classList.add('show');setTimeout(function(){w.classList.add('loaded')},350)}function close(){w.classList.remove('show','loaded')}t.addEventListener('click',function(){w.classList.contains('show')?close():open()});t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t.click()}});c.addEventListener('click',close);})();</script>
+<!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
+<div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></a></div></div>
 </body>
 </html>
