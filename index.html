@@ -637,7 +637,7 @@ footer .foot-cols a:hover{color:var(--sky)}
 
 @media(max-width:1100px){.dev-wrap{grid-template-columns:1fr;padding:0 22px;gap:36px}.dev-stage{max-width:560px;margin:0 auto;width:100%}}
 /* ---------- floater, modal, grain ---------- */
-.lla-float-cta{position:fixed;bottom:96px;right:28px;z-index:9998;display:inline-flex;align-items:stretch;cursor:pointer;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);border:1px solid rgba(140,190,255,.3);box-shadow:0 0 0 1px rgba(0,110,255,.25),0 14px 36px rgba(0,0,0,.5),0 0 28px rgba(0,110,255,.18);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease}
+.lla-float-cta{position:fixed;bottom:108px;right:28px;z-index:9997;display:inline-flex;align-items:stretch;cursor:pointer;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%);border:1px solid rgba(140,190,255,.3);box-shadow:0 0 0 1px rgba(0,110,255,.25),0 14px 36px rgba(0,0,0,.5),0 0 28px rgba(0,110,255,.18);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease}
 .lla-float-cta.is-visible{opacity:1;transform:translateY(0);pointer-events:auto}
 .lla-float-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(94,182,255,.4),0 18px 44px rgba(0,0,0,.55),0 0 44px rgba(0,110,255,.4)}
 .lla-cta-text{display:flex;flex-direction:column;justify-content:center;padding:14px 18px 14px 20px;gap:4px}
@@ -863,7 +863,7 @@ footer .foot-cols a:hover{color:var(--sky)}
   .day-banner img{min-height:260px}
   .band{padding:80px 0}
   .foot-cols{grid-template-columns:1fr;gap:38px}
-  .lla-float-cta{bottom:84px;right:12px;left:12px;border-radius:14px;justify-content:space-between}
+  .lla-float-cta{bottom:96px;right:12px;left:12px;border-radius:14px;justify-content:space-between}
   .lla-cta-text{padding:11px 12px 11px 16px}
   .lla-cta-eyebrow{display:none}
   .lla-cta-title{font-size:16.5px;white-space:nowrap}
@@ -1127,11 +1127,12 @@ window.LLA_META=(function(){
         <li>Her <b>complete anti-aging protocol</b>: sleep, food, training, the ~$100 stack</li>
         <li>The <b>DunedinPACE</b> testing loop she uses to prove it works</li>
         <li>Choose your date: <b>Oct 27</b> or <b>Nov 14</b></li>
-        <li>Fully refundable within 14 days</li>
+        <li>Downloadable protocol summary + Q&amp;A recap after class</li>
+        <li>Certificate of participation from Longevity Life Academy</li>
       </ul>
       <div class="p-scarcity">Only 18 seats left at this price</div>
       <a class="p-cta p-cta-blue" href="#apply" data-plan="standard">Reserve my seat &middot; $49</a>
-      <p class="p-foot">3 clicks. Instant confirmation.</p>
+      <p class="p-foot">3 clicks. Instant confirmation. All sales final at checkout.</p>
     </div>
 
     <div class="pcard pcard-featured">
@@ -1146,11 +1147,11 @@ window.LLA_META=(function(){
         <li><b>Additional live 30-minute Q&amp;A with Julie</b> &mdash; personal attention, ask her anything</li>
         <li><b>$79 credit back</b>: coupon code <code style="background:rgba(255,255,255,.14);padding:2px 8px;border-radius:6px;font-family:'Inter',monospace;font-size:13.5px">MASTERCLASS-VIP</code> for $79 off The Longevity Blueprint course &mdash; use anytime, whatever the price</li>
         <li>Same VIP treatment as students paying $299 for direct access</li>
-        <li>Fully refundable within 14 days</li>
+        <li>Priority admissions review + downloadable protocol pack</li>
       </ul>
       <div class="p-scarcity">VIP is capped at 12 seats per session</div>
       <a class="p-cta p-cta-blue" href="#apply" data-plan="vip">Get VIP access &middot; $79</a>
-      <p class="p-foot">Your $79 refunded as course credit. Net cost of masterclass: $0.</p>
+      <p class="p-foot">Your $79 returned as course credit for The Longevity Blueprint. All sales final at checkout.</p>
     </div>
 
     <div class="pcard pcard-royal">
@@ -1166,10 +1167,11 @@ window.LLA_META=(function(){
         <li><b>VIP masterclass INCLUDED FREE</b> &mdash; live hour + 30-min Q&amp;A with Julie, your date</li>
         <li>Full student community + 1:1 coaching access</li>
         <li>Nothing charged today for the masterclass &mdash; the seat is yours</li>
+        <li>First month <b>50% off</b> with promo <code style="background:rgba(255,255,255,.22);padding:2px 8px;border-radius:5px;font-family:'Inter',monospace;font-size:12px">MASTERCLASS-VIP</code> ($89.50 instead of $179)</li>
       </ul>
       <div class="p-scarcity">Enrollment closes when cohort fills</div>
       <a class="p-cta p-cta-onroyal" href="#apply" data-plan="fullcourse">Enroll in the full course</a>
-      <p class="p-foot">5 monthly payments of $179. VIP masterclass at no additional charge.</p>
+      <p class="p-foot">First month $89.50, then 4 &times; $179. VIP masterclass at no additional charge. Standard 14-day refund policy applies to the course.</p>
     </div>
 
   </div>
@@ -1868,30 +1870,33 @@ window.LLA_PLAN = (function(){
       id: 'standard',
       value: 49,
       currency: 'USD',
-      content_name: 'Julie Masterclass - Standard',
-      course_name: 'Longevity Masterclass \u2014 Live with Julie Gibson Clark',
-      tuition_label: '$49.00 \u00b7 one payment',
+      content_name: 'Standard Masterclass',
+      course_name: 'Standard Masterclass \u2014 Live with Julie Gibson Clark',
+      tuition_label: '$49.00 USD \u00b7 one payment',
       amount_label: '$49.00',
+      refund_note: 'One payment in USD. All sales final at checkout.',
       crmCourse: { mainAbroadCourseId: 283, abroadCourseId: 1823, campusId: 4203, languageId: 101, isTrial: 0 }
     },
     vip: {
       id: 'vip',
       value: 79,
       currency: 'USD',
-      content_name: 'Julie Masterclass - VIP',
-      course_name: 'Longevity Masterclass VIP \u2014 Live + 30-min Q&A with Julie',
-      tuition_label: '$79.00 \u00b7 one payment \u00b7 Includes $79 course credit',
+      content_name: 'VIP Masterclass',
+      course_name: 'VIP Masterclass \u2014 Live + 30-min Private Q&A with Julie',
+      tuition_label: '$79.00 USD \u00b7 one payment \u00b7 $79 course credit included',
       amount_label: '$79.00',
+      refund_note: 'One payment in USD. All sales final at checkout. Your $79 is returned as course credit toward The Longevity Blueprint.',
       crmCourse: { mainAbroadCourseId: 283, abroadCourseId: 1823, campusId: 4203, languageId: 101, isTrial: 0 }
     },
     fullcourse: {
       id: 'fullcourse',
-      value: 179,
+      value: 89.50,
       currency: 'USD',
-      content_name: 'Longevity Blueprint + VIP Masterclass Free',
+      content_name: 'Longevity Blueprint (first-month promo) + VIP Masterclass Free',
       course_name: 'The Longevity Blueprint + VIP Masterclass (free)',
-      tuition_label: '$179.00/month \u00d7 5 \u00b7 VIP masterclass included free',
-      amount_label: '$179.00',
+      tuition_label: 'First month $89.50 USD (50% off), then 4 \u00d7 $179.00 \u00b7 VIP masterclass included free',
+      amount_label: '$89.50',
+      refund_note: 'First-month promo applied: $89.50 today, then 4 monthly payments of $179 USD. VIP masterclass included at no charge. 14-day course refund policy.',
       crmCourse: { mainAbroadCourseId: 258, abroadCourseId: 1823, campusId: 4203, languageId: 101, isTrial: 0 }
     }
   };
@@ -1912,6 +1917,8 @@ window.LLA_PLAN = (function(){
     setText('emTuition', p.tuition_label);
     setText('ckTuition', p.tuition_label);
     setText('ckAmt', p.amount_label);
+    setText('emRefundNote', p.refund_note);
+    setText('ckRefundNote', p.refund_note);
     var cn = document.querySelector('.ck-course-name'); if(cn) cn.textContent = p.course_name;
   }
   return { get: get, apply: apply, plans: PLANS };
@@ -2504,7 +2511,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 
       <div class="em-err" id="emErr" role="alert"></div>
       <button class="em-go" type="button" id="emGo1">Continue</button>
-      <p class="em-refund">Fully refundable within 14 days from registration.</p>
+      <p class="em-refund" id="emRefundNote">Fully refundable within 14 days from registration.</p>
 
       <div class="em-consent">
         <input type="checkbox" id="emSms" checked />
@@ -2656,7 +2663,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           </div>
         </div>
       </div>
-      <p class="ck-foot-note">* Today's registration fee is fully refundable with 14 days from registration</p>
+      <p class="ck-foot-note" id="ckFootNote">* All sales are final at checkout. Prices in US Dollars.</p>
 
       <div class="ck-card">
         <div class="ck-pay-tabs">
@@ -2690,12 +2697,12 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           <span class="ck-k">Course registration fee <span class="ck-tip" title="Charged today to reserve your seat.">?</span></span>
           <span class="ck-v" id="ckAmt">$49.00</span>
         </div>
-        <p class="ck-sum-note">One payment. Fully refundable within 14 days from registration.</p>
+        <p class="ck-sum-note" id="ckRefundNote">One payment. Fully refundable within 14 days from registration.</p>
 
         <hr />
-        <p>Your session date is confirmed by admissions after registration. The course registration fee is fully refundable within 14 days from registration.</p>
-        <p>In case you have decided to cancel your participation please note that live sessions, like any other classrooms, have limited capacity. Demand for our classes is high and late cancellation prevent other students from obtaining a spot in the upcoming session.</p>
-        <p>Students who wish to cancel their participation up to 14 days after the registration date are entitled to a full refund, as explained on our <a href="https://www.longevitylifeacademy.com/terms.html">cancellation policy page</a>.</p>
+        <p id="ckPolicy1">Your session date is confirmed by admissions after registration.</p>
+        <p id="ckPolicy2">Live sessions have limited capacity and seats are allocated first come, first served. All charges are processed in US Dollars.</p>
+        <p id="ckPolicy3">By completing this purchase you agree to our <a href="https://www.longevitylifeacademy.com/terms.html" target="_blank" rel="noopener">terms of service and cancellation policy</a>. All sales are final at checkout for the Standard and VIP Masterclass. The Longevity Blueprint course carries a 14-day satisfaction guarantee.</p>
       </div>
 
       <div class="ck-voices">
