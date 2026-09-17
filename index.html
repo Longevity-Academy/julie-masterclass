@@ -908,7 +908,39 @@ window.LLA_META=(function(){
   return {track:track};
 })();
 </script>
-<style id="lla-wa-css">.lla-wa{display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;margin:14px 0 4px;padding:12px 16px;border-radius:14px;background:#EAFBF0;border:1.5px solid #25D366;color:#0B3D22;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-style:normal;transition:transform .15s,box-shadow .15s}.lla-wa:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,211,102,.28)}.lla-wa-ic{flex:none;width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(37,211,102,.4)}.lla-wa-tx{display:flex;flex-direction:column;line-height:1.25;text-align:left;flex:1}.lla-wa-tx b{font-size:15.5px;font-weight:700;color:#0B3D22}.lla-wa-tx span{font-size:13px;color:#2F6B47;margin-top:2px}.lla-wa-ar{flex:none;color:#128C7E}</style>
+<style id="et-bumpyard-css">
+#et-bumpyard-widget{font-family:"Open Sans","Inter",system-ui,sans-serif;position:fixed;right:0;bottom:var(--et-wa-bottom,0px);z-index:99999;padding:0 20px 20px;font-style:normal}
+#et-bumpyard-widget .flex{display:flex;flex-direction:row;align-items:center;justify-content:flex-start}
+#et-bumpyard-widget .chat-box{display:block;background:#fff;box-shadow:0 0 24px rgba(0,0,0,.2);border-radius:10px;overflow:hidden;position:relative;max-width:360px;width:0;height:0;transform:translateX(110%);opacity:0;transition:.3s cubic-bezier(.19,1,.22,1);border:1px solid #e2e2e2;margin:0 0 10px auto;text-align:left;color:#222}
+#et-bumpyard-widget.show .chat-box{transform:translateX(0);opacity:1;width:340px;height:auto}
+#et-bumpyard-widget .chat-box .close{position:absolute;top:15px;right:15px;width:15px;height:15px;cursor:pointer;z-index:2}
+#et-bumpyard-widget .chat-box .close::before,#et-bumpyard-widget .chat-box .close::after{content:"";width:2px;height:16px;position:absolute;left:calc(50% - 1px);background:#919295;display:block;border-radius:2px}
+#et-bumpyard-widget .chat-box .close::before{transform:rotate(45deg)}#et-bumpyard-widget .chat-box .close::after{transform:rotate(-45deg)}
+#et-bumpyard-widget .chat-box header{background:#f9f9f9;padding:20px;margin:0;border:0}
+#et-bumpyard-widget .chat-box header div{line-height:1.2;font-size:14px;color:#222}
+#et-bumpyard-widget .chat-box header div.name{font-size:16px;font-weight:600}
+#et-bumpyard-widget .chat-box header .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box .avatar{position:relative}
+#et-bumpyard-widget .chat-box .avatar img{border-radius:50%;box-shadow:0 0 30px rgba(0,0,0,.1);width:55px;height:55px;object-fit:cover;display:block}
+#et-bumpyard-widget .chat-box header .avatar::after{content:"";display:block;width:10px;height:10px;background:#4ecf5e;position:absolute;bottom:0;right:0;border:2px solid #f9f9f9;border-radius:50%}
+#et-bumpyard-widget .chat-box main{padding:20px;position:relative;border-bottom:1px solid #f3f0f0;display:block}
+#et-bumpyard-widget .chat-box main .time{font-size:12px;color:#919295;text-align:center;margin:0 0 20px;min-height:14px}
+#et-bumpyard-widget .chat-box main .message{align-items:flex-start;opacity:0;transition:.4s}
+#et-bumpyard-widget .chat-box main .message .avatar{margin-right:10px}
+#et-bumpyard-widget .chat-box main .message .avatar img{width:30px;height:30px;box-shadow:none}
+#et-bumpyard-widget .chat-box main .message .chat-message{background:#edecec;padding:10px;border-radius:0 10px 10px 10px;font-size:14px;line-height:1.3;transform:translateY(100%);transition:.4s;color:#222}
+#et-bumpyard-widget.loaded .message{opacity:1}#et-bumpyard-widget.loaded .message .chat-message{transform:translateY(0)}
+#et-bumpyard-widget .chat-box footer{text-align:center;padding:10px 20px 20px;background:#fff;margin:0;border:0}
+#et-bumpyard-widget .chat-box footer .title{font-size:14px;font-weight:600;margin:0 0 10px;color:#454545}
+.et-bump-btn.bump-whatsapp{border-radius:4px;background:#4ecf5e;color:#fff!important;text-decoration:none!important;padding:0 8px;line-height:40px;display:flex;justify-content:center;align-items:center;font-size:15px;font-weight:600;text-transform:none;font-family:"Open Sans","Inter",system-ui,sans-serif;font-style:normal}
+.et-bump-btn.bump-whatsapp img{margin:0 10px -2px 0;width:17px;height:17px}
+#et-bumpyard-widget .et-bump-btn-holder{text-align:right}
+#et-bumpyard-widget .widget-trigger-btn{position:relative;border-radius:500px;background:#025d17;line-height:40px;color:#fff;text-decoration:none;padding:0 20px;font-weight:600;display:inline-flex;align-items:center;box-shadow:0 0 24px rgba(0,0,0,.2);cursor:pointer;font-size:15px;user-select:none}
+#et-bumpyard-widget .widget-trigger-btn img{margin-right:10px;height:22px;width:22px}
+#et-bumpyard-widget .widget-trigger-btn::after{content:"";display:block;width:10px;height:10px;background:#f8294d;position:absolute;top:0;right:0;border-radius:50%}
+.lla-wa-inline{margin:14px 0 4px}
+@media screen and (max-width:768px){#et-bumpyard-widget{padding:0 14px 14px;bottom:var(--et-wa-bottom-m,var(--et-wa-bottom,0px))}#et-bumpyard-widget .widget-trigger-btn{padding:15px;margin:10px 0 0}#et-bumpyard-widget .widget-trigger-btn img{height:28px;width:28px;margin:0}#et-bumpyard-widget .widget-trigger-btn .label{display:none}#et-bumpyard-widget.show .chat-box{width:min(340px,calc(100vw - 28px))}}
+#et-bumpyard-widget{--et-wa-bottom:0px;--et-wa-bottom-m:0px}</style>
 </head>
 <body>
 
@@ -1262,7 +1294,7 @@ window.LLA_META=(function(){
         </div>
         <button type="submit" class="af-submit">Reserve my seat &middot; $79</button>
         <p class="af-micro">Live online &middot; Open Q&amp;A &middot; U.S. residents</p>
-<a class="lla-wa" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Talk to us on WhatsApp"><span class="lla-wa-ic"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span class="lla-wa-tx"><b>Prefer WhatsApp?</b><span>Talk to us, we reply fast</span></span><svg class="lla-wa-ar" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+<a class="et-bump-btn bump-whatsapp lla-wa-inline" href="https://wa.me/12015023701" target="_blank" rel="noopener"><img src="assets/wa/wapp.png" alt="whatsapp"> <span>Start Chat on WhatsApp</span></a>
 
       </form>
       <div class="form-thankyou" id="julieLeadThankYou" role="status" aria-live="polite">
@@ -2761,5 +2793,17 @@ var LLA_AC = (function(){
 </script>
 <!-- ===== /LONGEVITY MASTERCLASS CHECKOUT ===== -->
 
+
+<!-- eTeacher-style WhatsApp widget (design matched to IIBS bumpyard widget; link = LLA WhatsApp) -->
+<div id="et-bumpyard-widget" class="active">
+  <div class="chat-box">
+    <span class="close" role="button" aria-label="Close"></span>
+    <header class="flex"><div class="avatar"><img src="assets/wa/wgt-avatar.jpg" alt="Longevity Life Academy advisor" width="83" height="83"></div><div class="about"><div class="name">Longevity Life Academy</div><div class="desc">Typically replies in minutes</div></div></header>
+    <main><div class="time"></div><div class="message flex"><div class="avatar"><img src="assets/wa/wgt-avatar.jpg" alt="" width="83" height="83"></div><div class="chat-message">Hey there 👋 We're so excited you're here! Send us a message and let us know how we can help you today.</div></div></main>
+    <footer><div class="title">Start chat with:</div><div class="et-bump-buttons"><a class="et-bump-btn bump-whatsapp" href="https://wa.me/12015023701" target="_blank" rel="noopener"><img src="assets/wa/wapp.png" alt="whatsapp"> <span>Start Chat</span></a></div></footer>
+  </div>
+  <div class="et-bump-btn-holder"><span class="widget-trigger-btn" role="button" tabindex="0" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></span></div>
+</div>
+<script>(function(){var w=document.getElementById('et-bumpyard-widget');if(!w)return;var t=w.querySelector('.widget-trigger-btn'),c=w.querySelector('.close'),tm=w.querySelector('.time');function open(){var d=new Date();tm.textContent=d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});w.classList.add('show');setTimeout(function(){w.classList.add('loaded')},350)}function close(){w.classList.remove('show','loaded')}t.addEventListener('click',function(){w.classList.contains('show')?close():open()});t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t.click()}});c.addEventListener('click',close);})();</script>
 </body>
 </html>
