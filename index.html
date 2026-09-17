@@ -1077,10 +1077,12 @@ window.LLA_META=(function(){
 .pricing-fold .shead p{color:#c8d3e3;font-size:21px;line-height:1.7;margin-top:28px;max-width:760px;margin-left:auto;margin-right:auto}
 .pgrid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1280px;margin:0 auto;padding:0 32px;align-items:stretch;z-index:2}
 
-/* ============ Base card — EQUAL SIZE, NO SCALING ============ */
-.pcard{position:relative;border-radius:16px;padding:60px 44px 42px;display:flex;flex-direction:column;
-  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
-  overflow:hidden}
+/* ============ Base card, equal size, no scaling ============ */
+.pcard{position:relative;border-radius:22px;padding:56px 48px 44px;display:flex;flex-direction:column;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+  overflow:hidden;isolation:isolate}
+.pcard::after{content:"";position:absolute;top:0;left:0;right:0;height:180px;background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, transparent 100%);pointer-events:none;z-index:0}
+.pcard > *{position:relative;z-index:1}
 .pcard:hover{transform:translateY(-8px)}
 
 /* ============ MASTERCLASS — IVORY WHITE ============ */
@@ -1146,25 +1148,25 @@ window.LLA_META=(function(){
 .pcard-full .pribbon-bg{background:#fff;color:#8a6a1a}
 .pcard-full .p-code{background:rgba(42,30,8,.16);color:#2a1e08;border:1px solid rgba(42,30,8,.28)}
 
-/* ============ Shared innards — BIGGER, ELEGANT ============ */
-.pribbon{position:absolute;top:0;left:0;right:0;padding:13px 20px;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;z-index:3;font-family:'Inter',sans-serif}
-.p-eyebrow{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;font-family:'Inter',sans-serif}
-.p-name{font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-weight:600;font-size:44px;line-height:1.05;margin-bottom:16px;letter-spacing:-.018em}
-.p-tag{font-size:17.5px;line-height:1.55;margin-bottom:32px;font-weight:400;font-family:'Inter',sans-serif}
-.p-price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
-.p-strike{font-size:28px;font-weight:500;text-decoration:line-through;font-family:'Playfair Display',Georgia,serif}
-.p-now{font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-weight:700;font-size:96px;line-height:.95;letter-spacing:-.035em}
-.p-per{font-size:17px;font-weight:500;font-family:'Inter',sans-serif;margin-top:4px}
-.p-savebar{display:block;margin:22px -44px 32px;padding:16px 44px;font-size:15px;font-weight:700;letter-spacing:.03em;text-align:center;text-transform:none;font-family:'Inter',sans-serif}
-.p-savebar b{font-weight:900;font-size:17px;letter-spacing:.04em}
-.p-what-head{display:block;font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-style:italic;font-weight:500;font-size:22px;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid;letter-spacing:-.01em}
-.p-list{list-style:none;padding:0;margin:0 0 32px;flex:1;display:flex;flex-direction:column;gap:18px}
-.p-list li{position:relative;padding-left:36px;font-size:17px;line-height:1.55;font-family:'Inter',sans-serif;font-weight:400}
-.p-list li b{font-weight:700}
-.p-list li::before{content:"";position:absolute;left:0;top:5px;width:22px;height:22px;border-radius:50%}
-.p-code{display:inline-block;font-family:'Inter',monospace;font-size:13.5px;font-weight:800;letter-spacing:.08em;padding:4px 11px;border-radius:6px;vertical-align:middle}
-.p-cta{display:block;width:100%;padding:24px 22px;border-radius:14px;font-family:'Inter',sans-serif;font-size:18.5px;font-weight:700;text-align:center;cursor:pointer;border:1px solid transparent;transition:.28s cubic-bezier(.2,.8,.2,1);text-decoration:none;box-sizing:border-box;letter-spacing:.005em}
-.p-foot{margin-top:18px;font-size:14px;text-align:center;line-height:1.55;font-weight:500;font-family:'Inter',sans-serif}
+/* ============ Shared innards, editorial, sentence case only ============ */
+.p-numeral{position:absolute;top:38px;right:44px;font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:120px;line-height:1;letter-spacing:-.04em;opacity:.14;z-index:0}
+.p-name{font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-weight:600;font-size:46px;line-height:1.02;margin-bottom:14px;letter-spacing:-.02em}
+.p-tag{font-size:18px;line-height:1.5;margin-bottom:36px;font-weight:400;font-family:'Inter',sans-serif;max-width:32ch}
+.p-price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.p-strike{font-size:30px;font-weight:400;text-decoration:line-through;font-family:'Playfair Display',Georgia,serif;letter-spacing:-.01em}
+.p-now{font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-weight:700;font-size:104px;line-height:.9;letter-spacing:-.04em}
+.p-per{font-size:17px;font-weight:500;font-family:'Inter',sans-serif;margin-top:6px}
+.p-savebar{display:flex;align-items:center;gap:14px;margin:26px 0 34px;padding:16px 22px;border-radius:12px;font-size:16px;font-weight:600;text-align:left;font-family:'Inter',sans-serif;letter-spacing:0}
+.p-savebar b{font-weight:700;font-size:17.5px;letter-spacing:0}
+.p-savebar .p-savebar-icon{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:19px}
+.p-what-head{display:block;font-family:'Playfair Display','Instrument Serif',Georgia,serif;font-style:italic;font-weight:500;font-size:23px;padding-bottom:18px;margin-bottom:24px;border-bottom:1px solid;letter-spacing:-.01em}
+.p-list{list-style:none;padding:0;margin:0 0 36px;flex:1;display:flex;flex-direction:column;gap:20px}
+.p-list li{position:relative;padding-left:36px;font-size:17.5px;line-height:1.6;font-family:'Inter',sans-serif;font-weight:400}
+.p-list li b{font-weight:600}
+.p-list li::before{content:"";position:absolute;left:0;top:6px;width:22px;height:22px;border-radius:50%}
+.p-code{display:inline-block;font-family:'JetBrains Mono','Inter',monospace;font-size:13.5px;font-weight:600;letter-spacing:.04em;padding:4px 10px;border-radius:6px;vertical-align:middle}
+.p-cta{display:block;width:100%;padding:24px 22px;border-radius:14px;font-family:'Inter',sans-serif;font-size:18px;font-weight:600;text-align:center;cursor:pointer;border:1px solid transparent;transition:.28s cubic-bezier(.2,.8,.2,1);text-decoration:none;box-sizing:border-box;letter-spacing:.005em}
+.p-foot{margin-top:18px;font-size:14.5px;text-align:center;line-height:1.55;font-weight:400;font-family:'Inter',sans-serif;font-style:italic}
 
 /* Mobile: horizontal scroll-snap slider */
 .pgrid-scroll-wrap{position:relative}
@@ -1188,77 +1190,74 @@ window.LLA_META=(function(){
 </style>
 <section class="pricing-fold" id="pricing" style="scroll-margin-top:104px">
   <div class="shead">
-    <p class="eyebrow">Choose your seat</p>
+    <p class="eyebrow" style="letter-spacing:0;text-transform:none;font-style:italic;font-family:'Instrument Serif','Playfair Display',Georgia,serif;font-size:22px;font-weight:400">Choose your seat</p>
     <h2>Three ways in. <span class="accent">One live room.</span></h2>
     <p>The Longevity Masterclass with Julie Gibson Clark, live on Zoom. Pick your access level, reserve your date, get instant confirmation.</p>
   </div>
   <div class="pgrid-scroll-wrap">
   <div class="pgrid" id="pgridEl">
 
-    <!-- MASTERCLASS — WHITE -->
+    <!-- The Masterclass, ivory -->
     <div class="pcard pcard-standard">
-      <div class="pribbon pribbon-bg">The Essentials</div>
-      <div class="p-eyebrow">Live 60-minute class</div>
+      <span class="p-numeral">I</span>
       <div class="p-name">The Masterclass</div>
-      <div class="p-tag">One live hour with Julie Gibson Clark. Her complete protocol, revealed live on Zoom.</div>
+      <p class="p-tag">One live hour with Julie Gibson Clark. Her complete protocol, revealed live on Zoom.</p>
       <div class="p-price-row"><span class="p-strike">$79</span><span class="p-now">$49</span></div>
-      <div class="p-per">USD &middot; one-time payment</div>
-      <div class="p-savebar"><b>SAVE $30 — 38% OFF</b> &nbsp;&middot;&nbsp; Limited to 50 seats</div>
-      <span class="p-what-head">What you get:</span>
+      <div class="p-per">One payment in US dollars</div>
+      <div class="p-savebar"><span class="p-savebar-icon">%</span><span><b>Save $30</b> off the regular seat price. Fifty seats per session.</span></div>
+      <span class="p-what-head">What you get</span>
       <ul class="p-list">
-        <li><b>60-minute live masterclass</b> with Julie Gibson Clark on Zoom</li>
-        <li><b>Her complete anti-aging protocol</b> — sleep, plate, training, the $100 supplement stack</li>
-        <li><b>DunedinPACE testing loop</b> she used to score a verified 0.665</li>
-        <li><b>Choose your date:</b> Tue Oct 27 · 7 PM ET or Sat Nov 14 · 1 PM ET</li>
-        <li><b>Protocol summary PDF</b> + Q&amp;A recap emailed after class</li>
-        <li><b>Certificate of Participation</b> from Longevity Life Academy</li>
+        <li>The <b>full 60-minute live masterclass</b> with Julie Gibson Clark on Zoom</li>
+        <li>Her <b>complete anti-aging protocol</b>: sleep, plate, training, the $100 supplement stack</li>
+        <li>The <b>DunedinPACE testing loop</b> she used to reach a verified 0.665 score</li>
+        <li>Your choice of date: <b>Tuesday, October 27 at 7 PM ET</b> or <b>Saturday, November 14 at 1 PM ET</b></li>
+        <li>A <b>protocol summary PDF</b> and Q&amp;A recap emailed after class</li>
+        <li>A <b>Certificate of Participation</b> from Longevity Life Academy</li>
       </ul>
       <a class="p-cta" href="#apply" data-plan="standard">Reserve my seat</a>
       <p class="p-foot">Instant confirmation. All sales final at checkout.</p>
     </div>
 
-    <!-- VIP — ROYAL BLUE (elevated) -->
+    <!-- VIP Masterclass, royal blue -->
     <div class="pcard pcard-vip">
-      <div class="pribbon pribbon-bg">★ Most Popular</div>
-      <div class="p-eyebrow">Everything in Standard + private Q&amp;A</div>
+      <span class="p-numeral">II</span>
       <div class="p-name">VIP Masterclass</div>
-      <div class="p-tag">Live class + 30-min private Q&amp;A with Julie. Your $79 comes back as course credit.</div>
+      <p class="p-tag">The live class, plus a private 30-minute Q&amp;A with Julie, and your $79 back as course credit.</p>
       <div class="p-price-row"><span class="p-strike">$149</span><span class="p-now">$79</span></div>
-      <div class="p-per">USD &middot; one-time payment</div>
-      <div class="p-savebar"><b>SAVE $70 — 47% OFF</b> &nbsp;&middot;&nbsp; NET $0 with Blueprint</div>
-      <span class="p-what-head">What you get:</span>
+      <div class="p-per">One payment in US dollars</div>
+      <div class="p-savebar"><span class="p-savebar-icon">$</span><span><b>Save $70</b>, and net $0 when you use your credit toward The Longevity Blueprint.</span></div>
+      <span class="p-what-head">What you get</span>
       <ul class="p-list">
-        <li><b>Everything in the Standard masterclass</b> — the full 60-minute live class</li>
-        <li><b>+30-minute private Q&amp;A with Julie</b> — ask her anything, personal attention</li>
-        <li><b>$79 course credit</b> — coupon <span class="p-code">MASTERCLASS-VIP</span>, $79 off The Longevity Blueprint any time</li>
-        <li><b>Priority admissions review</b> + downloadable master protocol pack</li>
-        <li>Julie's <b>exact daily supplement stack</b> (name-brand list)</li>
-        <li>Exclusive <b>VIP student roster</b> + follow-up email from Julie's team</li>
+        <li>Everything in <b>The Masterclass</b>: the full 60-minute live class</li>
+        <li>A <b>private 30-minute Q&amp;A with Julie</b> after the class. Ask her anything.</li>
+        <li>A <b>$79 course credit</b>: coupon <span class="p-code">MASTERCLASS-VIP</span>, worth $79 off The Longevity Blueprint at any time</li>
+        <li><b>Priority admissions review</b> and the downloadable master protocol pack</li>
+        <li>Julie's <b>exact daily supplement stack</b> with brand names and dosages</li>
+        <li>A place on the <b>VIP student roster</b> and a follow-up email from Julie's team</li>
       </ul>
-      <a class="p-cta" href="#apply" data-plan="vip">Get VIP access</a>
-      <p class="p-foot">Capped at 12 VIP seats per session. All sales final at checkout.</p>
+      <a class="p-cta" href="#apply" data-plan="vip">Reserve my VIP seat</a>
+      <p class="p-foot">Only twelve VIP seats per session. All sales final at checkout.</p>
     </div>
 
-    <!-- FULL COURSE — GOLD -->
+    <!-- The Longevity Blueprint, champagne gold -->
     <div class="pcard pcard-full">
-      <div class="pribbon pribbon-bg">Best Value</div>
-      <div class="p-eyebrow">Full 18-lesson course + VIP included FREE</div>
+      <span class="p-numeral">III</span>
       <div class="p-name">The Longevity Blueprint</div>
-      <div class="p-tag">The complete course. Free CGM. Full VIP masterclass with Julie — included, no charge.</div>
+      <p class="p-tag">The complete 18-lesson course. Free CGM. The VIP masterclass with Julie, included at no charge.</p>
       <div class="p-price-row"><span class="p-strike">$279</span><span class="p-now">$0</span></div>
-      <div class="p-per">today &middot; then $179/mo &times; 5</div>
-      <div class="p-savebar"><b>14 DAYS FREE</b> &nbsp;&middot;&nbsp; VIP MASTERCLASS INCLUDED ($79 VALUE)</div>
-      <span class="p-what-head">What you get:</span>
+      <div class="p-per">Today. Then $179 a month for five months.</div>
+      <div class="p-savebar"><span class="p-savebar-icon">★</span><span>Your <b>first 14 days are free</b>. The VIP masterclass is included, a $79 value.</span></div>
+      <span class="p-what-head">What you get</span>
       <ul class="p-list">
-        <li><b>The Longevity Blueprint</b> — 18 lessons, complete protocol library, video vault</li>
-        <li><b>Free continuous glucose monitor</b> (CGM) shipped to your door — $99 value</li>
-        <li><b>VIP Masterclass INCLUDED FREE</b> — live hour + 30-min Q&amp;A with Julie ($79 value)</li>
-        <li><b>First 14 days FREE</b> with promo <span class="p-code">MASTERCLASS-VIP</span> — billing starts day 15</li>
-        <li>Full <b>student community</b> + 1:1 coaching access</li>
-        <li><b>14-day satisfaction guarantee</b> — cancel any time during the trial, no charge</li>
+        <li>The <b>full Longevity Blueprint course</b>: 18 lessons, complete protocol library, video vault</li>
+        <li>A <b>free continuous glucose monitor</b> shipped to your door, a $99 value</li>
+        <li>The <b>VIP masterclass included at no charge</b>: live hour plus private 30-min Q&amp;A with Julie ($79 value)</li>
+        <li>Your <b>first 14 days free</b> with coupon <span class="p-code">MASTERCLASS-VIP</span>. Billing begins day 15.</li>
+        <li>Full <b>student community</b> and access to 1:1 coaching</li>
+        <li>A <b>14-day satisfaction guarantee</b>. Cancel any time during the trial, no charge.</li>
       </ul>
-      <a class="p-cta" href="#apply" data-plan="fullcourse">Start free — 14 days on us</a>
-      <p class="p-foot">$0 today. $179/mo starts day 15. Cancel any time during the trial.</p>
+      <a class="p-cta" href="#apply" data-plan="fullcourse">Start my 14 free days</a>
+      <p class="p-foot">$0 today. $179 a month begins on day 15. Cancel any time during the trial.</p>
     </div>
 
   </div>
