@@ -946,6 +946,33 @@ window.LLA_META=(function(){
 .lla-wa-inline{margin:14px 0 4px}
 @media screen and (max-width:768px){#et-bumpyard-widget{padding:0 20px 20px;bottom:var(--et-wa-bottom-m,var(--et-wa-bottom,0px))}#et-bumpyard-widget .widget-trigger-btn{padding:15px;margin:10px 0 0}#et-bumpyard-widget .widget-trigger-btn img{height:28px;width:28px;margin:0}#et-bumpyard-widget .widget-trigger-btn .label{display:none}#et-bumpyard-widget.show .chat-box{width:min(340px,calc(100vw - 28px))}}
 #et-bumpyard-widget{--et-wa-bottom:0px;--et-wa-bottom-m:0px}</style>
+<style id="julie-mobile-overlay-fix-20260923">
+/* Keep support and enrollment overlays out of every modal and checkout. */
+body:has(#enrollModal.open) .lla-float-cta,
+body:has(#enrollModal.open) #et-bumpyard-widget,
+body:has(#ckScreen[style*="block"]) .lla-float-cta,
+body:has(#ckScreen[style*="block"]) #et-bumpyard-widget,
+body:has(.modal.open) .lla-float-cta,
+body:has(.modal.open) #et-bumpyard-widget,
+body:has(#mobileMenu.open) .lla-float-cta,
+body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
+#et-bumpyard-widget{z-index:250!important}
+#enrollModal .em-dialog{overscroll-behavior:contain}
+@media(max-width:768px){
+  body{padding-bottom:76px}
+  .lla-float-cta{left:14px!important;right:auto!important;bottom:calc(14px + env(safe-area-inset-bottom))!important;max-width:calc(100vw - 94px);min-height:46px;border-radius:12px!important}
+  .lla-float-cta .lla-cta-text{display:none}
+  .lla-float-cta .lla-cta-pill{margin:0;padding:13px 20px;font-size:16px;min-height:46px}
+  #et-bumpyard-widget{right:14px!important;bottom:calc(14px + env(safe-area-inset-bottom))!important;padding:0!important;max-width:48px}
+  #et-bumpyard-widget .widget-trigger-btn{margin:0!important;padding:12px!important;min-width:46px;min-height:46px;line-height:22px}
+  #et-bumpyard-widget .widget-trigger-btn img{width:22px;height:22px}
+  body:has(input:focus) .lla-float-cta,body:has(input:focus) #et-bumpyard-widget,
+  body:has(select:focus) .lla-float-cta,body:has(select:focus) #et-bumpyard-widget{display:none!important}
+  #enrollModal .em-dialog{max-height:calc(100dvh - 24px);margin:12px;scroll-padding-bottom:24px}
+  #ckScreen{height:100dvh;padding-bottom:env(safe-area-inset-bottom)}
+  #enrollModal input,#enrollModal select{font-size:16px}
+}
+</style>
 </head>
 <body>
 
