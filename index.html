@@ -874,6 +874,7 @@ footer .foot-cols a:hover{color:var(--sky)}
 </style>
 <!-- Meta Pixel Code -->
 <script>
+if(!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -884,6 +885,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1440305917310328');
 fbq('track', 'PageView');
+}
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1440305917310328&ev=PageView&noscript=1"
@@ -892,9 +894,10 @@ src="https://www.facebook.com/tr?id=1440305917310328&ev=PageView&noscript=1"
 <script>
 /* Meta event helper: browser pixel + server CAPI with shared event_id for dedup. Staging never sends. */
 window.LLA_META=(function(){
-  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]+)'));return m?decodeURIComponent(m[1]):'';}
+  function ck(n){var m=document.cookie.match(new RegExp('(?:^|;\\s*)'+n+'=([^;]+)'));return m?m[1]:'';}
   function track(name,data,email){
     try{
+      if(/[?&](llatest|qa)=1(?:&|$)/.test(location.search))return;
       if(window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')return;
       var id='lla_'+name.toLowerCase()+'_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
       try{if(window.fbq)fbq('track',name,data||{},{eventID:id});}catch(e){}
