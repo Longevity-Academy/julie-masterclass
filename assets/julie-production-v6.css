@@ -1,0 +1,92 @@
+/* Production Julie page: one offer selection, readable editorial hierarchy. */
+.reveal{opacity:1!important;transform:none!important}
+.session-picker{border:0;padding:0;margin:0 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;scroll-margin-top:110px}
+.session-picker legend{font-size:23px;font-weight:600;margin-bottom:18px;color:#0a2542}
+.session-option{display:flex;align-items:flex-start;gap:16px;padding:24px 26px;background:#fff;border:2px solid #c7def4;border-radius:16px;cursor:pointer;transition:background .2s,border-color .2s;min-width:0}
+.session-option:has(input:checked){border-color:#006eff;background:linear-gradient(115deg,#e1f0ff,#fff);box-shadow:0 12px 25px -20px #006eff}
+.session-option input{accent-color:#006eff;width:23px;height:23px;flex:0 0 23px;margin-top:5px}
+.session-option strong{display:block;font-size:29px;line-height:1.15;letter-spacing:-.04em;color:#0a2542}
+.session-option span span{display:block;font-size:20px;line-height:1.5;margin-top:7px;color:#173f62}
+.session-option small{display:block;font-size:16px;line-height:1.5;color:#3c5d79;margin-top:7px}
+.session-picker>p{grid-column:1/-1;font-size:17px;line-height:1.5;margin:0;color:#45627d}
+.offer-dates{display:none!important}
+#julie{background:radial-gradient(ellipse at 12% 12%,#d9edff,transparent 65%),#f5f9ff;padding:100px 0;color:#0a2542}
+#julie .container{max-width:1480px;padding:0 48px}
+#julie .jhero{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+#julie .jname{font-family:"Playfair Display",Georgia,serif;font-size:clamp(64px,6.6vw,102px);font-weight:400;line-height:1.02;letter-spacing:-.05em;color:#0a2542}
+#julie .jname span{color:#006eff}
+#julie .jrole2{font-size:30px;line-height:1.3;color:#24597e;margin:24px 0}
+#julie .jline{font-size:22px;line-height:1.65;max-width:620px;color:#274b67}
+#julie .jhero-media{height:660px;min-height:0;border-radius:24px;overflow:hidden;box-shadow:0 35px 65px -35px #006eff66}
+#julie .jhero-media img{width:100%;height:100%;object-fit:cover;object-position:center 27%}
+#julie .jbig{margin:24px 0;border:0;padding:0}
+#julie .jbig b{font-size:88px;line-height:1;color:#006eff}
+#julie .jbig span{font-size:18px;color:#345872}
+#julie .jhero-tag{font-size:18px;background:#ffffffed;color:#0a2542;top:auto;bottom:24px;left:24px;border-radius:8px;box-shadow:none;letter-spacing:0}
+#julie .jstats{margin-top:48px;background:#fff;border:1px solid #d1e5f6;border-radius:20px;padding:28px}
+#julie .jstats b{font-size:54px;color:#006eff}
+#julie .jstats span{font-size:20px;color:#0a2542}
+#julie .jstats i{font-size:16px;color:#46647d}
+#julie .jstats>div{background:#f0f7ff;border:0;padding:20px 12px}
+#julie .jstats span{text-transform:none;letter-spacing:0}
+#julie .jbig span{text-transform:none;letter-spacing:0;line-height:1.5}
+#julie .jproof{margin-top:60px}
+#julie .jproof-copy h3{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:52px;line-height:1.12;color:#0a2542}
+#julie .jproof-copy p{font-size:20px;line-height:1.6;color:#345872}
+#julie .jproof figcaption{font-size:17px;line-height:1.5}
+#julie .jcta-note{font-size:18px;color:#365c79;opacity:1;line-height:1.5}
+#julie .btn-ghost{background:#006eff;color:#fff;border:0}
+.press-foot{font-size:17px!important;color:#345872!important}
+.press-foot a{color:#005dcc!important}
+.fold .shead h2,#protocol h2{font-size:clamp(46px,5.8vw,88px);line-height:1.07}
+.eyebrow{display:none!important}
+#press{background:#f4f8ff!important;color:#0a2542;padding:80px 0!important}
+#press .shead h2{color:#0a2542}
+#press .sky{color:#006eff}
+.press-editorial{max-width:1480px;margin:auto;padding:0 48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.press-story{display:flex;flex-direction:column;gap:20px;padding:36px;border-radius:20px;background:#fff;box-shadow:0 15px 35px -28px #006eff66;color:#0a2542;text-decoration:none;border:1px solid #d1e5f6}
+.press-story:nth-child(3n+2){background:linear-gradient(135deg,#deefff,#b9ddff)}
+.press-story .publication{font-size:22px;font-weight:700;color:#005ccc}
+.press-story h3{font-family:"Playfair Display",Georgia,serif;font-size:36px;line-height:1.17;font-weight:500;letter-spacing:-.02em;margin:0;color:#0a2542}
+.press-story .article-read{font-size:17px;margin-top:auto;padding-top:8px;color:#005dcc}
+.checkout-package-summary{font-size:19px;color:#24597e;text-align:center;margin:-12px 0 22px}
+#enrollModal h2{font-size:36px;text-align:center;line-height:1.1}
+#school .et-logo{display:none}
+.eteacher-motion{display:block;width:250px;max-width:80%;height:auto;margin:16px auto 24px;object-fit:contain}
+.brand-logo-motion{height:31px;width:140px;object-fit:contain;display:block;margin:3px auto 0}
+.eteacher-motion{border-radius:12px;width:320px;max-width:100%;background:#050505}
+.checkout-brand{display:flex;justify-content:center;align-items:center;margin-bottom:18px}
+.checkout-brand img{width:172px;height:auto;display:block}
+.partner-strip{overflow:hidden}
+.partner-strip>span{animation:partner-drift 12s ease-in-out infinite alternate}
+@keyframes partner-drift{to{transform:translateX(-80px)}}
+@media(max-width:800px){
+ .session-picker{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+ .session-picker legend{font-size:21px}
+ .session-option{padding:20px 18px;gap:12px}
+ .session-option strong{font-size:25px}
+ .session-option span span{font-size:18px}
+ .session-option small{font-size:15px}
+ #julie{padding:60px 0}
+ #julie .container{padding:0 20px}
+ #julie .jhero{grid-template-columns:1fr;gap:30px}
+ #julie .jname{font-size:57px}
+ #julie .jrole2{font-size:26px}
+ #julie .jline{font-size:19px}
+ #julie .jhero-media{height:470px;grid-row:2}
+ #julie .jbig b{font-size:74px}
+ #julie .jstats{padding:22px 16px;gap:28px 14px;grid-template-columns:1fr 1fr}
+ #julie .jstats b{font-size:43px}
+ #julie .jstats span{font-size:17px}
+ #julie .jstats i{font-size:15px}
+ #julie .jproof-copy h3{font-size:38px}
+ #julie .jproof-copy p{font-size:19px}
+ .press-editorial{grid-template-columns:1fr;padding:0 20px;gap:18px}
+ .press-story{padding:26px}
+ .press-story h3{font-size:30px}
+ #press{padding:56px 0!important}
+ .fold .shead h2,#protocol h2{font-size:49px}
+ .checkout-package-summary{font-size:18px}
+ #enrollModal h2{font-size:31px}
+}
+@media(prefers-reduced-motion:reduce){.partner-strip>span{animation:none}.session-option{transition:none}}
