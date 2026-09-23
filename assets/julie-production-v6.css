@@ -1,4 +1,5 @@
 /* Production Julie page: one offer selection, readable editorial hierarchy. */
+@media(min-width:801px){.editorial-pricing h3{min-height:3.3em}}
 .reveal{opacity:1!important;transform:none!important}
 .session-picker{border:0;padding:0;margin:0 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;scroll-margin-top:110px}
 .session-picker legend{font-size:23px;font-weight:600;margin-bottom:18px;color:#0a2542}
