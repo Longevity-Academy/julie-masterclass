@@ -1,0 +1,89 @@
+/* Julie package edition: one restrained palette, clear paid offers. */
+#pricing{background:radial-gradient(ellipse at 50% 0,rgba(94,182,255,.13),transparent 58%),#080e19;padding:100px 0 110px}
+#pricing .shead{max-width:1050px;margin-bottom:56px}
+#pricing .shead .eyebrow{display:none}
+#pricing .shead h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(42px,4.5vw,76px);font-weight:400;line-height:1.12;letter-spacing:-.045em}
+#pricing .shead h2 .accent{font-family:"Playfair Display",Georgia,serif;font-style:italic;color:#a6cfff}
+#pricing .shead p{font-size:19px;line-height:1.65;max-width:680px;color:#bdc9da}
+#pricing .pgrid{max-width:1480px;gap:24px;padding:0 40px;align-items:stretch}
+#pricing .pcard{background:linear-gradient(145deg,#fcfcfa,#edf3f9);color:#111f32;border-radius:24px;padding:40px 30px 30px;border:1px solid rgba(226,237,251,.85);box-shadow:0 24px 60px #0003;transform:none;overflow:hidden}
+#pricing .pcard-vip{background:linear-gradient(145deg,#e7f1ff,#fff 72%);border-color:#9fc8ff;box-shadow:0 24px 60px #0003,0 0 0 2px #8dbdff33}
+#pricing .pcard-full{background:linear-gradient(145deg,#fcfcfa,#edf3f9)}
+#pricing .pcard::after{display:none}
+#pricing .p-numeral{top:18px;right:23px;font-family:"Playfair Display",Georgia,serif;color:#2a5891;font-size:86px;opacity:.09}
+#pricing .p-name{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(32px,2.6vw,43px);line-height:1.13;letter-spacing:-.035em;color:#152a44;min-height:98px;max-width:290px}
+#pricing .p-tag{color:#47596e;font-size:17px;line-height:1.6;margin:8px 0 30px;min-height:108px}
+#pricing .p-price-row{gap:12px;min-height:86px}
+#pricing .p-now{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:76px;line-height:1.05;letter-spacing:-.065em;color:#102a48}
+#pricing .p-strike{font-size:27px;color:#6b798a}
+#pricing .p-times{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:30px;color:#355776}
+#pricing .p-per{font-size:16px;font-weight:400;color:#47596e;min-height:28px}
+#pricing .p-savebar{margin:24px 0 28px;background:#e1ebf7;color:#193e67;padding:19px 18px;border-radius:12px;min-height:112px;font-size:16px;line-height:1.55}
+#pricing .p-savebar b{font-size:16px}
+#pricing .p-savebar-icon{display:none}
+#pricing .p-what-head{font-family:"Playfair Display",Georgia,serif;font-style:italic;color:#173354;border-color:#c9d6e5;font-size:25px;padding-bottom:15px;margin-bottom:22px}
+#pricing .p-list{gap:16px;margin-bottom:32px}
+#pricing .p-list li{font-size:16px;line-height:1.65;color:#374b61;padding-left:25px}
+#pricing .p-list li b{color:#173354;font-weight:600}
+#pricing .p-list li::before{content:"✓";background:none;color:#2767ab;font-size:16px;top:0;width:18px;height:auto}
+#pricing .p-code{background:#dce9f8;color:#123d70;border:0;font-family:Inter,sans-serif;font-size:15px;padding:2px 5px}
+#pricing .p-cta{background:#123d70;color:#fff;font-size:17px;border-radius:12px;padding:19px 12px;box-shadow:0 8px 20px #133d7020;border:0;min-height:60px;display:flex;align-items:center;justify-content:center}
+#pricing .pcard-vip .p-cta{background:#006eff}
+#pricing .p-cta:hover{background:#0052bd;color:white;transform:translateY(-2px);box-shadow:0 10px 24px #006eff25}
+#pricing .p-foot{font-size:15px;line-height:1.55;color:#516176;min-height:70px;font-style:normal}
+#pricing .pgrid-dots{display:none}
+.purchase-choices{background:#f3f7fd;color:#163452;border-radius:24px;padding:34px;display:grid;gap:16px;align-content:center}
+.purchase-choices h3{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:35px;font-weight:500;line-height:1.2;margin-bottom:10px}
+.purchase-choices a{display:flex;justify-content:space-between;gap:18px;background:#123d70;color:#fff;padding:19px 20px;border-radius:12px;font-size:17px;min-height:60px}
+.purchase-choices p{font-size:16px;line-height:1.6}
+@media(max-width:1100px){#pricing .pgrid{padding:0 24px;gap:16px}#pricing .pcard{padding:32px 23px 25px}#pricing .p-name{font-size:34px}#pricing .p-now{font-size:66px}}
+@media(max-width:800px){#pricing{padding:64px 0}#pricing .shead{padding:0 24px;margin-bottom:34px}#pricing .shead h2{font-size:44px}#pricing .shead p{font-size:17px}#pricing .pgrid{display:grid;grid-template-columns:1fr;overflow:visible;padding:0 20px;gap:24px}#pricing .pcard{width:100%;padding:32px 26px;scroll-snap-align:none}#pricing .p-name{font-size:39px;min-height:0;max-width:280px;margin-bottom:16px}#pricing .p-tag{min-height:0;margin-bottom:24px}#pricing .p-price-row{min-height:0}#pricing .p-now{font-size:76px}#pricing .p-savebar{min-height:0;margin:22px 0 25px;padding:18px}#pricing .p-foot{min-height:0}#pricing .p-list{gap:14px}.purchase-choices{padding:26px 22px}.purchase-choices a{font-size:16px}.apply-grid{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){#pricing *{transition:none!important;scroll-behavior:auto!important}}
+/* The same light editorial language extends through the real checkout. */
+#enrollModal .em-dialog{max-width:780px;border-radius:28px;background:linear-gradient(150deg,#f3f7ff,#fff 45%);padding:40px;margin:32px auto;max-height:calc(100dvh - 64px);overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#enrollModal h2{font-family:"Playfair Display",Georgia,serif;font-size:36px;font-weight:400;line-height:1.2;letter-spacing:-.035em;margin:28px 0 32px}
+#enrollModal h2 em{font-family:inherit;font-style:italic}
+#enrollModal .em-lbl{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:16px}
+#enrollModal .em-dot{width:32px;height:32px;font-size:15px}
+#enrollModal .em-lb{font-size:16px;margin-bottom:10px}
+#enrollModal .em-in{font-size:16px;min-height:56px;border-radius:12px;padding:15px}
+#enrollModal .em-cc{border-radius:12px;font-size:16px}
+#enrollModal .em-go{font-size:17px;min-height:56px;border-radius:12px}
+#enrollModal .em-consent label,#enrollModal .em-refund{font-size:15px;line-height:1.5}
+#enrollModal .em-x{width:44px;height:44px}
+#enrollModal .em-cname,#ckScreen .ck-course-name{color:#153d6b;font-size:18px}
+#enrollModal .em-cl,#ckScreen .ck-ln{font-size:16px}
+#enrollModal .em-card,#ckScreen .ck-card,#ckScreen .ck-sum{border-radius:16px}
+#enrollModal .em-band .b-v,#ckScreen .ck-tband .ck-t-val{font-size:20px}
+#ckScreen .ck-wrap{max-width:1120px}
+#ckScreen .ck-f-lbl,#ckScreen .ck-foot-note,#ckScreen .ck-sum p,#awx-status{font-size:15px!important}
+#ckScreen .ck-head{flex-wrap:wrap}
+#ckScreen .ck-head .ck-logo img{max-width:150px;object-fit:contain}
+#ckScreen .ck-callus{font-size:15px}
+@media(min-width:700px){
+ #enrollModal #emStep1.on{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px}
+ #enrollModal label[for="emName"]{grid-column:1;grid-row:1}
+ #enrollModal #emName{grid-column:1;grid-row:2}
+ #enrollModal label[for="emEmail"]{grid-column:2;grid-row:1}
+ #enrollModal #emEmail{grid-column:2;grid-row:2}
+ #enrollModal label[for="emPhone"]{grid-column:1/-1;grid-row:3}
+ #enrollModal .em-phone{grid-column:1/-1;grid-row:4}
+ #enrollModal .em-consent{grid-column:1/-1;grid-row:5;margin:2px 0 24px}
+ #enrollModal #emErr{grid-column:1/-1;grid-row:6}
+ #enrollModal #emGo1{grid-column:2;grid-row:7}
+ #enrollModal #emRefundNote{grid-column:1/-1;grid-row:8}
+}
+@media(max-width:699px){
+ #enrollModal .em-dialog{margin:10px;max-height:calc(100dvh - 20px);padding:28px 22px;border-radius:22px;width:calc(100% - 20px)}
+ #enrollModal h2{font-size:29px;margin:20px 0 26px}
+ #enrollModal .em-st{width:88px}#enrollModal .em-lbl{font-size:14px}
+ #enrollModal .em-phone .em-in{min-width:0}
+ #ckScreen .ck-head{position:relative;gap:12px;padding:12px 16px;justify-content:space-between}
+ #ckScreen .ck-stepper{order:3;flex-basis:100%;max-width:100%}
+ #ckScreen .ck-callus{white-space:normal;font-size:13px}
+ #ckScreen .ck-head .ck-logo img{max-width:120px;height:36px}
+ #ckScreen .ck-wrap{padding:20px 14px max(32px,env(safe-area-inset-bottom))}
+ #ckScreen .ck-cols{grid-template-columns:1fr}
+ #ckScreen .ck-pay-body{padding:16px}
+ #enrollModal .em-consent input{width:20px;height:20px}
+}

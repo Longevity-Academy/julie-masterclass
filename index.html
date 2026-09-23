@@ -973,6 +973,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
   #enrollModal input,#enrollModal select{font-size:16px}
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -1244,7 +1245,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
         <li>A <b>protocol summary PDF</b> and Q&amp;A recap emailed after class</li>
         <li>A <b>Certificate of Participation</b> from Longevity Life Academy</li>
       </ul>
-      <a class="p-cta" href="#apply" data-plan="standard">Reserve my seat</a>
+      <a class="p-cta" href="#apply" data-plan="standard">Reserve My Seat · $49</a>
       <p class="p-foot">Instant confirmation. All sales final at checkout.</p>
     </div>
 
@@ -1260,12 +1261,12 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
       <ul class="p-list">
         <li>Everything in <b>The Masterclass</b>: the full 60-minute live class</li>
         <li>A <b>private 30-minute Q&amp;A with Julie</b> after the class. Ask her anything.</li>
-        <li>A <b>$79 course credit</b>: coupon <span class="p-code">MASTERCLASS-VIP</span>, worth $79 off The Longevity Blueprint at any time</li>
+        <li>A <b>$79 course credit</b> toward The Longevity Blueprint, with redemption details after purchase</li>
         <li><b>Priority admissions review</b> and the downloadable master protocol pack</li>
         <li>Julie's <b>exact daily supplement stack</b> with brand names and dosages</li>
         <li>A place on the <b>VIP student roster</b> and a follow-up email from Julie's team</li>
       </ul>
-      <a class="p-cta" href="#apply" data-plan="vip">Reserve my VIP seat</a>
+      <a class="p-cta" href="#apply" data-plan="vip">Reserve My VIP Seat · $79</a>
       <p class="p-foot">Only twelve VIP seats per session. All sales final at checkout.</p>
     </div>
 
@@ -1273,21 +1274,21 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
     <div class="pcard pcard-full">
       <span class="p-numeral">III</span>
       <div class="p-name">The Longevity Blueprint</div>
-      <p class="p-tag">The complete 18-lesson course. Free CGM. The VIP masterclass with Julie, included at no charge.</p>
-      <div class="p-price-row"><span class="p-strike">$279</span><span class="p-now">$0</span></div>
-      <div class="p-per">Today. Then $179 a month for five months.</div>
-      <div class="p-savebar"><span class="p-savebar-icon">★</span><span>Your <b>first 14 days are free</b>. The VIP masterclass is included, a $79 value.</span></div>
+      <p class="p-tag">The complete 18-lesson course, your CGM, and a personal longevity protocol.</p>
+      <div class="p-price-row"><span class="p-now">$179</span><span class="p-times">× 5</span></div>
+      <div class="p-per">Five monthly payments · $895 total</div>
+      <div class="p-savebar"><span>With <b>JULIE249</b>: <b>$149 × 5</b> ($745 total), plus Julie's VIP Masterclass included free.</span></div>
       <span class="p-what-head">What you get</span>
       <ul class="p-list">
         <li>The <b>full Longevity Blueprint course</b>: 18 lessons, complete protocol library, video vault</li>
         <li>A <b>free continuous glucose monitor</b> shipped to your door, a $99 value</li>
-        <li>The <b>VIP masterclass included at no charge</b>: live hour plus private 30-min Q&amp;A with Julie ($79 value)</li>
-        <li>Your <b>first 14 days free</b> with coupon <span class="p-code">MASTERCLASS-VIP</span>. Billing begins day 15.</li>
+        <li>The <b>VIP masterclass included with JULIE249</b>: the live hour plus a private 30-minute Q&amp;A with Julie</li>
+        <li>Use <span class="p-code">JULIE249</span> at checkout for the promotional monthly price and free Julie access</li>
         <li>Full <b>student community</b> and access to 1:1 coaching</li>
-        <li>A <b>14-day satisfaction guarantee</b>. Cancel any time during the trial, no charge.</li>
+        <li>A <b>14-day money-back guarantee</b>. This is a paid course, not a free trial.</li>
       </ul>
-      <a class="p-cta" href="#apply" data-plan="fullcourse">Start my 14 free days</a>
-      <p class="p-foot">$0 today. $179 a month begins on day 15. Cancel any time during the trial.</p>
+      <a class="p-cta" href="https://longevitylifeacademy.pages.dev/?enroll=1&amp;plan=monthly&amp;code=JULIE249" data-plan="fullcourse">Start My Blueprint</a>
+      <p class="p-foot">First payment at checkout. Five payments total. JULIE249 applies during the promotion.</p>
     </div>
 
   </div>
@@ -1989,6 +1990,7 @@ try{
 </script>
 <!-- ===== LONGEVITY MASTERCLASS SELF-SERVICE CHECKOUT (3 screens, same as LLA ecommerce) ===== -->
 <link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+<script src="assets/julie-payment-safety.js"></script>
 <script>
 /* ===== 3-TIER PLAN RESOLVER =====
  * Sources of truth for pricing, CRM course id, content_name, checkout copy.
@@ -2021,16 +2023,33 @@ window.LLA_PLAN = (function(){
     },
     fullcourse: {
       id: 'fullcourse',
-      value: 0,
+      value: 149,
       currency: 'USD',
-      content_name: 'Longevity Blueprint (14-day free trial) + VIP Masterclass Free',
+      content_name: 'Longevity Blueprint + VIP Masterclass',
       course_name: 'The Longevity Blueprint + VIP Masterclass (free)',
-      tuition_label: '14 days free, then $179.00 USD/month \u00b7 VIP masterclass included at no charge',
-      amount_label: '$0.00',
-      refund_note: 'First 14 days free with promo MASTERCLASS-VIP. On day 15, billing starts at $179 USD/month for 5 months. VIP masterclass included at no additional charge. Cancel any time during the trial \u2014 no charge.',
-      crmCourse: { mainAbroadCourseId: 258, abroadCourseId: 1823, campusId: 4203, languageId: 101, isTrial: 1 }
+      tuition_label: '$149.00 USD/month for 5 months with JULIE249',
+      amount_label: '$149.00',
+      refund_note: '$149 today, then four monthly payments of $149. $745 total. 14-day satisfaction guarantee, not a free trial.',
+      externalCheckout: 'https://longevitylifeacademy.pages.dev/?enroll=1&plan=monthly&promo=on'
     }
   };
+  function blueprintCheckout(){
+    var promoValid = Date.now() <= Date.parse('2026-09-24T23:59:59-04:00');
+    var target = new URL('https://longevitylifeacademy.pages.dev/');
+    target.searchParams.set('enroll','1');
+    target.searchParams.set('plan','monthly');
+    target.searchParams.set('promo',promoValid?'on':'off');
+    if(promoValid) target.searchParams.set('code','JULIE249');
+    var incoming = new URLSearchParams(location.search);
+    var stored = {};
+    try { stored = window.LLA_ECOMM ? window.LLA_ECOMM.getAttribution() || {} : {}; } catch(e){}
+    ['cid','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(key){
+      var value = incoming.get(key) || stored[key];
+      if(value) target.searchParams.set(key,value);
+    });
+    if(incoming.get('env')==='staging') target.searchParams.set('env','staging');
+    return target.href;
+  }
   var current = 'standard';
   function get(){ return PLANS[current] || PLANS.standard; }
   function apply(planId){
@@ -2039,7 +2058,7 @@ window.LLA_PLAN = (function(){
     window.LLA_SELECTED_PLAN = planId;
     var p = PLANS[planId];
     /* Re-resolve CRM course at plan change (per 2026-09-17 fix: never snapshot pricing on screen 1) */
-    if(window.LLA_ECOMM_CONFIG){
+    if(window.LLA_ECOMM_CONFIG && p.crmCourse){
       window.LLA_ECOMM_CONFIG.crmCourse = Object.assign({}, p.crmCourse);
     }
     /* Update checkout DOM */
@@ -2050,9 +2069,15 @@ window.LLA_PLAN = (function(){
     setText('ckAmt', p.amount_label);
     setText('emRefundNote', p.refund_note);
     setText('ckRefundNote', p.refund_note);
+    var format = p.id === 'vip' ? 'Live 60-minute masterclass plus 30-minute private Q&A on Zoom' : 'One live 60-minute masterclass on Zoom, with open Q&A';
+    var duration = p.id === 'vip' ? '90 minutes total (60 + 30-minute Q&A)' : '60 minutes';
+    setText('emFormat', format);
+    setText('ckFormat', format);
+    setText('emDuration', duration);
+    setText('ckDuration', duration);
     var cn = document.querySelector('.ck-course-name'); if(cn) cn.textContent = p.course_name;
   }
-  return { get: get, apply: apply, plans: PLANS };
+  return { get: get, apply: apply, plans: PLANS, blueprintCheckout: blueprintCheckout };
 })();
 
 window.LLA_ECOMM_CONFIG = window.LLA_ECOMM_CONFIG || {};
@@ -2477,6 +2502,10 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     // Aug 4 2026: MainAbroadCourseId missing = server NRE. Values come from config
     // (window.LLA_ECOMM_CONFIG.crmCourse), set per environment once eTeacher provides them.
     if (CFG.mode === 'ecomm') {
+      if (!window.JuliePaymentSafety || !window.LLA_PLAN ||
+          !/^(standard|vip)$/.test(window.LLA_PLAN.get().id)) {
+        return { error: 'unsupported_plan' };
+      }
       var crs = CFG.crmCourse || {};
       payload.MainAbroadCourseId = crs.mainAbroadCourseId != null ? crs.mainAbroadCourseId : 283;
       payload.CampusId = crs.campusId != null ? crs.campusId : 4203;
@@ -2504,6 +2533,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
                              .filter(function(w){ return w.length; }).join('%20');
       var dynExtra = 'stateisocodebyip=' + stateCode + '&message=' + message;
       payload.DynamicParameters = ((payload.DynamicParameters ? payload.DynamicParameters + '&' : '') + dynExtra).slice(0, 4000);
+      window.JuliePaymentSafety.applyPrice(payload, window.LLA_PLAN.get().id);
     }
     return { payload: payload };
   }
@@ -2515,6 +2545,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     submitLead: function(fields){
       var built = buildLeadPayload(fields);
       if (built.error) return Promise.resolve({ ok: false, status: 0, error: built.error, reason: built.reason });
+      var submittedPlan = window.LLA_PLAN.get().id;
       var base = CFG.workerBase.replace(/\/$/, '');
       if (CFG.mode === 'ecomm') {
         var prefix = CFG.env === 'staging' ? '/staging' : '';
@@ -2523,7 +2554,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           var stid = bb.stid || bb.StudentId || bb.studentId || bb.StudentID || '';
           var orderid = bb.orderid || bb.OrderId || bb.orderId || bb.OrderID || '';
           if (r.ok && stid && orderid) {
-            try { sessionStorage.setItem('lla_ecomm_ids', JSON.stringify({ stid: String(stid), orderid: String(orderid), ts: Date.now() })); } catch(e){}
+            try { sessionStorage.setItem('julie_ecomm_ids', JSON.stringify({ stid: String(stid), orderid: String(orderid), plan: submittedPlan, env: CFG.env, ts: Date.now() })); } catch(e){}
           }
           return r;
         });
@@ -2534,9 +2565,13 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     getCheckoutIds: function(){
       try {
         var q = new URLSearchParams(location.search);
-        if (q.get('stid') && q.get('orderid')) return { stid: q.get('stid'), orderid: q.get('orderid') };
-        var raw = sessionStorage.getItem('lla_ecomm_ids');
-        return raw ? JSON.parse(raw) : null;
+        if (q.get('stid') && q.get('orderid') && /^(standard|vip)$/.test(q.get('plan') || '')) {
+          return { stid: q.get('stid'), orderid: q.get('orderid'), plan: q.get('plan'), env: CFG.env };
+        }
+        var raw = sessionStorage.getItem('julie_ecomm_ids');
+        var saved = raw ? JSON.parse(raw) : null;
+        return saved && saved.plan === window.LLA_PLAN.get().id && saved.env === CFG.env &&
+          Date.now() - saved.ts < 2 * 60 * 60 * 1000 ? saved : null;
       } catch(e) { return null; }
     },
     fetchCheckoutDetails: function(ids){
@@ -2661,9 +2696,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       <div class="em-card">
         <div class="em-card-b">
           <div class="em-cname" id="emCname">Longevity Masterclass &mdash; Live with Julie Gibson Clark</div>
-          <div class="em-cl"><b>Format:</b> One live 60-minute masterclass on Zoom, with open Q&amp;A</div>
+          <div class="em-cl"><b>Format:</b> <span id="emFormat">One live 60-minute masterclass on Zoom, with open Q&amp;A</span></div>
           <div class="em-cl"><b>Session:</b> <span id="emSessTxt">Tuesday, October 27 &middot; 7:00 PM ET</span></div>
-          <div class="em-cl"><b>Lesson duration:</b> 60 min</div>
+          <div class="em-cl"><b>Lesson duration:</b> <span id="emDuration">60 minutes</span></div>
           <div class="em-cl gap"><b>Location:</b> Online</div>
         </div>
         <div class="em-band">
@@ -2718,7 +2753,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 #ckScreen .ck-tband .ck-t-lbl{font-size:13.5px;font-weight:600;opacity:.92;margin-bottom:2px}
 #ckScreen .ck-tband .ck-t-val{font-family:'Codec Pro','Inter',sans-serif;font-weight:800;font-size:17px;letter-spacing:.1px}
 #ckScreen .ck-foot-note{font-size:12.5px;color:#5A6472;font-style:italic;margin:11px 0 18px;line-height:1.45}
-#ckScreen .ck-pay-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E3E7EE}
+#ckScreen .ck-pay-tabs{display:grid;grid-template-columns:1fr;border-bottom:1px solid #E3E7EE}
 #ckScreen .ck-pay-tab{display:flex;align-items:center;justify-content:center;gap:7px;padding:15px 10px;cursor:pointer;background:#F4F6F9;border-bottom:1px solid #E3E7EE;transition:.15s}
 #ckScreen .ck-pay-tab.active{background:#fff;border-bottom:1px solid #fff}
 #ckScreen .ck-pay-tab img{height:25px;display:block}
@@ -2757,11 +2792,17 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   #ckScreen .ck-head{padding:12px 16px;gap:12px}
   #ckScreen .ck-callus{font-size:13px}
 }
+@media(max-width:520px){
+  #ckScreen .ck-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  #ckScreen .ck-head .ck-logo img{height:auto;width:130px;max-width:100%}
+  #ckScreen .ck-stepper{grid-column:1/-1;grid-row:2}
+  #ckScreen .ck-callus{font-size:11px}
+}
 </style>
 
 <div id="ckScreen" role="dialog" aria-modal="true" aria-label="Place your order">
 <header class="ck-head">
-  <a class="ck-logo" href="#" data-ck-close><img src="https://lla-checkout.gitter-omri.workers.dev/assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" /></a>
+  <a class="ck-logo" href="#" data-ck-close><img src="assets/lla-logo-exact-transparent@2x.png" alt="Longevity Life Academy by eTeacher Group" /></a>
   <div class="ck-stepper"><div class="ck-stepper-in">
     <div class="ck-st done"><span class="ck-dot">1</span><span class="ck-lbl">Register</span></div>
     <span class="ck-bar done"></span>
@@ -2781,9 +2822,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       <div class="ck-card">
         <div class="ck-card-pad">
           <div class="ck-ln"><b>Course:</b> <span class="ck-course-name">Longevity Masterclass &mdash; Live with Julie Gibson Clark</span></div>
-          <div class="ck-ln"><b>Format:</b> One live 60-minute masterclass on Zoom, with open Q&amp;A</div>
+          <div class="ck-ln"><b>Format:</b> <span id="ckFormat">One live 60-minute masterclass on Zoom, with open Q&amp;A</span></div>
           <div class="ck-ln"><b>Session:</b> <span id="ckSessTxt">Tuesday, October 27 &middot; 7:00 PM ET</span></div>
-          <div class="ck-ln"><b>Lesson duration:</b> 60 min</div>
+          <div class="ck-ln"><b>Lesson duration:</b> <span id="ckDuration">60 minutes</span></div>
           <div class="ck-ln"><b>Location:</b> Online</div>
         </div>
         <div class="ck-tband">
@@ -2799,24 +2840,19 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       <div class="ck-card">
         <div class="ck-pay-tabs">
           <div class="ck-pay-tab active" data-tab="card">
-            <img src="https://lla-checkout.gitter-omri.workers.dev/assets/pay/visa.svg" alt="Visa" />
-            <img src="https://lla-checkout.gitter-omri.workers.dev/assets/pay/mastercard.svg" alt="Mastercard" />
-            <img src="https://lla-checkout.gitter-omri.workers.dev/assets/pay/amex.svg" alt="American Express" />
-          </div>
-          <div class="ck-pay-tab" data-tab="paypal">
-            <img class="ck-pp" src="https://lla-checkout.gitter-omri.workers.dev/assets/pay/paypal.svg" alt="PayPal" />
+            <img src="assets/pay/visa.svg" alt="Visa" />
+            <img src="assets/pay/mastercard.svg" alt="Mastercard" />
+            <img src="assets/pay/amex.svg" alt="American Express" />
           </div>
         </div>
         <div class="ck-pay-body">
-          <button class="ck-gpay" type="button">Pay with <img src="https://lla-checkout.gitter-omri.workers.dev/assets/pay/google-g.svg" alt="Google" /> <b>Pay</b></button>
-          <div class="ck-orpay">Or pay with</div>
-
-          <div class="ck-f-lbl">Card information</div>
+          <div class="ck-f-lbl">Secure payment</div>
+          <p style="font-size:13px;color:#5A6472">Available cards and wallets appear below after your order amount is verified.</p>
           <!-- Airwallex Drop-In mount (real card entry, wired to eTeacher's Airwallex account) -->
           <div id="awx-dropin" style="min-height:220px;border:1px solid #D5DCE6;border-radius:7px;padding:12px;margin-bottom:14px;background:#fff"></div>
           <div id="awx-status" style="font-size:13px;color:#5A6472;margin:6px 0 8px"></div>
 
-          <button class="ck-proceed" type="button" id="ckProceed">Pay now</button>
+          <button class="ck-proceed" type="button" id="ckProceed" disabled hidden style="display:none">Pay now</button>
         </div>
       </div>
     </div>
@@ -2859,10 +2895,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     <p style="font-size:13px;color:#dcebff;margin:0">Also saved to your email confirmation. Never expires.</p>
   </div>
   <div id="ckFullCourseNote" style="display:none;margin:28px auto;max-width:520px;background:linear-gradient(155deg,#C792FF 0%,#9B5EFF 100%);color:#fff;padding:26px 28px;border-radius:14px;box-shadow:0 20px 60px rgba(199,146,255,.35);text-align:left">
-    <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F0E0FF;margin-bottom:10px">Free trial + VIP Included</div>
-    <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin-bottom:14px">14 days on us. VIP masterclass free.</div>
-    <p style="font-size:15px;line-height:1.6;color:#F5EFFF;margin-bottom:6px">Your first 14 days are on the house. On day 15, billing starts at $179 USD/month for 5 months. Cancel any time in the trial window at no charge.</p>
-    <p style="font-size:15px;line-height:1.6;color:#F5EFFF;margin:0">Your Longevity Blueprint enrollment includes the full VIP masterclass with Julie Gibson Clark at the date you chose. Zoom link on the way.</p>
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F0E0FF;margin-bottom:10px">The Longevity Blueprint</div>
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin-bottom:14px">Your course enrollment</div>
+    <p style="font-size:15px;line-height:1.6;color:#F5EFFF;margin:0">Blueprint enrollment is completed in its separate secure checkout. The first payment is charged at checkout. A 14-day satisfaction guarantee is not a free trial.</p>
   </div>
   <a href="#" data-ck-close style="margin-top:18px;display:inline-block">&larr; Back to the masterclass</a>
 </section>
@@ -2884,7 +2919,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   }
   document.addEventListener('click',function(e){
     var a=e.target.closest('a[href="#apply"],a[href="checkout.html"],a[href="#pricing"][data-plan]');
-    if(a){e.preventDefault();var pl=a.getAttribute('data-plan');if(pl){window.LLA_SELECTED_PLAN=pl;LLA_PLAN.apply(pl);}else if(!window.LLA_SELECTED_PLAN){window.LLA_SELECTED_PLAN='standard';LLA_PLAN.apply('standard');}step(1);open();return;}
+    if(a){e.preventDefault();var pl=a.getAttribute('data-plan');if(pl==='fullcourse'){location.assign(LLA_PLAN.blueprintCheckout());return;}if(pl){window.LLA_SELECTED_PLAN=pl;LLA_PLAN.apply(pl);}else if(!window.LLA_SELECTED_PLAN){window.LLA_SELECTED_PLAN='standard';LLA_PLAN.apply('standard');}step(1);open();return;}
     if(e.target.closest('[data-em-close]')){close();return;}
     if(e.target.closest('[data-ck-close]')){e.preventDefault();closeCheckout();}
   });
@@ -2973,11 +3008,11 @@ var LLA_AC = (function(){
   });
   document.getElementById('emApply').addEventListener('click',function(){
     var v=document.getElementById('emPromo').value.trim().toUpperCase();
-    this.textContent = (v==='FOUNDER35') ? 'Applied' : 'Apply';
+    this.textContent = v ? 'Not valid for this package' : 'Apply';
   });
 
   /* ---------- STEP 3 (Place order, in-page) ---------- */
-  var ckInited=false;
+  var ckInited=false, activeDropIn=null, checkoutGeneration=0, checkoutIdentity='';
   function openCheckout(){
     m.classList.remove('open');
     document.getElementById('ckSessTxt').textContent=(document.getElementById('emDate')||{}).value||document.getElementById('ckSessTxt').textContent;
@@ -2986,7 +3021,18 @@ var LLA_AC = (function(){
     ck.scrollTop=0;
     LLA_AC.send('LGV_Abandoned_Cart_No_Payment');
     try{var _p=LLA_PLAN.get();LLA_META.track('InitiateCheckout',{value:_p.value,currency:'USD',content_name:_p.content_name},document.getElementById('emEmail').value);}catch(e){}
-    if(!ckInited){ckInited=true;initAirwallex();}
+    var ids = window.LLA_ECOMM.getCheckoutIds() || {};
+    var identity = LLA_PLAN.get().id + ':' + (ids.orderid || '') + ':' + (ids.stid || '');
+    if(!ckInited || identity !== checkoutIdentity){
+      checkoutGeneration++;
+      if(activeDropIn && activeDropIn.destroy){try{activeDropIn.destroy();}catch(e){}}
+      activeDropIn=null;
+      document.getElementById('awx-dropin').innerHTML='';
+      document.getElementById('ckDemoBanner').style.display='none';
+      document.getElementById('ckOrder').style.display='';
+      document.getElementById('ckDone').style.display='none';
+      checkoutIdentity=identity;ckInited=true;initAirwallex(checkoutGeneration);
+    }
   }
   function closeCheckout(){
     ck.style.display='none';
@@ -3019,8 +3065,9 @@ var LLA_AC = (function(){
     return Promise.reject(new Error('NO_ORDER_IN_SESSION'));
   }
 
-  async function initAirwallex(){
+  async function initAirwallex(generation){
     try {
+      var selectedPlan = LLA_PLAN.get();
       var ids = await ensureLiveOrder();
       setStatus('Fetching Airwallex intent for order ' + ids.orderid + '...');
 
@@ -3031,18 +3078,20 @@ var LLA_AC = (function(){
         body: JSON.stringify({ studentId: String(ids.stid), orderId: String(ids.orderid) })
       });
       var raw = await r.text();
+      if(generation !== checkoutGeneration) return;
       var d;
       try { d = JSON.parse(raw); }
       catch (parseErr) { throw new Error('CRM returned non-JSON (HTTP ' + r.status + '): ' + raw.slice(0, 200)); }
-      if (!d.Airwallex || !d.Airwallex.paymentIntentId) throw new Error('No Airwallex intent returned: ' + JSON.stringify(d).slice(0,300));
+      if (!r.ok) throw new Error('CHECKOUT_DETAILS_UNAVAILABLE');
+      var verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
 
       var intentId = d.Airwallex.paymentIntentId;
       var clientSecret = d.Airwallex.clientSecret;
-      var amount = d.Airwallex.amount;
-      var currency = d.Airwallex.currency;
+      var amount = verified.amount;
+      var currency = verified.currency;
       var paymentId = d.PaymentID;
 
-      statusEl.innerHTML = 'Live Airwallex intent: <code style="font-size:12px">' + intentId + '</code> &middot; $' + amount + ' ' + currency;
+      setStatus('Verified: $' + amount.toFixed(2) + ' USD, one payment.');
 
       /* Show live amount in the sum panel */
       var amtEl = document.getElementById('ckAmt');
@@ -3055,25 +3104,25 @@ var LLA_AC = (function(){
          staging CRM -> "eTeacher Demo PA" (demo), production CRM -> "ETEACHER EU LIMITED" (prod). */
       var awxEnv = (window.LLA_ECOMM_CONFIG.env === 'staging') ? 'demo' : 'prod';
       setStatus('Initializing Airwallex (' + awxEnv + ')...');
-      await awx.init({ env: awxEnv, origin: window.location.origin });
+      await awx.init({ env: awxEnv, origin: window.location.origin, locale: 'en' });
+      if(generation !== checkoutGeneration) return;
 
       var mountEl = document.getElementById('awx-dropin');
       mountEl.innerHTML = '';
 
-      /* Payment mode with intent_id (single $79 charge; schedule enforced server-side by eTeacher's CRM). */
-      var dropIn = awx.createElement('dropIn', {
-        intent_id: intentId,
-        client_secret: clientSecret,
-        currency: currency,
-        mode: 'payment'
-      });
+      /* Same gateway-owned wallet configuration as Blueprint. Only the SDK
+       * renders eligible wallet buttons; no decorative site-level buttons. */
+      var dropIn = awx.createElement('dropIn', window.JuliePaymentSafety.dropInOptions(d));
       if (!dropIn) throw new Error('createElement returned null - SDK could not build dropIn');
+      activeDropIn=dropIn;
       dropIn.mount(mountEl);
 
+      var paymentHandled=false;
       dropIn.on('success', function(evt){
+        if(paymentHandled || generation !== checkoutGeneration) return;
+        paymentHandled=true;
         setStatus('\u2713 Payment SUCCEEDED \u2014 intent ' + intentId, '#0a7');
-        try { LLA_AC.send('LGV_Purchased'); } catch(e){}
-        try{var _p=LLA_PLAN.get();LLA_META.track('Purchase',{value:Number(amount)||_p.value,currency:currency||'USD',content_name:_p.content_name,order_id:String(ids.orderid)},document.getElementById('emEmail').value);}catch(e){}try{if(_p.id==='vip'){var _v=document.getElementById('ckVipCoupon');if(_v)_v.style.display='block';}if(_p.id==='fullcourse'){var _fc=document.getElementById('ckFullCourseNote');if(_fc)_fc.style.display='block';}}catch(e){}
+        try{LLA_META.track('Purchase',{value:amount,currency:currency,content_name:selectedPlan.content_name,order_id:String(ids.orderid)},document.getElementById('emEmail').value);}catch(e){}
         window.LLA_ECOMM.reportPayment({
           StudentId: String(ids.stid),
           OrderId: String(ids.orderid),
@@ -3083,16 +3132,19 @@ var LLA_AC = (function(){
           ChargeType: 'RegistrationFee',
           IsApproved: true,
           TransactionId: (evt && evt.detail && evt.detail.intent && evt.detail.intent.id) || intentId
-        }).then(function(){ setTimeout(showDone, 800); });
+        }).then(function(result){
+          if(!result || !result.ok) throw new Error('PAYMENT_RECONCILIATION_PENDING');
+          try{sessionStorage.removeItem('julie_ecomm_ids');}catch(e){}
+          setTimeout(showDone, 800);
+        }).catch(function(){
+          setStatus('Your payment succeeded, but enrollment confirmation is pending. Do not pay again. Contact advisor@longevitylifeacademy.com with order #' + ids.orderid + '.', '#b45309');
+        });
       });
       dropIn.on('error', function(evt){
         setStatus('\u2717 Payment failed: ' + ((evt && evt.detail && evt.detail.message) || 'error'), '#c33');
       });
       dropIn.on('ready', function(){ setStatus(awxEnv === 'demo' ? 'Sandbox ready \u2014 test card 4035 5010 0000 0008, any future date, any CVC.' : 'Secure card entry ready. This is a live payment of $' + amount.toFixed(2) + ' ' + currency + '.'); });
 
-      document.getElementById('ckProceed').addEventListener('click', function(){
-        try { dropIn.confirm(); } catch(e){ setStatus('Submit error: ' + e.message, '#c33'); }
-      });
     } catch (e) {
       if (e && e.message === 'NO_ORDER_IN_SESSION') {
         document.getElementById('ckDemoBanner').style.display = 'flex';
@@ -3105,15 +3157,20 @@ var LLA_AC = (function(){
         document.getElementById('ckProceed').style.display = 'none';
         return;
       }
-      setStatus('Init failed: ' + e.message, '#c33');
+      if(generation !== checkoutGeneration) return;
+      ckInited=false;
+      document.getElementById('awx-dropin').innerHTML='';
+      setStatus('Payment is unavailable because we could not verify your selected package and exact USD total. No payment form was opened. Please contact advisor@longevitylifeacademy.com. Reference: ' + e.message, '#c33');
       console.error(e);
     }
   }
 
   /* Deep links: ?enroll=1|2 opens the modal, ?stid&orderid jumps straight to Place order */
   var q=new URLSearchParams(location.search);
-  if(q.get('stid')&&q.get('orderid')){openCheckout();}
-  else if(q.get('enroll')){step(q.get('enroll')==='2'?2:1);open();}
+  if(q.get('plan')==='fullcourse'){location.replace(LLA_PLAN.blueprintCheckout());return;}
+  if(/^(standard|vip)$/.test(q.get('plan')||'')) LLA_PLAN.apply(q.get('plan'));
+  if(q.get('stid')&&q.get('orderid')&&/^(standard|vip)$/.test(q.get('plan')||'')){openCheckout();}
+  else if(q.get('enroll') || /^(standard|vip)$/.test(q.get('plan')||'') || location.hash==='#apply'){step(1);open();}
 })();
 </script>
 <!-- ===== /LONGEVITY MASTERCLASS CHECKOUT ===== -->
@@ -3121,5 +3178,7 @@ var LLA_AC = (function(){
 
 <!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
 <div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></a></div></div>
+<link rel="stylesheet" href="assets/julie-premium.css?v=20260923-2">
+<script src="assets/julie-premium-routing.js?v=20260923-2"></script>
 </body>
 </html>
