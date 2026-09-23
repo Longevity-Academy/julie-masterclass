@@ -4,10 +4,21 @@
  */
 (function (root) {
   'use strict';
-  var prices = {
-    standard: { firstPayment: 49, numberOfPayments: 1, leftToPay: 0 },
-    vip: { firstPayment: 79, numberOfPayments: 1, leftToPay: 0 }
-  };
+  var crmCourseName = 'Longevity Masterclass';
+  var catalogCents = 7900;
+  var discountCents = { standard: 3000, vip: 0 };
+  var prices = {};
+  Object.keys(discountCents).forEach(function (plan) {
+    prices[plan] = { firstPayment: (catalogCents - discountCents[plan]) / 100,
+      numberOfPayments: 1, leftToPay: 0 };
+  });
+  function discount(plan) {
+    price(plan);
+    return { crmCourseName: crmCourseName, basePrice: catalogCents / 100,
+      discountAmount: discountCents[plan] / 100,
+      discountPercent: discountCents[plan] * 100 / catalogCents,
+      finalPrice: (catalogCents - discountCents[plan]) / 100 };
+  }
   function price(plan) {
     if (!Object.prototype.hasOwnProperty.call(prices, plan)) {
       throw new Error('UNSUPPORTED_MASTERCLASS_PLAN');
@@ -20,7 +31,10 @@
     payload.NumberOfPayments = p.numberOfPayments;
     payload.LeftToPay = p.leftToPay;
     payload.DynamicParameters = (payload.DynamicParameters ? payload.DynamicParameters + '&' : '') +
-      'masterclassplan=' + plan;
+      'masterclassplan=' + plan +
+      '&masterclassbaseprice=79&masterclassdiscountpercent=' + discount(plan).discountPercent +
+      '&masterclassdiscountamount=' + discount(plan).discountAmount +
+      '&crmcourse=' + encodeURIComponent(crmCourseName);
     return payload;
   }
   function validateDetails(details, plan) {
@@ -73,7 +87,7 @@
   }
   root.JuliePaymentSafety = {
     price: price, applyPrice: applyPrice, validateDetails: validateDetails,
-    dropInOptions: dropInOptions
+    dropInOptions: dropInOptions, discount: discount
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = root.JuliePaymentSafety;
 })(typeof window !== 'undefined' ? window : globalThis);
