@@ -55,3 +55,40 @@
 @media(min-width:801px) and (max-width:1100px){.editorial-pricing .offer-shell{padding:0 24px}.editorial-pricing .offer-composition{gap:14px}.editorial-pricing .offer-card{padding:28px 22px 24px}.editorial-pricing h3{font-size:34px;min-height:80px}.editorial-pricing .offer-copy{font-size:16px;min-height:80px}.editorial-pricing .offer-price strong{font-size:56px}.editorial-pricing .offer-price{min-height:66px;gap:12px}.editorial-pricing .offer-benefit{min-height:166px}.editorial-pricing .offer-promo strong span{display:block}.editorial-pricing .offer-topline{font-size:15px;flex-wrap:wrap;gap:4px;min-height:44px}.editorial-pricing .offer-button{padding:15px 12px;font-size:15px}}
 @media(max-width:800px){#pricing.editorial-pricing{padding:48px 0 40px}.editorial-pricing .offer-shell{padding:0 20px}.editorial-pricing .offer-heading{display:block;margin-bottom:30px}.editorial-pricing h2{font-size:49px}.editorial-pricing .offer-heading>p{font-size:17px;margin-top:18px;max-width:350px}.editorial-pricing .offer-composition{grid-template-columns:1fr;gap:20px}.editorial-pricing .offer-card{padding:30px 26px 24px}.editorial-pricing h3{font-size:43px;min-height:0;margin-bottom:18px}.editorial-pricing .offer-copy{min-height:0;font-size:17px}.editorial-pricing .offer-topline{margin-bottom:25px}.editorial-pricing .offer-price strong{font-size:66px}.editorial-pricing .offer-price{min-height:75px}.editorial-pricing .offer-benefit{min-height:0;margin-bottom:28px}.editorial-pricing .offer-promo strong span{display:block}.editorial-pricing .offer-dates{display:block;margin-top:30px}.editorial-pricing .offer-dates p{margin:14px 0 18px;font-size:16px}.editorial-pricing .offer-dates p span{display:block;margin:5px 0}.editorial-pricing .offer-button{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.editorial-pricing *{transition:none!important}}
+/* Readability correction: exact package names, prominent billing, stronger LLA gradients. */
+#pricing.editorial-pricing{padding:64px 0 54px;background:linear-gradient(180deg,#fff,#f0f7ff)}
+.editorial-pricing .offer-shell{max-width:1720px;padding:0 48px}
+.editorial-pricing .offer-heading{margin-bottom:38px}
+.editorial-pricing .offer-heading>p{font-size:21px;max-width:465px}
+.editorial-pricing .offer-composition{gap:24px}
+.editorial-pricing .offer-card{padding:38px 32px 30px;border-radius:24px}
+.editorial-pricing .offer-standard{background:radial-gradient(ellipse at 110% 95%,#89c5ff88,transparent 64%),linear-gradient(150deg,#fff 8%,#f2f9ff 50%,#b8ddff);border:1px solid #c1ddf5;box-shadow:0 20px 48px -28px #006eff55}
+.editorial-pricing .offer-standard:before{height:4px;background:linear-gradient(90deg,#006eff,#5eb6ff)}
+.editorial-pricing .offer-vip{background:radial-gradient(ellipse at 110% 0,#399fff77,transparent 52%),linear-gradient(145deg,#003fae 0%,#006eff 52%,#004dca 100%);border:1px solid #468bff;box-shadow:0 24px 52px -24px #006eff88}
+.editorial-pricing .offer-blueprint{background:radial-gradient(ellipse at 100% 100%,#006eff55,transparent 68%),linear-gradient(145deg,#ecf8ff 0%,#acdfff 42%,#80c2ff 100%);border:1px solid #86bdec;box-shadow:0 20px 48px -28px #006eff66}
+.editorial-pricing .offer-topline{font-size:19px;margin-bottom:28px}
+.editorial-pricing h3{font-size:clamp(42px,3.5vw,60px);line-height:1.1;min-height:136px;letter-spacing:-.045em;margin-bottom:23px}
+.editorial-pricing .offer-copy{font-size:22px;line-height:1.55;min-height:138px;margin-bottom:24px}
+.editorial-pricing .offer-copy strong{font-weight:650;color:inherit}
+.editorial-pricing .offer-price{min-height:103px;align-items:baseline;gap:18px;white-space:nowrap;margin-bottom:10px}
+.editorial-pricing .offer-price strong{font-size:clamp(72px,6vw,98px);line-height:1;font-weight:600;letter-spacing:-.065em}
+.editorial-pricing .offer-price s{font-size:29px}
+.editorial-pricing .offer-price>span{font:600 clamp(40px,3.8vw,62px)/1 Inter,sans-serif;letter-spacing:-.055em;color:#0a2542}
+.editorial-pricing .offer-terms{font-size:20px;line-height:1.55;min-height:62px;margin-bottom:24px;color:#244968}
+.editorial-pricing .offer-benefit{min-height:157px;padding-top:24px;margin-bottom:30px}
+.editorial-pricing .offer-benefit>strong{font-size:25px;line-height:1.35;margin-bottom:10px}
+.editorial-pricing .offer-benefit p{font-size:20px;line-height:1.55;color:#244968}
+.editorial-pricing .offer-promo{padding:19px 20px;min-height:162px;background:#ffffffe0;box-shadow:0 8px 22px #006eff12}
+.editorial-pricing .offer-promo p{font-size:18px}
+.editorial-pricing .offer-promo>strong{font-size:36px;line-height:1.25;letter-spacing:-.04em;margin:8px 0}
+.editorial-pricing .offer-promo strong span{display:block;font-size:20px;line-height:1.45;letter-spacing:0;margin-top:5px}
+.editorial-pricing .offer-button{font-size:21px;padding:21px 22px;min-height:70px;border-radius:10px}
+.editorial-pricing .offer-button>span:last-child{font-size:30px}
+.editorial-pricing .offer-bottom{font-size:18px;min-height:56px;color:#244968}
+.editorial-pricing summary{font-size:19px}
+.editorial-pricing details p{font-size:19px}
+.editorial-pricing .offer-dates{font-size:18px;margin-top:32px}
+.editorial-pricing .offer-dates p{font-size:19px}
+.editorial-pricing .offer-vip .offer-terms,.editorial-pricing .offer-vip .offer-benefit p,.editorial-pricing .offer-vip .offer-bottom{color:#edf6ff}
+@media(min-width:801px) and (max-width:1300px){.editorial-pricing .offer-shell{padding:0 24px}.editorial-pricing .offer-composition{gap:18px}.editorial-pricing .offer-card{padding:30px 25px 26px}.editorial-pricing h3{font-size:44px;min-height:108px}.editorial-pricing .offer-copy{font-size:20px;min-height:155px}.editorial-pricing .offer-topline{font-size:17px;flex-wrap:wrap;min-height:50px}.editorial-pricing .offer-price strong{font-size:76px}.editorial-pricing .offer-price>span{font-size:46px}.editorial-pricing .offer-price{gap:12px;min-height:88px}.editorial-pricing .offer-terms{font-size:18px}.editorial-pricing .offer-benefit{min-height:214px}.editorial-pricing .offer-benefit>strong{font-size:23px}.editorial-pricing .offer-benefit p{font-size:19px}.editorial-pricing .offer-promo>strong{font-size:33px}.editorial-pricing .offer-button{font-size:19px;padding:18px 15px}.editorial-pricing .offer-bottom{font-size:17px}}
+@media(max-width:800px){#pricing.editorial-pricing{padding:42px 0}.editorial-pricing .offer-shell{padding:0 18px}.editorial-pricing .offer-heading>p{font-size:20px}.editorial-pricing .offer-card{padding:32px 25px 28px}.editorial-pricing h3{font-size:47px;line-height:1.12;min-height:0;margin-bottom:24px}.editorial-pricing .offer-topline{font-size:18px;gap:10px;flex-wrap:wrap}.editorial-pricing .offer-copy{font-size:21px;min-height:0;margin-bottom:28px}.editorial-pricing .offer-price strong{font-size:78px}.editorial-pricing .offer-price>span{font-size:47px}.editorial-pricing .offer-price{min-height:89px;gap:12px}.editorial-pricing .offer-price s{font-size:27px}.editorial-pricing .offer-terms{font-size:19px;min-height:0;margin-bottom:26px}.editorial-pricing .offer-benefit{min-height:0;margin-bottom:28px}.editorial-pricing .offer-benefit>strong{font-size:25px}.editorial-pricing .offer-benefit p{font-size:20px}.editorial-pricing .offer-promo>strong{font-size:36px}.editorial-pricing .offer-promo p{font-size:18px}.editorial-pricing .offer-promo strong span{font-size:21px}.editorial-pricing .offer-button{font-size:20px;padding:20px 17px;min-height:68px}.editorial-pricing .offer-bottom{font-size:18px;min-height:0}.editorial-pricing summary{font-size:19px}.editorial-pricing .offer-dates p{font-size:18px}}
