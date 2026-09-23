@@ -66,10 +66,10 @@
       currency: 'USD',
       mode: 'payment',
       country_code: shopperCountry,
-      methods: ['card', 'googlepay', 'paypal', 'applepay'],
-      payment_methods: ['card', 'googlepay', 'paypal', 'applepay'],
-      paymentMethods: ['card', 'googlepay', 'paypal', 'applepay'],
-      payment_method_types: ['card', 'googlepay', 'paypal', 'applepay'],
+      methods: ['card', 'paypal'],
+      payment_methods: ['card', 'paypal'],
+      paymentMethods: ['card', 'paypal'],
+      payment_method_types: ['card', 'paypal'],
       applePayRequestOptions: {
         countryCode: 'CY', buttonType: 'buy', buttonColor: 'black',
         totalPriceLabel: 'Longevity Life Academy by eTeacher Group'
