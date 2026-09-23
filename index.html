@@ -2231,11 +2231,12 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 
     <!-- STEP 2 -->
     <div class="em-screen" id="emStep2">
-      <label class="em-lb" for="emDate">Selected session</label>
-      <select class="em-in" id="emDate" disabled aria-describedby="selectedSessionNote">
+      <p class="em-lb">Selected session</p>
+      <select class="em-in" id="emDate" hidden disabled aria-describedby="selectedSessionNote">
         <option value="Tuesday, October 27 &middot; 7:00 PM ET">Tuesday, October 27 &middot; 7:00 PM ET (6 CT / 5 MT / 4 PT)</option>
         <option value="Saturday, November 14 &middot; 1:00 PM ET">Saturday, November 14 &middot; 1:00 PM ET (12 CT / 11 MT / 10 PT)</option>
       </select>
+      <p id="reviewSessionDate" class="review-session-date">Tuesday, October 27 · 7:00 PM ET</p>
       <p id="selectedSessionNote" style="font-size:16px;color:#345872;margin:10px 0 18px">This is the date selected with your package. To change it, close checkout and select your new date before continuing.</p>
 
       <div class="em-card">

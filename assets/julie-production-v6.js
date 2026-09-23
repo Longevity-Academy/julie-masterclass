@@ -3,6 +3,7 @@
  function syncDate(index){
   var d=document.getElementById('emDate');if(!d)return;
   d.selectedIndex=Number(index)||0;d.dispatchEvent(new Event('change',{bubbles:true}));
+  var review=document.getElementById('reviewSessionDate');if(review)review.textContent=d.value;
   document.querySelectorAll('[name="julie-session"]').forEach(function(r){r.checked=Number(r.value)===d.selectedIndex;});
  }
  document.querySelectorAll('[name="julie-session"]').forEach(function(r){r.addEventListener('change',function(){syncDate(r.value);});});
@@ -31,7 +32,7 @@
   var walk=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n;
   while((n=walk.nextNode())){
    if(n.parentElement&&n.parentElement.closest('script,style,textarea'))continue;
-   if(/[—–]/.test(n.nodeValue))n.nodeValue=n.nodeValue.replace(/[—–]/g,', ');
+   if(/[—–]| ,/.test(n.nodeValue))n.nodeValue=n.nodeValue.replace(/[—–]/g,', ').replace(/\s+,/g,',').replace(/, {2,}/g,', ');
   }
  }
  clean(document.body);

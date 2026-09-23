@@ -50,6 +50,8 @@
 .press-story h3{font-family:"Playfair Display",Georgia,serif;font-size:36px;line-height:1.17;font-weight:500;letter-spacing:-.02em;margin:0;color:#0a2542}
 .press-story .article-read{font-size:17px;margin-top:auto;padding-top:8px;color:#005dcc}
 .checkout-package-summary{font-size:19px;color:#24597e;text-align:center;margin:-12px 0 22px}
+#emDate,[for="emPromo"],#enrollModal .em-promo{display:none!important}
+.review-session-date{font-size:20px;line-height:1.45;background:#eaf4ff;padding:18px;border-radius:12px;color:#0a2542;margin:8px 0 12px;white-space:normal;overflow-wrap:break-word}
 #enrollModal h2{font-size:36px;text-align:center;line-height:1.1}
 #school .et-logo{display:none}
 .eteacher-motion{display:block;width:250px;max-width:80%;height:auto;margin:16px auto 24px;object-fit:contain}
