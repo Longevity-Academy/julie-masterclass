@@ -101,6 +101,8 @@
   function applyPayload(payload, buyer) {
     if (!buyer || buyer.error || !BY_ISO[buyer.countryIso] || !buyer.e164) throw new Error('INVALID_BUYER_DETAILS');
     payload.MobilePhone = buyer.e164;
+    root.LLA_BUYER_COUNTRY = buyer.countryIso;
+    try { root.sessionStorage.setItem('julie_buyer_country', buyer.countryIso); } catch (ignore) {}
     // This is the verified Blueprint pricing lock, NOT a buyer-country claim.
     payload.CountryIsoCode = 'US';
     payload.CountryIsoCodeByIp = 'US';

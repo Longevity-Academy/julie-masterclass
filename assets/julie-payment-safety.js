@@ -41,12 +41,17 @@
     return { amount: Number(a.amount), currency: 'USD', plan: plan };
   }
   function dropInOptions(details) {
+    var shopperCountry = root.LLA_BUYER_COUNTRY || '';
+    if (!shopperCountry) {
+      try { shopperCountry = root.sessionStorage.getItem('julie_buyer_country') || ''; } catch (ignore) {}
+    }
+    if (!/^[A-Z]{2}$/.test(shopperCountry)) shopperCountry = 'US';
     return {
       intent_id: details.Airwallex.paymentIntentId,
       client_secret: details.Airwallex.clientSecret,
       currency: 'USD',
       mode: 'payment',
-      country_code: 'US',
+      country_code: shopperCountry,
       methods: ['card', 'googlepay', 'paypal', 'applepay'],
       payment_methods: ['card', 'googlepay', 'paypal', 'applepay'],
       paymentMethods: ['card', 'googlepay', 'paypal', 'applepay'],
