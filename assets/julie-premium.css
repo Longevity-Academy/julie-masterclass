@@ -70,7 +70,7 @@
  #enrollModal .em-phone{grid-column:1/-1;grid-row:4}
  #enrollModal .em-consent{grid-column:1/-1;grid-row:5;margin:2px 0 24px}
  #enrollModal #emErr{grid-column:1/-1;grid-row:6}
- #enrollModal #emGo1{grid-column:2;grid-row:7}
+ #enrollModal #emGo1{grid-column:1/-1;grid-row:7;justify-self:center;width:min(100%,360px)}
  #enrollModal #emRefundNote{grid-column:1/-1;grid-row:8}
 }
 @media(max-width:699px){
@@ -81,9 +81,15 @@
  #ckScreen .ck-head{position:relative;gap:12px;padding:12px 16px;justify-content:space-between}
  #ckScreen .ck-stepper{order:3;flex-basis:100%;max-width:100%}
  #ckScreen .ck-callus{white-space:normal;font-size:13px}
- #ckScreen .ck-head .ck-logo img{max-width:120px;height:36px}
+ #ckScreen .ck-head .ck-logo img{max-width:150px;width:150px;height:auto}
  #ckScreen .ck-wrap{padding:20px 14px max(32px,env(safe-area-inset-bottom))}
  #ckScreen .ck-cols{grid-template-columns:1fr}
  #ckScreen .ck-pay-body{padding:16px}
  #enrollModal .em-consent input{width:20px;height:20px}
 }
+#ckScreen .ck-head .ck-logo{display:flex;align-items:center;flex:0 0 auto}
+#ckScreen .ck-head .ck-logo img{width:172px;max-width:172px;height:auto;object-fit:contain;filter:none;opacity:1}
+#enrollModal #emGo1{display:block;margin-left:auto;margin-right:auto;text-align:center}
+#enrollModal .em-phone{min-width:0}
+#enrollModal .em-phone .em-in{min-width:0;width:100%}
+@media(max-width:699px){#ckScreen .ck-head .ck-logo img{width:144px;max-width:144px}#enrollModal #emGo1{width:100%}#enrollModal .em-st{min-width:0;width:30%}#enrollModal .em-lbl{font-size:14px;white-space:normal}}
