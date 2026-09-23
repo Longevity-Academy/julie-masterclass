@@ -1010,7 +1010,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
     <div class="hero-copy">
       <p class="hero-year">The Longevity Masterclass of the Year &middot; 60 minutes, live</p>
       <h1 class="anton hero-head">Learn to age slower<br><span class="serif-i">from the 2nd slowest aging human on earth.</span></h1>
-      <p class="hero-desc"><strong>Julie Gibson Clark</strong> ages eight months for every year. She teaches you her complete protocol, live on Zoom. 60 minutes. Open Q&amp;A. <strong>From $49</strong>.</p>
+      <p class="hero-desc"><strong>Julie Gibson Clark</strong> ages eight months for every year. She teaches you her complete protocol, live on Zoom. 60 minutes, with an additional 30-minute private Q&amp;A for VIP participants. <strong>From $49</strong>.</p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#pricing">Enroll now &middot; From $49</a>
         <a class="btn btn-ghost openFilm" href="#" id="trailerLink">Watch with sound</a>
@@ -1401,8 +1401,8 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
       <h2 class="anton">Frequently asked <span class="serif-i">questions</span></h2>
     </div>
     <div class="acc reveal" id="accFaq">
-      <div class="acc-item"><button class="acc-head"><span class="acc-title">What exactly will be revealed?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Julie's complete protocol: her sleep system, her plate architecture, the ~$100-a-month supplement stack item by item, and the testing loop she uses to prove it works, followed by open Q&amp;A.</p></div></div></div>
-      <div class="acc-item"><button class="acc-head"><span class="acc-title">Is it really live?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Yes. This is a live masterclass, not a recording. Julie teaches in real time and answers questions in the room. Nothing about it is pre-recorded.</p></div></div></div>
+      <div class="acc-item"><button class="acc-head"><span class="acc-title">What exactly will be revealed?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Julie's complete protocol: her sleep system, her plate architecture, the ~$100-a-month supplement stack item by item, and the testing loop she uses to prove it works. VIP participants also join a private 30-minute Q&amp;A after the 60-minute masterclass.</p></div></div></div>
+      <div class="acc-item"><button class="acc-head"><span class="acc-title">Is it really live?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Yes. This is a live masterclass, not a recording. Julie teaches in real time. VIP participants stay for an additional private 30-minute Q&amp;A. Nothing about it is pre-recorded.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Which dates can I join?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>Session one: Tuesday, October 27, 2026 at 7:00 PM Eastern (6:00 PM Central, 5:00 PM Mountain, 4:00 PM Pacific). Session two: Saturday, November 14, 2026 at 1:00 PM Eastern (12:00 PM Central, 11:00 AM Mountain, 10:00 AM Pacific). You choose your date at checkout. Both sessions cover the full protocol.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Do I need to be an Academy student?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. Your masterclass seat is all you need. Students of The Longevity Blueprint join the same live room.</p></div></div></div>
       <div class="acc-item"><button class="acc-head"><span class="acc-title">Is this medical advice?</span><span class="acc-x"></span></button><div class="acc-body"><div class="acc-inner"><p>No. The masterclass is educational. Julie shares her personal protocol and the evidence behind it, but nothing in the program is a substitute for advice from your own physician.</p></div></div></div>
@@ -1617,7 +1617,7 @@ window.LLA_PLAN = (function(){
     setText('ckAmt', p.amount_label);
     setText('emRefundNote', p.refund_note);
     setText('ckRefundNote', p.refund_note);
-    var format = p.id === 'vip' ? 'Live 60-minute masterclass plus 30-minute private Q&A on Zoom' : 'One live 60-minute masterclass on Zoom, with open Q&A';
+    var format = p.id === 'vip' ? 'Live 60-minute masterclass plus 30-minute private Q&A on Zoom' : 'One live 60-minute masterclass on Zoom';
     var duration = p.id === 'vip' ? '90 minutes total (60 + 30-minute Q&A)' : '60 minutes';
     setText('emFormat', format);
     setText('ckFormat', format);
@@ -1955,7 +1955,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       credentials: 'omit',
       mode: 'cors'
     }).then(function(res){
-      if (res.status === 200) return res.json().then(function(b){ return { ok: true, status: 200, body: b }; }).catch(function(){ return { ok: true, status: 200, body: null }; });
+      // HTTP 202 acknowledges queued payment reporting, not completed enrollment.
+      // Do not retry an accepted asynchronous report as though it had failed.
+      if (res.status >= 200 && res.status < 300) return res.json().then(function(b){ return { ok: true, status: res.status, body: b }; }).catch(function(){ return { ok: true, status: res.status, body: null }; });
       if (res.status >= 400 && res.status < 500) return { ok: false, status: res.status, retryable: false };
       if (attempt < 3) {
         var delay = Math.pow(2, attempt - 1) * 1000;
@@ -2085,6 +2087,11 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   window.LLA_ECOMM = {
     config: CFG,
     getAttribution: getAttribution,
+    validateLead: function(fields){
+      var built = buildLeadPayload(fields);
+      return built.error ? { ok: false, error: built.error, reason: built.reason } :
+        { ok: true, phone: built.payload.MobilePhone };
+    },
     submitLead: function(fields){
       var built = buildLeadPayload(fields);
       if (built.error) return Promise.resolve({ ok: false, status: 0, error: built.error, reason: built.reason });
@@ -2099,6 +2106,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           if (r.ok && stid && orderid) {
             try { sessionStorage.setItem('julie_ecomm_ids', JSON.stringify({ stid: String(stid), orderid: String(orderid), plan: submittedPlan, env: CFG.env, ts: Date.now() })); } catch(e){}
           }
+          if (r.ok && (!stid || !orderid)) return { ok: false, status: r.status, error: 'missing_order_identity' };
           return r;
         });
       }
@@ -2108,7 +2116,8 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     getCheckoutIds: function(){
       try {
         var q = new URLSearchParams(location.search);
-        if (q.get('stid') && q.get('orderid') && /^(standard|vip)$/.test(q.get('plan') || '')) {
+        if (q.get('stid') && q.get('orderid') && q.get('plan') === window.LLA_PLAN.get().id &&
+            /^(standard|vip)$/.test(q.get('plan') || '')) {
           return { stid: q.get('stid'), orderid: q.get('orderid'), plan: q.get('plan'), env: CFG.env };
         }
         var raw = sessionStorage.getItem('julie_ecomm_ids');
@@ -2221,7 +2230,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 
       <div class="em-err" id="emErr" role="alert"></div>
       <button class="em-go" type="button" id="emGo1">Continue</button>
-      <p class="em-refund" id="emRefundNote">Fully refundable within 14 days from registration.</p>
+      <p class="em-refund" id="emRefundNote">One payment in USD. All sales final at checkout.</p>
 
       <div class="em-consent">
         <input type="checkbox" id="emSms" checked />
@@ -2231,18 +2240,18 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 
     <!-- STEP 2 -->
     <div class="em-screen" id="emStep2">
-      <p class="em-lb">Selected session</p>
-      <select class="em-in" id="emDate" hidden disabled aria-describedby="selectedSessionNote">
-        <option value="Tuesday, October 27 &middot; 7:00 PM ET">Tuesday, October 27 &middot; 7:00 PM ET (6 CT / 5 MT / 4 PT)</option>
-        <option value="Saturday, November 14 &middot; 1:00 PM ET">Saturday, November 14 &middot; 1:00 PM ET (12 CT / 11 MT / 10 PT)</option>
+      <label class="em-lb" for="emDate">Select your masterclass date</label>
+      <select class="em-in" id="emDate" aria-describedby="selectedSessionNote">
+        <option value="Tuesday, October 27 &middot; 7:00 PM ET">Oct 27 · 7:00 PM ET</option>
+        <option value="Saturday, November 14 &middot; 1:00 PM ET">Nov 14 · 1:00 PM ET</option>
       </select>
       <p id="reviewSessionDate" class="review-session-date">Tuesday, October 27 · 7:00 PM ET</p>
-      <p id="selectedSessionNote" style="font-size:16px;color:#345872;margin:10px 0 18px">This is the date selected with your package. To change it, close checkout and select your new date before continuing.</p>
+      <p id="selectedSessionNote" style="font-size:16px;color:#345872;margin:10px 0 18px">Choose your preferred session before continuing to secure payment.</p>
 
       <div class="em-card">
         <div class="em-card-b">
           <div class="em-cname" id="emCname">Longevity Masterclass ,  Live with Julie Gibson Clark</div>
-          <div class="em-cl"><b>Format:</b> <span id="emFormat">One live 60-minute masterclass on Zoom, with open Q&amp;A</span></div>
+          <div class="em-cl"><b>Format:</b> <span id="emFormat">One live 60-minute masterclass on Zoom</span></div>
           <div class="em-cl"><b>Session:</b> <span id="emSessTxt">Tuesday, October 27 &middot; 7:00 PM ET</span></div>
           <div class="em-cl"><b>Lesson duration:</b> <span id="emDuration">60 minutes</span></div>
           <div class="em-cl gap"><b>Location:</b> Online</div>
@@ -2262,7 +2271,8 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
         <button class="em-apply" type="button" id="emApply">Apply</button>
       </div>
 
-      <button class="em-go" type="button" id="emGo2">Continue</button>
+      <div class="em-err" id="emErr2" role="alert"></div>
+      <button class="em-go" type="button" id="emGo2">Continue to payment</button>
     </div>
   </div>
 </div>
@@ -2368,7 +2378,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       <div class="ck-card">
         <div class="ck-card-pad">
           <div class="ck-ln"><b>Course:</b> <span class="ck-course-name">Longevity Masterclass ,  Live with Julie Gibson Clark</span></div>
-          <div class="ck-ln"><b>Format:</b> <span id="ckFormat">One live 60-minute masterclass on Zoom, with open Q&amp;A</span></div>
+          <div class="ck-ln"><b>Format:</b> <span id="ckFormat">One live 60-minute masterclass on Zoom</span></div>
           <div class="ck-ln"><b>Session:</b> <span id="ckSessTxt">Tuesday, October 27 &middot; 7:00 PM ET</span></div>
           <div class="ck-ln"><b>Lesson duration:</b> <span id="ckDuration">60 minutes</span></div>
           <div class="ck-ln"><b>Location:</b> Online</div>
@@ -2410,7 +2420,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           <span class="ck-k">Course registration fee <span class="ck-tip" title="Charged today to reserve your seat.">?</span></span>
           <span class="ck-v" id="ckAmt">$49.00</span>
         </div>
-        <p class="ck-sum-note" id="ckRefundNote">One payment. Fully refundable within 14 days from registration.</p>
+        <p class="ck-sum-note" id="ckRefundNote">One payment in USD. All sales final at checkout.</p>
 
         <hr />
         <p id="ckPolicy1">Your selected masterclass session is shown in your order summary.</p>
@@ -2431,8 +2441,10 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 </main>
 
 <section id="ckDone" class="ck-done">
-  <h1>You're enrolled</h1>
-  <p>Welcome to the Longevity Masterclass with Julie Gibson Clark. Your seat is reserved. A confirmation and your Zoom joining details are on the way, including your session date.</p>
+  <h1>Payment received</h1>
+  <p>Your payment for the Longevity Masterclass with Julie Gibson Clark succeeded. Enrollment confirmation is being processed. Do not pay again. Once confirmed, use your learning platform to join your session and access your included materials.</p>
+  <p id="ckReceiptReference"></p>
+  <p><a href="https://student.eteachergroup.com/" target="_blank" rel="noopener">Open your learning platform</a></p>
   <div id="ckVipCoupon" style="display:none;margin:28px auto;max-width:520px;background:linear-gradient(155deg,#006EFF 0%,#0046b5 100%);color:#fff;padding:26px 28px;border-radius:14px;box-shadow:0 20px 60px rgba(0,110,255,.35);text-align:left">
     <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#dcebff;margin-bottom:10px">VIP bonus &middot; Your $79 credit</div>
     <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin-bottom:14px">Your $79 Blueprint course credit</div>
@@ -2475,8 +2487,8 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 /* ===== ActiveCampaign checkout triggers (Sandra latest-status model) =====
    One field: LGV_checkout_events (id 206). The site always sends the LATEST
    stage reached; AC overwrites the previous value. Stages:
-     screen 1 done  -> LGV_Abandoned_Cart_Name_Details
-     screen 2 done  -> LGV_Abandoned_Cart_Course_Details
+     screen 1 identifiable contact -> LGV_Abandoned_Cart_Name_Details
+     screen 2 open -> LGV_Abandoned_Cart_Course_Details
      screen 3 open  -> LGV_Abandoned_Cart_No_Payment
    Purchase exclusion is handled by the internal CRM-to-AC sync (Brand +
    Order Status), per Sandra. The site writes NOTHING on payment success. */
@@ -2490,30 +2502,51 @@ var LLA_AC = (function(){
   function contact(){
     try { return JSON.parse(sessionStorage.getItem(K) || 'null'); } catch(e){ return null; }
   }
-  var lastStage = '';
+  var lastStage = '', delivery = Promise.resolve(), lastDelivery = null;
   function send(stage){
     var c = contact();
     if (!c || !c.email) return;              /* no PII yet, nothing to write */
-    if (stage === lastStage) return;         /* de-dupe within the session   */
-    lastStage = stage;
     var env = (window.LLA_ECOMM_CONFIG && window.LLA_ECOMM_CONFIG.env === 'staging') ? 'staging' : 'production';
-    var ids = (window.LLA_ECOMM && window.LLA_ECOMM.getCheckoutIds && window.LLA_ECOMM.getCheckoutIds()) || {};
+    // Earlier screens have no confirmed order for this selection. Never attach
+    // an old session's order/student IDs to a newly identified contact.
+    var ids = stage === 'LGV_Abandoned_Cart_No_Payment' || stage === 'LGV_Purchased' ?
+      ((window.LLA_ECOMM && window.LLA_ECOMM.getCheckoutIds && window.LLA_ECOMM.getCheckoutIds()) || {}) : {};
+    var selectedPlan = (window.LLA_PLAN && window.LLA_PLAN.get && window.LLA_PLAN.get()) || {};
+    var productEvent = selectedPlan.id === 'vip' ? 'VIP' : selectedPlan.id === 'standard' ? 'Regular' : '';
+    if (!productEvent) return;              /* Blueprint is a separate checkout. */
+    var stageKey = [c.email, stage, productEvent, ids.orderid || '', c.startDate || ''].join('|');
+    if (stageKey === lastStage) return;     /* de-dupe without losing plan changes */
+    lastStage = stageKey;
     var payload = JSON.stringify({
       email: c.email, fullName: c.fullName, phone: c.phone,
       sessionDate: c.startDate, stage: stage, env: env,
+      productEvent: productEvent,
       orderId: ids.orderid || '', studentId: ids.stid || '',
       page: location.pathname, ts: new Date().toISOString()
     });
     var url = 'https://lla-ac-events.vercel.app/api/ac/event';
-    try {
-      if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([payload], {type:'text/plain'}))) return;
-    } catch(e){}
-    fetch(url, { method:'POST', headers:{'Content-Type':'text/plain'}, body: payload, keepalive:true }).catch(function(){});
+    // Serialize stage updates in this checkout; never equate beacon acceptance
+    // with AC receipt. No automatic replay of automation-triggering writes.
+    delivery = delivery.then(function(){
+      return fetch(url, { method:'POST', headers:{'Content-Type':'text/plain'}, body: payload, keepalive:true })
+        .then(function(r){return r.json().then(function(b){
+          lastDelivery = {stage:stage,productEvent:productEvent,accepted:r.ok && b.queued === true};
+          if (!lastDelivery.accepted && lastStage === stageKey) lastStage = '';
+          return lastDelivery;
+        });})
+        .catch(function(){
+          lastDelivery = {stage:stage,productEvent:productEvent,accepted:false};
+          if (lastStage === stageKey) lastStage = '';
+          return lastDelivery;
+        });
+    });
+    return delivery;
   }
-  return { saveContact: saveContact, send: send };
+  return { saveContact: saveContact, send: send, settled:function(){return delivery;},
+    status:function(){return lastDelivery;} };
 })();
 
-  /* Step 1 -> eTeacher CRM ecommerce lead (same API rules as longevitylifeacademy.com integration) */
+  /* Step 1 -> eTeacher CRM validation only; create the order after date confirmation. */
   var errBox=document.getElementById('emErr');
   function emErr(msg){errBox.textContent=msg;errBox.classList.add('on');}
   function emErrClear(){errBox.textContent='';errBox.classList.remove('on');}
@@ -2526,10 +2559,8 @@ var LLA_AC = (function(){
     invalid_state:'Please select your U.S. state.',
     'Missing or invalid fields':'Please fill in all fields.'
   };
-  document.getElementById('emGo1').addEventListener('click',function(){
-    var btn=this;
-    emErrClear();
-    var fields={
+  function checkoutFields(){
+    return {
       fullName:document.getElementById('emName').value,
       email:document.getElementById('emEmail').value,
       phone:document.getElementById('emPhone').value,
@@ -2537,22 +2568,71 @@ var LLA_AC = (function(){
       startDate:(document.getElementById('emDate')||{}).value||'',
       promoCode:''
     };
+  }
+  // Contact-stage capture is limited to a usable email and full name. An
+  // anonymous visitor cannot be enrolled in a contact-based AC automation.
+  function captureNameStage(){
+    if (!m.classList.contains('open') || !document.getElementById('emStep1').classList.contains('on')) return;
+    var f=checkoutFields();
+    if (!/^\S+\s+\S/.test(f.fullName.trim()) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.trim())) return;
+    var valid=window.LLA_ECOMM.validateLead(f);
+    f.phone=valid.ok ? valid.phone : '';
+    LLA_AC.saveContact(f);
+    LLA_AC.send('LGV_Abandoned_Cart_Name_Details');
+  }
+  ['emName','emEmail','emPhone'].forEach(function(id){
+    document.getElementById(id).addEventListener('blur',captureNameStage);
+  });
+  document.getElementById('emGo1').addEventListener('click',function(){
+    emErrClear();
+    var fields=checkoutFields();
     if(!fields.fullName.trim()||!fields.email.trim()||!fields.phone.trim()){emErr('Please fill in all fields.');return;}
     if(!window.LLA_ECOMM){emErr('Something went wrong , please refresh and try again.');return;}
-    btn.disabled=true;btn.textContent='Please wait\u2026';
+    var valid=window.LLA_ECOMM.validateLead(fields);
+    if (!valid.ok) {emErr(ERR_MSG[valid.error]||'Please check your details.');return;}
+    fields.phone=valid.phone;
     LLA_AC.saveContact(fields);
-    window.LLA_ECOMM.submitLead(fields).then(function(r){
-      btn.disabled=false;btn.textContent='Continue';
-      if(r.ok){LLA_AC.send('LGV_Abandoned_Cart_Name_Details');try{var _p=LLA_PLAN.get();LLA_META.track('AddToCart',{value:_p.value,currency:'USD',content_name:_p.content_name},document.getElementById('emEmail').value);}catch(e){}step(2);return;}
-      emErr(ERR_MSG[r.error]||'Something went wrong , please try again in a moment.');
-    });
+    LLA_AC.send('LGV_Abandoned_Cart_Name_Details');
+    step(2);
+    LLA_AC.send('LGV_Abandoned_Cart_Course_Details');
   });
   document.getElementById('emDate').addEventListener('change',function(){
     document.getElementById('emSessTxt').textContent=this.value;
+    document.getElementById('reviewSessionDate').textContent=this.value;
+    if (m.classList.contains('open') && document.getElementById('emStep2').classList.contains('on')) {
+      var fields=checkoutFields(), valid=window.LLA_ECOMM.validateLead(fields);
+      if (valid.ok) {fields.phone=valid.phone;LLA_AC.saveContact(fields);LLA_AC.send('LGV_Abandoned_Cart_Course_Details');}
+    }
   });
+  var orderSubmitting=false, submittedContext='', submittedIds=null;
+  // Local-tab safety only: re-opening the same completed/uncertain checkout
+  // must show its outcome rather than creating a fresh order and charge form.
+  var paymentOutcomes=Object.create(null), visiblePaymentOutcome=null;
   document.getElementById('emGo2').addEventListener('click',function(){
-    LLA_AC.send('LGV_Abandoned_Cart_Course_Details');
-    openCheckout();
+    if(orderSubmitting)return;
+    var btn=this, error=document.getElementById('emErr2'), fields=checkoutFields();
+    error.textContent='';error.classList.remove('on');
+    var valid=window.LLA_ECOMM.validateLead(fields);
+    if (!valid.ok) {error.textContent=ERR_MSG[valid.error]||'Please check your details before payment.';error.classList.add('on');return;}
+    fields.phone=valid.phone;
+    LLA_AC.saveContact(fields);
+    var identity=JSON.stringify([LLA_PLAN.get().id,fields.email,fields.fullName,fields.phone,fields.startDate,
+      (document.getElementById('emCountry')||{}).value,(document.getElementById('emState')||{}).value]);
+    if(paymentOutcomes[identity]){reopenPaymentOutcome(paymentOutcomes[identity]);return;}
+    var currentIds=window.LLA_ECOMM.getCheckoutIds();
+    if (submittedContext===identity && submittedIds && currentIds && currentIds.orderid===submittedIds.orderid) {openCheckout();return;}
+    orderSubmitting=true;btn.disabled=true;btn.textContent='Preparing secure payment\u2026';
+    window.LLA_ECOMM.submitLead(fields).then(function(r){
+      if(!r.ok)throw new Error(r.error||'order_failed');
+      submittedContext=identity;submittedIds=window.LLA_ECOMM.getCheckoutIds();
+      try{var _p=LLA_PLAN.get();LLA_META.track('AddToCart',{value:_p.value,currency:'USD',content_name:_p.content_name},fields.email);}catch(e){}
+      openCheckout();
+    }).catch(function(e){
+      error.textContent=ERR_MSG[e.message]||'We could not confirm your order. No payment has been taken. Please contact advisor@longevitylifeacademy.com before trying again.';
+      error.classList.add('on');
+    }).finally(function(){
+      orderSubmitting=false;btn.disabled=false;btn.textContent='Continue to payment';
+    });
   });
   document.getElementById('emApply').addEventListener('click',function(){
     var v=document.getElementById('emPromo').value.trim().toUpperCase();
@@ -2562,6 +2642,7 @@ var LLA_AC = (function(){
   /* ---------- STEP 3 (Place order, in-page) ---------- */
   var ckInited=false, activeDropIn=null, checkoutGeneration=0, checkoutIdentity='';
   function openCheckout(){
+    visiblePaymentOutcome=null;
     m.classList.remove('open');
     document.getElementById('ckSessTxt').textContent=(document.getElementById('emDate')||{}).value||document.getElementById('ckSessTxt').textContent;
     ck.style.display='block';
@@ -2604,13 +2685,78 @@ var LLA_AC = (function(){
     document.getElementById('ckBar2').classList.add('done');
     ck.scrollTop=0;
   }
+  function renderPaymentOutcome(outcome){
+    if(outcome.accepted){
+      document.getElementById('ckReceiptReference').textContent=outcome.receipt;
+      showDone();
+    }else{
+      document.getElementById('ckOrder').style.display='';
+      document.getElementById('ckDone').style.display='none';
+      setStatus(outcome.message,'#b45309');
+    }
+  }
+  function reopenPaymentOutcome(outcome){
+    checkoutGeneration++;
+    ckInited=false;
+    if(activeDropIn && activeDropIn.destroy){try{activeDropIn.destroy();}catch(e){}}
+    activeDropIn=null;
+    document.getElementById('awx-dropin').innerHTML='';
+    m.classList.remove('open');ck.style.display='block';document.body.style.overflow='hidden';
+    visiblePaymentOutcome=outcome;
+    renderPaymentOutcome(outcome);
+  }
 
-  /* NEVER auto-create an order. A real order/lead is only created by step 1 of the enroll modal.
+  /* NEVER auto-create an order. A real order/lead is created after step 2 date confirmation.
      Opening this screen with no order in session shows the demo state and writes nothing to the CRM. */
   function ensureLiveOrder(){
     var ids = window.LLA_ECOMM ? window.LLA_ECOMM.getCheckoutIds() : null;
     if (ids && ids.stid && ids.orderid) return Promise.resolve(ids);
     return Promise.reject(new Error('NO_ORDER_IN_SESSION'));
+  }
+
+  // The details request binds the quote to these CRM identities. Reject any
+  // conflicting identities the response actually supplies; do not invent new
+  // required CRM response fields.
+  function validateCheckoutIdentity(details, ids){
+    var paymentId=details.PaymentID;
+    if ((typeof paymentId !== 'string' && typeof paymentId !== 'number') ||
+        !String(paymentId).trim() ||
+        (Number.isFinite(Number(paymentId)) && Number(paymentId)<=0) ||
+        (typeof paymentId==='number' && (!Number.isFinite(paymentId) || paymentId<=0))) {
+      throw new Error('PAYMENT_DETAILS_INCOMPLETE');
+    }
+    [['StudentId','StudentID','studentId','stid'],['OrderId','OrderID','orderId','orderid']].forEach(function(keys, index){
+      keys.forEach(function(key){
+        if (Object.prototype.hasOwnProperty.call(details, key) &&
+            String(details[key]) !== String(index ? ids.orderid : ids.stid)) {
+          throw new Error('PAYMENT_ORDER_MISMATCH');
+        }
+      });
+    });
+  }
+  function verifiedSuccessIntent(evt, quote){
+    // A consent-only "success", an authorization or a pending intent is not a
+    // completed payment. Missing evidence must not fall back to the quote ID.
+    // Server-side provider verification is still required before fulfillment.
+    var intent = evt && evt.detail && evt.detail.intent;
+    // SDK success events may omit status/amount/currency. The order-bound quote
+    // has already validated the latter two. Reject contradictory supplied
+    // evidence, without making those documented optional fields mandatory.
+    if (!intent || intent.id !== quote.paymentIntentId ||
+        (Object.prototype.hasOwnProperty.call(intent,'status') && intent.status !== 'SUCCEEDED') ||
+        (Object.prototype.hasOwnProperty.call(intent,'currency') &&
+          (typeof intent.currency !== 'string' || intent.currency.toUpperCase() !== 'USD')) ||
+        (Object.prototype.hasOwnProperty.call(intent,'amount') &&
+          ((typeof intent.amount !== 'number' && typeof intent.amount !== 'string') ||
+           !Number.isFinite(Number(intent.amount)) || Number(intent.amount) !== Number(quote.amount)))) {
+      throw new Error('PAYMENT_RESULT_UNVERIFIED');
+    }
+    // merchant_order_id is a merchant-defined reference, not necessarily the
+    // CRM order ID. Compare only with the explicit reference in this quote.
+    if (quote.merchant_order_id != null && intent.merchant_order_id !== quote.merchant_order_id) {
+      throw new Error('PAYMENT_ORDER_MISMATCH');
+    }
+    return intent;
   }
 
   async function initAirwallex(generation){
@@ -2632,6 +2778,7 @@ var LLA_AC = (function(){
       catch (parseErr) { throw new Error('CRM returned non-JSON (HTTP ' + r.status + '): ' + raw.slice(0, 200)); }
       if (!r.ok) throw new Error('CHECKOUT_DETAILS_UNAVAILABLE');
       var verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
+      validateCheckoutIdentity(d, ids);
 
       var intentId = d.Airwallex.paymentIntentId;
       var clientSecret = d.Airwallex.clientSecret;
@@ -2669,9 +2816,29 @@ var LLA_AC = (function(){
       dropIn.on('success', function(evt){
         if(paymentHandled || generation !== checkoutGeneration) return;
         paymentHandled=true;
+        // Stop this payment form immediately, including while the report is
+        // pending/rejected. A reporting problem must not invite a second charge.
+        try{if(dropIn.destroy)dropIn.destroy();}catch(e){}
+        mountEl.innerHTML='';
+        activeDropIn=null;
+        var outcome={
+          accepted:false,
+          message:'We could not verify the payment result for order #' + ids.orderid + '. Do not pay again. Contact advisor@longevitylifeacademy.com to check the existing payment.',
+          receipt:'Order #' + ids.orderid + ' · ' + selectedPlan.course_name + ' · $' + amount.toFixed(2) + ' USD'
+        };
+        if(submittedContext)paymentOutcomes[submittedContext]=outcome;
+        visiblePaymentOutcome=outcome;
+        var completedIntent;
+        try {
+          completedIntent=verifiedSuccessIntent(evt, d.Airwallex);
+        } catch(e) {
+          setStatus(outcome.message, '#b45309');
+          return;
+        }
+        outcome.message='Your payment succeeded, but enrollment confirmation is pending. Do not pay again. Contact advisor@longevitylifeacademy.com with order #' + ids.orderid + '.';
         setStatus('\u2713 Payment SUCCEEDED \u2014 intent ' + intentId, '#0a7');
         try{LLA_META.track('Purchase',{value:amount,currency:currency,content_name:selectedPlan.content_name,order_id:String(ids.orderid)},document.getElementById('emEmail').value);}catch(e){}
-        window.LLA_ECOMM.reportPayment({
+        Promise.resolve().then(function(){return window.LLA_ECOMM.reportPayment({
           StudentId: String(ids.stid),
           OrderId: String(ids.orderid),
           PaymentId: String(paymentId),
@@ -2679,19 +2846,40 @@ var LLA_AC = (function(){
           AmountCharged: String(amount),
           ChargeType: 'RegistrationFee',
           IsApproved: true,
-          TransactionId: (evt && evt.detail && evt.detail.intent && evt.detail.intent.id) || intentId
-        }).then(function(result){
-          if(!result || !result.ok) throw new Error('PAYMENT_RECONCILIATION_PENDING');
-          try{sessionStorage.removeItem('julie_ecomm_ids');}catch(e){}
-          setTimeout(showDone, 800);
+          TransactionId: completedIntent.id
+        });}).then(function(result){
+          if(!result || !result.ok || (result.body &&
+             (result.body.queued === false || result.body.ok === false || result.body.success === false ||
+              result.body.error || (Array.isArray(result.body.errors) && result.body.errors.length)))) {
+            throw new Error('PAYMENT_RECONCILIATION_PENDING');
+          }
+          outcome.accepted=true;
+          if(generation !== checkoutGeneration){
+            if(visiblePaymentOutcome===outcome)renderPaymentOutcome(outcome);
+            return;
+          }
+          document.getElementById('ckReceiptReference').textContent =
+            'Order #' + ids.orderid + ' · ' + selectedPlan.course_name + ' · $' + amount.toFixed(2) + ' USD';
+          try{
+            var stored=JSON.parse(sessionStorage.getItem('julie_ecomm_ids') || 'null');
+            if(stored && String(stored.orderid)===String(ids.orderid) && String(stored.stid)===String(ids.stid)) {
+              sessionStorage.removeItem('julie_ecomm_ids');
+            }
+          }catch(e){}
+          setTimeout(function(){if(generation === checkoutGeneration)showDone();}, 800);
         }).catch(function(){
-          setStatus('Your payment succeeded, but enrollment confirmation is pending. Do not pay again. Contact advisor@longevitylifeacademy.com with order #' + ids.orderid + '.', '#b45309');
+          if(generation !== checkoutGeneration){
+            if(visiblePaymentOutcome===outcome)renderPaymentOutcome(outcome);
+            return;
+          }
+          setStatus(outcome.message, '#b45309');
         });
       });
       dropIn.on('error', function(evt){
+        if(paymentHandled || generation !== checkoutGeneration) return;
         setStatus('\u2717 Payment failed: ' + ((evt && evt.detail && evt.detail.message) || 'error'), '#c33');
       });
-      dropIn.on('ready', function(){ setStatus(awxEnv === 'demo' ? 'Sandbox ready \u2014 test card 4035 5010 0000 0008, any future date, any CVC.' : 'Secure card entry ready. This is a live payment of $' + amount.toFixed(2) + ' ' + currency + '.'); });
+      dropIn.on('ready', function(){ if(paymentHandled || generation !== checkoutGeneration) return;setStatus(awxEnv === 'demo' ? 'Sandbox ready \u2014 test card 4035 5010 0000 0008, any future date, any CVC.' : 'Secure card entry ready. This is a live payment of $' + amount.toFixed(2) + ' ' + currency + '.'); });
 
     } catch (e) {
       if (e && e.message === 'NO_ORDER_IN_SESSION') {
