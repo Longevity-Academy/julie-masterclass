@@ -2122,12 +2122,39 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       // 'lead' mode: proven website path — CRM connected via /Students/AddNewLead.
       return postWithRetry(base + '/leads/' + CFG.env, built.payload);
     },
+    // 2026-09-24 (Elad, eTeacher): CRM-generated payment links carry RequestId (identifies student,
+    // order and rep). Accept ?RequestId=..&StudentId=..&OrderId=.. in any casing, keep RequestId for the
+    // payment report (SetECommercePayment optional field RequestId) and the details call.
+    linkParams: function(){
+      var out = {};
+      try {
+        new URLSearchParams(location.search).forEach(function(v, k){
+          var key = String(k).toLowerCase();
+          if (key === 'stid' || key === 'studentid' || key === 'student_id') out.stid = v;
+          else if (key === 'orderid' || key === 'order_id') out.orderid = v;
+          else if (key === 'requestid' || key === 'request_id' || key === 'rid') out.requestId = v;
+          else if (key === 'plan') out.plan = v;
+        });
+      } catch(e) {}
+      return out;
+    },
+    getRequestId: function(){
+      try {
+        var lp = window.LLA_ECOMM.linkParams();
+        if (lp.requestId && /^[\w-]{1,120}$/.test(lp.requestId)) {
+          sessionStorage.setItem('julie_request_id', JSON.stringify({ id: lp.requestId, stid: lp.stid || '', orderid: lp.orderid || '' }));
+          return lp.requestId;
+        }
+        var saved = JSON.parse(sessionStorage.getItem('julie_request_id') || 'null');
+        return (saved && saved.id) ? saved.id : '';
+      } catch(e) { return ''; }
+    },
     getCheckoutIds: function(){
       try {
-        var q = new URLSearchParams(location.search);
-        if (q.get('stid') && q.get('orderid') && q.get('plan') === window.LLA_PLAN.get().id &&
-            /^(standard|vip)$/.test(q.get('plan') || '')) {
-          return { stid: q.get('stid'), orderid: q.get('orderid'), plan: q.get('plan'), env: CFG.env };
+        var lp = window.LLA_ECOMM.linkParams();
+        if (lp.stid && lp.orderid && lp.plan === window.LLA_PLAN.get().id &&
+            /^(standard|vip)$/.test(lp.plan || '')) {
+          return { stid: lp.stid, orderid: lp.orderid, plan: lp.plan, env: CFG.env, requestId: window.LLA_ECOMM.getRequestId() || undefined };
         }
         var raw = sessionStorage.getItem('julie_ecomm_ids');
         var saved = raw ? JSON.parse(raw) : null;
@@ -2139,7 +2166,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       if (!ids || CFG.mode !== 'ecomm') return Promise.resolve(null);
       var base = CFG.workerBase.replace(/\/$/, '');
       var prefix = CFG.env === 'staging' ? '/staging' : '';
-      return postWithRetry(base + prefix + '/api/checkout/details', { studentId: String(ids.stid), orderId: String(ids.orderid) })
+      var body = { studentId: String(ids.stid), orderId: String(ids.orderid) };
+      var rid = window.LLA_ECOMM.getRequestId(); if (rid) { body.requestId = rid; body.RequestId = rid; }
+      return postWithRetry(base + prefix + '/api/checkout/details', body)
         .then(function(r){ return r.ok ? r.body : null; });
     },
     classForSession: function(sessionText){
@@ -2164,6 +2193,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           report.ActivitySessionLevel1ID = String(cls.semesterId);
           report.SemesterID = String(cls.semesterId);
         }
+      } catch(e) {}
+      try {
+        if (report && report.RequestId == null) { var rid = window.LLA_ECOMM.getRequestId(); if (rid) report.RequestId = rid; }
       } catch(e) {}
       return postWithRetry(base + prefix + '/api/checkout/payments/crm', report);
     }
@@ -2934,7 +2966,7 @@ var LLA_AC = (function(){
         attempt++;
         var r = await fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev' + envPrefix + '/api/checkout/details', {
           method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ studentId: String(ids.stid), orderId: String(ids.orderid) })
+          body: JSON.stringify((function(){ var b = { studentId: String(ids.stid), orderId: String(ids.orderid) }; var rid = window.LLA_ECOMM.getRequestId(); if (rid) { b.requestId = rid; b.RequestId = rid; } return b; })())
         });
         var raw = await r.text();
         if(generation !== checkoutGeneration) return;
@@ -3080,10 +3112,33 @@ var LLA_AC = (function(){
 
   /* Deep links: ?enroll=1|2 opens the modal, ?stid&orderid jumps straight to Place order */
   var q=new URLSearchParams(location.search);
-  if(q.get('plan')==='fullcourse'){location.replace(LLA_PLAN.blueprintCheckout());return;}
-  if(/^(standard|vip)$/.test(q.get('plan')||'')) LLA_PLAN.apply(q.get('plan'));
-  if(q.get('stid')&&q.get('orderid')&&/^(standard|vip)$/.test(q.get('plan')||'')){openCheckout();}
-  else if(q.get('enroll') || /^(standard|vip)$/.test(q.get('plan')||'') || location.hash==='#apply'){step(1);open();}
+  var lp=window.LLA_ECOMM.linkParams();
+  if(lp.plan==='fullcourse'){location.replace(LLA_PLAN.blueprintCheckout());return;}
+  if(/^(standard|vip)$/.test(lp.plan||'')) LLA_PLAN.apply(lp.plan);
+  function planFromDetails(d){
+    var amt=Number((d&&d.Airwallex&&d.Airwallex.amount)!=null?d.Airwallex.amount:(d||{}).AmountToCharge);
+    return amt===79?'vip':(amt===49?'standard':'');
+  }
+  function openFromCrmLink(ids){
+    /* CRM payment link (RequestId / StudentId / OrderId, no plan): read the order, pick the matching package, go straight to Pay. */
+    window.LLA_ECOMM.fetchCheckoutDetails({stid:ids.stid,orderid:ids.orderid}).then(function(d){
+      var pl=planFromDetails(d);
+      var sid=d&&(d.StudentId||d.StudentID), oid=d&&(d.OrderId||d.OrderID);
+      if(!pl||!sid||!oid){ alert('This payment link could not be opened. Please contact advisor@longevitylifeacademy.com or call +1-888-230-5110 and we will complete your enrollment.'); return; }
+      LLA_PLAN.apply(pl);
+      try{
+        var lessons=(d.AvailableClasses||[]).filter(function(c){return c.SelectedCourse;});
+        var dateEl=document.getElementById('emDate');
+        if(dateEl&&lessons.length&&/2026-11-14/.test(String(lessons[0].FirstLessonDate||''))){ var nov=Array.from(dateEl.options||[]).find(function(o){return /Nov(ember)?\s*14/i.test(o.value||o.text);}); if(nov) dateEl.value=nov.value; }
+      }catch(e){}
+      sessionStorage.setItem('julie_ecomm_ids', JSON.stringify({stid:String(sid),orderid:String(oid),plan:pl,env:window.LLA_ECOMM_CONFIG.env,ts:Date.now()}));
+      openCheckout();
+    });
+  }
+  if(lp.stid&&lp.orderid&&/^(standard|vip)$/.test(lp.plan||'')){openCheckout();}
+  else if(lp.stid&&lp.orderid){openFromCrmLink({stid:lp.stid,orderid:lp.orderid});}
+  else if(lp.requestId){openFromCrmLink({stid:'',orderid:''});}
+  else if(q.get('enroll') || /^(standard|vip)$/.test(lp.plan||'') || location.hash==='#apply'){step(1);open();}
 })();
 </script>
 <!-- ===== /LONGEVITY MASTERCLASS CHECKOUT ===== -->
