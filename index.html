@@ -2047,8 +2047,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       // Values read from GetECommerceFirstPaymentDetails.AvailableClasses for course 283 / 1823:
       //   Oct 27 7:00 PM ET -> CourseID 170141, SemesterID 2393 (2026-10b - Longevity)
       //   Nov 14 1:00 PM ET -> CourseID 170142, SemesterID 2394 (2026-11b - Longevity)
-      var MC_CLASSES = { oct27: { courseId: 170141, semesterId: 2393 }, nov14: { courseId: 170142, semesterId: 2394 } };
-      var mcClass = /Nov(ember)?\s*14/i.test(String(fields.startDate || '')) ? MC_CLASSES.nov14 : MC_CLASSES.oct27;
+      var mcClass = /Nov(ember)?\s*14/i.test(String(fields.startDate || '')) ? { courseId: 170142, semesterId: 2394 } : { courseId: 170141, semesterId: 2393 };
       payload.PrefferdCourseID        = mcClass.courseId;   // exact admin-form name (VP Ops screenshot)
       payload.PreferredCourseId       = mcClass.courseId;   // spec spelling
       payload.ActivitySessionLevel1ID = mcClass.semesterId; // exact admin-form name (VP Ops screenshot)
@@ -2131,11 +2130,29 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       return postWithRetry(base + prefix + '/api/checkout/details', { studentId: String(ids.stid), orderId: String(ids.orderid) })
         .then(function(r){ return r.ok ? r.body : null; });
     },
+    classForSession: function(sessionText){
+      // 2026-09-24 VP Operations: class + semester of the buyer's chosen session (CRM AvailableClasses, course 283/1823).
+      var nov14 = /Nov(ember)?\s*14/i.test(String(sessionText || ''));
+      return nov14 ? { courseId: 170142, semesterId: 2394 } : { courseId: 170141, semesterId: 2393 };
+    },
     reportPayment: function(report){
       // NEVER include raw card data (Pan/CardNumber/Cvv/Cvc/SecurityCode) — worker rejects it.
       if (CFG.mode !== 'ecomm') return Promise.resolve({ ok: false, error: 'ecomm_mode_off' });
       var base = CFG.workerBase.replace(/\/$/, '');
       var prefix = CFG.env === 'staging' ? '/staging' : '';
+      // 2026-09-24 VP Operations: SetECommercePayment carries PreferredCourseId (spec optional field) so the
+      // paid student is assigned to the class/semester; admin-form names sent alongside.
+      try {
+        if (report && report.PreferredCourseId == null) {
+          var sessTxt = ((document.getElementById('emDate') || {}).value) ||
+                        ((document.getElementById('ckSessTxt') || {}).textContent) || '';
+          var cls = window.LLA_ECOMM.classForSession(sessTxt);
+          report.PreferredCourseId = String(cls.courseId);
+          report.PrefferdCourseID = String(cls.courseId);
+          report.ActivitySessionLevel1ID = String(cls.semesterId);
+          report.SemesterID = String(cls.semesterId);
+        }
+      } catch(e) {}
       return postWithRetry(base + prefix + '/api/checkout/payments/crm', report);
     }
   };
