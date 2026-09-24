@@ -1225,6 +1225,405 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
   .pgrid-dot.active{width:26px;background:#006EFF}
 }
 </style>
+<style id="dev-fold-css">
+.dev-fold{ --blue: #006EFF; --blue-2: #338BFF; --blue-3: #5EB6FF; --blue-strong: #0051CC; --sky: #9CC8FF; --cyan: #7DE5FF; --cyan-2: #22C4F5; --electric: #2F7BFF; --indigo: #3348D6; --teal: #0B8FB5; --ice: #E8F1FF; --ice-2: #F3F7FF; --navy: #0A2240; --navy-2: #0B2A5B; --navy-deep: #061633; --navy-ink: #040D24; --ink: #0B1B33; --ink-2: #29385A; --ink-3: #5B6B8C; --ink-4: #8B97B3; --silver: #F3F6FB; --silver-2: #E6ECF5; --white: #FFFFFF; --tp: #00B67A; --font: 'Playfair Display', Georgia, 'Times New Roman', serif; --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --r-sm: 14px; --r-md: 22px; --r-lg: 30px; --r-xl: 40px; --ease: cubic-bezier(.22,1,.36,1); --nav-h: 78px; --gutter: clamp(20px, 4vw, 64px); --wrap: 1280px; --shadow-card: 0 1px 0 rgba(255,255,255,.7) inset, 0 30px 70px -34px rgba(10,34,64,.4), 0 2px 8px -2px rgba(10,34,64,.08); --shadow-dark: 0 1px 0 rgba(255,255,255,.14) inset, 0 40px 90px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(125,229,255,.12); --glow-blue: 0 18px 44px -14px rgba(0,110,255,.7); --glow-cyan: 0 0 0 1px rgba(125,229,255,.28), 0 0 60px -12px rgba(125,229,255,.55); }
+.dev-fold{ font-family: var(--font); font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.6; color: var(--ink-2); background: var(--white); -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; }
+.dev-fold{ --nav-h: 66px; }
+.dev-fold{ font-size: 17px; }
+.dev-fold{ font-size: 18px; }
+.dev-fold{ font-size: 17.5px; }
+.dev-fold{ --font-display: 'Playfair Display', Georgia, serif; }
+.dev-fold{ padding-bottom: 52px; }
+.dev-fold{ padding-bottom: 0px; }
+.dev-fold{ font-size: 17px; }
+.dev-fold{ font-size: 18px; }
+.dev-fold{ font-size: 17.5px; }
+.dev-fold{ --font-display: 'Playfair Display', Georgia, serif; }
+.dev-fold{ --mb: #006EFF; --ml: #5EB6FF; --mn: #0A1428; --mg: #F6DC8C; }
+.dev-fold{ padding-bottom: 60px; }
+.dev-fold *, .dev-fold ::before, .dev-fold ::after { box-sizing: border-box; margin: 0px; padding: 0px; }
+.dev-fold img, .dev-fold video { max-width: 100%; height: auto; display: block; }
+.dev-fold a { color: inherit; text-decoration: none; }
+.dev-fold em, .dev-fold i { font-style: italic; }
+.dev-fold h1, .dev-fold h2, .dev-fold h3, .dev-fold h4 { font-weight: 400; font-style: italic; letter-spacing: -0.012em; color: var(--ink); text-wrap: balance; }
+.dev-fold p { text-wrap: pretty; }
+.dev-fold .dv-container, .dev-fold .dv-fn-container, .dev-fold .lla-shine-in, .dev-fold .dv-pressx-in, .dev-fold .faq-inner { width: 100%; max-width: calc(var(--wrap) + var(--gutter) * 2); margin: 0px auto; padding-left: var(--gutter); padding-right: var(--gutter); position: relative; z-index: 1; }
+.dev-fold section { position: relative; isolation: isolate; overflow: clip; }
+.dev-fold .dv-container > *, .dev-fold .dv-fn-container > *, .dev-fold .fn-offer-grid > *, .dev-fold .dv-lla-value-layout > *, .dev-fold .dv-lla-value-cards > * { min-width: 0px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title, .dev-fold .hp-about-mainhead, .dev-fold .lla-shine-h2 { font-size: clamp(38px, 5vw, 70px); line-height: 1.03; margin: 0px 0px 20px; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub, .dev-fold .hp-about-lead, .dev-fold .lla-shine-p { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.55; color: var(--ink-3); max-width: 760px; margin: 0px; }
+.dev-fold .dv-section-title em, .dev-fold .fn-h2 em, .dev-fold .dv-pdp-value-h2 em, .dev-fold .lla-shine-h2 em, .dev-fold .hp-about-mainhead .life-blue { color: var(--blue); background: linear-gradient(90deg, rgb(0, 110, 255), rgb(34, 196, 245)) text; -webkit-text-fill-color: transparent; }
+.dev-fold .dv-is-dark .dv-section-title, .dev-fold .dv-is-dark .lp-learn-title, .dev-fold .dv-is-dark .fn-h2, .dev-fold .dv-is-dark .dv-pdp-value-h2, .dev-fold .dv-is-dark .cgm-fold-title, .dev-fold .dv-is-dark h3, .dev-fold .dv-is-dark h4 { color: rgb(255, 255, 255); }
+.dev-fold .dv-is-dark .dv-section-title em, .dev-fold .dv-is-dark .fn-h2 em, .dev-fold .dv-is-dark .dv-pdp-value-h2 em, .dev-fold .dv-is-dark .hp-about-mainhead .life-blue { color: var(--cyan); background: linear-gradient(90deg, rgb(125, 229, 255), rgb(207, 230, 255) 50%, rgb(94, 182, 255)) text; -webkit-text-fill-color: transparent; filter: drop-shadow(rgba(125, 229, 255, 0.45) 0px 0px 18px); }
+.dev-fold .pdp-cine-meta, .dev-fold .lp-learn-note, .dev-fold .fn-microtrust, .dev-fold .fn-stack-val, .dev-fold .fn-stack-total, .dev-fold .fn-exit-list .val, .dev-fold .phase-block-header, .dev-fold .cgm-fold-eyebrow, .dev-fold .pdp-cine-wordmark, .dev-fold .dv-lla-zoom-shot figcaption, .dev-fold .fn-cta-note, .dev-fold .cgm-fold-bullet svg, .dev-fold .fn-exit-list svg, .dev-fold .lp-classfact svg { display: none !important; }
+.dev-fold .reveal, .dev-fold .fn-reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease),transform .9s var(--ease); }
+.dev-fold .dv-rail-dots { display: none; justify-content: center; gap: 7px; margin-top: 18px; }
+.dev-fold .dv-rail-dots i { width: 6px; height: 6px; border-radius: 50%; background: currentcolor; opacity: 0.22; transition: all .3s var(--ease); }
+.dev-fold .dv-lla-films-head { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: end; margin-bottom: clamp(28px, 4vw, 48px); text-align: center; }
+.dev-fold .dv-lla-films-head .dv-section-subtitle { margin: 0px !important; max-width: none !important; }
+.dev-fold .dv-pressx { padding: 26px 0px; background: rgb(255, 255, 255); border-bottom: 1px solid rgba(10, 34, 64, 0.08); }
+.dev-fold .dv-pressx-in { display: flex; align-items: center; gap: 28px; }
+.dev-fold .dv-pressx-label { flex: 0 0 auto; font-size: 15px; color: var(--ink-4); }
+.dev-fold .dv-pressx-viewport { flex: 1 1 0%; min-width: 0px; width: 100%; max-width: 100%; overflow: hidden; mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, transparent); }
+.dev-fold .dv-pressx-track { display: flex; align-items: center; gap: 44px; width: max-content; animation: 36s linear 0s infinite normal none running pressMarquee; }
+.dev-fold .dv-px-mark { font-size: 22px; color: var(--ink-2); white-space: nowrap; }
+.dev-fold .dv-px-mark i { color: var(--blue); }
+.dev-fold .dv-px-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan-2); box-shadow: 0 0 8px var(--cyan-2); flex: 0 0 auto; }
+.dev-fold .dv-lla-news { padding: clamp(64px, 9vw, 128px) 0px; background: rgb(255, 255, 255); }
+.dev-fold .dv-lla-news .dv-lla-films-head { grid-template-columns: 1.3fr 1fr; }
+.dev-fold .dv-lla-news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.dev-fold .dv-lla-news-card { position: relative; display: flex; flex-direction: column; border-radius: var(--r-md); overflow: hidden; background: rgb(255, 255, 255); border: 1px solid rgba(10, 34, 64, 0.08); box-shadow: var(--shadow-card); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.dev-fold .dv-lla-news-media { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--silver-2); position: relative; }
+.dev-fold .dv-lla-news-media img, .dev-fold .dv-lla-news-media video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.dev-fold .dv-lla-news-body { display: flex; flex-direction: column; flex: 1 1 0%; padding: 20px 22px 18px; gap: 10px; }
+.dev-fold .dv-lla-news-outlet { font-size: 14px; color: var(--blue); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.dev-fold .dv-lla-news-outlet i { color: var(--ink-4); position: relative; padding-left: 12px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 21px; line-height: 1.3; color: var(--ink); }
+.dev-fold .dv-lla-news-sub { font-size: 15px; line-height: 1.55; color: var(--ink-3); }
+.dev-fold .dv-lla-news-meta { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(10, 34, 64, 0.08); display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--ink-4); }
+.dev-fold .dv-lla-news-meta em { color: var(--blue); display: inline-flex; align-items: center; gap: 6px; }
+.dev-fold .dv-pdp-value { padding: clamp(64px, 9vw, 128px) 0px; color: rgb(255, 255, 255); background: linear-gradient(rgb(7, 26, 61), rgb(4, 13, 36)); }
+.dev-fold .dv-pdp-value-head { margin-bottom: clamp(30px, 4vw, 56px); }
+.dev-fold .dv-lla-value-layout { display: grid; grid-template-columns: minmax(0px, 1.15fr) minmax(0px, 1fr); gap: 28px; align-items: center; }
+.dev-fold .dv-lla-zoom-shot { position: relative; perspective: 1600px; }
+.dev-fold .dv-mock-browser { position: relative; border-radius: 22px; overflow: hidden; background: rgb(11, 27, 51); border: 1px solid rgba(125, 229, 255, 0.3); box-shadow: rgba(0, 0, 0, 0.9) 0px 60px 120px -40px, rgba(0, 110, 255, 0.8) 0px 0px 90px -20px, rgba(255, 255, 255, 0.12) 0px 1px 0px inset; transition: transform .9s var(--ease); }
+.dev-fold .dv-mock-browser-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: linear-gradient(rgb(19, 42, 85), rgb(11, 27, 51)); border-bottom: 1px solid rgba(125, 229, 255, 0.16); }
+.dev-fold .dv-mock-browser-bar i { width: 11px; height: 11px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); }
+.dev-fold .dv-mock-browser-bar i:nth-child(1) { background: rgb(255, 107, 107); }
+.dev-fold .dv-mock-browser-bar i:nth-child(2) { background: rgb(255, 209, 102); }
+.dev-fold .dv-mock-browser-bar i:nth-child(3) { background: rgb(46, 212, 122); }
+.dev-fold .dv-mock-browser img { width: 100%; height: auto; display: block; }
+.dev-fold .dv-pdp-value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.dev-fold .dv-pdp-value-card { position: relative; padding: 26px 24px 28px; border-radius: var(--r-md); overflow: hidden; color: rgb(255, 255, 255); background: var(--vc-bg); border: 1px solid rgba(125, 229, 255, 0.22); box-shadow: var(--shadow-dark), 0 0 60px -24px var(--vc-glow); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.dev-fold .dv-pdp-value-card[data-vc="1"] { --vc-bg: linear-gradient(160deg,#0A57D8,#0A2E7A); --vc-glow: rgba(10,87,216,.9); }
+.dev-fold .dv-pdp-value-card[data-vc="2"] { --vc-bg: linear-gradient(160deg,#0E8FB8,#063A57); --vc-glow: rgba(18,163,207,.9); }
+.dev-fold .dv-pdp-value-card[data-vc="3"] { --vc-bg: linear-gradient(160deg,#3348D6,#141F6B); --vc-glow: rgba(51,72,214,.9); }
+.dev-fold .dv-pdp-value-card[data-vc="4"] { --vc-bg: linear-gradient(160deg,#2F7BFF,#0B2A5B); --vc-glow: rgba(47,123,255,.9); }
+.dev-fold .dv-pdp-value-card h3 { font-size: 24px; line-height: 1.2; color: rgb(255, 255, 255); margin-bottom: 10px; position: relative; }
+.dev-fold .dv-pdp-value-card p { font-size: 16px; line-height: 1.6; color: rgba(232, 240, 255, 0.86); position: relative; }
+.dev-fold .dv-lla-news { background: linear-gradient(rgb(241, 245, 251), rgb(255, 255, 255)); }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(42px, 5.4vw, 78px); line-height: 1.02; margin-bottom: 22px; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.5; color: var(--ink-2); }
+.dev-fold .dv-lla-news-card h3 { font-size: 23px; line-height: 1.28; }
+.dev-fold .dv-lla-news-sub { font-size: 16.5px; line-height: 1.55; }
+.dev-fold .lla-news-src, .dev-fold .dv-lla-news-meta, .dev-fold .lla-news-foot, .dev-fold .lla-news-foot * { font-size: 15px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 25px; }
+.dev-fold .dv-pdp-value-card p { font-size: 17px; line-height: 1.55; }
+.dev-fold .dv-is-dark { box-shadow: rgba(125, 229, 255, 0.45) 0px 1px 0px inset; }
+.dev-fold .lp-lrow, .dev-fold .quote-card, .dev-fold .dv-pdp-value-card, .dev-fold .fn-stack-row, .dev-fold .hp-teacher-card-live, .dev-fold .dv-lla-news-card, .dev-fold .fn-journey-step, .dev-fold .faq-item, .dev-fold .curriculum-tab, .dev-fold .cgm-fold-img, .dev-fold .fn-pricecard, .dev-fold .hp-about-powered, .dev-fold .dv-mock-browser { box-shadow: rgba(0, 30, 90, 0.55) 0px 30px 70px -40px, rgba(125, 229, 255, 0.28) 0px 0px 0px 1px, rgba(0, 110, 255, 0.55) 0px 0px 50px -16px; }
+.dev-fold .quote-card, .dev-fold .dv-pdp-value-card, .dev-fold .fn-stack-row, .dev-fold .lp-lrow { position: relative; }
+.dev-fold .dv-section-title em, .dev-fold .fn-h2 em, .dev-fold .dv-pdp-value-h2 em { filter: drop-shadow(rgba(0, 110, 255, 0.45) 0px 0px 22px); }
+.dev-fold .dv-mock-browser { border: 1px solid rgba(125, 229, 255, 0.45); box-shadow: rgba(0, 0, 0, 0.8) 0px 60px 120px -50px, rgba(125, 229, 255, 0.3) 0px 0px 0px 1px, rgba(0, 110, 255, 0.9) 0px 0px 90px -20px; }
+.dev-fold .dv-lla-news { background: linear-gradient(rgb(237, 243, 251) 0%, rgb(248, 250, 253) 100%); }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { max-width: none; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { max-width: 1000px; font-size: clamp(20px, 1.8vw, 26px); }
+.dev-fold .dv-pressx-label { display: none !important; }
+.dev-fold .dv-lla-news .dv-pressx, .dev-fold .dv-lla-news .dv-pressx-in { background: transparent; padding: 0px 0px 26px; }
+.dev-fold .dv-lla-news .dv-pressx-in { margin: 0px auto 10px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 24px; }
+.dev-fold .dv-lla-news-sub { font-size: 17px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 27px; }
+.dev-fold .dv-pdp-value-card p { font-size: 18px; }
+.dev-fold .dv-mock-browser { transform: scale(1.04); transform-origin: left center; }
+.dev-fold .dv-lla-news .dv-lla-films-head { grid-template-columns: 1fr; text-align: left; gap: 10px; }
+.dev-fold .dv-lla-news .dv-lla-films-head .dv-section-subtitle { max-width: 1000px !important; margin: 0px !important; }
+.dev-fold .dv-lla-news .dv-pressx-viewport { mask-image: none; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 24px; color: var(--navy); }
+.dev-fold .dv-lla-news .dv-pressx-in { padding: 6px 0px 28px; }
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 1.35fr) minmax(0px, 1fr); gap: 40px; align-items: stretch; }
+.dev-fold .dv-lla-zoom-shot { display: flex; align-items: center; }
+.dev-fold .dv-mock-browser { transform: none; width: 100%; }
+.dev-fold .dv-lla-value-cards { display: flex; }
+.dev-fold .dv-pdp-value-grid { grid-auto-rows: 1fr; gap: 22px; flex: 1 1 0%; }
+.dev-fold .dv-pdp-value-card { padding: 34px 30px 32px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 28px; line-height: 1.2; }
+.dev-fold .dv-pdp-value-card p { font-size: 19px; line-height: 1.55; }
+.dev-fold .dv-pdp-value-head { margin-bottom: 44px; }
+.dev-fold .lp-learn-head, .dev-fold .curriculum-header, .dev-fold .hp-instructors-header, .dev-fold .testimonials-header, .dev-fold .dv-pdp-value-head, .dev-fold .cgm-fold-header, .dev-fold .faq-header, .dev-fold .fn-head, .dev-fold .dv-lla-films-head, .dev-fold .dv-lla-news .dv-lla-films-head { max-width: none !important; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { max-width: none !important; font-size: clamp(44px, 5.6vw, 82px); }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: clamp(21px, 1.85vw, 27px); line-height: 1.5; max-width: 1180px !important; }
+.dev-fold .fn-head--center .fn-lead, .dev-fold .dv-lla-films-head .dv-section-subtitle { margin-left: auto !important; margin-right: auto !important; }
+.dev-fold .dv-lla-news-grid { align-items: flex-start; }
+.dev-fold .dv-lla-news-card { height: auto; }
+.dev-fold .dv-lla-news-body { flex: 0 0 auto; }
+.dev-fold .dv-lla-news-media { aspect-ratio: 16 / 9; }
+.dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 17px; }
+.dev-fold .dv-lla-news .dv-lla-films-head .dv-section-subtitle { display: none !important; }
+.dev-fold .dv-lla-news .dv-lla-films-head { margin-bottom: 26px !important; }
+.dev-fold .dv-lla-news .dv-pressx { background: rgb(0, 0, 0); margin: 0px calc(50% - 50vw) 34px; padding: 18px 0px; width: 100vw; position: relative; left: auto; }
+.dev-fold .dv-lla-news .dv-pressx-in { padding: 0 var(--gutter); margin: 0px auto; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { color: rgb(255, 255, 255); }
+.dev-fold .dv-lla-news .dv-pressx-viewport { mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, transparent); }
+.dev-fold .dv-lla-news .dv-pressx, .dev-fold .dv-lla-news .dv-pressx * { color: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 24px !important; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(42px, 5.4vw, 78px); line-height: 1.02; margin-bottom: 22px; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: clamp(19px, 1.7vw, 24px); line-height: 1.5; color: var(--ink-2); }
+.dev-fold .dv-lla-news-card h3 { font-size: 23px; line-height: 1.28; }
+.dev-fold .dv-lla-news-sub { font-size: 16.5px; line-height: 1.55; }
+.dev-fold .lla-news-src, .dev-fold .dv-lla-news-meta, .dev-fold .lla-news-foot, .dev-fold .lla-news-foot * { font-size: 15px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 25px; }
+.dev-fold .dv-pdp-value-card p { font-size: 17px; line-height: 1.55; }
+.dev-fold .dv-is-dark { box-shadow: rgba(125, 229, 255, 0.45) 0px 1px 0px inset; }
+.dev-fold .lp-lrow, .dev-fold .quote-card, .dev-fold .dv-pdp-value-card, .dev-fold .fn-stack-row, .dev-fold .hp-teacher-card-live, .dev-fold .dv-lla-news-card, .dev-fold .fn-journey-step, .dev-fold .faq-item, .dev-fold .curriculum-tab, .dev-fold .cgm-fold-img, .dev-fold .fn-pricecard, .dev-fold .hp-about-powered, .dev-fold .dv-mock-browser { box-shadow: rgba(0, 30, 90, 0.55) 0px 30px 70px -40px, rgba(125, 229, 255, 0.28) 0px 0px 0px 1px, rgba(0, 110, 255, 0.55) 0px 0px 50px -16px; }
+.dev-fold .quote-card, .dev-fold .dv-pdp-value-card, .dev-fold .fn-stack-row, .dev-fold .lp-lrow { position: relative; }
+.dev-fold .dv-section-title em, .dev-fold .fn-h2 em, .dev-fold .dv-pdp-value-h2 em { filter: drop-shadow(rgba(0, 110, 255, 0.45) 0px 0px 22px); }
+.dev-fold .dv-mock-browser { border: 1px solid rgba(125, 229, 255, 0.45); box-shadow: rgba(0, 0, 0, 0.8) 0px 60px 120px -50px, rgba(125, 229, 255, 0.3) 0px 0px 0px 1px, rgba(0, 110, 255, 0.9) 0px 0px 90px -20px; }
+.dev-fold .dv-lla-news { background: linear-gradient(rgb(237, 243, 251) 0%, rgb(248, 250, 253) 100%); }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { max-width: none; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { max-width: 1000px; font-size: clamp(20px, 1.8vw, 26px); }
+.dev-fold .dv-pressx-label { display: none !important; }
+.dev-fold .dv-lla-news .dv-pressx, .dev-fold .dv-lla-news .dv-pressx-in { background: transparent; padding: 0px 0px 26px; }
+.dev-fold .dv-lla-news .dv-pressx-in { margin: 0px auto 10px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 24px; }
+.dev-fold .dv-lla-news-sub { font-size: 17px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 27px; }
+.dev-fold .dv-pdp-value-card p { font-size: 18px; }
+.dev-fold .dv-mock-browser { transform: scale(1.04); transform-origin: left center; }
+.dev-fold .dv-lla-news .dv-lla-films-head { grid-template-columns: 1fr; text-align: left; gap: 10px; }
+.dev-fold .dv-lla-news .dv-lla-films-head .dv-section-subtitle { max-width: 1000px !important; margin: 0px !important; }
+.dev-fold .dv-lla-news .dv-pressx-viewport { mask-image: none; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 24px; color: var(--navy); }
+.dev-fold .dv-lla-news .dv-pressx-in { padding: 6px 0px 28px; }
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 1.35fr) minmax(0px, 1fr); gap: 40px; align-items: stretch; }
+.dev-fold .dv-lla-zoom-shot { display: flex; align-items: center; }
+.dev-fold .dv-mock-browser { transform: none; width: 100%; }
+.dev-fold .dv-lla-value-cards { display: flex; }
+.dev-fold .dv-pdp-value-grid { grid-auto-rows: 1fr; gap: 22px; flex: 1 1 0%; }
+.dev-fold .dv-pdp-value-card { padding: 34px 30px 32px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 28px; line-height: 1.2; }
+.dev-fold .dv-pdp-value-card p { font-size: 19px; line-height: 1.55; }
+.dev-fold .dv-pdp-value-head { margin-bottom: 44px; }
+.dev-fold .lp-learn-head, .dev-fold .curriculum-header, .dev-fold .hp-instructors-header, .dev-fold .testimonials-header, .dev-fold .dv-pdp-value-head, .dev-fold .cgm-fold-header, .dev-fold .faq-header, .dev-fold .fn-head, .dev-fold .dv-lla-films-head, .dev-fold .dv-lla-news .dv-lla-films-head { max-width: none !important; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { max-width: none !important; font-size: clamp(44px, 5.6vw, 82px); }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: clamp(21px, 1.85vw, 27px); line-height: 1.5; max-width: 1180px !important; }
+.dev-fold .fn-head--center .fn-lead, .dev-fold .dv-lla-films-head .dv-section-subtitle { margin-left: auto !important; margin-right: auto !important; }
+.dev-fold .dv-lla-news-grid { align-items: flex-start; }
+.dev-fold .dv-lla-news-card { height: auto; }
+.dev-fold .dv-lla-news-body { flex: 0 0 auto; }
+.dev-fold .dv-lla-news-media { aspect-ratio: 16 / 9; }
+.dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 17px; }
+.dev-fold .dv-lla-news .dv-lla-films-head .dv-section-subtitle { display: none !important; }
+.dev-fold .dv-lla-news .dv-lla-films-head { margin-bottom: 26px !important; }
+.dev-fold .dv-lla-news .dv-pressx { background: rgb(0, 0, 0); margin: 0px calc(50% - 50vw) 34px; padding: 18px 0px; width: 100vw; position: relative; left: auto; }
+.dev-fold .dv-lla-news .dv-pressx-in { padding: 0 var(--gutter); margin: 0px auto; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { color: rgb(255, 255, 255); }
+.dev-fold .dv-lla-news .dv-pressx-viewport { mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 8%, rgb(0, 0, 0) 92%, transparent); }
+.dev-fold .dv-lla-news .dv-pressx, .dev-fold .dv-lla-news .dv-pressx * { color: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 24px !important; }
+.dev-fold .reveal, .dev-fold .fn-reveal, .dev-fold [class*="reveal"] { opacity: 1 !important; transform: none !important; visibility: visible !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+.dev-fold .reveal, .dev-fold .fn-reveal { opacity: 1; transform: none; transition: none; }
+.dev-fold * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+}
+@media (max-width: 900px) {
+.dev-fold .dv-rail { overflow: auto hidden; scroll-snap-type: x mandatory; width: calc(100% + var(--gutter) * 2); min-width: 0px; max-width: none; margin-left: calc(var(--gutter) * -1); margin-right: calc(var(--gutter) * -1); padding: 10px var(--gutter) 26px; scroll-padding-left: var(--gutter); scrollbar-width: none; align-items: stretch; display: flex !important; flex-wrap: nowrap !important; gap: 14px !important; perspective: none !important; }
+.dev-fold .dv-rail > * { scroll-snap-align: start; flex: 0 0 min(84%, 360px) !important; width: auto !important; max-width: none !important; margin: 0px !important; transform: none !important; grid-area: auto !important; animation: auto ease 0s 1 normal none running none !important; }
+.dev-fold .dv-rail-dots { display: flex; }
+.dev-fold .dv-rail > .reveal, .dev-fold .dv-rail > .fn-reveal { opacity: 1 !important; transform: none !important; animation: auto ease 0s 1 normal none running none !important; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(34px, 9.6vw, 40px); margin-bottom: 14px; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub, .dev-fold .lla-shine-p { font-size: 17px; }
+.dev-fold .dv-lla-films-head { grid-template-columns: 1fr; gap: 14px; }
+.dev-fold .dv-pressx-in { flex-direction: column; align-items: flex-start; gap: 12px; }
+.dev-fold .dv-px-mark { font-size: 19px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 19px; }
+.dev-fold .dv-lla-news .dv-lla-films-head { grid-template-columns: 1fr; }
+.dev-fold .dv-pdp-value-card { padding: 22px 20px 24px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 22px; }
+.dev-fold .dv-mock-browser { border-radius: 16px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(30px, 8.6vw, 38px); line-height: 1.08; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 16px; line-height: 1.5; }
+.dev-fold .lp-learn-head, .dev-fold .curriculum-header, .dev-fold .hp-instructors-header, .dev-fold .testimonials-header, .dev-fold .dv-pdp-value-head, .dev-fold .cgm-fold-header, .dev-fold .faq-header, .dev-fold .dv-lla-films-head { margin-bottom: 22px !important; }
+.dev-fold .dv-rail > * { flex: 0 0 min(76%, 320px) !important; }
+.dev-fold .dv-lla-news-body { padding: 16px 16px 14px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 18px; }
+.dev-fold .dv-lla-news-sub { font-size: 14px; }
+.dev-fold .dv-pdp-value-card { padding: 18px 16px 20px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 20px; }
+.dev-fold .dv-pdp-value-card p { font-size: 14.5px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(34px, 9.6vw, 42px); line-height: 1.06; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 17.5px; line-height: 1.5; }
+.dev-fold .dv-rail > * { flex: 0 0 min(84%, 340px) !important; }
+.dev-fold .dv-lla-news-media { aspect-ratio: 2 / 1; }
+.dev-fold .dv-lla-news-card h3 { font-size: 20px; line-height: 1.3; }
+.dev-fold .dv-lla-news-sub { font-size: 15.5px; }
+.dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 15.5px; line-height: 1.5; }
+.dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3 { font-size: 22px; }
+.dev-fold section, .dev-fold footer, .dev-fold .lla-shine, .dev-fold .lla-mini, .dev-fold .dv-pressx { overflow: hidden; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(36px, 10vw, 44px); line-height: 1.04; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 18px; }
+.dev-fold .lp-lrow-pay, .dev-fold .hp-teacher-card-live-bio, .dev-fold .dv-lla-news-sub, .dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 16px; line-height: 1.5; }
+.dev-fold .hp-teacher-card-live-name, .dev-fold .fn-stack-txt h4, .dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3 { font-size: 23px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 21px; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 19px; }
+.dev-fold .dv-pdp-value-card { padding: 24px 20px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 24px; }
+.dev-fold .dv-pdp-value-card p, .dev-fold .fn-stack-txt p { font-size: 17px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(36px, 10vw, 44px); }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 18px; }
+.dev-fold .dv-rail > * { flex: 0 0 min(86%, 360px) !important; }
+.dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p, .dev-fold .hp-teacher-card-live-bio, .dev-fold .dv-lla-news-sub, .dev-fold .lp-lrow-pay, .dev-fold .quote-text { font-size: 15.5px; line-height: 1.5; }
+.dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3, .dev-fold .hp-teacher-card-live-name, .dev-fold .lp-lrow-title { font-size: 22px; line-height: 1.2; }
+.dev-fold .dv-lla-news-card h3 { font-size: 19px; line-height: 1.3; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 17px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(32px, 9vw, 40px); }
+.dev-fold .dv-lla-news .dv-pressx { margin-bottom: 22px; padding: 14px 0px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(34px, 9.6vw, 42px); line-height: 1.06; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 17.5px; line-height: 1.5; }
+.dev-fold .dv-rail > * { flex: 0 0 min(84%, 340px) !important; }
+.dev-fold .dv-lla-news-media { aspect-ratio: 2 / 1; }
+.dev-fold .dv-lla-news-card h3 { font-size: 20px; line-height: 1.3; }
+.dev-fold .dv-lla-news-sub { font-size: 15.5px; }
+.dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 15.5px; line-height: 1.5; }
+.dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3 { font-size: 22px; }
+.dev-fold section, .dev-fold footer, .dev-fold .lla-shine, .dev-fold .lla-mini, .dev-fold .dv-pressx { overflow: hidden; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(36px, 10vw, 44px); line-height: 1.04; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 18px; }
+.dev-fold .lp-lrow-pay, .dev-fold .hp-teacher-card-live-bio, .dev-fold .dv-lla-news-sub, .dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p { font-size: 16px; line-height: 1.5; }
+.dev-fold .hp-teacher-card-live-name, .dev-fold .fn-stack-txt h4, .dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3 { font-size: 23px; }
+.dev-fold .dv-lla-news-card h3 { font-size: 21px; }
+.dev-fold .dv-lla-news .dv-pressx-track, .dev-fold .dv-lla-news .dv-pressx-in > * { font-size: 19px; }
+.dev-fold .dv-pdp-value-card { padding: 24px 20px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 24px; }
+.dev-fold .dv-pdp-value-card p, .dev-fold .fn-stack-txt p { font-size: 17px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(36px, 10vw, 44px); }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 18px; }
+.dev-fold .dv-rail > * { flex: 0 0 min(86%, 360px) !important; }
+.dev-fold .fn-stack-txt p, .dev-fold .dv-pdp-value-card p, .dev-fold .fn-journey-txt p, .dev-fold .hp-teacher-card-live-bio, .dev-fold .dv-lla-news-sub, .dev-fold .lp-lrow-pay, .dev-fold .quote-text { font-size: 15.5px; line-height: 1.5; }
+.dev-fold .dv-pdp-value-card h3, .dev-fold .fn-journey-txt h3, .dev-fold .hp-teacher-card-live-name, .dev-fold .lp-lrow-title { font-size: 22px; line-height: 1.2; }
+.dev-fold .dv-lla-news-card h3 { font-size: 19px; line-height: 1.3; }
+.dev-fold .dv-section-subtitle, .dev-fold .lp-learn-lead, .dev-fold .fn-lead, .dev-fold .cgm-fold-sub { font-size: 17px; }
+.dev-fold .dv-section-title, .dev-fold .lp-learn-title, .dev-fold .fn-h2, .dev-fold .dv-pdp-value-h2, .dev-fold .cgm-fold-title { font-size: clamp(32px, 9vw, 40px); }
+.dev-fold .dv-lla-news .dv-pressx { margin-bottom: 22px; padding: 14px 0px; }
+}
+@media (max-width: 1100px) {
+.dev-fold .dv-lla-news-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1000px) {
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 1fr); }
+.dev-fold .dv-mock-browser { transform: none; }
+.dev-fold .dv-lla-value-layout { display: grid; gap: 22px; grid-template-columns: minmax(0px, 1fr) !important; }
+.dev-fold .dv-lla-zoom-shot { display: block; max-width: none; }
+.dev-fold .dv-lla-value-cards { display: block; }
+.dev-fold .dv-pdp-value-grid { grid-auto-rows: auto; }
+.dev-fold .dv-lla-value-layout { display: grid; gap: 22px; grid-template-columns: minmax(0px, 1fr) !important; }
+.dev-fold .dv-lla-zoom-shot { display: block; max-width: none; }
+.dev-fold .dv-lla-value-cards { display: block; }
+.dev-fold .dv-pdp-value-grid { grid-auto-rows: auto; }
+}
+@media (min-width: 901px) {
+.dev-fold .dv-lla-news-grid { flex-wrap: nowrap; overflow-x: auto; gap: 24px; scroll-snap-type: x mandatory; padding: 10px 4px 26px; scrollbar-width: thin; scrollbar-color: rgba(0, 110, 255, 0.5) transparent; display: flex !important; }
+.dev-fold .dv-lla-news-grid > * { flex: 0 0 calc(33.333% - 16px); scroll-snap-align: start; }
+.dev-fold .dv-lla-news-grid { flex-wrap: nowrap; overflow-x: auto; gap: 24px; scroll-snap-type: x mandatory; padding: 10px 4px 26px; scrollbar-width: thin; scrollbar-color: rgba(0, 110, 255, 0.5) transparent; display: flex !important; }
+.dev-fold .dv-lla-news-grid > * { flex: 0 0 calc(33.333% - 16px); scroll-snap-align: start; }
+}
+@media (min-width: 1001px) {
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 1fr); gap: 36px; }
+.dev-fold .dv-lla-zoom-shot { max-width: 1120px; margin: 0px auto; width: 100%; }
+.dev-fold .dv-pdp-value-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 22px; }
+.dev-fold .dv-pdp-value-card { padding: 30px 26px 28px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 26px; }
+.dev-fold .dv-pdp-value-card p { font-size: 18px; }
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 0.95fr) minmax(0px, 1.05fr); gap: 34px; align-items: center; }
+.dev-fold .dv-lla-zoom-shot { max-width: none; margin: 0px; }
+.dev-fold .dv-pdp-value-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 18px; }
+.dev-fold .dv-pdp-value-card { padding: 26px 24px 24px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 24px; line-height: 1.2; }
+.dev-fold .dv-pdp-value-card p { font-size: 17px; line-height: 1.5; }
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 1fr); gap: 36px; }
+.dev-fold .dv-lla-zoom-shot { max-width: 1120px; margin: 0px auto; width: 100%; }
+.dev-fold .dv-pdp-value-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 22px; }
+.dev-fold .dv-pdp-value-card { padding: 30px 26px 28px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 26px; }
+.dev-fold .dv-pdp-value-card p { font-size: 18px; }
+.dev-fold .dv-lla-value-layout { grid-template-columns: minmax(0px, 0.95fr) minmax(0px, 1.05fr); gap: 34px; align-items: center; }
+.dev-fold .dv-lla-zoom-shot { max-width: none; margin: 0px; }
+.dev-fold .dv-pdp-value-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 18px; }
+.dev-fold .dv-pdp-value-card { padding: 26px 24px 24px; }
+.dev-fold .dv-pdp-value-card h3 { font-size: 24px; line-height: 1.2; }
+.dev-fold .dv-pdp-value-card p { font-size: 17px; line-height: 1.5; }
+}
+@media (max-width: 720px) {
+.dev-fold #dv-live .dv-pdp-value-grid.dv-rail { display: flex !important; flex-direction: column !important; width: auto !important; }
+.dev-fold .dv-rail { display: grid !important; grid-auto-flow: row !important; grid-template-columns: 1fr !important; overflow: visible !important; gap: 14px !important; scroll-snap-type: none !important; }
+.dev-fold .dv-rail > * { width: auto !important; min-width: 0px !important; max-width: none !important; flex: 0 0 auto !important; }
+.dev-fold .dv-rail-dots, .dev-fold [class*="rail-dots"] { display: none !important; }
+}
+@media (max-width: 768px) {
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot * { text-wrap: pretty; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #learn h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #faq h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-news h2, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-section-title, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .lla-mini-card h3, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .lla-shine-h2 { font-family: Inter, "Codec Pro", system-ui, sans-serif !important; font-style: normal !important; font-weight: 800 !important; letter-spacing: -0.02em !important; line-height: 1.1 !important; font-size: 28px !important; text-align: center !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #learn h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #faq h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-news h2 em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-section-title em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .lla-shine-h2 em { color: rgb(126, 200, 255) !important; font-style: normal !important; font-weight: 800 !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #learn p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-news p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-section-subtitle, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .lla-mini-card p, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .lla-shine-p { font-family: Inter, "Codec Pro", system-ui, sans-serif !important; font-style: normal !important; font-weight: 400 !important; font-size: 16px !important; line-height: 1.6 !important; text-align: center !important; max-width: 340px !important; margin-left: auto !important; margin-right: auto !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-section-subtitle { color: rgba(0, 0, 0, 0.7) !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot em, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot i { font-style: normal !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-plans, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .dv-pdp-value-grid, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .hp-instructors .hp-inst-scroll, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-lla-journal .dv-pdp-press, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .testimonials .pdp-testis, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus .fn-sessions, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .pdp-mech-steps { display: flex !important; flex-wrap: nowrap !important; gap: 14px !important; padding: 4px 20px 20px !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; scroll-padding-left: 20px !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-plans > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .dv-pdp-value-grid > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .hp-instructors .hp-inst-scroll > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-lla-journal .dv-pdp-press > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .testimonials .pdp-testis > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus .fn-sessions > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .pdp-mech-steps > * { flex: 0 0 88% !important; scroll-snap-align: start !important; scroll-snap-stop: always !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .testimonials, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-lla-journal { overflow: hidden !important; padding-left: 0px !important; padding-right: 0px !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section { padding-left: 0px !important; padding-right: 0px !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section > .dv-container, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section > .pdp-cine-inner, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section .fn-plans-wrap, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section .hp-about-inner { padding-left: 20px !important; padding-right: 20px !important; max-width: 100% !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot section { padding-top: clamp(56px, 12vw, 84px) !important; padding-bottom: clamp(48px, 10vw, 72px) !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot img:not(.nav-logo-img):not(.pdp-cine-wordmark), .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot video, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot iframe { max-width: 100% !important; height: auto !important; }
+}
+@media (max-width: 360px) {
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-section-title, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot h2 { font-size: 25px !important; }
+}
+@media (max-width: 760px) {
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers .hp-teachers-grid-live, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .dv-pdp-value-grid, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .fn-journey, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm .cgm-fold-images, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus .curriculum-tabs, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-plans, .dev-fold .dv-lla-slider { overscroll-behavior-x: contain; scroll-behavior: smooth; position: relative; display: flex !important; flex-flow: row !important; align-items: stretch !important; gap: 14px !important; overflow: auto hidden !important; scroll-snap-type: x mandatory !important; width: calc(100% + (var(--gutter, 20px) * 2)) !important; min-width: 0px !important; max-width: none !important; margin-left: calc(var(--gutter, 20px) * -1) !important; margin-right: calc(var(--gutter, 20px) * -1) !important; padding-inline: 20px !important; padding-top: 6px !important; padding-bottom: 14px !important; scroll-padding-inline: 20px !important; grid-template-columns: none !important; grid-auto-flow: row !important; perspective: none !important; transform: none !important; scrollbar-width: none !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers .hp-teachers-grid-live > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .dv-pdp-value-grid > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .fn-journey > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm .cgm-fold-images > *, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-plans > *, .dev-fold .dv-lla-slider > * { scroll-snap-stop: always; box-sizing: border-box; flex: 0 0 86% !important; width: 86% !important; min-width: 0px !important; max-width: none !important; margin: 0px !important; scroll-snap-align: center !important; grid-area: auto !important; transform: none !important; animation: auto ease 0s 1 normal none running none !important; opacity: 1 !important; visibility: visible !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot .dv-rail-dots { display: none !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .fn-reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .reveal, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .fn-reveal, .dev-fold .dv-lla-slider .reveal, .dev-fold .dv-lla-slider .fn-reveal, .dev-fold .reveal.lla-force-visible, .dev-fold .fn-reveal.lla-force-visible { opacity: 1 !important; transform: none !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live { overflow-x: clip; }
+.dev-fold body#lpRoot #syllabus, .dev-fold body#lpRoot #cgm, .dev-fold body#lpRoot #dv-live { overflow-x: clip; }
+.dev-fold body#lpRoot #syllabus, .dev-fold body#lpRoot #cgm, .dev-fold body#lpRoot #dv-live { contain: paint; }
+.dev-fold #dv-news .dv-pressx { display: none !important; }
+.dev-fold body#lpRoot #dv-news .dv-lla-news-media img[src*="ceo-harel-tayeb"], .dev-fold body#lpRoot #dv-news img[src*="ceo-harel-tayeb"], .dev-fold body#lpRoot img[src*="instructors/jordan"], .dev-fold body#lpRoot #dv-news img[src*="instructors/jordan"] { object-fit: cover !important; object-position: 50% 15% !important; width: 100% !important; height: 100% !important; display: block !important; }
+.dev-fold body#lpRoot #dv-news .dv-lla-news-card--press .dv-lla-news-media { position: relative !important; display: block !important; width: 100% !important; aspect-ratio: 16 / 10 !important; height: auto !important; overflow: hidden !important; }
+.dev-fold body#lpRoot #dv-news .dv-lla-news-media img, .dev-fold body#lpRoot #dv-news .dv-lla-news-media video { position: absolute !important; inset: 0px !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 15% !important; display: block !important; }
+.dev-fold body#lpRoot #dv-news .dv-lla-news-media img[src*="ceo-harel-tayeb"] { object-position: 50% 12% !important; }
+.dev-fold body#lpRoot #learn-com, .dev-fold body#lpRoot #cgm, .dev-fold body#lpRoot #vip, .dev-fold body#lpRoot #offer, .dev-fold body#lpRoot #syllabus, .dev-fold body#lpRoot #teachers, .dev-fold body#lpRoot #institution, .dev-fold body#lpRoot #dv-news, .dev-fold body#lpRoot #mechanism, .dev-fold body#lpRoot #dv-live, .dev-fold body#lpRoot #faq { padding-top: 56px !important; padding-bottom: 52px !important; }
+.dev-fold body#lpRoot .dv-section-subtitle, .dev-fold body#lpRoot .cgm-fold-sub, .dev-fold body#lpRoot .lla-vip-sub, .dev-fold body#lpRoot .lla-price .lp-lead { margin-bottom: 22px !important; }
+.dev-fold body#lpRoot .topics-header, .dev-fold body#lpRoot .cgm-fold-header, .dev-fold body#lpRoot .lla-vip-head, .dev-fold body#lpRoot .hp-instructors-header, .dev-fold body#lpRoot .dv-lla-films-head { margin-bottom: 22px !important; }
+.dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-news .dv-lla-news-grid > * { scroll-snap-align: start; min-width: 0px; flex: 0 0 82% !important; }
+.dev-fold body#lpRoot #dv-news .dv-lla-news-media { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+.dev-fold .dv-lla-slider, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #teachers .hp-teachers-grid-live, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #dv-live .dv-pdp-value-grid, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #mechanism .fn-journey, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #cgm .cgm-fold-images, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #syllabus .curriculum-tabs, .dev-fold body#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot#lpRoot #offer .fn-plans { scroll-behavior: auto !important; }
+}
+@keyframes pressMarquee { 
+  100% { transform: translateX(calc(-33.3333%)); }
+}
+
+.dev-fold video,.dev-fold img{max-width:100%}
+
+</style>
+<!-- dev-fold: live on zoom -->
+<div class="dev-fold" id="dv-live-wrap">
+<section class="dv-pdp-value dv-lp-deep dv-is-dark" id="dv-live" aria-label="Inside the live masterclass">
+  <div class="dv-fn-container">
+    <div class="dv-pdp-value-head ">
+      <h2 class="dv-pdp-value-h2">Live on Zoom. Julie herself. <em>Not a video library.</em></h2>
+    </div>
+    <div class="dv-lla-value-layout"><figure class="dv-lla-zoom-shot "><div class="dv-mock-browser"><div class="dv-mock-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/zoom-40-ppl-logos.webp" alt="Julie Gibson Clark hosting a live Longevity Life Academy masterclass on Zoom with fifty participants" loading="lazy" width="1600" height="893"></div><figcaption>A live Longevity Life Academy masterclass on Zoom. Julie Gibson Clark hosting, participants on camera, one live room.</figcaption></figure>
+<div class="dv-lla-value-cards"><div class="dv-pdp-value-grid dv-rail">
+      <article class="dv-pdp-value-card " data-vc="1">
+        <h3>Live on Zoom, not a recording.</h3>
+        <p>60 minutes live with Julie Gibson Clark. Two dates to choose from: Tuesday, October 27 at 7:00 PM ET or Saturday, November 14 at 1:00 PM ET.</p>
+      </article>
+      <article class="dv-pdp-value-card " data-vc="2">
+        <h3>Her data, not theory.</h3>
+        <p>Julie walks through her verified DunedinPACE result of 0.665 and what it measures: how biological aging is tested and what actually moves the number.</p>
+      </article>
+      <article class="dv-pdp-value-card " data-vc="3">
+        <h3>Food, sleep and movement.</h3>
+        <p>The three levers of her routine, shown the way she runs them day to day: what she eats, how she protects her sleep, how she moves, and the supplements she chose to keep.</p>
+      </article>
+      <article class="dv-pdp-value-card " data-vc="4">
+        <h3>VIP: 30 minutes with Julie.</h3>
+        <p>VIP access runs 90 minutes and adds a private 30-minute Q&amp;A with Julie, plus a $249 credit toward The Longevity Blueprint, valid until December 31, 2026.</p>
+      </article>
+    </div><div class="dv-rail-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+  </div></div>
+</section>
+</div>
 <section class="pricing-fold editorial-pricing" id="pricing" style="scroll-margin-top:90px">
   <div class="offer-shell">
     <header class="offer-heading">
@@ -1351,7 +1750,44 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
 </section>
 
 <!-- 5. IN THE PRESS, real articles -->
-<section class="fold f-ink" id="press" style="padding-top:40px">
+<!-- dev-fold: in the news -->
+<div class="dev-fold" id="dv-news-wrap">
+<section class="dv-lla-journal dv-lla-news" id="dv-news"><div class="dv-container"><div class="dv-lla-films-head"><h2 class="dv-section-title">Longevity Life Academy <em>in the news.</em></h2><p class="dv-section-subtitle" style="margin:0 auto;max-width:640px;">Press coverage in AP News and Yahoo Finance, and deep dives from The Longevity Blog.</p></div><div class="dv-pdp-press dv-pressx" aria-label="As seen on">
+  <div class="dv-pressx-in">
+    <span class="dv-pressx-label">As seen on</span>
+    <div class="dv-pressx-viewport">
+      <div class="dv-pressx-track">
+      <span class="dv-px-mark dv-px-usat">USA TODAY</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-yah">yahoo<i>finance</i></span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-nb">NewsBreak</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-ein">EIN Presswire</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-usat">USA TODAY</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-yah">yahoo<i>finance</i></span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-nb">NewsBreak</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-ein">EIN Presswire</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-usat">USA TODAY</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-yah">yahoo<i>finance</i></span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-nb">NewsBreak</span>
+      <span class="dv-px-dot"></span>
+      <span class="dv-px-mark dv-px-ein">EIN Presswire</span>
+      <span class="dv-px-dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dv-lla-news-grid dv-rail dv-lla-slider"><a class="dv-lla-news-card dv-lla-news-card--press" href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener"><span class="dv-lla-news-media"><img src="https://longevitylifeacademy.pages.dev/assets/ceo-harel-tayeb.jpg" alt="" loading="lazy"></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">AP News <i>eTeacher Group</i></span><h3>eTeacher Group Launches Longevity Life Academy to Teach the Longevity Protocol the Wealthy Pay Millions For</h3><span class="dv-lla-news-meta"><span>July 20, 2026</span><em>Read the article</em></span></span></a><a class="dv-lla-news-card dv-lla-news-card--press dv-lla-news-card--blog" href="https://www.longevitylifeacademy.com/topics/supplements-health-tech.html" target="_blank" rel="noopener"><span class="dv-lla-news-media"><video preload="none" poster="https://longevitylifeacademy.pages.dev/assets/posters/v2-supplements-meds.jpg" src="https://longevitylifeacademy.pages.dev/assets/v2-supplements-meds.mp4" muted="" loop="" playsinline=""></video></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">The Longevity Blog <i>Supplements and Therapies</i></span><h3>Know What You're Actually Taking</h3><p class="dv-lla-news-sub">NAD precursors, Vitamin D, omega-3s, creatine, senolytics, the short list of supplements with real human data, and the long list of marketing dressed up as science.</p><span class="dv-lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a><a class="dv-lla-news-card dv-lla-news-card--press dv-lla-news-card--blog" href="https://www.longevitylifeacademy.com/topics/mental-emotional-health.html" target="_blank" rel="noopener"><span class="dv-lla-news-media"><video preload="none" poster="https://longevitylifeacademy.pages.dev/assets/posters/v2-mental-bubbles.jpg" src="https://longevitylifeacademy.pages.dev/assets/v2-mental-bubbles.mp4" muted="" loop="" playsinline=""></video></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">The Longevity Blog <i>The Longevity Toolkit</i></span><h3>Five Habits That Move the Needle</h3><p class="dv-lla-news-sub">Zone 2 cardio for mitochondrial health, VO2 max as the strongest predictor of all-cause mortality, CGM-driven metabolic tracking, ApoB management, and the sleep architecture that drives recovery.</p><span class="dv-lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a><a class="dv-lla-news-card dv-lla-news-card--press" href="https://finance.yahoo.com/healthcare/articles/julie-gibson-clark-2nd-slowest-195800053.html" target="_blank" rel="noopener"><span class="dv-lla-news-media"><img src="https://longevitylifeacademy.pages.dev/assets/instructors/julie-gibson-clark.jpg" alt="" loading="lazy"></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">Yahoo Finance <i>Julie Gibson Clark</i></span><h3>Julie Gibson Clark, 2nd Slowest-Aging Woman on Earth, Joins Longevity Life Academy by eTeacher Group</h3><span class="dv-lla-news-meta"><span>July 27, 2026</span><em>Read the article</em></span></span></a><a class="dv-lla-news-card dv-lla-news-card--press dv-lla-news-card--blog" href="https://www.longevitylifeacademy.com/topics/protocols-habits.html" target="_blank" rel="noopener"><span class="dv-lla-news-media"><video preload="none" poster="https://longevitylifeacademy.pages.dev/assets/posters/skill-skin.jpg" src="https://longevitylifeacademy.pages.dev/assets/skill-skin.mp4" muted="" loop="" playsinline=""></video></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">The Longevity Blog <i>Aging on the Outside</i></span><h3>The Visible Edge of Aging</h3><p class="dv-lla-news-sub">Skin as a real-time marker of systemic aging, collagen turnover, oxidative stress, glycation, UV damage, and the topical and oral interventions with actual clinical evidence behind them.</p><span class="dv-lla-news-meta"><span>Deep dive</span><em>Read the article</em></span></span></a></div><div class="dv-rail-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div></section>
+</div>
+<script>(function(){function go(){var vids=[].slice.call(document.querySelectorAll('.dev-fold video'));if(!vids.length)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(v.preload==='none')v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{try{v.pause()}catch(x){}}})},{rootMargin:'120px 0px',threshold:0.15});vids.forEach(function(v){io.observe(v)});}if(document.readyState==='complete')go();else window.addEventListener('load',go);})();</script><section class="fold f-ink" id="press" style="padding-top:40px">
   <div class="container">
     <div class="shead reveal">
       <p class="eyebrow">In the press</p>
