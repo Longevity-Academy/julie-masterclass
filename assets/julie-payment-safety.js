@@ -60,16 +60,17 @@
       try { shopperCountry = root.sessionStorage.getItem('julie_buyer_country') || ''; } catch (ignore) {}
     }
     if (!/^[A-Z]{2}$/.test(shopperCountry)) shopperCountry = 'US';
+    /* Omri 2026-09-24 13:00: Google Pay restored (removed 2026-09-23 by mistake). PayPal is offered via eTeacher's PayPal Smart Buttons tab, not through Airwallex. */
     return {
       intent_id: details.Airwallex.paymentIntentId,
       client_secret: details.Airwallex.clientSecret,
       currency: 'USD',
       mode: 'payment',
       country_code: shopperCountry,
-      methods: ['card', 'paypal'],
-      payment_methods: ['card', 'paypal'],
-      paymentMethods: ['card', 'paypal'],
-      payment_method_types: ['card', 'paypal'],
+      methods: ['card', 'googlepay', 'applepay'],
+      payment_methods: ['card', 'googlepay', 'applepay'],
+      paymentMethods: ['card', 'googlepay', 'applepay'],
+      payment_method_types: ['card', 'googlepay', 'applepay'],
       applePayRequestOptions: {
         countryCode: 'CY', buttonType: 'buy', buttonColor: 'black',
         totalPriceLabel: 'Longevity Life Academy by eTeacher Group'
