@@ -132,6 +132,7 @@
     var country = BY_ISO[select.value], isUS = select.value === 'US';
     field.hidden = !isUS;
     field.style.display = isUS ? '' : 'none';
+    if (el('emStep1')) el('emStep1').classList.toggle('has-state', isUS);
     stateSelect.required = isUS;
     stateSelect.disabled = !isUS;
     if (!isUS) stateSelect.value = '';
@@ -158,7 +159,7 @@
     if (!el('emState')) {
       var field = doc.createElement('div'); field.id = 'emStateField';
       var stateLabel = doc.createElement('label');
-      stateLabel.className = 'em-lb'; stateLabel.htmlFor = 'emState'; stateLabel.textContent = 'State (U.S. only)*';
+      stateLabel.className = 'em-lb'; stateLabel.htmlFor = 'emState'; stateLabel.textContent = 'State*';
       var stateSelect = doc.createElement('select');
       stateSelect.id = 'emState'; stateSelect.name = 'buyer_state'; stateSelect.className = 'em-in';
       stateSelect.autocomplete = 'address-level1'; stateSelect.required = true;

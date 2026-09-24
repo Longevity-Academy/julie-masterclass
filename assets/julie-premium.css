@@ -61,17 +61,23 @@
 #ckScreen .ck-head .ck-logo img{max-width:150px;object-fit:contain}
 #ckScreen .ck-callus{font-size:15px}
 @media(min-width:700px){
- #enrollModal #emStep1.on{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px}
+ /* Two columns. Rows: 1-2 name | email, 3-4 country | state, 5-6 mobile, 7 SMS consent, 8 error, 9 Continue, 10 note.
+    Country and State are injected by julie-international-checkout.js, so they need explicit cells here. */
+ #enrollModal #emStep1.on{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;align-items:start}
  #enrollModal label[for="emName"]{grid-column:1;grid-row:1}
  #enrollModal #emName{grid-column:1;grid-row:2}
  #enrollModal label[for="emEmail"]{grid-column:2;grid-row:1}
  #enrollModal #emEmail{grid-column:2;grid-row:2}
- #enrollModal label[for="emPhone"]{grid-column:1/-1;grid-row:3}
- #enrollModal .em-phone{grid-column:1/-1;grid-row:4}
- #enrollModal .em-consent{grid-column:1/-1;grid-row:5;margin:2px 0 24px}
- #enrollModal #emErr{grid-column:1/-1;grid-row:6}
- #enrollModal #emGo1{grid-column:1/-1;grid-row:7;justify-self:center;width:min(100%,360px)}
- #enrollModal #emRefundNote{grid-column:1/-1;grid-row:8}
+ #enrollModal label[for="emCountry"]{grid-column:1;grid-row:3}
+ #enrollModal #emCountry{grid-column:1;grid-row:4}
+ #enrollModal #emStateField{grid-column:2;grid-row:3/5}
+ #enrollModal #emStep1.on:not(.has-state) label[for="emCountry"],#enrollModal #emStep1.on:not(.has-state) #emCountry{grid-column:1/-1}
+ #enrollModal label[for="emPhone"]{grid-column:1/-1;grid-row:5}
+ #enrollModal .em-phone{grid-column:1/-1;grid-row:6}
+ #enrollModal .em-consent{grid-column:1/-1;grid-row:7;margin:2px 0 20px}
+ #enrollModal #emErr{grid-column:1/-1;grid-row:8}
+ #enrollModal #emGo1{grid-column:1/-1;grid-row:9;justify-self:center;width:min(100%,360px)}
+ #enrollModal #emRefundNote{grid-column:1/-1;grid-row:10}
 }
 @media(max-width:699px){
  #enrollModal .em-dialog{margin:10px;max-height:calc(100dvh - 20px);padding:28px 22px;border-radius:22px;width:calc(100% - 20px)}

@@ -6,7 +6,7 @@
     u.searchParams.set('enroll','1');
     u.searchParams.set('plan','monthly');
     u.searchParams.set('code','JULIE249');
-    u.searchParams.set('promo',Date.now()<=Date.parse('2026-09-24T23:59:59-04:00')?'on':'off');
+    u.searchParams.set('promo','on'); /* JULIE249 has no hard expiry (Omri, 24 Sep 2026); the date on the card is urgency copy only */
     for(const k of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','cid','fbclid','gclid','qa'])if(incoming.has(k))u.searchParams.set(k,incoming.get(k));
     a.href=u.href;
   });

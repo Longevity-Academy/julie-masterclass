@@ -1582,12 +1582,12 @@ window.LLA_PLAN = (function(){
     }
   };
   function blueprintCheckout(){
-    var promoValid = Date.now() <= Date.parse('2026-09-24T23:59:59-04:00');
+    /* JULIE249 has no hard expiry (Omri, 24 Sep 2026): always send the code so the $149 x 5 card never lands on a $179 checkout. */
     var target = new URL('https://longevitylifeacademy.pages.dev/');
     target.searchParams.set('enroll','1');
     target.searchParams.set('plan','monthly');
-    target.searchParams.set('promo',promoValid?'on':'off');
-    if(promoValid) target.searchParams.set('code','JULIE249');
+    target.searchParams.set('promo','on');
+    target.searchParams.set('code','JULIE249');
     var incoming = new URLSearchParams(location.search);
     var stored = {};
     try { stored = window.LLA_ECOMM ? window.LLA_ECOMM.getAttribution() || {} : {}; } catch(e){}
@@ -2207,9 +2207,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     <div class="em-steps">
       <div class="em-st active" id="emS1"><span class="em-dot">1</span><span class="em-lbl">Your details</span></div>
       <span class="em-bar" id="emB1"></span>
-      <div class="em-st" id="emS2"><span class="em-dot">2</span><span class="em-lbl">Review</span></div>
+      <div class="em-st" id="emS2"><span class="em-dot">2</span><span class="em-lbl">Plan &amp; date</span></div>
       <span class="em-bar" id="emB2"></span>
-      <div class="em-st" id="emS3"><span class="em-dot">3</span><span class="em-lbl">Payment</span></div>
+      <div class="em-st" id="emS3"><span class="em-dot">3</span><span class="em-lbl">Pay</span></div>
     </div>
 
     <h2 id="checkoutPackageTitle">The Masterclass</h2><p id="checkoutPackageSummary" class="checkout-package-summary">$49 / 60 minutes live</p>
@@ -2228,14 +2228,14 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
         <input class="em-in" id="emPhone" type="tel" placeholder="Mobile" autocomplete="tel" />
       </div>
 
+      <div class="em-consent">
+        <input type="checkbox" id="emSms" />
+        <label for="emSms">Yes, send me SMS reminders about my masterclass from Longevity Life Academy. Message frequency varies. Message &amp; Data rates may apply. Optional.</label>
+      </div>
+
       <div class="em-err" id="emErr" role="alert"></div>
       <button class="em-go" type="button" id="emGo1">Continue</button>
       <p class="em-refund" id="emRefundNote">One payment in USD. All sales final at checkout.</p>
-
-      <div class="em-consent">
-        <input type="checkbox" id="emSms" checked />
-        <label for="emSms">By subscribing, you agree to receive SMS messages from Longevity Life Academy. Message frequency varies. Message &amp; Data rates may apply.</label>
-      </div>
     </div>
 
     <!-- STEP 2 -->
@@ -2293,6 +2293,8 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 #ckScreen .ck-bar.done{background:#006EFF}
 #ckScreen .ck-callus{font-size:14.5px;color:#2A2F36;white-space:nowrap}
 #ckScreen .ck-callus a{font-weight:700}
+#ckScreen .ck-backrow{margin:0 0 14px;font-size:14px;color:#5A6472;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+#ckScreen .ck-backrow a{font-weight:700;min-height:44px;display:inline-flex;align-items:center}
 #ckScreen .ck-wrap{max-width:900px;margin:0 auto;padding:26px 18px 70px}
 #ckScreen .ck-demo{display:flex;justify-content:center;margin-bottom:18px}
 #ckScreen .ck-demo span{background:#E8F1FF;color:#0051CC;font-size:12.5px;font-weight:600;padding:7px 15px;border-radius:99px}
@@ -2360,17 +2362,18 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 <header class="ck-head">
   <a class="ck-logo" href="#" data-ck-close><img src="assets/lla-logo-checkout.png" width="1314" height="596" alt="Longevity Life Academy by eTeacher Group" /></a>
   <div class="ck-stepper"><div class="ck-stepper-in">
-    <div class="ck-st done"><span class="ck-dot">1</span><span class="ck-lbl">Register</span></div>
+    <div class="ck-st done"><span class="ck-dot">1</span><span class="ck-lbl">Your details</span></div>
     <span class="ck-bar done"></span>
-    <div class="ck-st done"><span class="ck-dot">2</span><span class="ck-lbl">Select course</span></div>
+    <div class="ck-st done"><span class="ck-dot">2</span><span class="ck-lbl">Plan &amp; date</span></div>
     <span class="ck-bar" id="ckBar2"></span>
-    <div class="ck-st" id="ckSt3"><span class="ck-dot">3</span><span class="ck-lbl">Place order</span></div>
+    <div class="ck-st" id="ckSt3"><span class="ck-dot">3</span><span class="ck-lbl">Pay</span></div>
   </div></div>
   <div class="ck-callus">Call Us <a href="tel:+18882305110">+1-888-230-5110</a></div>
 </header>
 
 <main id="ckOrder" class="ck-wrap">
   <div class="ck-demo" id="ckDemoBanner" style="display:none"><span>Demo checkout ,  no card is charged</span></div>
+  <p class="ck-backrow"><a href="#" data-ck-back>&#8592; Back to plan &amp; date</a> <span>Nothing is charged until you pay on this screen.</span></p>
 
   <div class="ck-cols">
     <!-- LEFT -->
@@ -2446,11 +2449,12 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   <p id="ckReceiptReference"></p>
   <p><a href="https://student.eteachergroup.com/" target="_blank" rel="noopener">Open your learning platform</a></p>
   <div id="ckVipCoupon" style="display:none;margin:28px auto;max-width:520px;background:linear-gradient(155deg,#006EFF 0%,#0046b5 100%);color:#fff;padding:26px 28px;border-radius:14px;box-shadow:0 20px 60px rgba(0,110,255,.35);text-align:left">
-    <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#dcebff;margin-bottom:10px">VIP bonus &middot; Your $79 credit</div>
-    <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin-bottom:14px">Your $79 Blueprint course credit</div>
-    <p style="font-size:15px;line-height:1.6;color:#eaf3ff;margin-bottom:16px">Use this coupon code at checkout for The Longevity Blueprint course. It's worth $79 off ,  whatever the price at the time.</p>
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#dcebff;margin-bottom:10px">VIP bonus &middot; $249 toward The Longevity Blueprint</div>
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin-bottom:14px">Your VIP course credit</div>
+    <p style="font-size:15px;line-height:1.6;color:#eaf3ff;margin-bottom:16px">Use this code at checkout for The Longevity Blueprint: $149 a month instead of $179, 5 payments, with your VIP masterclass included. $249 in total value.</p>
     <div style="background:#fff;color:#003a8c;font-family:'Inter',monospace;font-weight:800;font-size:22px;letter-spacing:.18em;padding:16px 22px;border-radius:10px;text-align:center;margin-bottom:14px">MASTERCLASS-VIP</div>
-    <p style="font-size:13px;color:#dcebff;margin:0">Also saved to your email confirmation. Never expires.</p>
+    <a href="https://longevitylifeacademy.pages.dev/?enroll=1&amp;code=MASTERCLASS-VIP&amp;utm_source=julie-checkout&amp;utm_medium=success-screen&amp;utm_campaign=lgv_onboarding&amp;utm_content=vip-credit" target="_blank" rel="noopener" style="display:block;background:#fff;color:#0046b5;text-decoration:none;font-weight:800;font-size:15px;text-align:center;padding:14px 18px;border-radius:10px;margin-bottom:12px">Apply my credit on the course page &rarr;</a>
+    <p style="font-size:13px;color:#dcebff;margin:0">The code is applied for you when you use this button. It is also in your emails. No expiry.</p>
   </div>
   <div id="ckFullCourseNote" style="display:none;margin:28px auto;max-width:520px;background:linear-gradient(155deg,#C792FF 0%,#9B5EFF 100%);color:#fff;padding:26px 28px;border-radius:14px;box-shadow:0 20px 60px rgba(199,146,255,.35);text-align:left">
     <div style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F0E0FF;margin-bottom:10px">The Longevity Blueprint</div>
@@ -2556,7 +2560,7 @@ var LLA_AC = (function(){
     non_us_phone:'Please enter a valid US mobile number for United States.',
     invalid_country:'Please select your country.',
     invalid_phone:'Please enter a valid mobile number including its country code.',
-    invalid_state:'Please select your U.S. state.',
+    invalid_state:'Please select your state.',
     'Missing or invalid fields':'Please fill in all fields.'
   };
   function checkoutFields(){
@@ -2667,6 +2671,13 @@ var LLA_AC = (function(){
     ck.style.display='none';
     document.body.style.overflow='';
   }
+  ck.querySelectorAll('[data-ck-back]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      closeCheckout();
+      step(2);open();
+    });
+  });
 
   ck.querySelectorAll('.ck-pay-tab').forEach(function(t){
     t.addEventListener('click',function(){
@@ -2681,6 +2692,7 @@ var LLA_AC = (function(){
   function showDone(){
     document.getElementById('ckOrder').style.display='none';
     document.getElementById('ckDone').style.display='block';
+    try{ var vipBox=document.getElementById('ckVipCoupon'); if(vipBox) vipBox.style.display = (LLA_PLAN.get().id==='vip') ? 'block' : 'none'; }catch(e){}
     document.getElementById('ckSt3').classList.add('done');
     document.getElementById('ckBar2').classList.add('done');
     ck.scrollTop=0;
@@ -2763,7 +2775,7 @@ var LLA_AC = (function(){
     try {
       var selectedPlan = LLA_PLAN.get();
       var ids = await ensureLiveOrder();
-      setStatus('Fetching Airwallex intent for order ' + ids.orderid + '...');
+      setStatus('Preparing your secure payment\u2026');
 
       /* Must hit the SAME environment the order was created in, else "Order and student did not match". */
       var envPrefix = (window.LLA_ECOMM_CONFIG.env === 'staging') ? '/staging' : '';
@@ -2775,7 +2787,7 @@ var LLA_AC = (function(){
       if(generation !== checkoutGeneration) return;
       var d;
       try { d = JSON.parse(raw); }
-      catch (parseErr) { throw new Error('CRM returned non-JSON (HTTP ' + r.status + '): ' + raw.slice(0, 200)); }
+      catch (parseErr) { console.error('checkout/details non-JSON', r.status, raw.slice(0, 200)); throw new Error('CHECKOUT_DETAILS_UNAVAILABLE'); }
       if (!r.ok) throw new Error('CHECKOUT_DETAILS_UNAVAILABLE');
       var verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
       validateCheckoutIdentity(d, ids);
@@ -2786,19 +2798,19 @@ var LLA_AC = (function(){
       var currency = verified.currency;
       var paymentId = d.PaymentID;
 
-      setStatus('Verified: $' + amount.toFixed(2) + ' USD, one payment.');
+      setStatus('Amount verified: $' + amount.toFixed(2) + ' USD, one payment.');
 
       /* Show live amount in the sum panel */
       var amtEl = document.getElementById('ckAmt');
       if (amtEl) amtEl.textContent = '$' + amount.toFixed(2);
 
       var awx = window.Airwallex;
-      if (!awx || !awx.init) throw new Error('Airwallex SDK not loaded. window.Airwallex=' + typeof window.Airwallex);
+      if (!awx || !awx.init) { console.error('payment SDK not loaded', typeof window.Airwallex); throw new Error('PAYMENT_FORM_UNAVAILABLE'); }
 
       /* Airwallex env must match the account the intent belongs to:
          staging CRM -> "eTeacher Demo PA" (demo), production CRM -> "ETEACHER EU LIMITED" (prod). */
       var awxEnv = (window.LLA_ECOMM_CONFIG.env === 'staging') ? 'demo' : 'prod';
-      setStatus('Initializing Airwallex (' + awxEnv + ')...');
+      setStatus('Loading secure card entry\u2026');
       await awx.init({ env: awxEnv, origin: window.location.origin, locale: 'en' });
       if(generation !== checkoutGeneration) return;
 
@@ -2808,7 +2820,7 @@ var LLA_AC = (function(){
       /* Same gateway-owned wallet configuration as Blueprint. Only the SDK
        * renders eligible wallet buttons; no decorative site-level buttons. */
       var dropIn = awx.createElement('dropIn', window.JuliePaymentSafety.dropInOptions(d));
-      if (!dropIn) throw new Error('createElement returned null - SDK could not build dropIn');
+      if (!dropIn) { console.error('payment form could not be built'); throw new Error('PAYMENT_FORM_UNAVAILABLE'); }
       activeDropIn=dropIn;
       dropIn.mount(mountEl);
 
@@ -2836,7 +2848,7 @@ var LLA_AC = (function(){
           return;
         }
         outcome.message='Your payment succeeded, but enrollment confirmation is pending. Do not pay again. Contact advisor@longevitylifeacademy.com with order #' + ids.orderid + '.';
-        setStatus('\u2713 Payment SUCCEEDED \u2014 intent ' + intentId, '#0a7');
+        setStatus('\u2713 Payment succeeded. Confirming your enrollment\u2026', '#0a7');
         try{LLA_META.track('Purchase',{value:amount,currency:currency,content_name:selectedPlan.content_name,order_id:String(ids.orderid)},document.getElementById('emEmail').value);}catch(e){}
         Promise.resolve().then(function(){return window.LLA_ECOMM.reportPayment({
           StudentId: String(ids.stid),
@@ -2877,7 +2889,7 @@ var LLA_AC = (function(){
       });
       dropIn.on('error', function(evt){
         if(paymentHandled || generation !== checkoutGeneration) return;
-        setStatus('\u2717 Payment failed: ' + ((evt && evt.detail && evt.detail.message) || 'error'), '#c33');
+        setStatus('Payment was not completed' + ((evt && evt.detail && evt.detail.message) ? ': ' + evt.detail.message : '') + '. You have not been charged. Please try again or use another card.', '#c33');
       });
       dropIn.on('ready', function(){ if(paymentHandled || generation !== checkoutGeneration) return;setStatus(awxEnv === 'demo' ? 'Sandbox ready \u2014 test card 4035 5010 0000 0008, any future date, any CVC.' : 'Secure card entry ready. This is a live payment of $' + amount.toFixed(2) + ' ' + currency + '.'); });
 
@@ -2896,7 +2908,7 @@ var LLA_AC = (function(){
       if(generation !== checkoutGeneration) return;
       ckInited=false;
       document.getElementById('awx-dropin').innerHTML='';
-      setStatus('Payment is unavailable because we could not verify your selected package and exact USD total. No payment form was opened. Please contact advisor@longevitylifeacademy.com. Reference: ' + e.message, '#c33');
+      setStatus('We could not open the payment form for your package, so nothing was charged. Please try again in a moment or contact advisor@longevitylifeacademy.com. Reference: ' + String(e && e.message || 'PAYMENT_UNAVAILABLE').replace(/[^A-Z0-9_]/gi,'_').slice(0,40), '#c33');
       console.error(e);
     }
   }
@@ -2914,11 +2926,11 @@ var LLA_AC = (function(){
 
 <!-- WhatsApp floater (eTeacher IIBS button look; opens the LLA WhatsApp channel directly) -->
 <div id="et-bumpyard-widget" class="active"><div class="et-bump-btn-holder"><a class="widget-trigger-btn" href="https://wa.me/12015023701" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/wa/whatsapp.svg" alt=""> <span class="label">Available on WhatsApp</span></a></div></div>
-<link rel="stylesheet" href="assets/julie-premium.css?v=20260923-2">
-<script src="assets/julie-premium-routing.js?v=20260923-2"></script>
+<link rel="stylesheet" href="assets/julie-premium.css?v=20260924-1">
+<script src="assets/julie-premium-routing.js?v=20260924-1"></script>
 <link rel="stylesheet" href="assets/julie-editorial.css?v=20260923-6">
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
-<script src="assets/julie-international-checkout.js?v=20260923-7"></script>
+<script src="assets/julie-international-checkout.js?v=20260924-1"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
 <script src="assets/julie-brand-motion-v7.js?v=20260923-7"></script>
 </body>
