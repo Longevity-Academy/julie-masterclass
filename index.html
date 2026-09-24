@@ -2042,6 +2042,17 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       payload.CampusId = crs.campusId != null ? crs.campusId : 4203;
       payload.CampusID = payload.CampusId; // both casings; unknown fields are ignored by the endpoint
       if (crs.preferredCourseId) payload.PreferredCourseId = crs.preferredCourseId;
+      // 2026-09-24 VP Operations: the order must carry the CLASS and SEMESTER so the buyer is assigned
+      // to a real session in the CRM (admin form fields select#PrefferdCourseID / select#ActivitySessionLevel1ID).
+      // Values read from GetECommerceFirstPaymentDetails.AvailableClasses for course 283 / 1823:
+      //   Oct 27 7:00 PM ET -> CourseID 170141, SemesterID 2393 (2026-10b - Longevity)
+      //   Nov 14 1:00 PM ET -> CourseID 170142, SemesterID 2394 (2026-11b - Longevity)
+      var MC_CLASSES = { oct27: { courseId: 170141, semesterId: 2393 }, nov14: { courseId: 170142, semesterId: 2394 } };
+      var mcClass = /Nov(ember)?\s*14/i.test(String(fields.startDate || '')) ? MC_CLASSES.nov14 : MC_CLASSES.oct27;
+      payload.PrefferdCourseID        = mcClass.courseId;   // exact admin-form name (VP Ops screenshot)
+      payload.PreferredCourseId       = mcClass.courseId;   // spec spelling
+      payload.ActivitySessionLevel1ID = mcClass.semesterId; // exact admin-form name (VP Ops screenshot)
+      payload.SemesterID              = mcClass.semesterId;
       if (crs.abroadCourseId)    payload.AbroadCourseId    = crs.abroadCourseId;
       payload.LanguageId         = crs.languageId         != null ? crs.languageId         : 1;
       payload.IsTrial            = crs.isTrial            != null ? crs.isTrial            : 0; // 0 = NoTrial (full-price order), 1 = Trial
