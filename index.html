@@ -11,9 +11,14 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net">
+<link rel="preload" as="image" href="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/b7dec8a8-7ef1-4092-a8e1-0e6488022de6.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+<!-- perf-v1: Codec Pro @font-face inlined (same cdnfonts files) with font-display:swap; replaces the render-blocking cdnfonts stylesheet -->
 <style>
+@font-face{font-family:'Codec Pro';font-style:normal;font-weight:400;font-display:swap;src:local('Codec Pro'),url('https://fonts.cdnfonts.com/s/31902/CodecPro-Regular.woff') format('woff')}
+@font-face{font-family:'Codec Pro';font-style:italic;font-weight:400;font-display:swap;src:local('Codec Pro'),url('https://fonts.cdnfonts.com/s/31902/CodecPro-Italic.woff') format('woff')}
 :root{
   --ink:#0b0e13; --ink2:#111722; --ink3:#171f2e;
   --royal:#006EFF; --royal-d:#0051CC; --royal-glow:rgba(0,110,255,.42);
@@ -879,9 +884,9 @@ if(!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
+n.queue=[];var go=function(){t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)};if(b.readyState==='complete')go();else f.addEventListener('load',go)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1440305917310328');
 fbq('track', 'PageView');
@@ -979,7 +984,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
 
 <nav class="nav" id="nav">
   <a class="nav-logo" href="#top" aria-label="Longevity Life Academy">
-    <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/de94f881-cc5e-429f-be5d-aa9baa61277f.png" alt="Longevity Life Academy">
+    <img src="assets/lla-logo-header.webp" width="657" height="298" alt="Longevity Life Academy">
   </a>
   <div class="nav-links">
     <a href="#dates">Dates and times</a>
@@ -1422,7 +1427,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
   <div class="container">
     <div class="foot-cols">
       <div>
-        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/de94f881-cc5e-429f-be5d-aa9baa61277f.png" alt="Longevity Life Academy" style="height:54px;width:auto">
+        <img src="assets/lla-logo-header.webp" width="657" height="298" alt="Longevity Life Academy" style="height:54px;width:auto">
         <p class="foot-about">Longevity Life Academy is the longevity education platform of eTeacher Group, a global leader in live online education since 2000. Every program is taught live by leading practitioners and grounded in published, evidence-based research.</p>
       </div>
       <div>
@@ -1510,10 +1515,11 @@ modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 <div class="grain" aria-hidden="true"></div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded',function(){
 try{
   if(window.Lenis){const lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
     if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
@@ -1534,9 +1540,9 @@ try{
   document.addEventListener('touchstart',kick,{once:true,passive:true});
   window.addEventListener('scroll',kick,{once:true,passive:true});
 }catch(e){}
+});
 </script>
 <!-- ===== LONGEVITY MASTERCLASS SELF-SERVICE CHECKOUT (3 screens, same as LLA ecommerce) ===== -->
-<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
 <script src="assets/julie-payment-safety.js?v=20260924-1"></script>
 <script>
 /* ===== 3-TIER PLAN RESOLVER =====
@@ -2205,8 +2211,13 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 })();
 
 </script>
-<script async src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card" onload="window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();"></script>
-<script src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0"></script>
+<script>
+/* perf-v1: payment SDKs no longer compete with the hero. PayPal SDK is injected on window load or when the checkout opens (whichever comes first); the checkout already waits for it. */
+window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card";t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
+if(document.readyState==='complete')window.JULIE_LOAD_PAYPAL();else window.addEventListener('load',window.JULIE_LOAD_PAYPAL);
+window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
+</script>
+<script defer src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0" onload="window.__awxReady&&window.__awxReady()" onerror="window.__awxReady&&window.__awxReady()"></script>
 
 <style>
 #enrollModal{position:fixed;inset:0;z-index:9999;display:none;font-family:'Inter',sans-serif}
@@ -2265,7 +2276,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   <div class="em-dialog">
     <button class="em-x" type="button" data-em-close aria-label="Close">&times;</button>
 
-    <div class="checkout-brand"><img src="assets/lla-logo-checkout.png" width="1314" height="596" alt="Longevity Life Academy by eTeacher Group"></div>
+    <div class="checkout-brand"><img src="assets/lla-logo-checkout.webp" loading="lazy" decoding="async" width="1314" height="596" alt="Longevity Life Academy by eTeacher Group"></div>
     <div class="em-steps">
       <div class="em-st active" id="emS1"><span class="em-dot">1</span><span class="em-lbl">Your details</span></div>
       <span class="em-bar" id="emB1"></span>
@@ -2422,7 +2433,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 
 <div id="ckScreen" role="dialog" aria-modal="true" aria-label="Place your order">
 <header class="ck-head">
-  <a class="ck-logo" href="#" data-ck-close><img src="assets/lla-logo-checkout.png" width="1314" height="596" alt="Longevity Life Academy by eTeacher Group" /></a>
+  <a class="ck-logo" href="#" data-ck-close><img src="assets/lla-logo-checkout.webp" loading="lazy" decoding="async" width="1314" height="596" alt="Longevity Life Academy by eTeacher Group" /></a>
   <div class="ck-stepper"><div class="ck-stepper-in">
     <div class="ck-st done"><span class="ck-dot">1</span><span class="ck-lbl">Your details</span></div>
     <span class="ck-bar done"></span>
@@ -2734,7 +2745,7 @@ var LLA_AC = (function(){
       document.getElementById('ckDemoBanner').style.display='none';
       document.getElementById('ckOrder').style.display='';
       document.getElementById('ckDone').style.display='none';
-      checkoutIdentity=identity;ckInited=true;initAirwallex(checkoutGeneration);
+      checkoutIdentity=identity;ckInited=true;if(window.JULIE_LOAD_PAYPAL)window.JULIE_LOAD_PAYPAL();initAirwallex(checkoutGeneration);
     }
   }
   function closeCheckout(){
@@ -3003,6 +3014,7 @@ var LLA_AC = (function(){
       var amtEl = document.getElementById('ckAmt');
       if (amtEl) amtEl.textContent = '$' + amount.toFixed(2);
 
+      if(!window.Airwallex && window.JULIE_AWX_WAIT){ await Promise.race([window.JULIE_AWX_WAIT, new Promise(function(r){setTimeout(r,15000);})]); }
       var awx = window.Airwallex;
       if (!awx || !awx.init) { console.error('payment SDK not loaded', typeof window.Airwallex); throw new Error('PAYMENT_FORM_UNAVAILABLE'); }
 
