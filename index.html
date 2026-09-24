@@ -2471,6 +2471,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     <a href="https://longevitylifeacademy.pages.dev/?enroll=1&amp;code=MASTERCLASS-VIP&amp;utm_source=julie-checkout&amp;utm_medium=success-screen&amp;utm_campaign=lgv_onboarding&amp;utm_content=thankyou-code" target="_blank" rel="noopener" style="display:block;background:#fff;color:#0046b5;text-decoration:none;font-weight:800;font-size:15px;text-align:center;padding:14px 18px;border-radius:10px;margin-bottom:12px">Continue to the course &rarr;</a>
     <p style="font-size:13px;color:#dcebff;margin:0">The code is applied for you when you use this button. Valid until December 31, 2026.</p>
   </div>
+  <p id="ckCourseLink" style="display:none;margin-top:22px"><a href="https://longevitylifeacademy.pages.dev/?enroll=1&amp;utm_source=julie-checkout&amp;utm_medium=success-screen&amp;utm_campaign=lgv_onboarding&amp;utm_content=thankyou-course" target="_blank" rel="noopener">Explore The Longevity Blueprint, the full 18-lesson course &rarr;</a></p>
   <a href="#" data-ck-close style="margin-top:18px;display:inline-block">&larr; Back to the masterclass</a>
 </section>
 </div>
@@ -2703,7 +2704,12 @@ var LLA_AC = (function(){
   function showDone(){
     document.getElementById('ckOrder').style.display='none';
     document.getElementById('ckDone').style.display='block';
-    try{ var codeBox=document.getElementById('ckVipCoupon'); if(codeBox) codeBox.style.display = 'block'; /* Omri 24 Sep 2026: every buyer gets the full-course code on the thank-you screen. */ }catch(e){}
+    try{ var codeBox=document.getElementById('ckVipCoupon'); var plainLink=document.getElementById('ckCourseLink');
+      var planNow=(window.LLA_PLAN && window.LLA_PLAN.get && window.LLA_PLAN.get()) || {}; var isVip = planNow.id === 'vip';
+      /* Omri 24 Sep 2026 (12:48): the $249 full-course code is for VIP ($79) buyers only. Regular ($49) buyers get the course link without a code. */
+      if(codeBox) codeBox.style.display = isVip ? 'block' : 'none';
+      if(plainLink) plainLink.style.display = isVip ? 'none' : 'block';
+    }catch(e){}
     document.getElementById('ckSt3').classList.add('done');
     document.getElementById('ckBar2').classList.add('done');
     ck.scrollTop=0;
