@@ -2415,7 +2415,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
         <hr />
         <p id="ckPolicy1">Your selected masterclass session is shown in your order summary.</p>
         <p id="ckPolicy2">Live sessions have limited capacity and seats are allocated first come, first served. All charges are processed in US Dollars.</p>
-        <p id="ckPolicy3">By completing this purchase you agree to our <a href="https://www.longevitylifeacademy.com/terms.html" target="_blank" rel="noopener">terms of service and cancellation policy</a>. All sales are final at checkout for the Standard and VIP Masterclass. The Longevity Blueprint course carries a 14-day satisfaction guarantee.</p>
+        <p id="ckPolicy3">By completing this purchase you agree to our <a href="https://www.longevitylifeacademy.com/terms.html" target="_blank" rel="noopener">terms of service and cancellation policy</a>. All sales are final at checkout for the Standard and VIP Masterclass.</p>
       </div>
 
       <div class="ck-voices">
@@ -2573,6 +2573,7 @@ var LLA_AC = (function(){
     emErrClear();
     var fields=checkoutFields();
     if(!fields.fullName.trim()||!fields.email.trim()||!fields.phone.trim()){emErr('Please fill in all fields.');return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(fields.email.trim())){emErr('Please enter a valid email address, like name@example.com.');return;}
     if(!window.LLA_ECOMM){emErr('Something went wrong , please refresh and try again.');return;}
     var valid=window.LLA_ECOMM.validateLead(fields);
     if (!valid.ok) {emErr(ERR_MSG[valid.error]||'Please check your details.');return;}
