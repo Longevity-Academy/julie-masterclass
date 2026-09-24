@@ -2166,8 +2166,10 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       if (!ids || CFG.mode !== 'ecomm') return Promise.resolve(null);
       var base = CFG.workerBase.replace(/\/$/, '');
       var prefix = CFG.env === 'staging' ? '/staging' : '';
-      var body = { studentId: String(ids.stid), orderId: String(ids.orderid) };
-      var rid = window.LLA_ECOMM.getRequestId(); if (rid) { body.requestId = rid; body.RequestId = rid; }
+      // CRM behaviour verified 2026-09-24: when RequestId is present GetECommerceFirstPaymentDetails resolves the
+      // student + order from it (studentId/orderId are ignored), so a RequestId link is sent as RequestId only.
+      var rid = window.LLA_ECOMM.getRequestId();
+      var body = rid ? { RequestId: rid } : { studentId: String(ids.stid), orderId: String(ids.orderid) };
       return postWithRetry(base + prefix + '/api/checkout/details', body)
         .then(function(r){ return r.ok ? r.body : null; });
     },
@@ -2966,7 +2968,7 @@ var LLA_AC = (function(){
         attempt++;
         var r = await fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev' + envPrefix + '/api/checkout/details', {
           method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify((function(){ var b = { studentId: String(ids.stid), orderId: String(ids.orderid) }; var rid = window.LLA_ECOMM.getRequestId(); if (rid) { b.requestId = rid; b.RequestId = rid; } return b; })())
+          body: JSON.stringify((function(){ var rid = window.LLA_ECOMM.getRequestId(); return rid ? { RequestId: rid } : { studentId: String(ids.stid), orderId: String(ids.orderid) }; })())
         });
         var raw = await r.text();
         if(generation !== checkoutGeneration) return;
