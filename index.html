@@ -2926,18 +2926,35 @@ var LLA_AC = (function(){
 
       /* Must hit the SAME environment the order was created in, else "Order and student did not match". */
       var envPrefix = (window.LLA_ECOMM_CONFIG.env === 'staging') ? '/staging' : '';
-      var r = await fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev' + envPrefix + '/api/checkout/details', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ studentId: String(ids.stid), orderId: String(ids.orderid) })
-      });
-      var raw = await r.text();
-      if(generation !== checkoutGeneration) return;
-      var d;
-      try { d = JSON.parse(raw); }
-      catch (parseErr) { console.error('checkout/details non-JSON', r.status, raw.slice(0, 200)); throw new Error('CHECKOUT_DETAILS_UNAVAILABLE'); }
-      if (!r.ok) throw new Error('CHECKOUT_DETAILS_UNAVAILABLE');
-      var verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
-      validateCheckoutIdentity(d, ids);
+      /* 2026-09-24: right after order creation the CRM can answer before the payment
+       * intent/PaymentID exist (seen live: PAYMENT_DETAILS_INCOMPLETE on first try, fine
+       * 2 s later). Re-ask up to 3 more times before showing an error. Same request, same checks. */
+      var d, verified, attempt = 0;
+      while (true) {
+        attempt++;
+        var r = await fetch('https://eteacher-leads-proxy.gitter-omri.workers.dev' + envPrefix + '/api/checkout/details', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ studentId: String(ids.stid), orderId: String(ids.orderid) })
+        });
+        var raw = await r.text();
+        if(generation !== checkoutGeneration) return;
+        try { d = JSON.parse(raw); }
+        catch (parseErr) { console.error('checkout/details non-JSON', r.status, raw.slice(0, 200)); throw new Error('CHECKOUT_DETAILS_UNAVAILABLE'); }
+        if (!r.ok) throw new Error('CHECKOUT_DETAILS_UNAVAILABLE');
+        try {
+          verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
+          validateCheckoutIdentity(d, ids);
+          break;
+        } catch (ve) {
+          if (ve && ve.message === 'PAYMENT_DETAILS_INCOMPLETE' && attempt < 4) {
+            setStatus('Preparing your secure payment\u2026 (' + attempt + ')');
+            await new Promise(function(res){ setTimeout(res, 1800); });
+            if(generation !== checkoutGeneration) return;
+            continue;
+          }
+          throw ve;
+        }
+      }
 
       var intentId = d.Airwallex.paymentIntentId;
       var clientSecret = d.Airwallex.clientSecret;
