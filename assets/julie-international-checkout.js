@@ -33,6 +33,17 @@
      overall. Deliberately permissive beyond that. National numbering plans for
      190 countries are not something this file can police, and rejecting a real
      customer is worse than passing the CRM a number it can review. */
+  var MOBILE_RULES = {
+    GB: /^7[1-9]\d{8}$/, IE: /^8[3-9]\d{7}$/, IL: /^5\d{8}$/, AU: /^4\d{8}$/, NZ: /^2\d{7,9}$/,
+    CA: /^[2-9]\d{2}[2-9]\d{6}$/, DE: /^1[5-7]\d{8,9}$/, FR: /^[67]\d{8}$/, ES: /^[67]\d{8}$/, IT: /^3\d{8,9}$/,
+    NL: /^6\d{8}$/, BE: /^4[5-9]\d{7}$/, PT: /^9[1236]\d{7}$/, CH: /^7[5-9]\d{7}$/, AT: /^6[5-9]\d{7,10}$/,
+    SE: /^7[0236-9]\d{7}$/, NO: /^[49]\d{7}$/, DK: /^[2-9]\d{7}$/, FI: /^[45]\d{7,9}$/, PL: /^[4-8]\d{8}$/,
+    GR: /^69\d{8}$/, TR: /^5\d{9}$/, RU: /^9\d{9}$/, UA: /^[3-9]\d{8}$/, AE: /^5[0245689]\d{7}$/, SA: /^5\d{8}$/,
+    IN: /^[6-9]\d{9}$/, SG: /^[89]\d{7}$/, HK: /^[4-9]\d{7}$/, JP: /^[789]0\d{8}$/, KR: /^1[0-9]\d{7,8}$/,
+    CN: /^1[3-9]\d{9}$/, PH: /^9\d{9}$/, TH: /^[689]\d{8}$/, MY: /^1\d{8,9}$/, ID: /^8\d{8,11}$/,
+    ZA: /^[6-8]\d{8}$/, NG: /^[789]\d{9}$/, EG: /^1[0125]\d{8}$/, BR: /^[1-9]{2}9\d{8}$/, MX: /^[1-9]\d{9}$/,
+    AR: /^9?[1-9]\d{9}$/, CL: /^9\d{8}$/, CO: /^3\d{9}$/, PE: /^9\d{8}$/
+  };
   function toE164(raw, iso) {
     var c = BY_ISO[iso];
     if (!c) return { ok: false, reason: 'unknown_country' };
@@ -69,6 +80,12 @@
        lengths for countries/territories whose real numbers need them. */
     var nat = digits.slice(c.dial.length);
     if (nat.length < (SHORT_NATIONAL[iso] || 6) || nat.length > 12) return { ok: false, reason: 'phone_length' };
+    /* 2026-09-24: national mobile-number shape for the most common buyer countries
+       (libphonenumber metadata: mobile leading digits + national significant length).
+       Countries not listed keep the permissive bounds above. Stops e.g. a US number
+       submitted under United Kingdom from reaching the CRM as +44 212 555 0142. */
+    var rule = MOBILE_RULES[iso];
+    if (rule && !rule.test(nat)) return { ok: false, reason: 'phone_shape' };
     return { ok: true, e164: '+' + digits };
   }
 
