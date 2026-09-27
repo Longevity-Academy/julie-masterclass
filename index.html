@@ -993,7 +993,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
 <!-- 1. HERO, dark navy -->
 <header class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
-    <video src="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/5ad9539e-02bc-4773-967e-cd691d9dc969.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/b7dec8a8-7ef1-4092-a8e1-0e6488022de6.jpg" autoplay muted loop playsinline preload="auto"></video>
+    <video src="assets/film/julie-film-720p.mp4" poster="assets/film/julie-film-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
   </div>
   <div class="container hero-inner">
     <div class="hero-copy">
@@ -1899,9 +1899,9 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
 </a>
 
 <!-- TRAILER MODAL -->
-<div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer">
+<div class="modal" id="trailerModal" role="dialog" aria-modal="true" aria-label="Watch the trailer" data-lenis-prevent>
   <button class="modal-close" id="modalClose">Close</button>
-  <video id="trailerVideo" src="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/e4f963bb-00ec-40cb-817f-eab57cc93637.mp4" controls playsinline preload="none"></video>
+  <video id="trailerVideo" src="assets/film/julie-film-720p.mp4" poster="assets/film/julie-film-poster.jpg" controls playsinline preload="none"></video>
 </div>
 
 <script>
@@ -1940,7 +1940,8 @@ if(p)p.addEventListener('click',function(){r.scrollBy({left:-st()*2,behavior:'sm
 if(n)n.addEventListener('click',function(){r.scrollBy({left:st()*2,behavior:'smooth'})});})();
 const hsBtn=document.getElementById('heroSound'),hvid=document.querySelector('.hero-media video');
 if(hsBtn&&hvid){
-  const HL='https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/5ad9539e-02bc-4773-967e-cd691d9dc969.mp4',HF='https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/e4f963bb-00ec-40cb-817f-eab57cc93637.mp4';
+  /* 2026-09-27: the approved Julie film, identical to the .dev site (julie-film-v20260927, 2:19, 1080p HLS source, remuxed without re-encoding). Muted loop = 720p; with sound = 1080p on desktop, 720p on phones. */
+  const HL='assets/film/julie-film-720p.mp4',HF=(window.innerWidth>=900?'assets/film/julie-film-1080p.mp4':'assets/film/julie-film-720p.mp4');
   const IOFF='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>';
   const ION='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.8 5.2a9.5 9.5 0 0 1 0 13.6"/></svg>';
   let sOn=false;
@@ -1949,6 +1950,7 @@ if(hsBtn&&hvid){
   paint();
 }
 const modal=document.getElementById('trailerModal'),tv=document.getElementById('trailerVideo');
+if(window.innerWidth>=900)tv.src='assets/film/julie-film-1080p.mp4';
 document.querySelectorAll('.openFilm').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();modal.classList.add('open');tv.currentTime=0;tv.muted=false;tv.play().catch(()=>{})}));
 function closeModal(){modal.classList.remove('open');tv.pause()}
 document.getElementById('modalClose').addEventListener('click',closeModal);
@@ -2714,7 +2716,7 @@ window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 
 <div id="enrollModal" role="dialog" aria-modal="true" aria-label="Enroll">
   <div class="em-backdrop" data-em-close></div>
-  <div class="em-dialog">
+  <div class="em-dialog" data-lenis-prevent>
     <button class="em-x" type="button" data-em-close aria-label="Close">&times;</button>
 
     <div class="checkout-brand"><img src="assets/lla-logo-checkout.webp" loading="lazy" decoding="async" width="520" height="236" alt="Longevity Life Academy by eTeacher Group"></div>
@@ -2872,7 +2874,7 @@ window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 }
 </style>
 
-<div id="ckScreen" role="dialog" aria-modal="true" aria-label="Place your order">
+<div id="ckScreen" role="dialog" aria-modal="true" aria-label="Place your order" data-lenis-prevent>
 <header class="ck-head">
   <a class="ck-logo" href="#" data-ck-close><img src="assets/lla-logo-checkout.webp" loading="lazy" decoding="async" width="520" height="236" alt="Longevity Life Academy by eTeacher Group" /></a>
   <div class="ck-stepper"><div class="ck-stepper-in">
@@ -2989,8 +2991,10 @@ window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 (function(){
   var m=document.getElementById('enrollModal');
   var ck=document.getElementById('ckScreen');
-  function open(){m.classList.add('open');document.body.style.overflow='hidden';}
-  function close(){m.classList.remove('open');if(ck.style.display!=='block')document.body.style.overflow='';}
+  /* 2026-09-27: Lenis smooth scroll hijacks the wheel on desktop (Mac trackpad/mouse), so the fixed dialog could not scroll on step 2. Pause Lenis while any checkout screen is open; data-lenis-prevent on the dialogs as a second guard. */
+  function lenisPause(on){try{if(window.__lenis){if(on)window.__lenis.stop();else window.__lenis.start();}}catch(e){}}
+  function open(){m.classList.add('open');document.body.style.overflow='hidden';lenisPause(true);}
+  function close(){m.classList.remove('open');if(ck.style.display!=='block'){document.body.style.overflow='';lenisPause(false);}}
   function step(n){
     document.getElementById('emStep1').classList.toggle('on',n===1);
     document.getElementById('emStep2').classList.toggle('on',n===2);
@@ -3172,6 +3176,7 @@ var LLA_AC = (function(){
     document.getElementById('ckSessTxt').textContent=(document.getElementById('emDate')||{}).value||document.getElementById('ckSessTxt').textContent;
     ck.style.display='block';
     document.body.style.overflow='hidden';
+    lenisPause(true);
     ck.scrollTop=0;
     LLA_AC.send('LGV_Abandoned_Cart_No_Payment');
     try{var _p=LLA_PLAN.get();LLA_META.track('InitiateCheckout',{value:_p.value,currency:'USD',content_name:_p.content_name},document.getElementById('emEmail').value);}catch(e){}
@@ -3191,6 +3196,7 @@ var LLA_AC = (function(){
   function closeCheckout(){
     ck.style.display='none';
     document.body.style.overflow='';
+    if(!m.classList.contains('open'))lenisPause(false);
   }
   ck.querySelectorAll('[data-ck-back]').forEach(function(a){
     a.addEventListener('click',function(e){
