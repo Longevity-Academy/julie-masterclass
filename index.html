@@ -878,9 +878,11 @@ footer .foot-cols a:hover{color:var(--sky)}
   .press-merge{margin-top:70px}
 }
 </style>
+<!-- Meta event helper (isolated file, loads first): one shared event_id per event for Pixel + Conversions API; Purchase id = CRM order id; QA/staging/preview/test never fire production events. -->
+<script src="assets/julie-meta-tracking.js?v=20260927-2"></script>
 <!-- Meta Pixel Code -->
 <script>
-if(!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
+if(window.LLA_META?LLA_META.mode()==='live':!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -890,33 +892,14 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)};if(b.readyState==='complete')go();else f.addEventListener('load',go)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1440305917310328');
-fbq('track', 'PageView');
+if(window.LLA_META)fbq('track', 'PageView', {}, {eventID: LLA_META.pageViewId()});else fbq('track', 'PageView');
 }
+if(window.LLA_META)LLA_META.pageEvents();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1440305917310328&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script>
-/* Meta event helper: browser pixel + server CAPI with shared event_id for dedup. Staging never sends. */
-window.LLA_META=(function(){
-  function ck(n){var m=document.cookie.match(new RegExp('(?:^|;\\s*)'+n+'=([^;]+)'));return m?m[1]:'';}
-  function track(name,data,email){
-    try{
-      if(/[?&](llatest|qa)=1(?:&|$)/.test(location.search))return;
-      if(window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')return;
-      var id='lla_'+name.toLowerCase()+'_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
-      try{if(window.fbq)fbq('track',name,data||{},{eventID:id});}catch(e){}
-      var payload=JSON.stringify({event_name:name,event_id:id,email:email||'',
-        value:(data&&data.value)||0,currency:(data&&data.currency)||'USD',
-        content_name:(data&&data.content_name)||'',order_id:(data&&data.order_id)||'',
-        url:location.href,fbp:ck('_fbp'),fbc:ck('_fbc')});
-      fetch('https://lla-ac-events.vercel.app/api/meta/capi',{method:'POST',headers:{'Content-Type':'text/plain'},body:payload,keepalive:true}).catch(function(){});
-    }catch(e){}
-  }
-  return {track:track};
-})();
-</script>
 <style id="et-bumpyard-css">
 #et-bumpyard-widget{font-family:"Open Sans","Inter",system-ui,sans-serif;position:fixed;right:0;bottom:var(--et-wa-bottom,0px);z-index:99999;padding:0 20px 20px;font-style:normal}
 #et-bumpyard-widget .flex{display:flex;flex-direction:row;align-items:center;justify-content:flex-start}
@@ -2369,7 +2352,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   function isValidEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
 
   /* ---------- Click-ID + UTM capture (identical to website integration) ---------- */
-  var ATTR_KEYS = ['cid','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var ATTR_KEYS = ['cid','adGroupID','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000;
   var ATTR_STORAGE_KEY = 'lla_attribution_v1';
   function readAttributionStorage(){
@@ -2473,7 +2456,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
           var p = new URLSearchParams(qs);
           if (!p.get('cid')) {
             var saved = getAttribution();
-            if (saved && saved.cid) { p.set('cid', saved.cid); qs = p.toString(); }
+            if (saved && saved.cid) { p.set('cid', saved.cid); if (saved.adGroupID && !p.get('adGroupID')) p.set('adGroupID', saved.adGroupID); qs = p.toString(); }
           }
         } catch(e){}
         return qs;
