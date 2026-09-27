@@ -431,3 +431,64 @@ p,li,dd,dt,figcaption,.btn,span{font-family:'Inter',system-ui,sans-serif}
   .jb-wide .btn{width:100%;justify-content:center;text-align:center}
 }
 .v9-julie .jb-wide-body>b,.v9-julie .jb-cap b,.v9-julie .jb-photo-body h3{opacity:1!important;transform:none!important;color:#fff!important;transition:none!important}
+/* v9.3 mobile hardening */
+html,body{overflow-x:hidden!important;max-width:100vw}
+.mq-band,.mq-wrap,.mq{overflow:hidden!important}
+.jb-wide,.jb-wide-body,.jb,.jbento{min-width:0}
+@media(max-width:1000px){.jb-wide{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:760px){
+  .hero-inner{min-height:0!important;align-items:flex-start!important;padding-top:118px!important;padding-bottom:64px!important}
+  .hero-year{font-size:17px!important;margin-bottom:14px!important}
+  .hero-desc{font-size:18px!important;line-height:1.55!important}
+  .hero-dates-line{font-size:17px!important}
+}
+/* v9.4 — mobile sliders (.dev pattern) */
+@media(max-width:760px){
+  .m-rail{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 6px 22px!important;margin:0 -6px!important;max-width:none!important;grid-template-columns:none!important}
+  .m-rail::-webkit-scrollbar{display:none}
+  .m-rail>*{flex:0 0 84%!important;min-width:0;width:auto!important;max-width:none!important;scroll-snap-align:center;margin:0!important}
+  #reveal .tgrid{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 6px 22px!important;margin:0 -6px!important;max-width:none!important}
+  #reveal .tgrid::-webkit-scrollbar{display:none}
+  #reveal .tcard{flex:0 0 84%!important;min-width:0;scroll-snap-align:center;transform:none!important}
+  #reveal .tcard .tmedia img,#reveal .tcard .tmedia video{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+  .dev-fold .dv-pdp-value-grid{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 6px 22px!important;margin:0 -6px!important;grid-template-columns:none!important;width:auto!important}
+  .dev-fold .dv-pdp-value-grid::-webkit-scrollbar{display:none}
+  .dev-fold .dv-pdp-value-card{flex:0 0 84%!important;min-width:0;scroll-snap-align:center;min-height:100%}
+  .how-steps{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 6px 22px!important;margin:0 -6px!important}
+  .how-steps::-webkit-scrollbar{display:none}
+  .how-step{flex:0 0 84%!important;min-width:0;scroll-snap-align:center;padding:24px 22px 24px 78px!important}
+  .jbento{display:flex!important;flex-wrap:nowrap!important;gap:14px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 6px 22px!important;margin:0 -6px!important}
+  .jbento::-webkit-scrollbar{display:none}
+  .jb{flex:0 0 86%!important;min-width:0;scroll-snap-align:center;grid-column:auto!important;grid-row:auto!important}
+  .jb-photo img{aspect-ratio:4/4.6!important;flex:none!important}
+  .jb-vid video{aspect-ratio:16/10!important}
+  .jb-wide video{aspect-ratio:16/10!important}
+  .jb-wide-body p{font-size:16px}
+  /* slider hint */
+  .m-hint{display:block;text-align:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin:-6px 0 0}
+  /* eTeacher logo readable */
+  .hp-about-powered-logo-img{height:64px!important;max-height:64px!important;width:auto!important}
+  /* Most popular badge inside card */
+  #reveal .tcard .tbadge,#reveal .tcard [class*=badge],#reveal .tcard [class*=popular]{right:14px!important;left:auto!important;max-width:calc(100% - 28px)}
+  .mq-band .mq-track{will-change:transform}
+}
+@media(max-width:760px){
+  .dev-fold .dv-lla-value-layout{display:block!important}
+  .dev-fold .dv-mock-browser{margin-bottom:22px}
+  .dev-fold .dv-pdp-value-grid{height:auto!important;align-items:stretch!important;grid-auto-rows:auto!important}
+  .dev-fold .dv-pdp-value-card{min-height:0!important;height:auto!important;align-self:stretch}
+  .how-layout{display:block!important}
+}
+@media(max-width:760px){
+  .dev-fold .dv-pdp-value-grid.dv-rail{align-items:flex-start!important;height:auto!important;max-height:none!important}
+  .dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{align-self:flex-start!important;height:auto!important;min-height:230px!important}
+  .dev-fold .dv-pdp-value-card::before,.dev-fold .dv-pdp-value-card::after{position:absolute!important}
+}
+@media(max-width:760px){
+  #reveal .tgrid,.dev-fold .dv-pdp-value-grid,.how-steps,.jbento,.v8-pressgrid{flex-direction:row!important}
+  .dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{align-self:stretch!important;min-height:0!important}
+  .dev-fold .dv-pdp-value-grid.dv-rail{align-items:stretch!important}
+}
+@media(max-width:760px){
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail{flex-direction:row!important;width:auto!important;display:flex!important}
+}
