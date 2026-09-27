@@ -3593,6 +3593,20 @@ var LLA_AC = (function(){
   function openFromCrmLink(ids){
     /* CRM payment link (RequestId / StudentId / OrderId, no plan): read the order, pick the matching package, go straight to Pay. */
     window.LLA_ECOMM.fetchCheckoutDetails({stid:ids.stid,orderid:ids.orderid}).then(function(d){
+      /* 2026-09-27 course router mirror: a Blueprint order (CoursePrice.MainAbroadCourseID 258 / AbroadCourseID 1774)
+       * opened with a masterclass link continues on the brand checkout /checkout/ with the raw query string.
+       * Masterclass orders (283 / 1823) and unknown ids continue here unchanged. Same origin: cookies and attribution survive. */
+      try{
+        var cp=(d&&d.CoursePrice)||{}, oid0=String(d&&(d.OrderId||d.OrderID)||ids.orderid||'');
+        if((Number(cp.MainAbroadCourseID)===258||Number(cp.AbroadCourseID)===1774)&&sessionStorage.getItem('lla_course_routed_'+oid0)!=='1'){
+          sessionStorage.setItem('lla_course_routed_'+oid0,'1');
+          var qs0=location.search||'';
+          if(!/[?&]stid=/.test(qs0)&&ids.stid)qs0+=(qs0?'&':'?')+'stid='+encodeURIComponent(ids.stid);
+          if(!/[?&]orderid=/.test(qs0)&&oid0)qs0+=(qs0?'&':'?')+'orderid='+encodeURIComponent(oid0);
+          location.replace('https://www.longevitylifeacademy.com/checkout/'+qs0);
+          return;
+        }
+      }catch(e){}
       var pl=planFromDetails(d);
       var sid=d&&(d.StudentId||d.StudentID), oid=d&&(d.OrderId||d.OrderID);
       if(!pl||!sid||!oid){ alert('This payment link could not be opened. Please contact advisor@longevitylifeacademy.com or call +1-888-230-5110 and we will complete your enrollment.'); return; }
