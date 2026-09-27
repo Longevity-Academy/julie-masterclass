@@ -3594,7 +3594,16 @@ var LLA_AC = (function(){
   }
   function openFromCrmLink(ids){
     /* CRM payment link (RequestId / StudentId / OrderId, no plan): read the order, pick the matching package, go straight to Pay. */
-    window.LLA_ECOMM.fetchCheckoutDetails({stid:ids.stid,orderid:ids.orderid}).then(function(d){
+    /* 2026-09-27 speed-up (Roberto): when the brand checkout /checkout/ forwarded this order it already read it from the CRM
+     * and left the answer in sessionStorage (same origin, <2 min old, same OrderId). Use it and open Pay at once instead of
+     * asking the CRM a second time. Anything else (no hand-over, stale, different order) asks the CRM exactly as before. */
+    var handed=null;
+    try{
+      var hk='lla_crm_details_'+String(ids.orderid||''), raw=ids.orderid?sessionStorage.getItem(hk):null;
+      if(raw){ sessionStorage.removeItem(hk); var h=JSON.parse(raw);
+        if(h&&h.d&&h.ts&&(Date.now()-h.ts)<120000&&String(h.d.OrderId||h.d.OrderID||'')===String(ids.orderid)) handed=h.d; }
+    }catch(e){}
+    (handed?Promise.resolve(handed):window.LLA_ECOMM.fetchCheckoutDetails({stid:ids.stid,orderid:ids.orderid})).then(function(d){
       /* 2026-09-27 course router mirror: a Blueprint order (CoursePrice.MainAbroadCourseID 258 / AbroadCourseID 1774)
        * opened with a masterclass link continues on the brand checkout /checkout/ with the raw query string.
        * Masterclass orders (283 / 1823) and unknown ids continue here unchanged. Same origin: cookies and attribution survive. */
