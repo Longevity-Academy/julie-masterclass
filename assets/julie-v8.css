@@ -522,3 +522,19 @@ html,body{overflow-x:hidden!important;max-width:100vw}
   footer p,footer li,footer a{font-size:15.5px!important}
 }
 @media(max-width:760px){#faq .acc-head{padding:22px 18px 22px 20px!important;gap:16px!important}#faq .acc-inner{padding:0 20px 22px!important}}
+
+/* ===== v9.6 (2026-09-27): approved Julie film shown UNCUT in the hero. No mask fade, no gradient over the film, 16:9 frame beside the copy; on phones the film sits under the copy as its own frame, never behind the headline. ===== */
+@media(min-width:981px){
+  .hero-media video{left:auto!important;right:40px!important;height:auto!important;aspect-ratio:16/9;top:50%!important;transform:translateY(-50%)!important;object-fit:cover;object-position:50% 50%!important;-webkit-mask-image:none!important;mask-image:none!important;border-radius:22px;box-shadow:0 40px 110px rgba(0,0,0,.65),0 0 0 1px rgba(127,184,255,.22);z-index:1;background:#04070e}
+  .hero-media::after{z-index:0}
+}
+@media(min-width:1201px){.hero-media video{width:calc(100% - 80px - max(56px,(100% - 1240px)/2 + 56px) - 680px)!important}}
+@media(min-width:981px) and (max-width:1200px){.hero-copy{max-width:calc(100% - 380px)}.hero-media video{width:340px!important}}
+@media(max-width:980px){
+  .hero{display:flex;flex-direction:column}
+  .hero-inner{order:1;padding-bottom:22px!important}
+  .hero-media{order:2;position:relative!important;inset:auto!important;margin:0 20px 38px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;z-index:1;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(127,184,255,.22);background:#04070e}
+  .hero-media video{position:absolute!important;inset:0!important;top:0!important;width:100%!important;height:100%!important;transform:none!important;object-fit:cover;object-position:50% 50%!important;-webkit-mask-image:none!important;mask-image:none!important}
+  .hero-media::after{display:none!important}
+  .hero-sound{bottom:52px!important;right:34px!important}
+}
