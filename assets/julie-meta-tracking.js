@@ -47,11 +47,11 @@
  *   'test' ?meta_test=TESTnnnnn -> server copies only, flagged with test_event_code, no Pixel.
  *   'live' Pixel + Conversions API.
  *
- * Release: julie-meta-20260927-3
+ * Release: julie-meta-20260927-4
  */
 (function (root) {
   'use strict';
-  var RELEASE = 'julie-meta-20260927-3';
+  var RELEASE = 'julie-meta-20260927-4';
   var PIXEL_ID = '1440305917310328';
   var RELAY_URL = 'https://lla-ac-events.vercel.app/api/meta/capi';
   var SOURCE = 'julie-masterclass';
@@ -423,9 +423,9 @@
     });
   }
   var deferred = [], flushed = false;
-  /* PageView / ViewContent server copies leave after the Pixel has loaded (window load + 1.5 s)
-   * or immediately when the page is being left; fbp/fbc are re-read at send time because the
-   * Pixel writes its cookies asynchronously. Commerce events are never deferred. */
+  /* PageView / ViewContent wait briefly for Pixel cookies, never indefinitely for media.
+   * A 2-second fallback runs independently of window load. Page exit/backgrounding flushes
+   * immediately; cookie values are re-read at send time. Commerce events are not deferred. */
   function flushDeferred() {
     if (flushed) return; flushed = true;
     var q = deferred; deferred = [];
@@ -438,8 +438,12 @@
   function scheduleFlush() {
     try {
       var arm = function () { root.setTimeout(flushDeferred, 1500); };
+      root.setTimeout(flushDeferred, 2000);
       if (doc.readyState === 'complete') arm(); else root.addEventListener('load', arm, { once: true });
       root.addEventListener('pagehide', flushDeferred, { once: true });
+      doc.addEventListener('visibilitychange', function () {
+        if (doc.visibilityState === 'hidden') flushDeferred();
+      });
     } catch (e) { flushDeferred(); }
   }
 
