@@ -353,3 +353,11 @@ p,li,dd,dt,figcaption,.btn,span{font-family:'Inter',system-ui,sans-serif}
 .v8-julie .jsplit-media img{aspect-ratio:4/4.2}
 @media(max-width:1000px){.v8-julie .claim{grid-template-columns:1fr;gap:20px;direction:ltr}.v8-julie .claims{gap:44px}.v8-julie .claim b{font-size:34px}.v8-julie .claim span{font-size:19px}}
 @media(max-width:760px){.dev-fold .v8-pressgrid .dv-lla-news-card{flex:0 0 86%}.dev-fold .dv-pdp-value-card h3{font-size:23px!important}.dev-fold .dv-pdp-value-card p{font-size:16.5px!important}}
+/* v8.3 zoom: shot full width, 4 cards below */
+.dev-fold .dv-lla-value-layout{grid-template-columns:minmax(0,1fr)!important;gap:40px!important}
+.dev-fold .dv-mock-browser{max-width:1180px;margin:0 auto}
+.dev-fold .dv-pdp-value-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:22px!important;width:100%!important}
+.dev-fold .dv-pdp-value-card h3{font-size:24px!important}
+.dev-fold .dv-pdp-value-card p{font-size:17.5px!important}
+@media(max-width:1000px){.dev-fold .dv-pdp-value-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:760px){.dev-fold .dv-pdp-value-grid{grid-template-columns:1fr!important}}
