@@ -538,3 +538,8 @@ html,body{overflow-x:hidden!important;max-width:100vw}
   .hero-media::after{display:none!important}
   .hero-sound{bottom:52px!important;right:34px!important}
 }
+
+/* v9.7 (2026-09-27, Roberto QA): one scrollbar only while the enrollment dialog or the Pay screen is open.
+   body is already overflow:hidden; the html (Lenis root) scrollbar stayed visible next to the fixed screen's own scrollbar on Windows. */
+html:has(#ckScreen[style*="display: block"]),
+html:has(#enrollModal.open){overflow:hidden!important}
