@@ -1096,7 +1096,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
       <figure class="claim"><video src="assets/anim/PLAY_V6_LLA_RANK.mp4?v=48" autoplay muted loop playsinline preload="metadata"></video><figcaption><b>No.2 on Earth.</b><span>Rejuvenation Olympics leaderboard, ahead of Bryan Johnson.</span></figcaption></figure>
     </div>
     <div class="jsplit jsplit-claims">
-      <div class="jsplit-media reveal"><img src="assets/instructors/julie-portrait.jpg" alt="Julie Gibson Clark" loading="lazy" width="1200" height="1600"><span class="jsplit-tag">Julie Gibson Clark &middot; Phoenix, Arizona</span></div>
+      <div class="jsplit-media reveal"><img src="assets/julie-banner-photo.webp" alt="Julie Gibson Clark" loading="lazy" width="1140" height="1080" style="object-position:50% 8%"><span class="jsplit-tag">Julie Gibson Clark &middot; Phoenix, Arizona</span></div>
       <div class="jsplit-copy reveal">
         <p class="eyebrow">Founding Faculty &middot; Longevity Life Academy</p>
         <h3 class="anton">Julie Gibson Clark</h3>
@@ -1789,6 +1789,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
       <a class="dv-lla-news-card dv-lla-news-card--press" href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener"><span class="dv-lla-news-media"><img src="assets/press-people/harel-tayeb.jpg" alt="Harel Tayeb, CEO of eTeacher Group" loading="lazy" style="object-position:50% 20%"></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">AP News <i>eTeacher Group</i></span><h3>eTeacher Group Launches Longevity Life Academy to Teach the Longevity Protocol the Wealthy Pay Millions For.</h3><span class="dv-lla-news-meta"><span>July 20, 2026</span><em>Read the article</em></span></span></a>
       <a class="dv-lla-news-card dv-lla-news-card--press" href="https://www.theglobeandmail.com/investing/markets/markets-news/Newsfile/3486316/julie-gibson-clark-2nd-slowest-aging-woman-on-earth-joins-longevity-life-academy-by-eteacher-group-to-make-elite-longevity-accessible-to-americans/" target="_blank" rel="noopener"><span class="dv-lla-news-media"><img src="assets/instructors/julie-jeans.jpg" alt="Julie Gibson Clark" loading="lazy"></span><span class="dv-lla-news-body"><span class="dv-lla-news-outlet">The Globe and Mail <i>Newsfile</i></span><h3>Julie Gibson Clark, 2nd Slowest-Aging Woman on Earth, Joins Longevity Life Academy by eTeacher Group.</h3><span class="dv-lla-news-meta"><span>July 2026</span><em>Read the article</em></span></span></a>
     </div>
+    <div class="v8-press-nav" aria-hidden="true"><button type="button" class="v8-press-btn" data-dir="-1">&larr;</button><button type="button" class="v8-press-btn" data-dir="1">&rarr;</button></div>
     </div>
     <p class="v8-press-foot reveal serif-i">Also covered by USA Today, Times Now, NewsBreak, NOVOS and NAD.com.</p>
   </div>
@@ -3617,7 +3618,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-editorial.css?v=20260924-2">
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
 <link rel="stylesheet" href="assets/julie-v7.css?v=1">
-<link rel="stylesheet" href="assets/julie-v8.css?v=2">
+<link rel="stylesheet" href="assets/julie-v8.css?v=3">
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
@@ -3636,5 +3637,6 @@ document.addEventListener('click',function(e){
   try{history.replaceState(null,'',href)}catch(_){}
 },true);
 </script>
+<script>(function(){var g=document.querySelector(".v8-pressgrid");if(!g)return;document.querySelectorAll(".v8-press-btn").forEach(function(b){b.addEventListener("click",function(){var c=g.querySelector(".dv-lla-news-card");var w=c?c.getBoundingClientRect().width+28:420;g.scrollBy({left:w*parseInt(b.dataset.dir,10),behavior:"smooth"})})})})();</script>
 </body>
 </html>
