@@ -879,7 +879,8 @@ footer .foot-cols a:hover{color:var(--sky)}
 }
 </style>
 <!-- Meta event helper (isolated file, loads first): one shared event_id per event for Pixel + Conversions API; Purchase id = CRM order id; QA/staging/preview/test never fire production events. -->
-<script src="assets/julie-meta-tracking.js?v=20260927-2"></script>
+<script src="assets/julie-attribution.js?v=20260927-1"></script>
+<script src="assets/julie-meta-tracking.js?v=20260927-3"></script>
 <!-- Meta Pixel Code -->
 <script>
 if(window.LLA_META?LLA_META.mode()==='live':!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
@@ -2040,7 +2041,7 @@ window.LLA_PLAN = (function(){
     var incoming = new URLSearchParams(location.search);
     var stored = {};
     try { stored = window.LLA_ECOMM ? window.LLA_ECOMM.getAttribution() || {} : {}; } catch(e){}
-    ['cid','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(key){
+    (window.LLA_ATTR ? window.LLA_ATTR.keys : ['cid','adGroupID','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term']).forEach(function(key){
       var value = incoming.get(key) || stored[key];
       if(value) target.searchParams.set(key,value);
     });
@@ -2355,10 +2356,11 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   function isValidEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
 
   /* ---------- Click-ID + UTM capture (identical to website integration) ---------- */
-  var ATTR_KEYS = ['cid','adGroupID','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var ATTR_KEYS = window.LLA_ATTR ? window.LLA_ATTR.keys : ['cid','adGroupID','gclid','fbclid','msclkid','ttclid','li_fat_id','wbraid','gbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var ATTR_TTL_MS = 30 * 24 * 60 * 60 * 1000;
-  var ATTR_STORAGE_KEY = 'lla_attribution_v1';
+  var ATTR_STORAGE_KEY = 'julie_attribution_v2';
   function readAttributionStorage(){
+    if(window.LLA_ATTR)return window.LLA_ATTR.read();
     try {
       var raw = localStorage.getItem(ATTR_STORAGE_KEY);
       if (!raw) return null;
@@ -2371,6 +2373,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     return (window.location.search || '').replace(/^\?/, '').replace(/\?/g, '&');
   }
   function captureAttribution(){
+    if(window.LLA_ATTR)return window.LLA_ATTR.capture(normalizedSearch());
     try {
       var params = new URLSearchParams(normalizedSearch());
       var found = {}; var hasAny = false;
@@ -2390,7 +2393,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
   function buildDynamicParameters(attr){
     if (!attr) return '';
     var pairs = [];
-    ATTR_KEYS.forEach(function(k){ if (attr[k]) pairs.push(k + '=' + attr[k]); });
+    ATTR_KEYS.forEach(function(k){ if (attr[k]) pairs.push(k + '=' + encodeURIComponent(attr[k])); });
     return pairs.join(';');
   }
 
@@ -2455,6 +2458,7 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       ReferringSite: document.referrer || window.location.hostname,
       QueryString: (function(){
         var qs = normalizedSearch();
+        if(window.LLA_ATTR)return window.LLA_ATTR.queryString(qs,getAttribution());
         try {
           var p = new URLSearchParams(qs);
           if (!p.get('cid')) {
@@ -2472,19 +2476,14 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
     payload.AdminNotes = notes.slice(0, 4000);
 
     var dyn = buildDynamicParameters(getAttribution());
-    var attr0 = getAttribution() || {};
-    var qsNow = null; try { qsNow = new URLSearchParams(normalizedSearch()); } catch(e){}
-    var hasCid = !!(attr0.cid || (qsNow && qsNow.get('cid')));
-    var nonGoogleSource = !!(attr0.utm_source || attr0.fbclid || attr0.ttclid) && !attr0.gclid;
-    if (!hasCid && !nonGoogleSource && CFG.googleCampaignId && /^\d+$/.test(String(CFG.googleCampaignId))) {
-      dyn = (dyn ? dyn + ';' : '') + 'google_campaign_id=' + String(CFG.googleCampaignId);
-    }
+    // Unknown acquisition stays unknown; do not label Julie traffic as the
+    // unrelated inherited Google campaign when an ad's cid is absent.
     if (dyn) payload.DynamicParameters = dyn.slice(0, 4000);
     // Aug 5 2026 eTeacher dev: CampaignID does not exist on this endpoint, it is ignored.
     // The campaign is read from QueryString only, as cid=<id>.
     delete payload.CampaignID;
     (function () {
-      var cid = CFG.campaignId && /^\d+$/.test(String(CFG.campaignId)) ? String(CFG.campaignId) : String(CFG.googleCampaignId || '');
+      var cid = CFG.campaignId && /^\d+$/.test(String(CFG.campaignId)) ? String(CFG.campaignId) : '';
       if (!/^\d+$/.test(cid)) return;
       var qs = payload.QueryString || '';
       if (!/(^|&)cid=/.test(qs)) qs = qs ? qs + '&cid=' + cid : 'cid=' + cid;
@@ -2621,7 +2620,19 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
       var rid = window.LLA_ECOMM.getRequestId();
       var body = rid ? { RequestId: rid } : { studentId: String(ids.stid), orderId: String(ids.orderid) };
       return postWithRetry(base + prefix + '/api/checkout/details', body)
-        .then(function(r){ return r.ok ? r.body : null; });
+        .then(function(r){
+          // Read-only tracking enrichment from the existing response. Never
+          // change checkout data, visible forms, AC contact or payment routing.
+          if(r.ok&&r.body)try{
+            var expected=ids;
+            if(rid&&!ids.stid&&!ids.orderid)expected={
+              stid:r.body.StudentId||r.body.StudentID||r.body.studentId,
+              orderid:r.body.OrderId||r.body.OrderID||r.body.orderId
+            };
+            if(window.LLA_META&&LLA_META.captureCheckoutIdentity)LLA_META.captureCheckoutIdentity(r.body,expected);
+          }catch(e){}
+          return r.ok ? r.body : null;
+        });
     },
     classForSession: function(sessionText){
       // 2026-09-24 VP Operations: class + semester of the buyer's chosen session (CRM AvailableClasses, course 283/1823).
@@ -3436,6 +3447,7 @@ var LLA_AC = (function(){
         try {
           verified = window.JuliePaymentSafety.validateDetails(d, selectedPlan.id);
           validateCheckoutIdentity(d, ids);
+          try{if(window.LLA_META&&LLA_META.captureCheckoutIdentity)LLA_META.captureCheckoutIdentity(d,ids);}catch(trackingOnlyError){}
           break;
         } catch (ve) {
           if (ve && ve.message === 'PAYMENT_DETAILS_INCOMPLETE' && attempt < 4) {
