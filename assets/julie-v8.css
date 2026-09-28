@@ -550,7 +550,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
 @media(max-width:760px){
   .nav{padding:0 16px!important;gap:10px}
   .nav-logo{flex:0 0 auto!important}
-  .nav-logo img{height:46px!important;width:auto!important}
+  .nav-logo>img{height:46px!important;width:auto}
+  .nav-logo .bm-v7-lockup>.bm-v7-original{width:126px!important;max-width:none!important}
   .nav .btn,.nav .btn-blue{width:auto!important;min-height:0!important;padding:11px 16px!important;font-size:14.5px!important;margin-left:auto!important;margin-right:0!important;flex:0 0 auto!important;border-radius:11px}
   .burger{flex:0 0 auto!important;width:40px!important;height:40px!important}
   .burger span{left:8px!important;right:8px!important}
