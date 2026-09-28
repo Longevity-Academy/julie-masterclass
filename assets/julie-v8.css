@@ -543,3 +543,15 @@ html,body{overflow-x:hidden!important;max-width:100vw}
    body is already overflow:hidden; the html (Lenis root) scrollbar stayed visible next to the fixed screen's own scrollbar on Windows. */
 html:has(#ckScreen[style*="display: block"]),
 html:has(#enrollModal.open){overflow:hidden!important}
+
+/* v9.8 (2026-09-28): phone header. The v8 mobile rule ".btn{width:100%;min-height:58px;font-size:18.5px;padding:17px 22px}" also hit the
+   fixed nav's Enroll button, which then squeezed the logo to 82px and the burger to 24px. The nav button is exempted and the
+   three nav items get fixed widths so nothing shrinks. Tracking files untouched. */
+@media(max-width:760px){
+  .nav{padding:0 16px!important;gap:10px}
+  .nav-logo{flex:0 0 auto!important}
+  .nav-logo img{height:46px!important;width:auto!important}
+  .nav .btn,.nav .btn-blue{width:auto!important;min-height:0!important;padding:11px 16px!important;font-size:14.5px!important;margin-left:auto!important;margin-right:0!important;flex:0 0 auto!important;border-radius:11px}
+  .burger{flex:0 0 auto!important;width:40px!important;height:40px!important}
+  .burger span{left:8px!important;right:8px!important}
+}
