@@ -672,7 +672,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
    CSS only, assets/julie-v8.css; index.html, checkout and tracking untouched. ===== */
 @media(min-width:761px){
   #pricing .pk-grid{gap:28px}
-  #pricing .pk-card{padding:26px 30px 26px!important;border-radius:26px!important;
+  #packages{scroll-margin-top:0!important}   /* land right under the nav (html scroll-padding-top 104px) instead of 200px down */
+  #pricing .pk-card{padding:22px 30px 22px!important;border-radius:26px!important;
     display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";column-gap:22px;align-items:center;align-content:start}
   #pricing .pk-top{grid-area:top;margin:0 0 14px}
   #pricing .pk-tier{font-size:14px!important;letter-spacing:.02em!important;text-transform:none!important;font-weight:700}
@@ -680,8 +681,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-price{grid-area:price;margin:0!important;font-size:clamp(56px,4.4vw,66px)!important;line-height:.95!important}
   #pricing .pk-price sup{font-size:.42em!important;margin-top:.18em}
   #pricing .pk-title{grid-area:title;margin:0!important;font-size:clamp(22px,1.65vw,26px)!important;line-height:1.2!important;text-wrap:balance}
-  #pricing .pk-spec{grid-area:spec;margin:16px 0 18px!important}
-  #pricing .pk-spec>div{grid-template-columns:104px 1fr!important;gap:16px!important;padding:10px 0!important;align-items:start!important}
+  #pricing .pk-spec{grid-area:spec;margin:12px 0 14px!important}
+  #pricing .pk-spec>div{grid-template-columns:104px 1fr!important;gap:16px!important;padding:9px 0!important;align-items:start!important}
   #pricing .pk-spec dt{font-size:13.5px!important;letter-spacing:.01em!important;text-transform:none!important;font-weight:700;padding-top:3px!important}
   #pricing .pk-spec dd{font-size:17px!important;line-height:1.4!important}
   #pricing .pk-ul li{font-size:16px!important;line-height:1.38!important;margin-bottom:5px!important}
