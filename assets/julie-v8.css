@@ -675,7 +675,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   html{scroll-padding-top:0}                 /* anchors landed 104px + their own scroll-margin (200px) below the top; now just the margin */
   #packages{scroll-margin-top:100px!important}
   #pricing .pk-card{padding:22px 30px 22px!important;border-radius:26px!important;
-    display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";grid-template-rows:auto auto 1fr auto;column-gap:22px;align-items:center}
+    display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";grid-template-rows:auto auto auto 1fr;column-gap:22px;align-items:center}
   #pricing .pk-top{grid-area:top;margin:0 0 14px}
   #pricing .pk-tier{font-size:14px!important;letter-spacing:.02em!important;text-transform:none!important;font-weight:700}
   #pricing .pk-len{font-size:13.5px!important;letter-spacing:0!important;padding:7px 13px!important}
@@ -689,7 +689,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-ul li{font-size:16px!important;line-height:1.38!important;margin-bottom:5px!important}
   #pricing .pk-ul li::before{top:8px!important}
   #pricing .pk-ul li:nth-child(3){padding-right:72px}   /* keeps "~$100-a-month" on one line */
-  #pricing .pk-btn{grid-area:btn;margin:0!important;padding:16px 26px!important;min-height:56px!important;font-size:18px!important;border-radius:14px!important}
+  #pricing .pk-btn{grid-area:btn;align-self:end;margin:0!important;padding:16px 26px!important;min-height:56px!important;font-size:18px!important;border-radius:14px!important}
   #pricing .pk-card:hover{transform:none}
   #pricing .pk-foot{margin-top:22px!important}
 }
