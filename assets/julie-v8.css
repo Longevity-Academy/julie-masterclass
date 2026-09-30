@@ -633,6 +633,10 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-card .pk-spec dt{font:700 12.5px/1.2 Inter,sans-serif!important;letter-spacing:0!important;text-transform:none!important;margin:0 0 4px!important;padding:0!important;color:#2F6BFF!important}
   #pricing .pk-vip .pk-spec dt{color:#BFDFFF!important}
   #pricing .pk-card .pk-spec dd{font:500 15.5px/1.38 Inter,sans-serif!important;margin:0!important;text-wrap:pretty}
-  #pricing .pk-grid+.pk-foot::before{content:'Swipe for the VIP seat \2192';display:block;text-align:center;font:600 14px/1 Inter,sans-serif;color:#8AD2FF;margin:0 0 12px}
+  #pricing .pk-grid+.pk-foot{flex-wrap:wrap;justify-content:center;text-wrap:balance}
+  #pricing .pk-grid+.pk-foot::before{content:'Swipe for the VIP seat \2192';flex:0 0 100%;display:block;text-align:center;font:600 14px/1 Inter,sans-serif;color:#8AD2FF;margin:0 0 12px}
   #pricing .pk-foot{font-size:15px!important;margin:6px 0 0!important}
+  /* line-break control without touching markup: keep "30-minute" and "December 31, 2026" whole */
+  #pricing .pk-vip .pk-spec>div:first-child dd{padding-right:36px}
+  #pricing .pk-vip .pk-spec>div:nth-child(4) dd{font-size:14.5px!important}
 }
