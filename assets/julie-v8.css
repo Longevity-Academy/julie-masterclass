@@ -693,3 +693,24 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-card:hover{transform:none}
   #pricing .pk-foot{margin-top:22px!important}
 }
+
+/* ===== v9.9f (2026-09-30): three phone fixes from the external audit, CSS only.
+   1) step-2 error line rides above the sticky "Continue to payment" button (same treatment as step 1)
+   2) very narrow phones (≤340px: iPhone SE zoomed, Galaxy Fold cover screen) keep the menu button on screen
+   3) the WhatsApp bubble no longer overlaps the hero "Enroll now" button on short phone viewports (Safari with bars) ===== */
+@media(max-width:699px){
+  #enrollModal #emErr2{position:sticky;bottom:72px;z-index:3;background:#fff;padding:6px 0;margin:0!important}
+}
+@media(max-width:340px){
+  .nav{padding:0 10px!important;gap:6px}
+  .nav-logo>img{height:44px!important}
+  .nav-logo .bm-v7-lockup>.bm-v7-original{width:104px!important}
+  .nav .btn,.nav .btn-blue{padding:9px 10px!important;font-size:13px!important}
+  .burger{width:36px!important;height:36px!important}
+}
+@media(max-width:300px){
+  .nav .btn,.nav .btn-blue{display:none!important}   /* Enroll stays in the menu and on the page */
+}
+@media(max-width:760px) and (max-height:720px){
+  .hero-actions .btn-blue{width:calc(100% - 78px)!important}   /* leaves the WhatsApp bubble its own corner */
+}
