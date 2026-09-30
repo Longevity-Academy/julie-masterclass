@@ -589,7 +589,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
 
   /* hero: content clear of the fixed nav, sentence-case Inter eyebrow, three-line headline, brighter serif line, one CTA */
   .hero .hero-inner.container{padding-top:136px!important;padding-bottom:40px!important;padding-left:16px!important;padding-right:16px!important}
-  .hero-year{font:600 17px/1.3 Inter,sans-serif!important;color:#8AD2FF!important;font-style:normal!important;letter-spacing:0;text-transform:none;margin-bottom:16px!important}
+  .hero-year{font:600 17px/1.3 Inter,sans-serif!important;color:#8AD2FF!important;font-style:normal!important;letter-spacing:0;text-transform:none;margin-bottom:16px!important;max-width:320px}  /* breaks after "Year": line 2 = "· 60 minutes, live" */
   .hero-head{font-size:38px!important;line-height:1.04!important;letter-spacing:-.015em;color:#fff}
   .hero-head .serif-i{font-size:42px!important;line-height:1.02!important;display:block;margin-top:8px;color:#B3D9FF!important;text-shadow:0 2px 24px rgba(61,139,255,.35)}
   .hero-desc{font-size:20px!important;line-height:1.5!important;margin-top:22px!important;color:#EEF4FF!important}
@@ -633,8 +633,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-card .pk-spec dt{font:700 12.5px/1.2 Inter,sans-serif!important;letter-spacing:0!important;text-transform:none!important;margin:0 0 4px!important;padding:0!important;color:#2F6BFF!important}
   #pricing .pk-vip .pk-spec dt{color:#BFDFFF!important}
   #pricing .pk-card .pk-spec dd{font:500 15.5px/1.38 Inter,sans-serif!important;margin:0!important;text-wrap:pretty}
-  #pricing .pk-grid+.pk-foot{flex-wrap:wrap;justify-content:center;text-wrap:balance}
-  #pricing .pk-grid+.pk-foot::before{content:'Swipe for the VIP seat \2192';flex:0 0 100%;display:block;text-align:center;font:600 14px/1 Inter,sans-serif;color:#8AD2FF;margin:0 0 12px}
+  #pricing .pk-grid+.pk-foot{text-wrap:balance}
+  #pricing .pk-grid+.pk-foot::before{content:'Swipe for the VIP seat \2192';display:block;width:auto;height:auto;margin:0 0 12px;border-radius:0;background:none;box-shadow:none;vertical-align:baseline;text-align:center;font:600 14px/1 Inter,sans-serif;color:#8AD2FF}
   #pricing .pk-foot{font-size:15px!important;margin:6px 0 0!important}
   /* line-break control without touching markup: keep "30-minute" and "December 31, 2026" whole */
   #pricing .pk-vip .pk-spec>div:first-child dd{padding-right:36px}
