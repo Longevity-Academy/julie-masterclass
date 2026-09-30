@@ -648,3 +648,21 @@ html:has(#enrollModal.open){overflow:hidden!important}
 .pk-ul li::before{content:'';position:absolute;left:1px;top:8px;width:7px;height:7px;border-radius:50%;background:#2F6BFF}
 @media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li{font:500 15.5px/1.38 Inter,sans-serif!important}}
 @media(min-width:761px){.pk-ul li{font-size:16px;line-height:1.42;margin-bottom:7px}.pk-ul li::before{top:9px}}
+
+/* ===== v9.9d (2026-09-30, authorized by Omri 11:49 IDT "Yes, do it"): enrollment dialog on phones — the Continue button is always
+   on screen (sticky at the bottom of the scrolling dialog) and the top of the dialog is tighter so the fields start higher. CSS only:
+   no field, label, order, id, script, validation or tracking change; index.html untouched. ===== */
+@media(max-width:699px){
+  #enrollModal .em-dialog{padding:22px 20px 0!important;scroll-padding-bottom:96px}
+  #enrollModal .em-steps{margin:4px 0 12px!important}
+  #enrollModal h2{font-size:24px!important;line-height:1.2!important;margin:8px 0 8px!important}
+  #enrollModal .checkout-package-summary{margin:0 0 12px!important;font-size:15px!important}
+  #enrollModal .em-lb{font-size:14px!important;margin-bottom:5px!important}
+  #enrollModal .em-in{min-height:52px!important;padding:12px 14px!important;margin-bottom:12px!important;font-size:16px!important} /* 16px stops iOS zoom-on-focus */
+  #enrollModal .em-consent{margin-top:8px!important;margin-bottom:6px!important}
+  #enrollModal .em-consent label{font-size:13px!important;line-height:1.4!important}
+  #enrollModal #emGo1,#enrollModal .em-go{position:sticky;bottom:0;z-index:3;min-height:56px!important;font-size:17px!important;
+    box-shadow:0 0 0 20px #fff,0 -6px 8px 2px rgba(255,255,255,.9);margin-top:10px}   /* thin fade only, so the SMS consent and the error line stay readable above the button */
+  #enrollModal #emErr{position:sticky;bottom:72px;z-index:3;background:#fff;padding:6px 0;margin:0!important}   /* the validation line rides just above the sticky button, so a tap on an empty form shows it without scrolling */
+  #enrollModal .em-refund{margin:14px 0 0!important;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+}
