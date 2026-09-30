@@ -640,3 +640,11 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-spec>div:first-child dd{padding-right:36px}
   #pricing .pk-vip .pk-spec>div:nth-child(4) dd{font-size:14.5px!important}
 }
+
+/* v9.9c (2026-09-30, freeze lifted by Omri for index.html pricing copy): Standard card "You learn" bullet list */
+.pk-ul{list-style:none;margin:0;padding:0}
+.pk-ul li{position:relative;padding-left:18px;margin:0 0 6px;font:500 15.5px/1.4 Inter,sans-serif;color:inherit}
+.pk-ul li:last-child{margin-bottom:0}
+.pk-ul li::before{content:'';position:absolute;left:1px;top:8px;width:7px;height:7px;border-radius:50%;background:#2F6BFF}
+@media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li{font:500 15.5px/1.38 Inter,sans-serif!important}}
+@media(min-width:761px){.pk-ul li{font-size:16px;line-height:1.42;margin-bottom:7px}.pk-ul li::before{top:9px}}
