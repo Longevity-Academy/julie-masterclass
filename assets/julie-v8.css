@@ -672,7 +672,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
    CSS only, assets/julie-v8.css; index.html, checkout and tracking untouched. ===== */
 @media(min-width:761px){
   #pricing .pk-grid{gap:28px}
-  #packages{scroll-margin-top:0!important}   /* land right under the nav (html scroll-padding-top 104px) instead of 200px down */
+  html{scroll-padding-top:0}                 /* anchors landed 104px + their own scroll-margin (200px) below the top; now just the margin */
+  #packages{scroll-margin-top:100px!important}
   #pricing .pk-card{padding:22px 30px 22px!important;border-radius:26px!important;
     display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";column-gap:22px;align-items:center;align-content:start}
   #pricing .pk-top{grid-area:top;margin:0 0 14px}
