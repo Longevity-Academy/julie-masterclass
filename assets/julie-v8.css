@@ -825,3 +825,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-cta-pill{flex:1;justify-content:center;font-size:18.5px!important;padding:0 18px!important;margin:7px!important;border-radius:11px!important}
   .lla-float-cta .lla-cta-copy,.lla-float-cta>*:not(.lla-cta-pill){display:none!important}   /* the small caption beside the pill is dropped on phones; the pill carries the words */
 }
+.hp-about-mainhead{font-family:'Codec Pro','Inter',sans-serif!important}   /* v9.11f: the one headline on the page that was still Inter now matches every other headline */
