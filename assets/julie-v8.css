@@ -1300,3 +1300,9 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-cta-eyebrow{color:#CFE4FF!important}
 }
 @media(max-width:760px){#pricing .pk-price,#pricing .price{-webkit-text-stroke:0!important}}   /* v9.25b: gradient price has no outline */
+@media(max-width:760px){
+  /* v9.26: stroke removed everywhere — titles back to the real Codec Pro glyphs; body stays Inter 500 with the brighter contrast */
+  #pricing .pk-title,#pricing .pk-title em,#pricing .pk-head h2,h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead,#reveal .tcard h3,.how-step h3,.dev-fold .dv-pdp-value-card h3,.v8-julie h3.anton,.band p,.hero-head,.hero-head .serif-i,#reveal .tcard h3 .serif-i,h2.anton .serif-i,#pricing .pk-price,#pricing .price{-webkit-text-stroke:0!important;paint-order:normal}
+  #pricing .pk-title{font-size:46px!important;letter-spacing:-.02em!important}
+  #pricing .pk-vip .pk-title{font-size:42px!important}
+}
