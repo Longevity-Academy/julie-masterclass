@@ -985,3 +985,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .eyebrow,.how-when,.pk-spec dt{font-size:15px!important}
 }
 @media(max-width:760px){#pricing .pk-head h2{font-size:40px!important;white-space:nowrap}}   /* v9.15b: "Choose your seat" stays on one line */
+@media(max-width:760px){
+  /* v9.15c: floating Enroll back to its original 46px height; prominence comes from the glow and sheen, not size */
+  .lla-float-cta{min-height:46px!important;border-radius:14px!important}
+  .lla-cta-pill{font-size:17px!important;margin:4px!important;padding:0 16px!important;min-height:38px}
+}
