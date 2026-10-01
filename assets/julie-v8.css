@@ -1096,3 +1096,34 @@ html:has(#enrollModal.open){overflow:hidden!important}
 @media(max-width:760px){#pricing .pk-btn{font-size:21px!important;white-space:nowrap}}   /* v9.19b: Reserve buttons one line */
 @media(max-width:340px){.hero-head{font-size:42px!important}.hero-head .serif-i{font-size:40px!important}.lla-cta-eyebrow{display:none!important}.lla-cta-title{font-size:14px!important}#pricing .pk-btn{font-size:18px!important}}
 @media(max-width:340px){.lla-cta-title{font-size:13px!important}.lla-cta-text{padding:8px 6px 8px 10px!important}.lla-cta-pill{padding:0 10px!important;margin:5px 5px 5px 2px!important}.lla-cta-pill .arr{font-size:19px!important}}   /* v9.19c: 320px floater */
+
+/* ===== v9.20 (2026-10-01, CEO 17:59): floater = home floater with more gradient and light, title "The Masterclass", big "$49" pill;
+   hero + nav + band + About Julie CTAs white with blue type; Reserve buttons very light blue with strong light and navy type;
+   all pulsing / sweeping animations off. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  /* no motion on CTAs and cards */
+  .lla-float-cta.is-visible,.lla-float-cta .arr,.lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after,#pricing .pk-standard{animation:none!important}
+  .lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after{display:none!important}
+  /* floater: deeper gradient, much more light */
+  .lla-float-cta{background:linear-gradient(180deg,#1A4A86 0%,#0F2D52 45%,#071A33 100%)!important;border:1px solid rgba(160,205,255,.28)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 0 0 1px rgba(120,180,255,.35),0 16px 40px rgba(8,30,60,.45),0 0 44px rgba(120,190,255,.45)!important}
+  .lla-cta-eyebrow{font-size:11.5px!important;color:#9CC4F5!important}
+  .lla-cta-title{font-size:0!important;white-space:nowrap;overflow:visible!important}
+  .lla-cta-title::before{content:"The Masterclass, live with Julie";font-size:15px;font-weight:700;color:#fff;font-family:'Codec Pro','Inter',sans-serif}
+  .lla-cta-pill{padding:0 16px!important;margin:6px 6px 6px 4px!important;border-radius:11px!important;
+    background:linear-gradient(180deg,#9EDCFF 0%,#5EB6FF 55%,#2E8BE6 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(0,40,90,.18),0 8px 22px rgba(46,139,230,.45)!important}
+  .lla-cta-pill::before{content:"$49";font-size:24px;font-weight:900;color:#06243F;letter-spacing:-.01em;margin-right:8px;line-height:1}
+  .lla-cta-pill .arr{font-size:22px!important}
+  /* hero, nav, band, About Julie, menu: white button, blue type */
+  .hero-actions .btn-blue,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn{
+    background:linear-gradient(180deg,#FFFFFF 0%,#EEF6FF 100%)!important;color:#0A58D6!important;-webkit-text-fill-color:#0A58D6!important;
+    border:1px solid rgba(255,255,255,.9)!important;box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(120,180,255,.25),0 14px 36px rgba(8,30,60,.35),0 0 28px rgba(140,200,255,.30)!important}
+  .hero-actions .btn-blue *,.nav .btn *,.band .btn *,.v8-julie .btn *{color:#0A58D6!important;-webkit-text-fill-color:#0A58D6!important}
+  /* Reserve buttons: very light blue, strong light, navy type */
+  #pricing .pk-btn{background:linear-gradient(180deg,#DFF1FF 0%,#9EDCFF 55%,#5EB6FF 100%)!important;color:#06243F!important;-webkit-text-fill-color:#06243F!important;
+    border:1px solid rgba(255,255,255,.85)!important;border-radius:14px!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(0,40,90,.15),0 0 0 1px rgba(94,182,255,.45),0 14px 34px rgba(46,139,230,.40),0 0 30px rgba(120,190,255,.45)!important}
+  #pricing .pk-btn span,#pricing .pk-btn .pk-arr{color:#06243F!important;-webkit-text-fill-color:#06243F!important}
+}
+@media(max-width:340px){.lla-cta-title::before{font-size:13px}.lla-cta-pill::before{font-size:20px;margin-right:6px}}
