@@ -991,3 +991,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-cta-pill{font-size:17px!important;margin:4px!important;padding:0 16px!important;min-height:38px}
 }
 @media(max-width:760px){.lla-float-cta{height:46px!important;min-height:0!important;align-items:center!important}.lla-cta-pill{height:38px!important;min-height:0!important;margin:0 4px!important;line-height:38px!important}}   /* v9.15d: exactly 46px */
+@media(max-width:760px){
+  /* v9.15e: floating Enroll shell in brand royal blue with a sky border, no dark navy */
+  .lla-float-cta{background:linear-gradient(180deg,#1663F0 0%,#0B46BE 100%)!important;border:1px solid rgba(138,210,255,.55)!important}
+  .lla-cta-pill{background:linear-gradient(180deg,#9EDCFF 0%,#4FB2FF 100%)!important;color:#03182b!important}
+}
