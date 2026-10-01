@@ -1231,3 +1231,48 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-datenote{margin-top:10px!important;max-width:320px}
 }
 @media(max-width:340px){.hero-head{font-size:44px!important}.hero-head .serif-i{font-size:42px!important}.hero-desc{font-size:21px!important}#pricing .pk-date{width:100%!important}}
+
+/* ===== v9.24 (2026-10-01, CEO 18:58): date chips removed from the pricing head; pricing titles 44px; bullets 25px with air;
+   CTA text larger everywhere; logo 170px crisp; more gradient light on cards, hero and floater; stronger text contrast. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  /* pricing head: no date chips, no "or", no note */
+  #pricing .pk-dates{display:none!important}
+  #pricing .pk-sub{margin-bottom:6px!important}
+  /* pricing titles and bullets */
+  #pricing .pk-title{font-size:44px!important;line-height:1.02!important;margin:16px 0 20px!important}
+  #reveal .tcard li,#reveal .t-navy li:first-child,#pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:25px!important;line-height:1.5!important;margin-bottom:16px!important;letter-spacing:0!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li:last-child,#reveal .tcard li:last-child{margin-bottom:0!important}
+  #pricing .pk-ul{display:block!important}
+  #pricing .pk-spec dd,#pricing .pk-standard .pk-spec>div:last-child dd,#pricing .pk-vip .pk-spec::before{font-size:25px!important;line-height:1.5!important}
+  #pricing .pk-spec>div{padding:18px 0!important}
+  #pricing .pk-spec dt{margin-bottom:8px!important}
+  #reveal .tcard .tlead{font-size:25px!important;line-height:1.5!important}
+  /* contrast */
+  #pricing .pk-standard,#pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li,#pricing .pk-standard .pk-title,#pricing .pk-standard .pk-price{color:#04122A!important}
+  #pricing .pk-standard .pk-title em{color:#0A58D6!important}
+  #pricing .pk-vip,#pricing .pk-vip .pk-spec dd,#pricing .pk-vip .pk-ul li,#pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em,#pricing .pk-vip .pk-price,#pricing .pk-vip .pk-spec::before{color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important}
+  #pricing .pk-vip .pk-spec dt{color:#CFE6FF!important}
+  #reveal .tcard,#reveal .tcard li,#reveal .tcard .tlead,#reveal .tcard h3{color:#FFFFFF!important}
+  #reveal .tcard.t-light,#reveal .tcard.t-light li,#reveal .tcard.t-light .tlead,#reveal .tcard.t-light h3{color:#04122A!important}
+  .hero-desc{color:#FFFFFF!important}
+  /* gradient light */
+  #pricing .pk-standard{background:radial-gradient(120% 70% at 50% -10%,#FFFFFF 0%,rgba(255,255,255,0) 60%),linear-gradient(180deg,#FFFFFF 0%,#EEF5FF 100%)!important;box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(140,200,255,.35),0 24px 60px -20px rgba(0,30,90,.45),0 0 40px rgba(120,190,255,.25)!important}
+  #pricing .pk-vip{background:radial-gradient(120% 70% at 50% -10%,rgba(120,190,255,.55) 0%,rgba(120,190,255,0) 60%),linear-gradient(180deg,#1F6FE8 0%,#0B46BE 55%,#082F8A 100%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 0 0 1px rgba(140,200,255,.45),0 24px 60px -20px rgba(0,30,90,.6),0 0 44px rgba(60,140,255,.35)!important}
+  #reveal .tcard:not(.t-light){background:radial-gradient(120% 70% at 50% -10%,rgba(120,190,255,.5) 0%,rgba(120,190,255,0) 60%),linear-gradient(180deg,#1F6FE8 0%,#0B46BE 60%,#082F8A 100%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 1px rgba(140,200,255,.4),0 20px 50px -18px rgba(0,30,90,.6)!important}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 50% at 50% 0%,rgba(60,140,255,.28) 0%,rgba(60,140,255,0) 70%);z-index:0}
+  .hero>*{position:relative;z-index:1}
+  .lla-float-cta{box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 0 1px rgba(140,200,255,.45),0 16px 40px rgba(8,30,60,.5),0 0 56px rgba(120,190,255,.55)!important}
+  /* CTA text larger */
+  .hero-actions .btn-blue{font-size:24px!important;min-height:72px!important}
+  #pricing .pk-btn{font-size:24px!important;min-height:72px!important}
+  .band .btn,.v8-julie .btn,.mobile-menu .btn{font-size:24px!important;min-height:70px!important}
+  .nav .btn,.nav .btn-blue{font-size:18px!important;padding:13px 20px!important}
+  .lla-cta-pill::before{font-size:26px}
+  .lla-cta-pill .arr{font-size:24px!important}
+  .lla-cta-title::before{font-size:16px}
+  .lla-cta-eyebrow{font-size:12px!important}
+  /* logo: bigger, crisp, no blur */
+  .nav-logo{width:170px!important;height:76px!important;filter:none!important;background-size:contain!important}
+  .nav{min-height:84px}
+}
+@media(max-width:340px){#pricing .pk-btn{font-size:19px!important}.hero-actions .btn-blue{font-size:20px!important}.nav-logo{width:140px!important;height:64px!important}}
