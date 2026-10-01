@@ -878,3 +878,79 @@ html:has(#enrollModal.open){overflow:hidden!important}
   /* v9.12e: no one-word last lines on phones */
   #pricing .pk-card .pk-spec dd .pk-ul li,.band p,.dev-fold .dv-pdp-value-card p,.v8-pressgrid .dv-lla-news-card h3,.v8-pressgrid .dv-lla-news-card p{text-wrap:balance!important}
 }
+
+/* ===== v9.13 (2026-10-01, CEO review round 4): phones (max-width:760px) — hero hierarchy, VIP title contrast, Dates row stands out.
+   CSS in this file only; index.html, checkout and tracking files untouched. Fonts unchanged (Codec Pro / Inter / Instrument Serif italic accent). ===== */
+@media(max-width:760px){
+  /* hero: no eyebrow line; one big headline, accent in near-white; bigger subline and button */
+  .hero-year{display:none!important}
+  .hero-head{font-size:46px!important;line-height:1.02!important;letter-spacing:-.02em!important;color:#fff!important;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero-head .serif-i{font-size:46px!important;line-height:1.04!important;display:block;margin-top:10px;color:#DCEBFF!important;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero-desc{font-size:21.5px!important;line-height:1.48!important;margin-top:24px!important;color:#FFFFFF!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+  .hero-desc strong{color:#fff!important}
+  .hero-actions{margin-top:28px!important}
+  .hero-actions .btn-blue{min-height:66px!important;font-size:21px!important;font-weight:800!important;border-radius:16px!important}
+  /* dates: two plain chips, no label, no dots */
+  .hero-dates-line{margin-top:22px!important;border-top:0!important;padding-top:0!important;display:flex!important;flex-wrap:wrap;gap:10px}
+  .hero-dates-line::before{display:none!important;content:none!important}
+  .hero-dates-line span{display:inline-flex!important;align-items:center;font:700 17px/1.2 'Inter',sans-serif!important;color:#fff!important;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px!important;white-space:nowrap!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .hero-dates-line span::before{display:none!important;content:none!important}
+
+  /* VIP card: "private Q&A" readable on the blue gradient */
+  #pricing .pk-vip .pk-title{color:#fff!important}
+  #pricing .pk-vip .pk-title em{color:#FFFFFF!important;text-shadow:0 1px 10px rgba(0,30,90,.35)}
+  #pricing .pk-vip .pk-spec dt{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-spec dd{color:#fff!important}
+
+  /* Standard card: the Dates row is its own tinted block, bold dates */
+  #pricing .pk-standard .pk-spec>div:last-child{background:rgba(0,110,255,.07);border:1px solid rgba(0,110,255,.14);border-top:1px solid rgba(0,110,255,.14)!important;border-radius:14px;padding:14px 16px!important;margin-top:14px}
+  #pricing .pk-standard .pk-spec>div:last-child dt{color:#006EFF!important}
+  #pricing .pk-standard .pk-spec>div:last-child dd{font-weight:700!important;color:#0A2240!important;font-size:19.5px!important}
+  #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#0F1E36!important}
+}
+@media(max-width:760px){
+  /* v9.13b: balanced headline lines, no single-word line */
+  .hero-head{font-size:44px!important;text-wrap:balance}
+  .hero-head .serif-i{font-size:44px!important;text-wrap:balance}
+}
+@media(max-width:760px){.hero-head .serif-i{color:#DCEBFF!important;-webkit-text-fill-color:#DCEBFF!important;background:none!important}}   /* v9.13c: accent line near-white, one headline */
+@media(max-width:760px){
+  /* v9.13d: VIP title in dark navy (readable on the light part of the gradient); VIP gets the same Dates block as Standard; bigger WhatsApp */
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#061833!important;-webkit-text-fill-color:#061833!important;text-shadow:none!important}
+  #pricing .pk-vip .pk-tier{color:#061833!important}
+  #pricing .pk-vip .pk-spec{position:relative}
+  #pricing .pk-vip .pk-spec::after{content:"Dates";display:block;margin-top:14px;padding:14px 16px 0;font:700 14px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#BFE3FF;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-bottom:0;border-radius:14px 14px 0 0}
+  #pricing .pk-vip .pk-btn::before{content:"October 27 or November 14, your choice";display:block;position:absolute;left:0;right:0;bottom:calc(100% + 22px);margin:0;padding:8px 16px 14px;font:700 19.5px/1.4 'Inter',sans-serif;letter-spacing:0;text-transform:none;color:#fff;text-align:left;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-top:0;border-radius:0 0 14px 14px;text-wrap:balance}
+  #pricing .pk-vip .pk-btn{position:relative!important;margin-top:88px!important}
+  /* WhatsApp bubble 64px, bottom Enroll bar keeps its lane */
+  #et-bumpyard-widget{max-width:64px!important;right:14px!important}
+  #et-bumpyard-widget .widget-trigger-btn{min-width:64px!important;min-height:64px!important;padding:16px!important;line-height:32px!important}
+  #et-bumpyard-widget .widget-trigger-btn img{width:32px!important;height:32px!important}
+  .lla-float-cta{right:92px!important}
+}
+
+/* ===== v9.14 (2026-10-01): conversion emphasis, CSS only — bottom Enroll bar glows and nudges, the three buy buttons get a light sweep,
+   the Standard card carries a soft pulsing halo. No new content, no layout change, honours reduced-motion. ===== */
+@keyframes llaGlow{0%,100%{box-shadow:0 10px 30px rgba(0,110,255,.35),0 0 0 0 rgba(94,182,255,.55)}60%{box-shadow:0 14px 40px rgba(0,110,255,.55),0 0 0 12px rgba(94,182,255,0)}}
+@keyframes llaSheen{0%{transform:translateX(-160%) skewX(-18deg)}18%{transform:translateX(220%) skewX(-18deg)}100%{transform:translateX(220%) skewX(-18deg)}}
+@keyframes llaNudge{0%,80%,100%{transform:translateX(0)}88%{transform:translateX(5px)}94%{transform:translateX(0)}}
+@keyframes llaHalo{0%,100%{box-shadow:0 24px 60px -20px rgba(0,30,90,.35),0 0 0 0 rgba(0,110,255,.0)}50%{box-shadow:0 24px 60px -20px rgba(0,30,90,.35),0 0 0 8px rgba(0,110,255,.14)}}
+@media(max-width:760px){
+  .lla-float-cta.is-visible{animation:llaGlow 2.8s ease-in-out infinite}
+  .lla-float-cta .arr{display:inline-block;animation:llaNudge 2.8s ease-in-out infinite}
+  .lla-cta-pill{position:relative;overflow:hidden}
+  .lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);pointer-events:none;animation:llaSheen 4.2s ease-in-out infinite}
+  .hero-actions .btn-blue,#pricing .pk-btn{position:relative;overflow:hidden}
+  #pricing .pk-btn::after{animation-delay:1.4s}
+  #pricing .pk-standard{animation:llaHalo 3.2s ease-in-out infinite}
+}
+@media(prefers-reduced-motion:reduce){.lla-float-cta.is-visible,.lla-float-cta .arr,.lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after,#pricing .pk-standard{animation:none!important}}
+@media(max-width:760px){
+  /* v9.14b: VIP Dates block built inside the spec list (label + value), nothing hangs off the button */
+  #pricing .pk-vip .pk-spec{display:flex!important;flex-direction:column}
+  #pricing .pk-vip .pk-spec>div{order:1}
+  #pricing .pk-vip .pk-spec::after{order:2;margin-top:14px;padding:14px 16px 6px;border-radius:14px 14px 0 0;border-bottom:0}
+  #pricing .pk-vip .pk-spec::before{content:"October 27 or November 14, your choice";order:3;display:block;padding:0 16px 14px;font:700 19.5px/1.4 'Inter',sans-serif;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-top:0;border-radius:0 0 14px 14px;text-wrap:balance}
+  #pricing .pk-vip .pk-btn::before{display:none!important;content:none!important}
+  #pricing .pk-vip .pk-btn{margin-top:22px!important}
+}
