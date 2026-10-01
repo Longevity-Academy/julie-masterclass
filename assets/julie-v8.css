@@ -863,3 +863,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .dev-fold .dv-rail-dots,.dev-fold #dv-live .dv-rail-dots{display:flex!important;justify-content:center;margin-top:16px}
   .v8-press-nav{display:flex!important;justify-content:center;gap:14px;margin-top:4px}
 }
+@media(max-width:760px){
+  /* v9.12b: the press fold renders light; its intro line and footnote were set light in v9.11 and vanished — dark ink again */
+  #press .shead p,#press .shead-sub{color:#2A3A55!important}
+  #press .v8-press-foot{color:#3A4B68!important}
+}
