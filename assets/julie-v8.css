@@ -954,3 +954,11 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-btn::before{display:none!important;content:none!important}
   #pricing .pk-vip .pk-btn{margin-top:22px!important}
 }
+@media(max-width:760px){
+  /* v9.14c: VIP card — white type again on a deeper top gradient; hero accent back to the brand blue */
+  #pricing .pk-vip{background:linear-gradient(180deg,#0B2E66 0%,#0F3F8F 42%,#1C63E8 100%)!important}
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 2px 14px rgba(0,20,60,.45)!important}
+  #pricing .pk-vip .pk-tier{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-price{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  .hero-head .serif-i{color:#8AD2FF!important;-webkit-text-fill-color:#8AD2FF!important}
+}
