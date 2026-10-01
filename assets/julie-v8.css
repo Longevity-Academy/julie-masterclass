@@ -962,3 +962,25 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-price{color:#fff!important;-webkit-text-fill-color:#fff!important}
   .hero-head .serif-i{color:#8AD2FF!important;-webkit-text-fill-color:#8AD2FF!important}
 }
+@media(max-width:760px){
+  /* v9.15: type up another step on phones — pricing card headers first, then section and card headings */
+  #pricing .pk-title{font-size:34px!important;line-height:1.12!important;margin-top:16px!important}
+  #pricing .pk-price{font-size:88px!important}
+  #pricing .pk-tier{font-size:15px!important}
+  #pricing .pk-len{font-size:15px!important}
+  #pricing .pk-spec dt{font-size:15px!important}
+  #pricing .pk-spec dd{font-size:20.5px!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:20px!important}
+  #pricing .pk-standard .pk-spec>div:last-child dd{font-size:20.5px!important}
+  #pricing .pk-vip .pk-spec::before{font-size:20.5px!important}
+  #pricing .pk-btn{font-size:20.5px!important;min-height:64px!important}
+  #pricing .pk-head h2{font-size:44px!important}
+  h2.anton,.dv-pdp-value-h2,#faq h2{font-size:42px!important;line-height:1.05!important}
+  .hp-about-mainhead{font-size:42px!important}
+  #reveal .tcard h3{font-size:33px!important}
+  .dev-fold .dv-pdp-value-card h3,.how-step h3{font-size:29px!important}
+  .v8-julie h3.anton{font-size:33px!important}
+  .acc-title{font-size:23px!important}
+  .band p{font-size:38px!important}
+  .eyebrow,.how-when,.pk-spec dt{font-size:15px!important}
+}
