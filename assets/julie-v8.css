@@ -945,3 +945,12 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-standard{animation:llaHalo 3.2s ease-in-out infinite}
 }
 @media(prefers-reduced-motion:reduce){.lla-float-cta.is-visible,.lla-float-cta .arr,.lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after,#pricing .pk-standard{animation:none!important}}
+@media(max-width:760px){
+  /* v9.14b: VIP Dates block built inside the spec list (label + value), nothing hangs off the button */
+  #pricing .pk-vip .pk-spec{display:flex!important;flex-direction:column}
+  #pricing .pk-vip .pk-spec>div{order:1}
+  #pricing .pk-vip .pk-spec::after{order:2;margin-top:14px;padding:14px 16px 6px;border-radius:14px 14px 0 0;border-bottom:0}
+  #pricing .pk-vip .pk-spec::before{content:"October 27 or November 14, your choice";order:3;display:block;padding:0 16px 14px;font:700 19.5px/1.4 'Inter',sans-serif;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-top:0;border-radius:0 0 14px 14px;text-wrap:balance}
+  #pricing .pk-vip .pk-btn::before{display:none!important;content:none!important}
+  #pricing .pk-vip .pk-btn{margin-top:22px!important}
+}
