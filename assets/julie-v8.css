@@ -869,3 +869,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #press .v8-press-foot{color:#3A4B68!important}
 }
 @media(max-width:760px){#press .shead::after{color:#006EFF}}   /* v9.12c: swipe hint readable on the light press fold */
+@media(max-width:760px){
+  /* v9.12d: the "~$100-a-month" squeeze rules are obsolete with the new copy; balanced wrapping instead */
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:19px!important;letter-spacing:0!important;word-spacing:0!important}
+  #reveal .t-navy li:first-child{font-size:19.5px!important;letter-spacing:0!important;word-spacing:0!important;text-wrap:balance!important}
+}
