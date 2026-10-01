@@ -954,3 +954,108 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-btn::before{display:none!important;content:none!important}
   #pricing .pk-vip .pk-btn{margin-top:22px!important}
 }
+@media(max-width:760px){
+  /* v9.14c: VIP card — white type again on a deeper top gradient; hero accent back to the brand blue */
+  #pricing .pk-vip{background:linear-gradient(180deg,#0B2E66 0%,#0F3F8F 42%,#1C63E8 100%)!important}
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 2px 14px rgba(0,20,60,.45)!important}
+  #pricing .pk-vip .pk-tier{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-price{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  .hero-head .serif-i{color:#8AD2FF!important;-webkit-text-fill-color:#8AD2FF!important}
+}
+@media(max-width:760px){
+  /* v9.15: type up another step on phones — pricing card headers first, then section and card headings */
+  #pricing .pk-title{font-size:34px!important;line-height:1.12!important;margin-top:16px!important}
+  #pricing .pk-price{font-size:88px!important}
+  #pricing .pk-tier{font-size:15px!important}
+  #pricing .pk-len{font-size:15px!important}
+  #pricing .pk-spec dt{font-size:15px!important}
+  #pricing .pk-spec dd{font-size:20.5px!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:20px!important}
+  #pricing .pk-standard .pk-spec>div:last-child dd{font-size:20.5px!important}
+  #pricing .pk-vip .pk-spec::before{font-size:20.5px!important}
+  #pricing .pk-btn{font-size:20.5px!important;min-height:64px!important}
+  #pricing .pk-head h2{font-size:44px!important}
+  h2.anton,.dv-pdp-value-h2,#faq h2{font-size:42px!important;line-height:1.05!important}
+  .hp-about-mainhead{font-size:42px!important}
+  #reveal .tcard h3{font-size:33px!important}
+  .dev-fold .dv-pdp-value-card h3,.how-step h3{font-size:29px!important}
+  .v8-julie h3.anton{font-size:33px!important}
+  .acc-title{font-size:23px!important}
+  .band p{font-size:38px!important}
+  .eyebrow,.how-when,.pk-spec dt{font-size:15px!important}
+}
+@media(max-width:760px){#pricing .pk-head h2{font-size:40px!important;white-space:nowrap}}   /* v9.15b: "Choose your seat" stays on one line */
+@media(max-width:760px){
+  /* v9.15c: floating Enroll back to its original 46px height; prominence comes from the glow and sheen, not size */
+  .lla-float-cta{min-height:46px!important;border-radius:14px!important}
+  .lla-cta-pill{font-size:17px!important;margin:4px!important;padding:0 16px!important;min-height:38px}
+}
+@media(max-width:760px){.lla-float-cta{height:46px!important;min-height:0!important;align-items:center!important}.lla-cta-pill{height:38px!important;min-height:0!important;margin:0 4px!important;line-height:38px!important}}   /* v9.15d: exactly 46px */
+@media(max-width:760px){
+  /* v9.15e: floating Enroll shell in brand royal blue with a sky border, no dark navy */
+  .lla-float-cta{background:linear-gradient(180deg,#1663F0 0%,#0B46BE 100%)!important;border:1px solid rgba(138,210,255,.55)!important}
+  .lla-cta-pill{background:linear-gradient(180deg,#9EDCFF 0%,#4FB2FF 100%)!important;color:#03182b!important}
+}
+@media(max-width:760px){
+  /* v9.16: type up again on phones — body 22px, bullets 21.5px, headings 46px */
+  body{font-size:22px}
+  .shead p,.shead-sub,.hero-desc,.how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p,.jb-cap,.jb-photo-body p,.v8-julie .jbio,.dev-fold .dv-pdp-value-card p{font-size:22px!important;line-height:1.5!important}
+  .hero-head,.hero-head .serif-i{font-size:48px!important}
+  .hero-actions .btn-blue{font-size:22px!important;min-height:68px!important}
+  .hero-dates-line span{font-size:18px!important}
+  h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead{font-size:46px!important}
+  #pricing .pk-head h2{font-size:42px!important}
+  #reveal .tcard h3{font-size:35px!important}
+  #reveal .tcard .tlead{font-size:22px!important}
+  #reveal .tcard li,#reveal .t-navy li:first-child{font-size:21.5px!important;line-height:1.42!important}
+  .dev-fold .dv-pdp-value-card h3,.how-step h3{font-size:31px!important}
+  .v8-julie h3.anton{font-size:35px!important}
+  .jfacts li,.jb-chips span{font-size:20px!important}
+  #pricing .pk-title{font-size:36px!important}
+  #pricing .pk-spec dt,.eyebrow,.how-when{font-size:16px!important}
+  #pricing .pk-spec dd,#pricing .pk-standard .pk-spec>div:last-child dd,#pricing .pk-vip .pk-spec::before{font-size:22px!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:21.5px!important}
+  #pricing .pk-btn{font-size:22px!important;min-height:66px!important}
+  #pricing .pk-foot,#pricing .pk-datenote{font-size:18px!important}
+  .acc-title{font-size:25px!important}
+  .dev-fold .v8-pressgrid h3{font-size:22.5px!important}
+  .dv-lla-news-outlet,.dev-fold .v8-pressgrid .dv-lla-news-meta{font-size:17px!important}
+  .v8-press-foot{font-size:19px!important}
+  .hp-about-stat-value,.hp-about-stats b{font-size:38px!important}
+  .band p{font-size:42px!important}
+  footer p,footer li,footer a{font-size:18px!important}
+  .lla-cta-pill{font-size:18px!important}
+}
+@media(max-width:760px){#pricing .pk-head h2{font-size:38px!important;white-space:nowrap!important}#pricing .pk-head h2 .serif-i{white-space:nowrap!important;display:inline!important}.hero-desc{font-size:21.5px!important;text-wrap:pretty}}   /* v9.16b */
+@media(max-width:760px){
+  /* v9.17: floating Enroll = one solid brand-blue button, white text (same look as the nav button); hero type much larger */
+  .lla-float-cta{background:none!important;border:0!important;box-shadow:none!important;height:54px!important;animation:none!important}
+  .lla-cta-pill{background:linear-gradient(180deg,#2F82FF 0%,#1360F2 100%)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font-size:20px!important;font-weight:800!important;height:54px!important;line-height:54px!important;margin:0!important;border-radius:16px!important;border:1px solid rgba(160,214,255,.55);box-shadow:0 10px 28px rgba(0,110,255,.45);animation:llaGlow 2.8s ease-in-out infinite}
+  .lla-cta-pill .arr{color:#fff!important}
+  .hero-head{font-size:56px!important;line-height:1.0!important}
+  .hero-head .serif-i{font-size:54px!important;line-height:1.02!important;margin-top:12px}
+  .hero-desc{font-size:24px!important;line-height:1.42!important;margin-top:26px!important}
+  .hero-actions .btn-blue{font-size:24px!important;min-height:72px!important;border-radius:18px!important}
+  .hero-dates-line span{font-size:19px!important;padding:13px 15px!important}
+}
+
+/* ===== v9.18 (2026-10-01, CEO): phones — every CTA in the longevitylifeacademy.com primary-button style
+   (gradient #2E91FF→#0066FF, pill, inner light, blue glow, white bold text), larger; nav logo larger and fully opaque. CSS only. ===== */
+@media(max-width:760px){
+  .hero-actions .btn-blue,#pricing .pk-btn,.lla-cta-pill,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn{
+    background:linear-gradient(135deg,#2E91FF 0%,#0066FF 100%)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
+    border:1px solid rgba(140,200,255,.55)!important;border-radius:999px!important;font-weight:800!important;letter-spacing:.01em;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.30),inset 0 -1px 0 rgba(0,0,0,.18),0 10px 32px rgba(20,110,240,.55),0 2px 6px rgba(0,0,0,.35)!important}
+  .hero-actions .btn-blue{font-size:24px!important;min-height:72px!important}
+  #pricing .pk-btn{font-size:23px!important;min-height:68px!important}
+  #pricing .pk-btn span,#pricing .pk-btn .pk-arr{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  .lla-cta-pill{font-size:21px!important;height:56px!important;line-height:56px!important}
+  .lla-float-cta{height:56px!important}
+  .nav .btn,.nav .btn-blue{font-size:16.5px!important;padding:12px 18px!important}
+  .band .btn,.v8-julie .btn{font-size:22px!important;min-height:66px!important}
+  .hero-actions .btn-blue::after,#pricing .pk-btn::after{border-radius:999px}
+  /* nav logo */
+  .nav-logo>img{height:70px!important}
+  .nav-logo .bm-v7-lockup>.bm-v7-original{width:172px!important}
+  .nav-logo,.nav-logo *{opacity:1!important;filter:none!important}
+}
