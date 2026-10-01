@@ -703,6 +703,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #reveal .tcard hr{margin:16px 0!important}
   #reveal .tcard li{font-size:18.5px!important;line-height:1.45!important;margin:0 0 12px!important}
   #reveal .tcard li:last-child{margin-bottom:0!important}
+  #reveal .tcard li{text-wrap:balance}   /* no one-word last lines */
   #reveal .m-hint{display:none!important}
   #reveal .tcard .tn{display:none!important}   /* the outline watermark number sat over the bullets on phones */
   /* card 3 photo: the source file has a "Most popular" label and a caption baked in; on phones the crop keeps Julie and leaves both out */
@@ -726,6 +727,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-spec>div{grid-template-columns:1fr!important;gap:6px!important;padding:14px 0!important}
   #pricing .pk-spec dt{font-size:13px!important;letter-spacing:.14em!important}
   #pricing .pk-spec dd{font-size:18.5px!important;line-height:1.45!important;text-wrap:balance}
+  #pricing .pk-card .pk-spec dd .pk-ul li{text-wrap:wrap}
   #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:17.5px!important}   /* keeps "~$100-a-month" whole */
   /* the Length row repeats the pill in the card header; hidden on phones so each seat stays short */
   #pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(2){display:none!important}
