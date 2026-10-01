@@ -908,3 +908,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-standard .pk-spec>div:last-child dd{font-weight:700!important;color:#0A2240!important;font-size:19.5px!important}
   #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#0F1E36!important}
 }
+@media(max-width:760px){
+  /* v9.13b: balanced headline lines, no single-word line */
+  .hero-head{font-size:44px!important;text-wrap:balance}
+  .hero-head .serif-i{font-size:44px!important;text-wrap:balance}
+}
