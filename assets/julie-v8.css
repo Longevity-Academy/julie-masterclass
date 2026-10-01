@@ -1127,3 +1127,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-btn span,#pricing .pk-btn .pk-arr{color:#06243F!important;-webkit-text-fill-color:#06243F!important}
 }
 @media(max-width:340px){.lla-cta-title::before{font-size:13px}.lla-cta-pill::before{font-size:20px;margin-right:6px}}
+@media(max-width:760px){.lla-cta-title::before{content:"The Masterclass"}.lla-cta-title{overflow:hidden!important;text-overflow:ellipsis}}   /* v9.20b */
