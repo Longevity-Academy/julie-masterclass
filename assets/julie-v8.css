@@ -928,3 +928,20 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #et-bumpyard-widget .widget-trigger-btn img{width:32px!important;height:32px!important}
   .lla-float-cta{right:92px!important}
 }
+
+/* ===== v9.14 (2026-10-01): conversion emphasis, CSS only — bottom Enroll bar glows and nudges, the three buy buttons get a light sweep,
+   the Standard card carries a soft pulsing halo. No new content, no layout change, honours reduced-motion. ===== */
+@keyframes llaGlow{0%,100%{box-shadow:0 10px 30px rgba(0,110,255,.35),0 0 0 0 rgba(94,182,255,.55)}60%{box-shadow:0 14px 40px rgba(0,110,255,.55),0 0 0 12px rgba(94,182,255,0)}}
+@keyframes llaSheen{0%{transform:translateX(-160%) skewX(-18deg)}18%{transform:translateX(220%) skewX(-18deg)}100%{transform:translateX(220%) skewX(-18deg)}}
+@keyframes llaNudge{0%,80%,100%{transform:translateX(0)}88%{transform:translateX(5px)}94%{transform:translateX(0)}}
+@keyframes llaHalo{0%,100%{box-shadow:0 24px 60px -20px rgba(0,30,90,.35),0 0 0 0 rgba(0,110,255,.0)}50%{box-shadow:0 24px 60px -20px rgba(0,30,90,.35),0 0 0 8px rgba(0,110,255,.14)}}
+@media(max-width:760px){
+  .lla-float-cta.is-visible{animation:llaGlow 2.8s ease-in-out infinite}
+  .lla-float-cta .arr{display:inline-block;animation:llaNudge 2.8s ease-in-out infinite}
+  .lla-cta-pill{position:relative;overflow:hidden}
+  .lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:34%;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);pointer-events:none;animation:llaSheen 4.2s ease-in-out infinite}
+  .hero-actions .btn-blue,#pricing .pk-btn{position:relative;overflow:hidden}
+  #pricing .pk-btn::after{animation-delay:1.4s}
+  #pricing .pk-standard{animation:llaHalo 3.2s ease-in-out infinite}
+}
+@media(prefers-reduced-motion:reduce){.lla-float-cta.is-visible,.lla-float-cta .arr,.lla-cta-pill::after,.hero-actions .btn-blue::after,#pricing .pk-btn::after,#pricing .pk-standard{animation:none!important}}
