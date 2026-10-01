@@ -1059,3 +1059,37 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .nav-logo .bm-v7-lockup>.bm-v7-original{width:172px!important}
   .nav-logo,.nav-logo *{opacity:1!important;filter:none!important}
 }
+
+/* ===== v9.19 (2026-10-01, CEO): copy longevitylifeacademy.com — floater = home floater (navy gradient shell, eyebrow+title, light pill);
+   all CTAs = that navy gradient with the blue light ring, white text; nav logo = the home logo file. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  /* floater: exact home design */
+  .lla-float-cta{height:auto!important;min-height:0!important;display:inline-flex!important;align-items:stretch!important;justify-content:space-between!important;
+    background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%)!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:14px!important;
+    box-shadow:0 0 0 1px rgba(120,180,255,.18),0 14px 36px rgba(8,30,60,.28),0 0 28px rgba(120,190,255,.18)!important;animation:none!important}
+  .lla-float-cta>*:not(.lla-cta-pill),.lla-float-cta .lla-cta-text{display:flex!important}
+  .lla-cta-text{flex:1;min-width:0;flex-direction:column;justify-content:center;padding:9px 10px 9px 14px!important;gap:3px}
+  .lla-cta-eyebrow{display:flex!important;font-size:11px!important;font-weight:600;letter-spacing:.12em;color:#8FB9F0!important;font-style:normal!important}
+  .lla-cta-title{font-family:'Codec Pro','Inter',sans-serif;font-size:15px!important;font-weight:700;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lla-cta-pill{flex:0 0 auto;display:flex!important;align-items:center;justify-content:center;height:auto!important;line-height:1!important;min-height:0!important;
+    padding:0 15px!important;margin:6px 6px 6px 4px!important;border-radius:10px!important;border:0!important;
+    background:linear-gradient(180deg,#5EB6FF 0%,#2E8BE6 100%)!important;color:#06243F!important;-webkit-text-fill-color:#06243F!important;
+    box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 8px 20px rgba(46,139,230,.32)!important;font-size:0!important;animation:none!important}
+  .lla-cta-pill .arr{font-size:22px!important;color:#06243F!important;-webkit-text-fill-color:#06243F!important;font-weight:800}
+  .lla-cta-pill::after{display:none!important}
+  /* every other CTA: the same navy gradient and light ring, white type, no sweep */
+  .hero-actions .btn-blue,#pricing .pk-btn,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn{
+    background:linear-gradient(180deg,#0F2D52 0%,#0A2240 100%)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
+    border:1px solid rgba(255,255,255,.14)!important;border-radius:14px!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 0 0 1px rgba(120,180,255,.28),0 14px 36px rgba(8,30,60,.35),0 0 28px rgba(120,190,255,.22)!important}
+  #pricing .pk-btn span,#pricing .pk-btn .pk-arr{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  .hero-actions .btn-blue::after,#pricing .pk-btn::after{display:none!important}
+  /* nav logo: the home logo file, same drop shadow */
+  .nav-logo{display:block!important;width:150px!important;height:68px!important;background:url("lla-logo-exact-transparent@2x.png") no-repeat left center/contain!important;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45))}
+  .nav-logo>*{opacity:0!important;position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;pointer-events:none}
+}
+@media(max-width:340px){
+  .hero-head{font-size:44px!important}.hero-head .serif-i{font-size:42px!important}.hero-desc{font-size:20px!important}
+  .hero-dates-line span{font-size:15.5px!important;padding:11px 12px!important}
+  .lla-cta-title{font-size:13.5px!important}
+}
