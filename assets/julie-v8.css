@@ -808,3 +808,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   footer p,footer li,footer a{font-size:17px!important;line-height:1.55!important}
   footer p{color:#C9D8F0!important}
 }
+@media(max-width:760px){
+  /* v9.11b: the two bullets that carry "~$100-a-month" stay whole at the larger sizes */
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:18px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important}
+  #reveal .t-navy li:first-child{font-size:19px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important;text-wrap:wrap}
+}
