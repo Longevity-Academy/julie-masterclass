@@ -996,3 +996,33 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-float-cta{background:linear-gradient(180deg,#1663F0 0%,#0B46BE 100%)!important;border:1px solid rgba(138,210,255,.55)!important}
   .lla-cta-pill{background:linear-gradient(180deg,#9EDCFF 0%,#4FB2FF 100%)!important;color:#03182b!important}
 }
+@media(max-width:760px){
+  /* v9.16: type up again on phones — body 22px, bullets 21.5px, headings 46px */
+  body{font-size:22px}
+  .shead p,.shead-sub,.hero-desc,.how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p,.jb-cap,.jb-photo-body p,.v8-julie .jbio,.dev-fold .dv-pdp-value-card p{font-size:22px!important;line-height:1.5!important}
+  .hero-head,.hero-head .serif-i{font-size:48px!important}
+  .hero-actions .btn-blue{font-size:22px!important;min-height:68px!important}
+  .hero-dates-line span{font-size:18px!important}
+  h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead{font-size:46px!important}
+  #pricing .pk-head h2{font-size:42px!important}
+  #reveal .tcard h3{font-size:35px!important}
+  #reveal .tcard .tlead{font-size:22px!important}
+  #reveal .tcard li,#reveal .t-navy li:first-child{font-size:21.5px!important;line-height:1.42!important}
+  .dev-fold .dv-pdp-value-card h3,.how-step h3{font-size:31px!important}
+  .v8-julie h3.anton{font-size:35px!important}
+  .jfacts li,.jb-chips span{font-size:20px!important}
+  #pricing .pk-title{font-size:36px!important}
+  #pricing .pk-spec dt,.eyebrow,.how-when{font-size:16px!important}
+  #pricing .pk-spec dd,#pricing .pk-standard .pk-spec>div:last-child dd,#pricing .pk-vip .pk-spec::before{font-size:22px!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:21.5px!important}
+  #pricing .pk-btn{font-size:22px!important;min-height:66px!important}
+  #pricing .pk-foot,#pricing .pk-datenote{font-size:18px!important}
+  .acc-title{font-size:25px!important}
+  .dev-fold .v8-pressgrid h3{font-size:22.5px!important}
+  .dv-lla-news-outlet,.dev-fold .v8-pressgrid .dv-lla-news-meta{font-size:17px!important}
+  .v8-press-foot{font-size:19px!important}
+  .hp-about-stat-value,.hp-about-stats b{font-size:38px!important}
+  .band p{font-size:42px!important}
+  footer p,footer li,footer a{font-size:18px!important}
+  .lla-cta-pill{font-size:18px!important}
+}
