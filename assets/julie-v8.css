@@ -714,3 +714,55 @@ html:has(#enrollModal.open){overflow:hidden!important}
 @media(max-width:760px) and (max-height:720px){
   .hero-actions .btn-blue{width:calc(100% - 78px)!important}   /* leaves the WhatsApp bubble its own corner */
 }
+
+/* ===== v9.10 (2026-10-01, CEO review): phones (max-width:760px) — no more sliders for the two seats or the three "What you'll learn" cards;
+   both seats stacked and fully visible, larger type everywhere. CSS in this file only; index.html, checkout dialog and tracking files untouched.
+   Fonts unchanged: Codec Pro headlines, Inter body, Instrument Serif italic accent. ===== */
+@media(max-width:760px){
+  /* --- base type up one step --- */
+  body{font-size:19px}
+  .shead p,.shead-sub{font-size:19.5px!important;line-height:1.5}
+  .how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p{font-size:18.5px!important;line-height:1.55}
+  .how-step h3{font-size:25px!important}
+  .acc-title{font-size:20.5px!important}
+
+  /* --- What you'll learn: three stacked cards, big type --- */
+  #reveal .tgrid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:22px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  #reveal .tcard{flex:none!important;width:100%!important;max-width:none!important;border-radius:22px!important}
+  #reveal .tcard .tmedia img,#reveal .tcard .tmedia video{aspect-ratio:16/10!important}
+  #reveal .tcard .tbody{padding:24px 22px 26px!important}
+  #reveal .tcard .tn{font-size:64px!important;line-height:1!important}
+  #reveal .tcard h3{font-size:31px!important;line-height:1.08!important;margin:10px 0 12px!important}
+  #reveal .tcard .tlead{font-size:19.5px!important;line-height:1.45!important}
+  #reveal .tcard hr{margin:16px 0!important}
+  #reveal .tcard li{font-size:18.5px!important;line-height:1.45!important;margin:0 0 12px!important}
+  #reveal .tcard li:last-child{margin-bottom:0!important}
+  #reveal .m-hint{display:none!important}
+
+  /* --- Choose your seat: Standard then VIP, stacked, no swipe --- */
+  #pricing .pk-head h2{font-size:38px!important}
+  #pricing .pk-sub{font-size:18.5px!important;line-height:1.45!important}
+  #pricing .pk-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none;align-items:stretch!important}
+  #pricing .pk-card{flex:none!important;width:100%!important;padding:22px 20px 20px!important;border-radius:22px!important;
+    grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";column-gap:16px}
+  #pricing .pk-tier,#pricing .pk-len{font-size:16px!important}
+  #pricing .pk-top{margin:0 0 10px!important}
+  #pricing .pk-price{font-size:58px!important}
+  #pricing .pk-price sup{font-size:26px!important;top:-20px!important}
+  #pricing .pk-title{font-size:24px!important;line-height:1.12!important}
+  #pricing .pk-title em{font-size:27px!important}
+  #pricing .pk-spec{margin:14px 0 0!important;padding-top:6px}
+  #pricing .pk-card .pk-spec>div{padding:10px 0 4px!important}
+  #pricing .pk-card .pk-spec dt{font-size:14.5px!important;margin:0 0 6px!important}
+  #pricing .pk-card .pk-spec dd,#pricing .pk-card .pk-spec dd .pk-ul li{font-size:18px!important;line-height:1.42!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{padding-left:20px;margin:0 0 9px}
+  #pricing .pk-card .pk-spec dd .pk-ul li::before{top:9px;width:8px;height:8px}
+  /* rows already said in the card header ("60 min live" / "90 min with Julie") are hidden on phones to keep each seat short */
+  #pricing .pk-standard .pk-spec>div:nth-child(1),#pricing .pk-standard .pk-spec>div:nth-child(2){display:none!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(2){display:none!important}
+  #pricing .pk-vip .pk-spec>div:first-child dd{padding-right:0}
+  #pricing .pk-vip .pk-spec>div:nth-child(4) dd{font-size:18px!important}
+  #pricing .pk-btn{min-height:62px!important;font-size:19.5px!important;margin:16px 0 0!important}
+  #pricing .pk-grid+.pk-foot::before{display:none!important}
+  #pricing .pk-foot{font-size:16.5px!important;margin:14px 0 0!important}
+}
