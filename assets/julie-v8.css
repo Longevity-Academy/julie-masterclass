@@ -1278,3 +1278,24 @@ html:has(#enrollModal.open){overflow:hidden!important}
 @media(max-width:340px){#pricing .pk-btn{font-size:19px!important}.hero-actions .btn-blue{font-size:20px!important}.nav-logo{width:140px!important;height:64px!important}}
 @media(max-width:760px){#pricing .pk-vip .pk-title{font-size:40px!important}#pricing .pk-title{text-wrap:balance}#reveal .tcard li,#pricing .pk-ul li,#pricing .pk-spec dd{text-wrap:pretty!important}}   /* v9.24b: VIP title two lines, bullets fill the line */
 @media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-ul li:nth-child(3),#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){text-wrap:pretty!important;padding-right:0!important}}   /* v9.24c: bullets use the full line */
+
+/* ===== v9.25 (2026-10-01, CEO 19:08): heavier real weight — Codec Pro titles get a crisp 0.9px stroke (not browser fake bold);
+   body and bullets Inter 500; every secondary text brightened for contrast. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  #pricing .pk-title,#pricing .pk-title em,#pricing .pk-head h2,h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead,#reveal .tcard h3,.how-step h3,.dev-fold .dv-pdp-value-card h3,.v8-julie h3.anton,.band p,.hero-head{-webkit-text-stroke:.9px currentColor;paint-order:stroke fill}
+  #pricing .pk-title em,.hero-head .serif-i,#reveal .tcard h3 .serif-i,h2.anton .serif-i{-webkit-text-stroke:.35px currentColor}
+  #pricing .pk-price,#pricing .price{-webkit-text-stroke:1px currentColor}
+  body,.shead p,.shead-sub,.how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p,.jb-cap,.jb-photo-body p,.v8-julie .jbio,.dev-fold .dv-pdp-value-card p,#pricing .pk-sub,.v8-press-foot,
+  #reveal .tcard li,#reveal .t-navy li:first-child,#pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3),#pricing .pk-spec dd,#pricing .pk-standard .pk-spec>div:last-child dd,#pricing .pk-vip .pk-spec::before,#reveal .tcard .tlead,.hero-desc,.acc-title{font-weight:500!important}
+  /* secondary text brighter */
+  #pricing .pk-sub,.shead p,.shead-sub,.hero-dates-line span,#pricing .pk-foot,#pricing .pk-datenote,.v8-press-foot,.how-when,footer p,footer li,footer a{color:#E8F1FF!important}
+  #pricing .pk-standard .pk-foot,#pricing .pk-standard .pk-spec dt{color:#0A58D6!important}
+  #pricing .pk-standard .pk-len,#pricing .pk-standard .pk-tier{color:#04122A!important}
+  #pricing .pk-vip .pk-spec dt,#pricing .pk-vip .pk-len,#pricing .pk-vip .pk-tier{color:#FFFFFF!important}
+  #reveal .tcard .eyebrow,#reveal .tcard:not(.t-light) .eyebrow{color:#DCEBFF!important}
+  .acc-inner p{color:#F2F7FF!important}
+  .hp-about-desc,.hp-about-powered-desc{color:#F2F7FF!important}
+  .jfacts li,.jb-chips span,.jb-cap{color:#F2F7FF!important}
+  .dv-lla-news-outlet,.dev-fold .v8-pressgrid .dv-lla-news-meta{color:#DCEBFF!important}
+  .lla-cta-eyebrow{color:#CFE4FF!important}
+}
