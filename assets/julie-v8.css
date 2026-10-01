@@ -826,3 +826,40 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-float-cta .lla-cta-copy,.lla-float-cta>*:not(.lla-cta-pill){display:none!important}   /* the small caption beside the pill is dropped on phones; the pill carries the words */
 }
 .hp-about-mainhead{font-family:'Codec Pro','Inter',sans-serif!important}   /* v9.11f: the one headline on the page that was still Inter now matches every other headline */
+
+/* ===== v9.12 (2026-10-01, CEO review round 3): phones (max-width:760px).
+   Sliders back where the CEO wants them: "What you'll learn", the four cards under the Zoom grid, and the press.
+   Pricing, About Julie and How it works stay stacked. Each slider shows the edge of the next card and a swipe hint.
+   Contrast fix: the "What you'll learn" intro was navy on navy. CSS in this file only. Fonts unchanged. ===== */
+@media(max-width:760px){
+  /* --- contrast: #reveal and #faq carry the class f-white but render dark; their intro text is light again --- */
+  #reveal .shead p,#reveal .shead .eyebrow,#faq .shead p{color:#E6EEFA!important}
+  #reveal .shead .eyebrow{color:#8AD2FF!important}
+
+  /* --- shared slider recipe: full-bleed rail, 84% cards, next card peeking, snap, no scrollbar --- */
+  #reveal .tgrid,
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,
+  .v8-pressgrid{
+    display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;grid-template-columns:none!important;
+    overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch;
+    gap:14px!important;padding:4px 20px 10px!important;margin:0 -20px!important;width:auto!important;max-width:none!important;height:auto!important;
+    scrollbar-width:none;scroll-padding:0 20px}
+  #reveal .tgrid::-webkit-scrollbar,#dv-live .dv-pdp-value-grid::-webkit-scrollbar,.v8-pressgrid::-webkit-scrollbar{display:none}
+  #reveal .tcard,
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card,.dev-fold .dv-pdp-value-card,
+  .v8-pressgrid .dv-lla-news-card{
+    flex:0 0 84%!important;width:84%!important;max-width:84%!important;min-width:0!important;scroll-snap-align:center!important;position:relative!important;align-self:stretch!important;height:auto!important;min-height:0!important}
+  #reveal .tgrid{align-items:stretch!important}
+  .v8-pressgrid .dv-lla-news-card:nth-child(n+4){display:flex!important}   /* all nine press cards are back in the rail */
+
+  /* --- swipe hint: a line under each rail, same type as the small labels --- */
+  #reveal .tgrid::after,section#dv-live .dv-pdp-value-grid.dv-rail::after,.v8-pressgrid::after{content:"";flex:0 0 6px}   /* breathing room after the last card */
+  #reveal .shead::after,#dv-live .dv-pdp-value-h2::after,#press .shead::after{
+    content:"Swipe \2192  3 cards";display:block;margin-top:14px;font:600 14px/1 'Inter',sans-serif;letter-spacing:.02em;color:#8AD2FF;text-align:center}
+  #dv-live .dv-pdp-value-h2::after{content:"Swipe \2192  4 cards";text-align:left}
+  #press .shead::after{content:"Swipe \2192  9 articles"}
+
+  /* dots under the Zoom-grid cards and the press arrows come back */
+  .dev-fold .dv-rail-dots,.dev-fold #dv-live .dv-rail-dots{display:flex!important;justify-content:center;margin-top:16px}
+  .v8-press-nav{display:flex!important;justify-content:center;gap:14px;margin-top:4px}
+}
