@@ -731,7 +731,6 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #reveal .tcard{flex:none!important;width:100%!important;max-width:none!important;border-radius:22px!important}
   #reveal .tcard .tmedia img,#reveal .tcard .tmedia video{aspect-ratio:16/10!important}
   #reveal .tcard .tbody{padding:24px 22px 26px!important}
-  #reveal .tcard .tn{font-size:64px!important;line-height:1!important}
   #reveal .tcard h3{font-size:31px!important;line-height:1.08!important;margin:10px 0 12px!important}
   #reveal .tcard .tlead{font-size:19.5px!important;line-height:1.45!important}
   #reveal .tcard hr{margin:16px 0!important}
@@ -756,6 +755,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-card .pk-spec dt{font-size:14.5px!important;margin:0 0 6px!important}
   #pricing .pk-card .pk-spec dd,#pricing .pk-card .pk-spec dd .pk-ul li{font-size:18px!important;line-height:1.42!important}
   #pricing .pk-card .pk-spec dd .pk-ul li{padding-left:20px;margin:0 0 9px}
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:17.5px!important;letter-spacing:-.005em}
   #pricing .pk-card .pk-spec dd .pk-ul li::before{top:9px;width:8px;height:8px}
   /* rows already said in the card header ("60 min live" / "90 min with Julie") are hidden on phones to keep each seat short */
   #pricing .pk-standard .pk-spec>div:nth-child(1),#pricing .pk-standard .pk-spec>div:nth-child(2){display:none!important}
