@@ -605,40 +605,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .widget-trigger-btn{width:60px!important;height:60px!important}
   .widget-trigger-btn img{width:34px!important;height:34px!important}
 
-  /* pricing: horizontal snap slider, two compact cards, price + title on one row, stacked spec rows */
-  #pricing{padding-top:44px!important;padding-bottom:36px!important}
-  #pricing .pk-head{padding:0 0 14px!important;margin:0!important}
-  #pricing .pk-head h2{font-size:34px!important;line-height:1.05!important;margin:0 0 8px!important}
-  #pricing .pk-sub{font-size:16.5px!important;line-height:1.4!important;margin:0!important;text-wrap:balance}
-  #pricing .pk-dates{display:none!important}                 /* dates live inside the Standard card on phones */
-  #pricing .pk-grid{display:flex!important;flex-wrap:nowrap!important;gap:12px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 4px 14px!important;margin:0 -4px!important;align-items:flex-start!important}
-  #pricing .pk-grid::-webkit-scrollbar{display:none}
-  #pricing .pk-card{flex:0 0 90%!important;min-width:0;scroll-snap-align:center;padding:18px 18px 16px!important;border-radius:20px!important;
-    display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"top top" "price title" "spec spec" "btn btn";column-gap:14px;align-items:center}
-  #pricing .pk-top{grid-area:top;display:flex!important;align-items:baseline!important;justify-content:space-between!important;margin:0 0 6px!important}
-  #pricing .pk-price{grid-area:price;font-size:50px!important;line-height:1!important;margin:0!important}
-  #pricing .pk-price sup{font-size:22px!important;top:-16px!important}
-  #pricing .pk-title{grid-area:title;font-size:21px!important;line-height:1.15!important;margin:0!important;text-wrap:balance}
-  #pricing .pk-title em{font-size:23px!important;white-space:nowrap}
-  #pricing .pk-spec{grid-area:spec;margin:10px 0 0!important;border-top:1px solid rgba(0,0,0,.08);padding-top:4px}
-  #pricing .pk-vip .pk-spec{border-top-color:rgba(255,255,255,.16)}
-  #pricing .pk-btn{grid-area:btn;margin:12px 0 0!important;min-height:56px!important;font-size:18px!important}
-  #pricing .pk-tier,#pricing .pk-len{font:600 14.5px/1.2 Inter,sans-serif!important;letter-spacing:0!important;text-transform:none!important;background:none!important;border:0!important;padding:0!important;box-shadow:none!important}
-  #pricing .pk-tier{color:#2F6BFF!important;font-weight:700!important}
-  #pricing .pk-vip .pk-tier{color:#BFDFFF!important}
-  #pricing .pk-len{color:#5A6B82!important}
-  #pricing .pk-vip .pk-len{color:rgba(255,255,255,.75)!important}
-  #pricing .pk-tier::before{display:none!important}
-  #pricing .pk-card .pk-spec>div{display:block!important;padding:7px 0 3px!important;border:0!important;margin:0!important}
-  #pricing .pk-card .pk-spec dt{font:700 12.5px/1.2 Inter,sans-serif!important;letter-spacing:0!important;text-transform:none!important;margin:0 0 4px!important;padding:0!important;color:#2F6BFF!important}
-  #pricing .pk-vip .pk-spec dt{color:#BFDFFF!important}
-  #pricing .pk-card .pk-spec dd{font:500 15.5px/1.38 Inter,sans-serif!important;margin:0!important;text-wrap:pretty}
-  #pricing .pk-grid+.pk-foot{text-wrap:balance}
-  #pricing .pk-grid+.pk-foot::before{content:'Swipe for the VIP seat \2192';display:block;width:auto;height:auto;margin:0 0 12px;border-radius:0;background:none;box-shadow:none;vertical-align:baseline;text-align:center;font:600 14px/1 Inter,sans-serif;color:#8AD2FF}
-  #pricing .pk-foot{font-size:15px!important;margin:6px 0 0!important}
-  /* line-break control without touching markup: keep "30-minute" and "December 31, 2026" whole */
-  #pricing .pk-vip .pk-spec>div:first-child dd{padding-right:36px}
-  #pricing .pk-vip .pk-spec>div:nth-child(4) dd{font-size:14.5px!important}
+  /* v9.9 pricing slider removed in v9.10 (CEO review 2026-10-01): the phone cards go back to the brand design (v7/v8 rules below), stacked. */
 }
 
 /* v9.9c (2026-09-30, freeze lifted by Omri for index.html pricing copy): Standard card "You learn" bullet list */
@@ -646,7 +613,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
 .pk-ul li{position:relative;padding-left:18px;margin:0 0 6px;font:500 15.5px/1.4 Inter,sans-serif;color:inherit}
 .pk-ul li:last-child{margin-bottom:0}
 .pk-ul li::before{content:'';position:absolute;left:1px;top:8px;width:7px;height:7px;border-radius:50%;background:#2F6BFF}
-@media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li{font:500 15.5px/1.38 Inter,sans-serif!important}}
+@media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li{font:500 18px/1.45 Inter,sans-serif!important;margin-bottom:9px;padding-left:20px}#pricing .pk-card .pk-spec dd .pk-ul li::before{top:10px;width:8px;height:8px}}
 @media(min-width:761px){.pk-ul li{font-size:16px;line-height:1.42;margin-bottom:7px}.pk-ul li::before{top:9px}}
 
 /* ===== v9.9d (2026-09-30, authorized by Omri 11:49 IDT "Yes, do it"): enrollment dialog on phones — the Continue button is always
@@ -713,4 +680,201 @@ html:has(#enrollModal.open){overflow:hidden!important}
 }
 @media(max-width:760px) and (max-height:720px){
   .hero-actions .btn-blue{width:calc(100% - 78px)!important}   /* leaves the WhatsApp bubble its own corner */
+}
+
+/* ===== v9.10 (2026-10-01, CEO review): phones (max-width:760px) — no more sliders for the two seats or the three "What you'll learn" cards;
+   both seats stacked and fully visible, larger type everywhere. CSS in this file only; index.html, checkout dialog and tracking files untouched.
+   Fonts unchanged: Codec Pro headlines, Inter body, Instrument Serif italic accent. ===== */
+@media(max-width:760px){
+  /* --- base type up one step --- */
+  body{font-size:19px}
+  .shead p,.shead-sub{font-size:19.5px!important;line-height:1.5}
+  .how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p{font-size:18.5px!important;line-height:1.55}
+  .how-step h3{font-size:25px!important}
+  .acc-title{font-size:20.5px!important}
+
+  /* --- What you'll learn: three stacked cards, big type --- */
+  #reveal .tgrid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:22px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  #reveal .tcard{flex:none!important;width:100%!important;max-width:none!important;border-radius:22px!important}
+  #reveal .tcard .tmedia img,#reveal .tcard .tmedia video{aspect-ratio:16/10!important}
+  #reveal .tcard .tbody{padding:24px 22px 26px!important}
+  #reveal .tcard h3{font-size:31px!important;line-height:1.08!important;margin:10px 0 12px!important}
+  #reveal .tcard .tlead{font-size:19.5px!important;line-height:1.45!important}
+  #reveal .tcard hr{margin:16px 0!important}
+  #reveal .tcard li{font-size:18.5px!important;line-height:1.45!important;margin:0 0 12px!important}
+  #reveal .tcard li:last-child{margin-bottom:0!important}
+  #reveal .tcard li{text-wrap:balance}   /* no one-word last lines */
+  #reveal .t-navy li:first-child{text-wrap:wrap;letter-spacing:-.01em}   /* keeps "~$100-a-month" whole */
+  #reveal .m-hint{display:none!important}
+  #reveal .tcard .tn{display:none!important}   /* the outline watermark number sat over the bullets on phones */
+  /* card 3 photo: the source file has a "Most popular" label and a caption baked in; on phones the crop keeps Julie and leaves both out */
+  #reveal .t-navy .tmedia{overflow:hidden;aspect-ratio:4/3;position:relative}
+  #reveal .t-navy .tmedia img{aspect-ratio:auto!important;height:118%!important;width:100%!important;object-fit:cover;object-position:32% 35%!important;display:block}
+
+  /* --- Choose your seat: the brand cards (gradient price, tier dot, length pill, ruled rows), Standard then VIP stacked, type up --- */
+  #pricing{padding-top:48px!important;padding-bottom:40px!important}
+  #pricing .pk-head h2{font-size:40px!important;line-height:1.05!important}
+  #pricing .pk-sub{font-size:18.5px!important;line-height:1.45!important;margin-top:12px!important}
+  #pricing .pk-dates{display:flex!important;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin:18px 0 0!important}
+  #pricing .pk-date b{font-size:17px}#pricing .pk-date i{font-size:15px}#pricing .pk-datenote{font-size:15px;width:100%}
+  #pricing .pk-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;overflow:visible!important;padding:0!important;margin:28px 0 0!important}
+  #pricing .pk-card{width:100%!important;padding:28px 22px 26px!important;border-radius:26px!important}
+  #pricing .pk-tier{font-size:14px!important;letter-spacing:.2em!important}
+  #pricing .pk-len{font-size:14px!important;padding:8px 14px!important}
+  #pricing .pk-price{font-size:78px!important;margin-top:20px!important}
+  #pricing .pk-title{font-size:27px!important;line-height:1.18!important;margin-top:14px!important;text-wrap:balance}
+  #pricing .pk-title em{white-space:nowrap}   /* "live with Julie" / "private Q&A" stay on one line, no one-word line */
+  #pricing .pk-spec{margin-top:18px!important}
+  #pricing .pk-spec>div{grid-template-columns:1fr!important;gap:6px!important;padding:14px 0!important}
+  #pricing .pk-spec dt{font-size:13px!important;letter-spacing:.14em!important}
+  #pricing .pk-spec dd{font-size:18.5px!important;line-height:1.45!important;text-wrap:balance}
+  #pricing .pk-card .pk-spec dd .pk-ul li{text-wrap:wrap}
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){letter-spacing:-.02em;word-spacing:-1.5px}   /* keeps "~$100-a-month" whole */
+  /* the Length row repeats the pill in the card header; hidden on phones so each seat stays short */
+  #pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(2){display:none!important}
+  #pricing .pk-btn{min-height:62px!important;font-size:19.5px!important;margin-top:22px!important}
+  #pricing .pk-grid+.pk-foot::before{display:none!important}
+  #pricing .pk-foot{font-size:16.5px!important;margin:16px 0 0!important}
+}
+
+/* ===== v9.11 (2026-10-01, CEO review round 2): phones (max-width:760px) — every remaining slider becomes a stack, type up another step,
+   stronger text contrast on dark folds. CSS in this file only; index.html, checkout and tracking files untouched. Fonts unchanged. ===== */
+@media(max-width:760px){
+  /* --- type and contrast --- */
+  body{font-size:20px}
+  .shead p,.shead-sub{font-size:20px!important;line-height:1.5;color:#E6EEFA}
+  .f-white .shead p,.f-cream .shead p,.f-white .shead-sub,.f-cream .shead-sub,.v8-julie .shead-sub{color:#2A3A55!important}
+  .eyebrow{font-size:14px!important}
+
+  /* What you'll learn */
+  #reveal .tcard .tlead{font-size:20px!important}
+  #reveal .tcard li{font-size:19.5px!important;line-height:1.42!important}
+  #reveal .t-ivory li{color:#1B2F52!important}#reveal .t-ivory .tlead{color:#1F3A66!important}
+  #reveal .t-navy li,#reveal .t-royal li{color:#F2F7FF!important}#reveal .t-navy .tlead,#reveal .t-royal .tlead{color:#E6F0FF!important}
+
+  /* About Julie: bento stacked, bigger bio, stronger ink */
+  .v8-julie .jbio{font-size:20px!important;line-height:1.6!important;color:#1E2C44!important}
+  .jbento{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .jb{flex:none!important;width:100%!important}
+  .jb-photo img{aspect-ratio:4/4.2!important}
+  .jb-vid video,.jb-wide video{aspect-ratio:16/10!important}
+  .jb-cap,.jb-photo-body p,.jb-wide-body p{font-size:18.5px!important;line-height:1.5!important}
+  .jb-chips span{font-size:15.5px!important}
+  .v9-julie .jstats b{font-size:44px!important}.v9-julie .jstats span{font-size:17px!important;color:#1E2C44!important}.v9-julie .jstats i{font-size:15px!important;color:#4A5B78!important}
+  .jfacts li{font-size:19px!important}
+
+  /* Choose your seat: one more step up, redundant Standard "Format" row hidden (the title already says live with Julie) */
+  #pricing .pk-title{font-size:28px!important}
+  #pricing .pk-spec dt{font-size:14px!important}
+  #pricing .pk-spec dd{font-size:19.5px!important;line-height:1.42!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{font-size:19px!important;line-height:1.42!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(1){display:none!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(3){border-top:0!important;padding-top:4px!important}
+  #pricing .pk-foot{font-size:17px!important;color:#C9D8F0!important}
+  #pricing .pk-datenote{color:#C9D8F0!important;font-size:16px!important}
+
+  /* Inside the live masterclass: four cards stacked */
+  .dev-fold .dv-pdp-value-grid,.dev-fold .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;overflow:visible!important;padding:0!important;margin:0!important;width:auto!important;scroll-snap-type:none}
+  .dev-fold .dv-pdp-value-card{flex:none!important;width:100%!important;min-height:0!important}
+  .dev-fold .dv-pdp-value-card h3{font-size:26px!important}
+  .dev-fold .dv-pdp-value-card p{font-size:18.5px!important;line-height:1.5!important;color:#E6EEFA!important}
+  .dv-rail-dots{display:none!important}
+
+  /* How it works: steps stacked */
+  .how-steps{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .how-step{flex:none!important;width:100%!important}
+  .how-when{font-size:14.5px!important}
+  .how-step h3{font-size:26px!important}
+  .how-step p{font-size:19px!important;line-height:1.5!important;color:#DCE6F5!important}
+
+  /* Julie in the press: three cards stacked, the rest named in the line under them; arrows off */
+  .v8-pressgrid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .v8-pressgrid .dv-lla-news-card{flex:none!important;width:100%!important}
+  .v8-pressgrid .dv-lla-news-card:nth-child(n+4){display:none!important}
+  .v8-press-nav{display:none!important}
+  .dev-fold .v8-pressgrid h3{font-size:20.5px!important;line-height:1.3!important}
+  .dv-lla-news-outlet{font-size:15px!important}
+  .dev-fold .v8-pressgrid .dv-lla-news-meta{font-size:16px!important}
+  .v8-press-foot{font-size:18px!important;color:#C9D8F0!important}
+
+  /* About the Academy */
+  .hp-about-desc,.hp-about-powered-desc{font-size:19px!important;line-height:1.55!important;color:#E6EEFA!important}
+  .hp-about-stat-label,.hp-about-stats span{font-size:14px!important;color:#BFD0EA!important}
+  .hp-about-stat-value,.hp-about-stats b{font-size:34px!important}
+
+  /* FAQ and footer */
+  .acc-title{font-size:21px!important}
+  .acc-inner p{font-size:19px!important;line-height:1.55!important}
+  footer p,footer li,footer a{font-size:17px!important;line-height:1.55!important}
+  footer p{color:#C9D8F0!important}
+}
+@media(max-width:760px){
+  /* v9.11b: the two bullets that carry "~$100-a-month" stay whole at the larger sizes */
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:18px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important}
+  #reveal .t-navy li:first-child{font-size:19px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important;text-wrap:wrap}
+}
+@media(max-width:760px){.how-step h3,.dv-pdp-value-card h3,#reveal .tcard h3{text-wrap:balance}}   /* v9.11c: no one-word heading lines on phones */
+@media(max-width:760px){
+  /* v9.11d: the live-masterclass cards — a v9.4 selector with higher specificity kept the rail; this one outranks it */
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-lla-value-cards .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;flex-direction:column!important;gap:16px!important;overflow:visible!important;width:auto!important;height:auto!important;max-height:none!important;padding:0!important;margin:0!important}
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{width:100%!important;flex:none!important;position:relative!important;height:auto!important;min-height:0!important;align-self:stretch!important}
+}
+@media(max-width:760px){
+  /* v9.11e: the floating Enroll button becomes a proper bottom bar (room left for the WhatsApp bubble), bigger and clear of the text */
+  .lla-float-cta{left:14px!important;right:88px!important;max-width:none!important;min-height:58px!important;border-radius:16px!important;justify-content:center!important;bottom:calc(14px + env(safe-area-inset-bottom))!important}
+  .lla-cta-pill{flex:1;justify-content:center;font-size:18.5px!important;padding:0 18px!important;margin:7px!important;border-radius:11px!important}
+  .lla-float-cta .lla-cta-copy,.lla-float-cta>*:not(.lla-cta-pill){display:none!important}   /* the small caption beside the pill is dropped on phones; the pill carries the words */
+}
+.hp-about-mainhead{font-family:'Codec Pro','Inter',sans-serif!important}   /* v9.11f: the one headline on the page that was still Inter now matches every other headline */
+
+/* ===== v9.12 (2026-10-01, CEO review round 3): phones (max-width:760px).
+   Sliders back where the CEO wants them: "What you'll learn", the four cards under the Zoom grid, and the press.
+   Pricing, About Julie and How it works stay stacked. Each slider shows the edge of the next card and a swipe hint.
+   Contrast fix: the "What you'll learn" intro was navy on navy. CSS in this file only. Fonts unchanged. ===== */
+@media(max-width:760px){
+  /* --- contrast: #reveal and #faq carry the class f-white but render dark; their intro text is light again --- */
+  #reveal .shead p,#reveal .shead .eyebrow,#faq .shead p{color:#E6EEFA!important}
+  #reveal .shead .eyebrow{color:#8AD2FF!important}
+
+  /* --- shared slider recipe: full-bleed rail, 84% cards, next card peeking, snap, no scrollbar --- */
+  #reveal .tgrid,
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,
+  .v8-pressgrid{
+    display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;grid-template-columns:none!important;
+    overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch;
+    gap:14px!important;padding:4px 20px 10px!important;margin:0 -20px!important;width:auto!important;max-width:none!important;height:auto!important;
+    scrollbar-width:none;scroll-padding:0 20px}
+  #reveal .tgrid::-webkit-scrollbar,#dv-live .dv-pdp-value-grid::-webkit-scrollbar,.v8-pressgrid::-webkit-scrollbar{display:none}
+  #reveal .tcard,
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card,.dev-fold .dv-pdp-value-card,
+  .v8-pressgrid .dv-lla-news-card{
+    flex:0 0 84%!important;width:84%!important;max-width:84%!important;min-width:0!important;scroll-snap-align:center!important;position:relative!important;align-self:stretch!important;height:auto!important;min-height:0!important}
+  #reveal .tgrid{align-items:stretch!important}
+  .v8-pressgrid .dv-lla-news-card:nth-child(n+4){display:flex!important}   /* all nine press cards are back in the rail */
+
+  /* --- swipe hint: a line under each rail, same type as the small labels --- */
+  #reveal .tgrid::after,section#dv-live .dv-pdp-value-grid.dv-rail::after,.v8-pressgrid::after{content:"";flex:0 0 6px}   /* breathing room after the last card */
+  #reveal .shead::after,#dv-live .dv-pdp-value-h2::after,#press .shead::after{
+    content:"Swipe \2192  3 cards";display:block;margin-top:14px;font:600 14px/1 'Inter',sans-serif;letter-spacing:.02em;color:#8AD2FF;text-align:center}
+  #dv-live .dv-pdp-value-h2::after{content:"Swipe \2192  4 cards";text-align:left}
+  #press .shead::after{content:"Swipe \2192  9 articles"}
+
+  /* dots under the Zoom-grid cards and the press arrows come back */
+  .dev-fold .dv-rail-dots,.dev-fold #dv-live .dv-rail-dots{display:flex!important;justify-content:center;margin-top:16px}
+  .v8-press-nav{display:flex!important;justify-content:center;gap:14px;margin-top:4px}
+}
+@media(max-width:760px){
+  /* v9.12b: the press fold renders light; its intro line and footnote were set light in v9.11 and vanished — dark ink again */
+  #press .shead p,#press .shead-sub{color:#2A3A55!important}
+  #press .v8-press-foot{color:#3A4B68!important}
+}
+@media(max-width:760px){#press .shead::after{color:#006EFF}}   /* v9.12c: swipe hint readable on the light press fold */
+@media(max-width:760px){
+  /* v9.12d: the "~$100-a-month" squeeze rules are obsolete with the new copy; balanced wrapping instead */
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:19px!important;letter-spacing:0!important;word-spacing:0!important}
+  #reveal .t-navy li:first-child{font-size:19.5px!important;letter-spacing:0!important;word-spacing:0!important;text-wrap:balance!important}
+}
+@media(max-width:760px){
+  /* v9.12e: no one-word last lines on phones */
+  #pricing .pk-card .pk-spec dd .pk-ul li,.band p,.dev-fold .dv-pdp-value-card p,.v8-pressgrid .dv-lla-news-card h3,.v8-pressgrid .dv-lla-news-card p{text-wrap:balance!important}
 }
