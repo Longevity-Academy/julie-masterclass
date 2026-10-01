@@ -914,3 +914,17 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .hero-head .serif-i{font-size:44px!important;text-wrap:balance}
 }
 @media(max-width:760px){.hero-head .serif-i{color:#DCEBFF!important;-webkit-text-fill-color:#DCEBFF!important;background:none!important}}   /* v9.13c: accent line near-white, one headline */
+@media(max-width:760px){
+  /* v9.13d: VIP title in dark navy (readable on the light part of the gradient); VIP gets the same Dates block as Standard; bigger WhatsApp */
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#061833!important;-webkit-text-fill-color:#061833!important;text-shadow:none!important}
+  #pricing .pk-vip .pk-tier{color:#061833!important}
+  #pricing .pk-vip .pk-spec{position:relative}
+  #pricing .pk-vip .pk-spec::after{content:"Dates";display:block;margin-top:14px;padding:14px 16px 0;font:700 14px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#BFE3FF;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-bottom:0;border-radius:14px 14px 0 0}
+  #pricing .pk-vip .pk-btn::before{content:"October 27 or November 14, your choice";display:block;position:absolute;left:0;right:0;bottom:calc(100% + 22px);margin:0;padding:8px 16px 14px;font:700 19.5px/1.4 'Inter',sans-serif;letter-spacing:0;text-transform:none;color:#fff;text-align:left;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-top:0;border-radius:0 0 14px 14px;text-wrap:balance}
+  #pricing .pk-vip .pk-btn{position:relative!important;margin-top:88px!important}
+  /* WhatsApp bubble 64px, bottom Enroll bar keeps its lane */
+  #et-bumpyard-widget{max-width:64px!important;right:14px!important}
+  #et-bumpyard-widget .widget-trigger-btn{min-width:64px!important;min-height:64px!important;padding:16px!important;line-height:32px!important}
+  #et-bumpyard-widget .widget-trigger-btn img{width:32px!important;height:32px!important}
+  .lla-float-cta{right:92px!important}
+}
