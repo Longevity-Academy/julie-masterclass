@@ -736,3 +736,75 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-grid+.pk-foot::before{display:none!important}
   #pricing .pk-foot{font-size:16.5px!important;margin:16px 0 0!important}
 }
+
+/* ===== v9.11 (2026-10-01, CEO review round 2): phones (max-width:760px) — every remaining slider becomes a stack, type up another step,
+   stronger text contrast on dark folds. CSS in this file only; index.html, checkout and tracking files untouched. Fonts unchanged. ===== */
+@media(max-width:760px){
+  /* --- type and contrast --- */
+  body{font-size:20px}
+  .shead p,.shead-sub{font-size:20px!important;line-height:1.5;color:#E6EEFA}
+  .f-white .shead p,.f-cream .shead p,.f-white .shead-sub,.f-cream .shead-sub,.v8-julie .shead-sub{color:#2A3A55!important}
+  .eyebrow{font-size:14px!important}
+
+  /* What you'll learn */
+  #reveal .tcard .tlead{font-size:20px!important}
+  #reveal .tcard li{font-size:19.5px!important;line-height:1.42!important}
+  #reveal .t-ivory li{color:#1B2F52!important}#reveal .t-ivory .tlead{color:#1F3A66!important}
+  #reveal .t-navy li,#reveal .t-royal li{color:#F2F7FF!important}#reveal .t-navy .tlead,#reveal .t-royal .tlead{color:#E6F0FF!important}
+
+  /* About Julie: bento stacked, bigger bio, stronger ink */
+  .v8-julie .jbio{font-size:20px!important;line-height:1.6!important;color:#1E2C44!important}
+  .jbento{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .jb{flex:none!important;width:100%!important}
+  .jb-photo img{aspect-ratio:4/4.2!important}
+  .jb-vid video,.jb-wide video{aspect-ratio:16/10!important}
+  .jb-cap,.jb-photo-body p,.jb-wide-body p{font-size:18.5px!important;line-height:1.5!important}
+  .jb-chips span{font-size:15.5px!important}
+  .v9-julie .jstats b{font-size:44px!important}.v9-julie .jstats span{font-size:17px!important;color:#1E2C44!important}.v9-julie .jstats i{font-size:15px!important;color:#4A5B78!important}
+  .jfacts li{font-size:19px!important}
+
+  /* Choose your seat: one more step up, redundant Standard "Format" row hidden (the title already says live with Julie) */
+  #pricing .pk-title{font-size:28px!important}
+  #pricing .pk-spec dt{font-size:14px!important}
+  #pricing .pk-spec dd{font-size:19.5px!important;line-height:1.42!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{font-size:19px!important;line-height:1.42!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(1){display:none!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(3){border-top:0!important;padding-top:4px!important}
+  #pricing .pk-foot{font-size:17px!important;color:#C9D8F0!important}
+  #pricing .pk-datenote{color:#C9D8F0!important;font-size:16px!important}
+
+  /* Inside the live masterclass: four cards stacked */
+  .dev-fold .dv-pdp-value-grid,.dev-fold .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;overflow:visible!important;padding:0!important;margin:0!important;width:auto!important;scroll-snap-type:none}
+  .dev-fold .dv-pdp-value-card{flex:none!important;width:100%!important;min-height:0!important}
+  .dev-fold .dv-pdp-value-card h3{font-size:26px!important}
+  .dev-fold .dv-pdp-value-card p{font-size:18.5px!important;line-height:1.5!important;color:#E6EEFA!important}
+  .dv-rail-dots{display:none!important}
+
+  /* How it works: steps stacked */
+  .how-steps{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .how-step{flex:none!important;width:100%!important}
+  .how-when{font-size:14.5px!important}
+  .how-step h3{font-size:26px!important}
+  .how-step p{font-size:19px!important;line-height:1.5!important;color:#DCE6F5!important}
+
+  /* Julie in the press: three cards stacked, the rest named in the line under them; arrows off */
+  .v8-pressgrid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;overflow:visible!important;padding:0!important;margin:0!important;scroll-snap-type:none}
+  .v8-pressgrid .dv-lla-news-card{flex:none!important;width:100%!important}
+  .v8-pressgrid .dv-lla-news-card:nth-child(n+4){display:none!important}
+  .v8-press-nav{display:none!important}
+  .dev-fold .v8-pressgrid h3{font-size:20.5px!important;line-height:1.3!important}
+  .dv-lla-news-outlet{font-size:15px!important}
+  .dev-fold .v8-pressgrid .dv-lla-news-meta{font-size:16px!important}
+  .v8-press-foot{font-size:18px!important;color:#C9D8F0!important}
+
+  /* About the Academy */
+  .hp-about-desc,.hp-about-powered-desc{font-size:19px!important;line-height:1.55!important;color:#E6EEFA!important}
+  .hp-about-stat-label,.hp-about-stats span{font-size:14px!important;color:#BFD0EA!important}
+  .hp-about-stat-value,.hp-about-stats b{font-size:34px!important}
+
+  /* FAQ and footer */
+  .acc-title{font-size:21px!important}
+  .acc-inner p{font-size:19px!important;line-height:1.55!important}
+  footer p,footer li,footer a{font-size:17px!important;line-height:1.55!important}
+  footer p{color:#C9D8F0!important}
+}
