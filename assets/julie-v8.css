@@ -990,3 +990,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .lla-float-cta{min-height:46px!important;border-radius:14px!important}
   .lla-cta-pill{font-size:17px!important;margin:4px!important;padding:0 16px!important;min-height:38px}
 }
+@media(max-width:760px){.lla-float-cta{height:46px!important;min-height:0!important;align-items:center!important}.lla-cta-pill{height:38px!important;min-height:0!important;margin:0 4px!important;line-height:38px!important}}   /* v9.15d: exactly 46px */
