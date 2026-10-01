@@ -878,3 +878,33 @@ html:has(#enrollModal.open){overflow:hidden!important}
   /* v9.12e: no one-word last lines on phones */
   #pricing .pk-card .pk-spec dd .pk-ul li,.band p,.dev-fold .dv-pdp-value-card p,.v8-pressgrid .dv-lla-news-card h3,.v8-pressgrid .dv-lla-news-card p{text-wrap:balance!important}
 }
+
+/* ===== v9.13 (2026-10-01, CEO review round 4): phones (max-width:760px) — hero hierarchy, VIP title contrast, Dates row stands out.
+   CSS in this file only; index.html, checkout and tracking files untouched. Fonts unchanged (Codec Pro / Inter / Instrument Serif italic accent). ===== */
+@media(max-width:760px){
+  /* hero: no eyebrow line; one big headline, accent in near-white; bigger subline and button */
+  .hero-year{display:none!important}
+  .hero-head{font-size:46px!important;line-height:1.02!important;letter-spacing:-.02em!important;color:#fff!important;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero-head .serif-i{font-size:46px!important;line-height:1.04!important;display:block;margin-top:10px;color:#DCEBFF!important;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero-desc{font-size:21.5px!important;line-height:1.48!important;margin-top:24px!important;color:#FFFFFF!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+  .hero-desc strong{color:#fff!important}
+  .hero-actions{margin-top:28px!important}
+  .hero-actions .btn-blue{min-height:66px!important;font-size:21px!important;font-weight:800!important;border-radius:16px!important}
+  /* dates: two plain chips, no label, no dots */
+  .hero-dates-line{margin-top:22px!important;border-top:0!important;padding-top:0!important;display:flex!important;flex-wrap:wrap;gap:10px}
+  .hero-dates-line::before{display:none!important;content:none!important}
+  .hero-dates-line span{display:inline-flex!important;align-items:center;font:700 17px/1.2 'Inter',sans-serif!important;color:#fff!important;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px!important;white-space:nowrap!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .hero-dates-line span::before{display:none!important;content:none!important}
+
+  /* VIP card: "private Q&A" readable on the blue gradient */
+  #pricing .pk-vip .pk-title{color:#fff!important}
+  #pricing .pk-vip .pk-title em{color:#FFFFFF!important;text-shadow:0 1px 10px rgba(0,30,90,.35)}
+  #pricing .pk-vip .pk-spec dt{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-spec dd{color:#fff!important}
+
+  /* Standard card: the Dates row is its own tinted block, bold dates */
+  #pricing .pk-standard .pk-spec>div:last-child{background:rgba(0,110,255,.07);border:1px solid rgba(0,110,255,.14);border-top:1px solid rgba(0,110,255,.14)!important;border-radius:14px;padding:14px 16px!important;margin-top:14px}
+  #pricing .pk-standard .pk-spec>div:last-child dt{color:#006EFF!important}
+  #pricing .pk-standard .pk-spec>div:last-child dd{font-weight:700!important;color:#0A2240!important;font-size:19.5px!important}
+  #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#0F1E36!important}
+}
