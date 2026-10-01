@@ -1026,3 +1026,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   footer p,footer li,footer a{font-size:18px!important}
   .lla-cta-pill{font-size:18px!important}
 }
+@media(max-width:760px){#pricing .pk-head h2{font-size:38px!important;white-space:nowrap!important}#pricing .pk-head h2 .serif-i{white-space:nowrap!important;display:inline!important}.hero-desc{font-size:21.5px!important;text-wrap:pretty}}   /* v9.16b */
