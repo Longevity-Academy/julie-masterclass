@@ -913,3 +913,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .hero-head{font-size:44px!important;text-wrap:balance}
   .hero-head .serif-i{font-size:44px!important;text-wrap:balance}
 }
+@media(max-width:760px){.hero-head .serif-i{color:#DCEBFF!important;-webkit-text-fill-color:#DCEBFF!important;background:none!important}}   /* v9.13c: accent line near-white, one headline */
