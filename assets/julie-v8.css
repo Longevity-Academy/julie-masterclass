@@ -984,3 +984,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .band p{font-size:38px!important}
   .eyebrow,.how-when,.pk-spec dt{font-size:15px!important}
 }
+@media(max-width:760px){#pricing .pk-head h2{font-size:40px!important;white-space:nowrap}}   /* v9.15b: "Choose your seat" stays on one line */
