@@ -813,3 +813,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:18px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important}
   #reveal .t-navy li:first-child{font-size:19px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important;text-wrap:wrap}
 }
+@media(max-width:760px){.how-step h3,.dv-pdp-value-card h3,#reveal .tcard h3{text-wrap:balance}}   /* v9.11c: no one-word heading lines on phones */
