@@ -1093,3 +1093,5 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .hero-dates-line span{font-size:15.5px!important;padding:11px 12px!important}
   .lla-cta-title{font-size:13.5px!important}
 }
+@media(max-width:760px){#pricing .pk-btn{font-size:21px!important;white-space:nowrap}}   /* v9.19b: Reserve buttons one line */
+@media(max-width:340px){.hero-head{font-size:42px!important}.hero-head .serif-i{font-size:40px!important}.lla-cta-eyebrow{display:none!important}.lla-cta-title{font-size:14px!important}#pricing .pk-btn{font-size:18px!important}}
