@@ -1277,3 +1277,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
 }
 @media(max-width:340px){#pricing .pk-btn{font-size:19px!important}.hero-actions .btn-blue{font-size:20px!important}.nav-logo{width:140px!important;height:64px!important}}
 @media(max-width:760px){#pricing .pk-vip .pk-title{font-size:40px!important}#pricing .pk-title{text-wrap:balance}#reveal .tcard li,#pricing .pk-ul li,#pricing .pk-spec dd{text-wrap:pretty!important}}   /* v9.24b: VIP title two lines, bullets fill the line */
+@media(max-width:760px){#pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-ul li:nth-child(3),#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){text-wrap:pretty!important;padding-right:0!important}}   /* v9.24c: bullets use the full line */
