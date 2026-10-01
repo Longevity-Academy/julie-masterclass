@@ -1190,3 +1190,44 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #reveal .tcard li,#pricing .pk-ul li,#pricing .pk-spec dd,.hero-desc,.shead p,.how-step p,.acc-inner p{font-weight:400!important;-webkit-font-smoothing:auto!important}
   #pricing .pk-standard .pk-ul li,#pricing .pk-standard .pk-spec dd{color:#0B1F3A!important}
 }
+
+/* ===== v9.23 (2026-10-01, CEO 18:50): type up again (bullets 24px, body 24px, headings 50px, hero 60px); no text shadows anywhere;
+   button text clean (no shadow, 22px); the two date chips identical in size and aligned. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  .hero-head,.hero-head .serif-i,.hero-desc,#pricing .pk-title,#pricing .pk-title em,#pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em,
+  .hero-actions .btn-blue,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn,#pricing .pk-btn,.lla-cta-pill,.lla-cta-title,.lla-cta-eyebrow,#reveal .tcard h3,h2.anton{text-shadow:none!important}
+  /* sizes */
+  body{font-size:24px}
+  .shead p,.shead-sub,.how-step p,.acc-inner p,.hp-about-desc,.hp-about-powered-desc,.jb-wide-body p,.jb-cap,.jb-photo-body p,.v8-julie .jbio,.dev-fold .dv-pdp-value-card p,#pricing .pk-sub,#pricing .pk-datenote,.v8-press-foot{font-size:24px!important;line-height:1.45!important}
+  .hero-head{font-size:60px!important}
+  .hero-head .serif-i{font-size:58px!important}
+  .hero-desc{font-size:25px!important;line-height:1.42!important}
+  h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead{font-size:50px!important}
+  #pricing .pk-head h2{font-size:42px!important}
+  #reveal .tcard h3{font-size:38px!important}
+  #reveal .tcard .tlead{font-size:24px!important}
+  #reveal .tcard li,#reveal .t-navy li:first-child,#pricing .pk-card .pk-spec dd .pk-ul li,#pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:24px!important;line-height:1.4!important}
+  #pricing .pk-spec dd,#pricing .pk-standard .pk-spec>div:last-child dd,#pricing .pk-vip .pk-spec::before{font-size:24px!important;line-height:1.4!important}
+  #pricing .pk-spec dt,.eyebrow,.how-when{font-size:17px!important}
+  #pricing .pk-title{font-size:40px!important}
+  .dev-fold .dv-pdp-value-card h3,.how-step h3{font-size:34px!important}
+  .v8-julie h3.anton{font-size:38px!important}
+  .jfacts li,.jb-chips span{font-size:22px!important}
+  .acc-title{font-size:27px!important}
+  .dev-fold .v8-pressgrid h3{font-size:24px!important}
+  footer p,footer li,footer a{font-size:19px!important}
+  /* buttons */
+  .hero-actions .btn-blue{font-size:22px!important;min-height:70px!important}
+  #pricing .pk-btn{font-size:22px!important;min-height:68px!important}
+  .band .btn,.v8-julie .btn{font-size:22px!important}
+  .nav .btn,.nav .btn-blue{font-size:17px!important}
+  .hero-dates-line span{font-size:20px!important}
+  /* date chips: same box, same alignment */
+  #pricing .pk-dates{display:grid!important;grid-template-columns:1fr;justify-items:center;gap:10px!important;margin-top:22px!important}
+  #pricing .pk-date{width:300px!important;max-width:100%;box-sizing:border-box;display:flex!important;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 16px 22px!important}
+  #pricing .pk-date b{font-size:21px!important;white-space:nowrap}
+  #pricing .pk-date i{font-size:18px!important;white-space:nowrap}
+  #pricing .pk-or{font-size:24px!important;margin:0!important}
+  #pricing .pk-datenote{margin-top:10px!important;max-width:320px}
+}
+@media(max-width:340px){.hero-head{font-size:44px!important}.hero-head .serif-i{font-size:42px!important}.hero-desc{font-size:21px!important}#pricing .pk-date{width:100%!important}}
