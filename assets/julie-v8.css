@@ -1095,3 +1095,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
 }
 @media(max-width:760px){#pricing .pk-btn{font-size:21px!important;white-space:nowrap}}   /* v9.19b: Reserve buttons one line */
 @media(max-width:340px){.hero-head{font-size:42px!important}.hero-head .serif-i{font-size:40px!important}.lla-cta-eyebrow{display:none!important}.lla-cta-title{font-size:14px!important}#pricing .pk-btn{font-size:18px!important}}
+@media(max-width:340px){.lla-cta-title{font-size:13px!important}.lla-cta-text{padding:8px 6px 8px 10px!important}.lla-cta-pill{padding:0 10px!important;margin:5px 5px 5px 2px!important}.lla-cta-pill .arr{font-size:19px!important}}   /* v9.19c: 320px floater */
