@@ -1167,3 +1167,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .hero-actions{margin-top:38px!important}
   .hero-dates-line{margin-top:18px!important}
 }
+@media(max-width:760px){
+  /* v9.21b: WhatsApp bubble waits until the first scroll (nav gets .solid at 40px) so it never sits on the hero Enroll button */
+  #et-bumpyard-widget{transition:opacity .3s ease,transform .3s ease}
+  body:has(#nav:not(.solid)) #et-bumpyard-widget{opacity:0!important;pointer-events:none!important;transform:translateY(16px)}
+}
