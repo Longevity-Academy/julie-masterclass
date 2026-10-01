@@ -814,3 +814,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #reveal .t-navy li:first-child{font-size:19px!important;letter-spacing:-.02em!important;word-spacing:-1.5px!important;text-wrap:wrap}
 }
 @media(max-width:760px){.how-step h3,.dv-pdp-value-card h3,#reveal .tcard h3{text-wrap:balance}}   /* v9.11c: no one-word heading lines on phones */
+@media(max-width:760px){
+  /* v9.11d: the live-masterclass cards — a v9.4 selector with higher specificity kept the rail; this one outranks it */
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-lla-value-cards .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;flex-direction:column!important;gap:16px!important;overflow:visible!important;width:auto!important;height:auto!important;max-height:none!important;padding:0!important;margin:0!important}
+  section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{width:100%!important;flex:none!important;position:relative!important;height:auto!important;min-height:0!important;align-self:stretch!important}
+}
