@@ -1172,3 +1172,21 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #et-bumpyard-widget{transition:opacity .3s ease,transform .3s ease}
   body:has(#nav:not(.solid)) #et-bumpyard-widget{opacity:0!important;pointer-events:none!important;transform:translateY(16px)}
 }
+
+/* ===== v9.22 (2026-10-01, CEO 18:26): the ugly type was fake bold. Codec Pro ships only in weight 400 (the only face the browser can load),
+   so every 700/800 Codec Pro heading and button was synthetically emboldened by the browser. Fix: no synthetic bold on Codec Pro
+   (real Regular glyphs), tighter tracking for headline weight; buttons in real Inter 600. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  .hero-head,h2.anton,.dv-pdp-value-h2,#faq h2,.hp-about-mainhead,#pricing .pk-head h2,#reveal .tcard h3,.dev-fold .dv-pdp-value-card h3,.how-step h3,.v8-julie h3.anton,#pricing .pk-title,.band p,.acc-title,.lla-cta-title::before,.lla-cta-pill::before,.hp-about-stat-value,.hp-about-stats b,#pricing .pk-price,#pricing .price{
+    font-synthesis:none!important;font-weight:400!important;letter-spacing:-.015em!important}
+  .hero-head{letter-spacing:-.02em!important}
+  /* buttons: real Inter weight, clean */
+  .hero-actions .btn-blue,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn,#pricing .pk-btn{
+    font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;letter-spacing:-.005em!important;font-synthesis:none}
+  .lla-cta-pill::before{font-family:Inter,system-ui,sans-serif!important;font-weight:700!important;letter-spacing:-.02em!important}
+  .lla-cta-title::before{font-family:Inter,system-ui,sans-serif!important;font-weight:600!important;letter-spacing:0!important}
+  .lla-cta-eyebrow{font-family:Inter,system-ui,sans-serif!important}
+  /* card body: real weights, true dark navy, no smoothing tricks */
+  #reveal .tcard li,#pricing .pk-ul li,#pricing .pk-spec dd,.hero-desc,.shead p,.how-step p,.acc-inner p{font-weight:400!important;-webkit-font-smoothing:auto!important}
+  #pricing .pk-standard .pk-ul li,#pricing .pk-standard .pk-spec dd{color:#0B1F3A!important}
+}
