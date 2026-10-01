@@ -868,3 +868,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #press .shead p,#press .shead-sub{color:#2A3A55!important}
   #press .v8-press-foot{color:#3A4B68!important}
 }
+@media(max-width:760px){#press .shead::after{color:#006EFF}}   /* v9.12c: swipe hint readable on the light press fold */
