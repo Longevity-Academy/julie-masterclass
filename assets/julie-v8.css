@@ -874,3 +874,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:19px!important;letter-spacing:0!important;word-spacing:0!important}
   #reveal .t-navy li:first-child{font-size:19.5px!important;letter-spacing:0!important;word-spacing:0!important;text-wrap:balance!important}
 }
+@media(max-width:760px){
+  /* v9.12e: no one-word last lines on phones */
+  #pricing .pk-card .pk-spec dd .pk-ul li,.band p,.dev-fold .dv-pdp-value-card p,.v8-pressgrid .dv-lla-news-card h3,.v8-pressgrid .dv-lla-news-card p{text-wrap:balance!important}
+}
