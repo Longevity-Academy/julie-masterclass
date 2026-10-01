@@ -705,6 +705,9 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #reveal .tcard li:last-child{margin-bottom:0!important}
   #reveal .m-hint{display:none!important}
   #reveal .tcard .tn{display:none!important}   /* the outline watermark number sat over the bullets on phones */
+  /* card 3 photo: the source file has a "Most popular" label and a caption baked in; on phones the crop keeps Julie and leaves both out */
+  #reveal .t-navy .tmedia{overflow:hidden;aspect-ratio:4/3;position:relative}
+  #reveal .t-navy .tmedia img{aspect-ratio:auto!important;height:118%!important;width:100%!important;object-fit:cover;object-position:32% 35%!important;display:block}
 
   /* --- Choose your seat: the brand cards (gradient price, tier dot, length pill, ruled rows), Standard then VIP stacked, type up --- */
   #pricing{padding-top:48px!important;padding-bottom:40px!important}
@@ -717,11 +720,13 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-tier{font-size:14px!important;letter-spacing:.2em!important}
   #pricing .pk-len{font-size:14px!important;padding:8px 14px!important}
   #pricing .pk-price{font-size:78px!important;margin-top:20px!important}
-  #pricing .pk-title{font-size:27px!important;line-height:1.18!important;margin-top:14px!important}
+  #pricing .pk-title{font-size:27px!important;line-height:1.18!important;margin-top:14px!important;text-wrap:balance}
+  #pricing .pk-title em{white-space:nowrap}   /* "live with Julie" / "private Q&A" stay on one line, no one-word line */
   #pricing .pk-spec{margin-top:18px!important}
   #pricing .pk-spec>div{grid-template-columns:1fr!important;gap:6px!important;padding:14px 0!important}
   #pricing .pk-spec dt{font-size:13px!important;letter-spacing:.14em!important}
-  #pricing .pk-spec dd{font-size:18.5px!important;line-height:1.45!important}
+  #pricing .pk-spec dd{font-size:18.5px!important;line-height:1.45!important;text-wrap:balance}
+  #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){font-size:17.5px!important}   /* keeps "~$100-a-month" whole */
   /* the Length row repeats the pill in the card header; hidden on phones so each seat stays short */
   #pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(2){display:none!important}
   #pricing .pk-btn{min-height:62px!important;font-size:19.5px!important;margin-top:22px!important}
