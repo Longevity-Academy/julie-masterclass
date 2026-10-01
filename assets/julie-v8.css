@@ -1128,3 +1128,42 @@ html:has(#enrollModal.open){overflow:hidden!important}
 }
 @media(max-width:340px){.lla-cta-title::before{font-size:13px}.lla-cta-pill::before{font-size:20px;margin-right:6px}}
 @media(max-width:760px){.lla-cta-title::before{content:"The Masterclass"}.lla-cta-title{overflow:hidden!important;text-overflow:ellipsis}}   /* v9.20b */
+
+/* ===== v9.21 (2026-10-01, CEO 18:09): button typography = Codec Pro 700, normal tracking, calmer sizes; true inner gradient light
+   on every button (top sheen + bottom shade); hero spacing between paragraph, button and dates. Phones only. CSS only. ===== */
+@media(max-width:760px){
+  .hero-actions .btn-blue,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn,#pricing .pk-btn,.lla-cta-pill::before,.lla-cta-title::before,.lla-cta-eyebrow{
+    font-family:'Codec Pro','Inter',sans-serif!important;font-weight:700!important;letter-spacing:0!important;-webkit-font-smoothing:antialiased}
+  .hero-actions .btn-blue{font-size:21px!important;min-height:66px!important}
+  .nav .btn,.nav .btn-blue{font-size:16px!important}
+  #pricing .pk-btn{font-size:20px!important;min-height:64px!important}
+  .band .btn,.v8-julie .btn{font-size:20px!important}
+  .lla-cta-pill::before{font-size:23px;font-weight:700!important}
+  .lla-cta-title::before{font-weight:700!important}
+  .lla-cta-eyebrow{font-weight:500!important;letter-spacing:.08em!important}
+  /* inner light: white buttons */
+  .hero-actions .btn-blue,.nav .btn,.nav .btn-blue,.band .btn,.v8-julie .btn,.jb .btn,.mobile-menu .btn{
+    background:
+      radial-gradient(120% 90% at 50% -20%,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%),
+      linear-gradient(180deg,#FFFFFF 0%,#F3F8FF 40%,#D9E9FF 100%)!important;
+    box-shadow:inset 0 2px 0 rgba(255,255,255,1),inset 0 -2px 0 rgba(10,88,214,.14),inset 0 0 24px rgba(255,255,255,.6),0 0 0 1px rgba(140,200,255,.35),0 14px 36px rgba(8,30,60,.35),0 0 30px rgba(140,200,255,.35)!important}
+  /* inner light: Reserve buttons */
+  #pricing .pk-btn{
+    background:
+      radial-gradient(120% 90% at 50% -20%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 60%),
+      linear-gradient(180deg,#EAF6FF 0%,#A9DDFF 50%,#5EB6FF 100%)!important;
+    box-shadow:inset 0 2px 0 rgba(255,255,255,1),inset 0 -2px 0 rgba(0,40,90,.18),inset 0 0 26px rgba(255,255,255,.55),0 0 0 1px rgba(94,182,255,.5),0 14px 34px rgba(46,139,230,.42),0 0 30px rgba(120,190,255,.45)!important}
+  /* inner light: floater pill */
+  .lla-cta-pill{
+    background:
+      radial-gradient(120% 90% at 50% -20%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 60%),
+      linear-gradient(180deg,#B6E4FF 0%,#5EB6FF 55%,#2E8BE6 100%)!important;
+    box-shadow:inset 0 2px 0 rgba(255,255,255,.95),inset 0 -2px 0 rgba(0,40,90,.2),inset 0 0 22px rgba(255,255,255,.45),0 8px 22px rgba(46,139,230,.5)!important}
+  /* inner light: floater shell */
+  .lla-float-cta{background:
+      radial-gradient(140% 100% at 50% -30%,rgba(120,190,255,.55) 0%,rgba(120,190,255,0) 60%),
+      linear-gradient(180deg,#1A4A86 0%,#0F2D52 45%,#071A33 100%)!important}
+  /* hero spacing */
+  .hero-actions{margin-top:38px!important}
+  .hero-dates-line{margin-top:18px!important}
+}
