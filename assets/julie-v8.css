@@ -1299,3 +1299,4 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .dv-lla-news-outlet,.dev-fold .v8-pressgrid .dv-lla-news-meta{color:#DCEBFF!important}
   .lla-cta-eyebrow{color:#CFE4FF!important}
 }
+@media(max-width:760px){#pricing .pk-price,#pricing .price{-webkit-text-stroke:0!important}}   /* v9.25b: gradient price has no outline */
