@@ -819,3 +819,9 @@ html:has(#enrollModal.open){overflow:hidden!important}
   section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail,.dev-fold #dv-live .dv-pdp-value-grid.dv-rail,#dv-live .dv-lla-value-cards .dv-pdp-value-grid.dv-rail,section#dv-live.dev-fold .dv-lla-value-cards .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;flex-direction:column!important;gap:16px!important;overflow:visible!important;width:auto!important;height:auto!important;max-height:none!important;padding:0!important;margin:0!important}
   section#dv-live.dev-fold .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{width:100%!important;flex:none!important;position:relative!important;height:auto!important;min-height:0!important;align-self:stretch!important}
 }
+@media(max-width:760px){
+  /* v9.11e: the floating Enroll button becomes a proper bottom bar (room left for the WhatsApp bubble), bigger and clear of the text */
+  .lla-float-cta{left:14px!important;right:88px!important;max-width:none!important;min-height:58px!important;border-radius:16px!important;justify-content:center!important;bottom:calc(14px + env(safe-area-inset-bottom))!important}
+  .lla-cta-pill{flex:1;justify-content:center;font-size:18.5px!important;padding:0 18px!important;margin:7px!important;border-radius:11px!important}
+  .lla-float-cta .lla-cta-copy,.lla-float-cta>*:not(.lla-cta-pill){display:none!important}   /* the small caption beside the pill is dropped on phones; the pill carries the words */
+}
