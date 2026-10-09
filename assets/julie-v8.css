@@ -1075,13 +1075,16 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-tier::before{display:none!important}
   #pricing .pk-tier{font-size:12.5px!important;letter-spacing:.14em!important;text-transform:uppercase!important;font-weight:800!important}
   #pricing .pk-top{margin:0 0 6px!important}
-  #pricing .pk-card{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"top top" "title price" "spec spec" "btn btn"!important;column-gap:14px;align-items:start}
+  #pricing .pk-card{display:grid!important;grid-template-columns:minmax(0,1fr) 92px!important;grid-template-areas:"top top" "title price" "spec spec" "btn btn"!important;column-gap:14px;align-items:start}
   #pricing .pk-top{grid-area:top}
   #pricing .pk-title{grid-area:title;font-size:21px!important;line-height:1.12!important;margin:0!important;align-self:center;min-width:0;padding-right:6px;letter-spacing:-.3px!important}
   #pricing .pk-title em{display:inline!important}
-  #pricing .pk-price{grid-area:price;font-size:42px!important;line-height:1!important;margin:0!important;align-self:center;white-space:nowrap}
+  #pricing .pk-price{grid-area:price;justify-self:end;font-size:40px!important;line-height:1!important;margin:0!important;align-self:center;white-space:nowrap}
   #pricing .pk-spec{grid-area:spec;margin:14px 0 14px!important}
   #pricing .pk-btn{grid-area:btn}
+  #pricing .pk-vip .pk-spec::after,#pricing .pk-vip .pk-spec::before{display:none!important;content:none!important}
+  #pricing .pk-standard{animation:none!important}
+  #pricing .pk-vip::after{display:none!important}
   #pricing .pk-spec>div{padding:9px 0!important;gap:2px!important}
   #pricing .pk-standard .pk-spec>div:nth-child(1),#pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-standard .pk-spec>div:nth-child(4){display:none!important}
   #pricing .pk-vip .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(3){display:none!important}
