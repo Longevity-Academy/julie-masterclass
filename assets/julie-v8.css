@@ -1077,8 +1077,9 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-top{margin:0 0 6px!important}
   #pricing .pk-card{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"top top" "title price" "spec spec" "btn btn"!important;column-gap:14px;align-items:start}
   #pricing .pk-top{grid-area:top}
-  #pricing .pk-title{grid-area:title;font-size:24px!important;line-height:1.12!important;margin:0!important;align-self:center}
-  #pricing .pk-price{grid-area:price;font-size:52px!important;line-height:1!important;margin:0!important;align-self:center}
+  #pricing .pk-title{grid-area:title;font-size:22px!important;line-height:1.12!important;margin:0!important;align-self:center;min-width:0;padding-right:4px}
+  #pricing .pk-title em{display:inline!important}
+  #pricing .pk-price{grid-area:price;font-size:46px!important;line-height:1!important;margin:0!important;align-self:center;white-space:nowrap}
   #pricing .pk-spec{grid-area:spec;margin:14px 0 14px!important}
   #pricing .pk-btn{grid-area:btn}
   #pricing .pk-spec>div{padding:9px 0!important;gap:2px!important}
@@ -1111,7 +1112,9 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #enrollModal .em-cc{min-height:48px}
   #enrollModal .em-consent{margin:2px 0 4px!important}
   #enrollModal .em-consent label{font-size:12px!important;line-height:1.35!important}
-  #enrollModal #emStep1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:10px}
+  #enrollModal #emStep1.on{display:grid}
+  #enrollModal #emStep1:not(.on){display:none!important}
+  #enrollModal #emStep1{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:10px}
   #enrollModal #emStep1>*{grid-column:1/-1}
   #enrollModal #emStep1>.em-lb[for="emCountry"]{grid-column:1;grid-row:5}
   #enrollModal #emStep1>#emCountry{grid-column:1;grid-row:6}
