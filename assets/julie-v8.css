@@ -1212,3 +1212,36 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-btn span,#pricing .pk-vip .pk-btn{color:#0B1B33!important;-webkit-text-fill-color:#0B1B33!important}
   #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important;-webkit-text-fill-color:#006EFF!important}
 }
+@media(max-width:760px){
+  /* v9.19k: contrast and light (Omri: "not lit or pro, inert contrast"). Flat solid CTAs without gradient/shine, crisp white Standard card
+     in navy, VIP with a lit top-right light source, white band, bright cyan labels, brighter dividers. CSS only. */
+  #pricing .pk-card::before{display:none!important;content:none!important}
+  #pricing .pk-shell .pk-btn,#pricing .pk-shell .pk-btn:hover{background-image:none!important;text-shadow:none!important;font-weight:800!important;font-size:17.5px!important;letter-spacing:-.01em}
+  #pricing .pk-btn::after,#pricing .pk-btn::before{display:none!important;content:none!important;animation:none!important}
+
+  #pricing .pk-standard{background:#fff!important;border:1.5px solid #C9D8F0!important;box-shadow:0 14px 34px rgba(6,24,51,.22)!important}
+  #pricing .pk-standard .pk-tier{color:#0047B3!important}
+  #pricing .pk-standard .pk-title,#pricing .pk-standard .pk-title em{color:#061833!important;-webkit-text-fill-color:#061833!important}
+  #pricing .pk-standard .pk-title em{color:#0047B3!important;-webkit-text-fill-color:#0047B3!important}
+  #pricing .pk-standard .pk-price{color:#061833!important;-webkit-text-fill-color:#061833!important}
+  #pricing .pk-standard .pk-spec dt{color:#0047B3!important}
+  #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#0B1B33!important;font-weight:500!important}
+  #pricing .pk-standard .pk-ul li::before{background:#006EFF!important}
+  #pricing .pk-standard .pk-spec>div{border-top-color:#E3EBF7!important}
+  #pricing .pk-standard .pk-btn{background:#006EFF!important;color:#fff!important;box-shadow:0 10px 24px rgba(0,110,255,.38),0 1px 0 rgba(255,255,255,.35) inset!important}
+  #pricing .pk-standard .pk-btn span,#pricing .pk-standard .pk-btn .pk-arr{color:#fff!important;-webkit-text-fill-color:#fff!important}
+
+  #pricing .pk-vip{background:radial-gradient(120% 90% at 100% 0%,rgba(120,200,255,.55) 0%,rgba(120,200,255,0) 55%),linear-gradient(165deg,#071E4A 0%,#0A3C9B 55%,#0C5BE6 100%)!important;border:1.5px solid rgba(160,210,255,.45)!important;box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 18px 44px rgba(3,20,60,.45)!important}
+  #pricing .pk-vip::before{background:#fff!important;color:#061833!important;-webkit-text-fill-color:#061833!important;font-weight:800!important}
+  #pricing .pk-vip .pk-tier{color:#8FE3FF!important}
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em,#pricing .pk-vip .pk-price{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  #pricing .pk-vip .pk-title em{color:#CFF1FF!important;-webkit-text-fill-color:#CFF1FF!important}
+  #pricing .pk-vip .pk-spec dt{color:#8FE3FF!important}
+  #pricing .pk-vip .pk-spec dd{color:#fff!important}
+  #pricing .pk-vip .pk-spec>div{border-top-color:rgba(255,255,255,.28)!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd{color:#fff!important}
+  #pricing .pk-vip .pk-btn{background:#fff!important;box-shadow:0 12px 28px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.6)!important}
+  #pricing .pk-vip .pk-btn span{color:#061833!important;-webkit-text-fill-color:#061833!important}
+  #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important;-webkit-text-fill-color:#006EFF!important}
+  #pricing .pk-foot{color:#CFE0F7!important}
+}
