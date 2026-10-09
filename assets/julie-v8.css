@@ -1282,3 +1282,62 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-price sup{display:inline!important;vertical-align:top!important;font-size:.42em!important;line-height:1!important;margin:.18em 2px 0 0!important;position:relative;top:.1em}
   #pricing .pk-card::after{content:"Secure checkout · Apple Pay · 14-day full refund"!important;white-space:nowrap;font-size:12px!important}
 }
+@media(max-width:760px){
+  /* v9.19p: editorial-luxury pricing (Omri: "cheap"). Bone + ink navy, Instrument Serif numerals and titles, hairlines, single gold accent
+     on VIP, layered shadows, no badges, no check-circles, no glow. Replaces v9.19h–n visual rules on phone. CSS only. */
+  #pricing .pk-grid{gap:16px!important}
+  #pricing .pk-card{padding:28px 24px 26px!important;border-radius:22px!important;grid-template-areas:"top top" "title title" "price price" "spec spec" "btn btn"!important;grid-template-columns:1fr!important;row-gap:0}
+  #pricing .pk-card::before,#pricing .pk-card::after,#pricing .pk-vip::before,#pricing .pk-vip::after{display:none!important;content:none!important}
+  #pricing .pk-vip{padding-top:28px!important}
+  #pricing .pk-foot{display:block!important;color:#B9C6DA!important;font:500 13px/1.5 'Inter',sans-serif!important;margin-top:18px!important;letter-spacing:0}
+
+  /* Standard: bone card, ink type, navy button */
+  #pricing .pk-standard{background:#F4F1EA!important;border:1px solid #E6E0D3!important;box-shadow:0 1px 2px rgba(6,20,45,.18),0 24px 48px -16px rgba(6,20,45,.45)!important}
+  #pricing .pk-standard .pk-tier{color:#6B6A62!important}
+  #pricing .pk-standard .pk-title,#pricing .pk-standard .pk-title em,#pricing .pk-standard .pk-price{color:#11130F!important;-webkit-text-fill-color:#11130F!important}
+  #pricing .pk-standard .pk-spec dt{color:#6B6A62!important}
+  #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#1C1E24!important}
+  #pricing .pk-standard .pk-spec>div{border-top-color:rgba(17,19,15,.12)!important}
+  #pricing .pk-standard .pk-btn{background:#0B1B33!important;box-shadow:0 1px 1px rgba(0,0,0,.25),0 14px 28px -10px rgba(11,27,51,.55)!important}
+  #pricing .pk-standard .pk-btn span,#pricing .pk-standard .pk-btn .pk-arr{color:#F4F1EA!important;-webkit-text-fill-color:#F4F1EA!important}
+
+  /* VIP: ink-navy card, bone type, gold accent, bone button */
+  #pricing .pk-vip{background:#0A1A38!important;border:1px solid rgba(201,162,75,.45)!important;box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 1px 2px rgba(0,0,0,.4),0 28px 56px -18px rgba(0,0,0,.7)!important}
+  #pricing .pk-vip .pk-tier{color:#C9A24B!important}
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em,#pricing .pk-vip .pk-price{color:#F4F1EA!important;-webkit-text-fill-color:#F4F1EA!important;text-shadow:none!important}
+  #pricing .pk-vip .pk-spec dt{color:#C9A24B!important}
+  #pricing .pk-vip .pk-spec dd{color:#F4F1EA!important}
+  #pricing .pk-vip .pk-spec>div{border-top-color:rgba(244,241,234,.14)!important}
+  #pricing .pk-vip .pk-btn{background:#F4F1EA!important;box-shadow:0 1px 1px rgba(0,0,0,.35),0 16px 30px -12px rgba(0,0,0,.7)!important}
+  #pricing .pk-vip .pk-btn span{color:#0A1A38!important;-webkit-text-fill-color:#0A1A38!important}
+  #pricing .pk-vip .pk-btn .pk-arr{color:#C9A24B!important;-webkit-text-fill-color:#C9A24B!important}
+
+  /* type system */
+  #pricing .pk-top{margin:0 0 14px!important}
+  #pricing .pk-tier{font:600 11px/1 'Inter',sans-serif!important;letter-spacing:.22em!important;text-transform:uppercase!important}
+  #pricing .pk-title{grid-area:title;font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;font-size:31px!important;line-height:1.05!important;letter-spacing:-.01em!important;margin:0 0 14px!important;padding:0!important;text-wrap:balance}
+  #pricing .pk-title em{font-style:italic!important;font-size:1em!important;display:inline!important}
+  #pricing .pk-price{grid-area:price;display:block!important;text-align:left!important;font-family:'Instrument Serif',Georgia,serif!important;font-weight:400!important;font-size:60px!important;line-height:.9!important;letter-spacing:-.02em!important;margin:0!important;justify-self:start!important}
+  #pricing .pk-price sup{font-size:.5em!important;vertical-align:top!important;position:relative;top:.12em;margin:0 1px 0 0!important}
+  #pricing .pk-price::after{content:none!important;display:none!important}
+  #pricing .pk-spec{margin:22px 0 22px!important}
+  #pricing .pk-spec>div{padding:12px 0!important;grid-template-columns:1fr!important;gap:5px!important}
+  #pricing .pk-spec>div:first-child,#pricing .pk-standard .pk-spec>div:nth-child(3){border-top:1px solid!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(3){border-top-color:rgba(17,19,15,.12)!important}
+  #pricing .pk-vip .pk-spec>div:first-child{border-top-color:rgba(244,241,234,.14)!important}
+  #pricing .pk-spec>div:last-child{border-bottom:0!important}
+  #pricing .pk-spec dt{font:600 11px/1 'Inter',sans-serif!important;letter-spacing:.18em!important;text-transform:uppercase!important;padding:0 0 2px!important}
+  #pricing .pk-spec dd{font:400 16.5px/1.45 'Inter',sans-serif!important;padding:0!important;position:static!important}
+  #pricing .pk-spec dd::before{content:none!important;display:none!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{padding-left:0!important;margin:0 0 10px!important;font:400 16.5px/1.45 'Inter',sans-serif!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li::before{content:none!important;display:none!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li:last-child{margin-bottom:0!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3){padding:0 0 12px!important;border-top:0!important;grid-template-columns:1fr!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dt{display:none!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd{font:italic 400 17px/1.4 'Instrument Serif',Georgia,serif!important;color:#C9A24B!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd::after{content:", plus"}
+  #pricing .pk-vip .pk-spec>div:nth-child(1){border-top:1px solid rgba(244,241,234,.14)!important}
+
+  #pricing .pk-shell .pk-btn{min-height:60px!important;height:60px!important;font:700 16.5px/1 'Inter',sans-serif!important;letter-spacing:.01em!important;border-radius:14px!important;gap:10px}
+  #pricing .pk-btn .pk-arr{font-size:19px!important;transform:none}
+}
