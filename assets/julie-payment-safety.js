@@ -89,7 +89,7 @@
         locale: 'en', mode: 'light',
         variables: { colorBrand: '#006EFF', colorText: '#111722', colorBackground: '#FFFFFF' },
         rules: {
-          '.Button': { borderRadius: '6px', fontWeight: '700', fontSize: '17px' },
+          '.Button': { borderRadius: '6px', fontWeight: '700', fontSize: '17px', minHeight: '52px' },
           '.Button:hover': { backgroundColor: '#0059D6' },
           '.Input': { borderRadius: '8px' }
         }
