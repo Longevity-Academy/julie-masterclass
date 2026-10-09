@@ -1245,3 +1245,33 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important;-webkit-text-fill-color:#006EFF!important}
   #pricing .pk-foot{color:#CFE0F7!important}
 }
+@media(max-width:760px){
+  /* v9.19m: conversion pass (Omri: "not premium or converting, doesn't stand out to click"). Price 56px with "one seat" caption,
+     check-marked benefits, 62px CTAs with colour glow and a trust line beneath, VIP band carries the $249 credit anchor. CSS only. */
+  #pricing .pk-card{padding:24px 22px 22px!important;border-radius:20px!important;grid-template-areas:"top top" "title price" "spec spec" "btn btn" "foot foot"!important}
+  #pricing .pk-tier{font-size:12px!important;letter-spacing:.18em!important;font-weight:800!important}
+  #pricing .pk-title{font-weight:700!important;font-size:22px!important;line-height:1.1!important;letter-spacing:-.4px!important}
+  #pricing .pk-price{font-size:56px!important;font-weight:800!important;letter-spacing:-.05em!important;line-height:.9!important;display:flex!important;flex-direction:column;align-items:flex-end;align-self:start!important}
+  #pricing .pk-price sup{font-size:.42em!important;margin-top:.1em}
+  #pricing .pk-price::after{content:"one seat · USD";display:block;font:600 10.5px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:8px;opacity:.75}
+  #pricing .pk-standard .pk-price::after{color:#5A6F8F}
+  #pricing .pk-vip .pk-price::after{color:#CFF1FF}
+  #pricing .pk-spec{margin:18px 0 18px!important}
+  #pricing .pk-spec>div{padding:10px 0!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{padding-left:30px!important;margin-bottom:9px!important;font-size:16.5px!important;line-height:1.35!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li::before{content:"✓"!important;top:0!important;left:0!important;width:21px!important;height:21px!important;border-radius:50%!important;display:flex;align-items:center;justify-content:center;font:800 12px/1 'Inter',sans-serif;background:#E6F0FF!important;color:#006EFF!important}
+  #pricing .pk-vip .pk-spec>div{grid-template-columns:1fr!important}
+  #pricing .pk-vip .pk-spec>div:not(:nth-child(3)) dd{position:relative;padding-left:30px}
+  #pricing .pk-vip .pk-spec>div:not(:nth-child(3)) dd::before{content:"✓";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 12px/1 'Inter',sans-serif;background:rgba(143,227,255,.18);color:#8FE3FF}
+  #pricing .pk-vip .pk-spec>div:not(:nth-child(3)) dt{padding-left:30px}
+  #pricing .pk-vip::before{content:"Best value · includes a $249 Blueprint credit"!important}
+
+  #pricing .pk-shell .pk-btn{min-height:62px!important;height:62px!important;font-size:19px!important;font-weight:800!important;border-radius:14px!important;gap:12px}
+  #pricing .pk-btn .pk-arr{font-size:22px!important;transform:translateY(1px)}
+  #pricing .pk-standard .pk-btn{background:#006EFF!important;box-shadow:0 14px 30px rgba(0,110,255,.45),0 2px 0 rgba(255,255,255,.3) inset!important}
+  #pricing .pk-vip .pk-btn{background:#fff!important;box-shadow:0 16px 34px rgba(0,0,0,.4),0 0 0 1.5px rgba(143,227,255,.7),0 0 36px rgba(143,227,255,.35)!important}
+  #pricing .pk-card::after{content:"Secure checkout · Apple Pay, card or PayPal · 14-day full refund";grid-area:foot;display:block!important;position:static!important;width:auto!important;height:auto!important;inset:auto!important;border-radius:0!important;background:none!important;filter:none!important;transform:none!important;opacity:1!important;margin-top:12px;text-align:center;font:500 12.5px/1.4 'Inter',sans-serif;letter-spacing:0;pointer-events:none}
+  #pricing .pk-standard::after{color:#5A6F8F}
+  #pricing .pk-vip::after{color:#CFE0F7!important}
+  #pricing .pk-foot{display:none!important}
+}
