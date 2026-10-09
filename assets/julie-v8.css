@@ -1182,3 +1182,32 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #enrollModal #emErr{bottom:60px}
   #enrollModal .em-refund{margin-top:8px!important;font-size:11.5px!important}
 }
+@media(max-width:760px){
+  /* v9.19h: tiers differentiated (Omri: "pricing and CTA too monotonic"). Standard = white card, blue CTA. VIP = deep-blue card with a
+     top band, "Includes everything in Standard" lead line, white CTA with navy text. Price weight up, title weight down. CSS only. */
+  #pricing .pk-grid{gap:18px!important}
+  #pricing .pk-card{position:relative;box-shadow:0 10px 30px rgba(6,24,51,.18)!important}
+  #pricing .pk-standard{background:#fff!important;border:1px solid #D9E3F2!important}
+  #pricing .pk-tier{font-size:12px!important;letter-spacing:.16em!important;color:#5A6F8F!important}
+  #pricing .pk-title{font-weight:600!important;font-size:20px!important;color:#0B1B33!important}
+  #pricing .pk-title em{font-size:1.08em}
+  #pricing .pk-price{font-size:44px!important;font-weight:800!important;letter-spacing:-.04em!important}
+  #pricing .pk-standard .pk-price{background:none!important;-webkit-text-fill-color:#0B1B33!important;color:#0B1B33!important}
+  #pricing .pk-spec dt{color:#5A6F8F!important}
+  #pricing .pk-standard .pk-spec dd,#pricing .pk-standard .pk-ul li{color:#1b2a44!important}
+  #pricing .pk-standard .pk-btn{background:#006EFF!important;color:#fff!important;border:0!important;box-shadow:0 8px 20px rgba(0,110,255,.28)!important}
+
+  #pricing .pk-vip{padding-top:58px!important;background:linear-gradient(170deg,#0A2A5E 0%,#0B4BB5 60%,#0A6BFF 100%)!important;border:1px solid rgba(255,255,255,.18)!important;overflow:hidden}
+  #pricing .pk-vip::before{content:"Most chosen · includes a private Q&A with Julie";position:absolute;left:0;right:0;top:0;height:38px;display:flex;align-items:center;justify-content:center;font:700 13px/1 'Inter',sans-serif;letter-spacing:.02em;color:#0B1B33;background:#BFE3FF;z-index:1}
+  #pricing .pk-vip .pk-tier{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:none!important}
+  #pricing .pk-vip .pk-price{color:#fff!important;text-shadow:none!important}
+  #pricing .pk-vip .pk-spec dt{color:#BFE3FF!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3){display:grid!important;order:0;border-top:0!important;padding:0 0 10px!important;grid-template-columns:auto 1fr!important;gap:6px!important;align-items:baseline!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dt{font-size:12px!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd{font-size:14.5px!important;font-weight:600!important;color:#DCEBFF!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd::after{content:", plus:"}
+  #pricing .pk-vip .pk-spec>div:nth-child(1){border-top:1px solid rgba(255,255,255,.18)!important}
+  #pricing .pk-vip .pk-btn{background:#fff!important;color:#0B1B33!important;border:0!important;box-shadow:0 10px 24px rgba(0,0,0,.25)!important}
+  #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important}
+}
