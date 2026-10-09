@@ -1341,3 +1341,25 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-shell .pk-btn{min-height:60px!important;height:60px!important;font:700 16.5px/1 'Inter',sans-serif!important;letter-spacing:.01em!important;border-radius:14px!important;gap:10px}
   #pricing .pk-btn .pk-arr{font-size:19px!important;transform:none}
 }
+@media(max-width:760px){
+  /* v9.19q: larger type and tactile buttons (Omri). Title 36, price 72, body 18.5; 66px buttons with a lit face, inner highlight,
+     deep contact shadow and a round arrow chip. CSS only. */
+  #pricing .pk-tier{font-size:12.5px!important}
+  #pricing .pk-title{font-size:36px!important;line-height:1.02!important;margin:0 0 16px!important}
+  #pricing .pk-price{font-size:72px!important;line-height:.88!important}
+  #pricing .pk-spec{margin:24px 0 24px!important}
+  #pricing .pk-spec>div{padding:14px 0!important;gap:6px!important}
+  #pricing .pk-spec dt{font-size:12.5px!important}
+  #pricing .pk-spec dd,#pricing .pk-card .pk-spec dd .pk-ul li{font-size:18.5px!important;line-height:1.42!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{margin-bottom:12px!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(3) dd{font-size:19.5px!important}
+  #pricing .pk-foot{font-size:14.5px!important}
+
+  #pricing .pk-shell .pk-btn{min-height:66px!important;height:66px!important;font-size:18.5px!important;font-weight:700!important;border-radius:16px!important;padding:0 10px 0 22px!important;justify-content:space-between!important;position:relative;overflow:visible!important;transition:transform .12s ease,box-shadow .12s ease}
+  #pricing .pk-shell .pk-btn:active{transform:translateY(2px) scale(.995)}
+  #pricing .pk-btn .pk-arr{width:44px;height:44px;border-radius:50%;display:flex!important;align-items:center;justify-content:center;font-size:22px!important;line-height:1;flex:none}
+  #pricing .pk-standard .pk-btn{background:linear-gradient(180deg,#1A3B6E 0%,#0B1B33 100%)!important;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -2px 0 rgba(0,0,0,.35) inset,0 2px 2px rgba(0,0,0,.25),0 18px 30px -12px rgba(11,27,51,.7)!important}
+  #pricing .pk-standard .pk-btn .pk-arr{background:#F4F1EA!important;color:#0B1B33!important;-webkit-text-fill-color:#0B1B33!important;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+  #pricing .pk-vip .pk-btn{background:linear-gradient(180deg,#FFFDF8 0%,#EDE7D9 100%)!important;box-shadow:0 1px 0 #fff inset,0 -2px 0 rgba(0,0,0,.08) inset,0 2px 2px rgba(0,0,0,.4),0 20px 34px -12px rgba(0,0,0,.8)!important}
+  #pricing .pk-vip .pk-btn .pk-arr{background:#C9A24B!important;color:#0A1A38!important;-webkit-text-fill-color:#0A1A38!important;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+}
