@@ -1275,3 +1275,10 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip::after{color:#CFE0F7!important}
   #pricing .pk-foot{display:none!important}
 }
+@media(max-width:760px){
+  /* v9.19n: band clearance, price glyph inline, shorter trust line */
+  #pricing .pk-vip{padding-top:64px!important}
+  #pricing .pk-price{display:block!important;text-align:right;line-height:.9!important}
+  #pricing .pk-price sup{display:inline!important;vertical-align:top!important;font-size:.42em!important;line-height:1!important;margin:.18em 2px 0 0!important;position:relative;top:.1em}
+  #pricing .pk-card::after{content:"Secure checkout · Apple Pay · 14-day full refund"!important;white-space:nowrap;font-size:12px!important}
+}
