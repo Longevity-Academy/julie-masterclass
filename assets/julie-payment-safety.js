@@ -83,7 +83,17 @@
         emailRequired: false, billingAddressRequired: false
       },
       showPayButton: true,
-      appearance: { locale: 'en' }
+      /* Omri 2026-10-09 (design only, no logic): save-card box starts unticked; drop-in colours follow the site's #006EFF buttons. Documented drop-in options (Airwallex.js dropIn: autoSaveCardForFuturePayments, appearance.variables, appearance.rules). */
+      autoSaveCardForFuturePayments: false,
+      appearance: {
+        locale: 'en', mode: 'light',
+        variables: { colorBrand: '#006EFF', colorText: '#111722', colorBackground: '#FFFFFF' },
+        rules: {
+          '.Button': { borderRadius: '6px', fontWeight: '700', fontSize: '17px' },
+          '.Button:hover': { backgroundColor: '#0059D6' },
+          '.Input': { borderRadius: '8px' }
+        }
+      }
     };
   }
   root.JuliePaymentSafety = {
