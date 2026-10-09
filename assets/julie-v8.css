@@ -1111,7 +1111,8 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #enrollModal .em-go{min-height:52px!important;font-size:16.5px!important;border-radius:10px!important;margin-top:8px!important}
   #enrollModal #emErr{bottom:66px}
   #enrollModal .em-refund{margin:10px 0 0!important;font-size:12px!important;padding-bottom:calc(12px + env(safe-area-inset-bottom))!important}
-  #enrollModal #emStep2 .review-session-date,#enrollModal #emStep2 #selectedSessionNote{display:none!important}
+  #enrollModal #emStep2 .review-session-date,#enrollModal #emStep2 #selectedSessionNote,#enrollModal #emStep2 .em-lb[for="emPromo"]{display:none!important}
+  #enrollModal #emStep2 .em-cl:has(#emFormat),#enrollModal #emStep2 .em-cl:has(#emDuration){display:none!important}
   #enrollModal .em-card{margin:4px 0 12px!important;border-radius:10px!important}
   #enrollModal .em-card-b{padding:12px 14px!important}
   #enrollModal .em-cname{font-size:14px!important;margin-bottom:6px!important}
@@ -1119,8 +1120,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #enrollModal .em-cl.gap{margin-top:3px!important}
   #enrollModal .em-band{padding:11px 14px!important}
   #enrollModal .em-promo{margin-bottom:12px!important}
-  #enrollModal #emStep2 .em-lb[for="emPromo"]{font-weight:600!important;color:#5A6472!important}
-  #enrollModal #emStep2 .em-go{position:sticky;bottom:0;margin-bottom:0}
+    #enrollModal #emStep2 .em-go{position:sticky;bottom:0;margin-bottom:0}
   #enrollModal #emStep2::after{content:"";display:block;height:calc(12px + env(safe-area-inset-bottom))}
 
   /* pay screen */
