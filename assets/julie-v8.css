@@ -1059,3 +1059,90 @@ html:has(#enrollModal.open){overflow:hidden!important}
   .nav-logo .bm-v7-lockup>.bm-v7-original{width:172px!important}
   .nav-logo,.nav-logo *{opacity:1!important;filter:none!important}
 }
+
+/* ===== v9.19 (2026-10-09): phone compaction. Omri: "Continue buttons need too much scrolling / overlaid; cards too tall; remove pills; looks AI".
+   Pricing cards: pills and glow dots removed, price + title on one row, Format/Length/Dates rows hidden (dates already in the header and
+   picked at step 2), VIP CTA on one line. Enroll modal: logo smaller, stepper tighter, fields 48px, step 2 loses the duplicate date box and
+   helper line, order card slimmer. Pay screen: slimmer header, payment card first, step 3 lit. CSS only; no field, id, script, validation,
+   payment or tracking change. ===== */
+@media(max-width:760px){
+  /* pricing section */
+  #pricing .pk-head{margin-bottom:22px!important}
+  #pricing .pk-sub,#pricing .pk-datenote{display:none!important}
+  #pricing .pk-dates{margin-top:12px!important;gap:10px!important}
+  #pricing .pk-card{padding:22px 20px 20px!important;border-radius:18px!important}
+  #pricing .pk-len{display:none!important}
+  #pricing .pk-tier::before{display:none!important}
+  #pricing .pk-tier{font-size:12.5px!important;letter-spacing:.14em!important;text-transform:uppercase!important;font-weight:800!important}
+  #pricing .pk-top{margin:0 0 6px!important}
+  #pricing .pk-price{font-size:52px!important;line-height:1!important;margin:0!important;float:right;margin-left:14px!important}
+  #pricing .pk-title{font-size:24px!important;line-height:1.15!important;margin:4px 0 0!important;min-height:52px;display:flex;align-items:center}
+  #pricing .pk-spec{margin:16px 0 16px!important;clear:both}
+  #pricing .pk-spec>div{padding:9px 0!important;gap:2px!important}
+  #pricing .pk-standard .pk-spec>div:nth-child(1),#pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-standard .pk-spec>div:nth-child(4){display:none!important}
+  #pricing .pk-vip .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(3){display:none!important}
+  #pricing .pk-spec>div:first-child,#pricing .pk-standard .pk-spec>div:nth-child(3){border-top:0!important}
+  #pricing .pk-spec dt{font-size:12px!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+  #pricing .pk-spec dd{font-size:16.5px!important;line-height:1.4!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li{font:500 16.5px/1.4 Inter,sans-serif!important;margin-bottom:6px!important;padding-left:18px!important}
+  #pricing .pk-card .pk-spec dd .pk-ul li::before{top:8px!important;width:7px!important;height:7px!important}
+  #pricing .pk-ul li:nth-child(3){padding-right:0!important}
+  #pricing .pk-shell .pk-btn{font-size:17px!important;padding:0 18px!important;min-height:56px!important;height:56px;white-space:nowrap;border-radius:12px!important;margin:0!important;justify-content:center}
+  #pricing .pk-foot{margin-top:14px!important;font-size:14px!important}
+
+  /* enroll modal, steps 1 and 2 */
+  #enrollModal .em-dialog{margin:8px!important;max-height:calc(100dvh - 16px)!important;padding:16px 18px 0!important;border-radius:14px!important}
+  #enrollModal .em-x{top:10px;right:12px}
+  #enrollModal .checkout-brand{margin-bottom:8px!important}
+  #enrollModal .checkout-brand img{width:112px!important}
+  #enrollModal .em-steps{margin:0 0 10px!important}
+  #enrollModal .em-st{width:78px!important;gap:4px!important}
+  #enrollModal .em-dot{width:22px!important;height:22px!important;font-size:12px!important}
+  #enrollModal .em-bar{margin-top:11px!important}
+  #enrollModal .em-lbl{font-size:11.5px!important}
+  #enrollModal h2{font-size:21px!important;margin:4px 0 2px!important}
+  #enrollModal .checkout-package-summary{font-size:14px!important;margin:0 0 10px!important}
+  #enrollModal .em-lb{font-size:13px!important;margin-bottom:4px!important}
+  #enrollModal .em-in{min-height:48px!important;padding:11px 13px!important;margin-bottom:9px!important}
+  #enrollModal .em-phone{margin-bottom:9px!important}
+  #enrollModal .em-cc{min-height:48px}
+  #enrollModal .em-consent{margin:2px 0 4px!important}
+  #enrollModal .em-consent label{font-size:12px!important;line-height:1.35!important}
+  #enrollModal .em-go{min-height:52px!important;font-size:16.5px!important;border-radius:10px!important;margin-top:8px!important}
+  #enrollModal #emErr{bottom:66px}
+  #enrollModal .em-refund{margin:10px 0 0!important;font-size:12px!important;padding-bottom:calc(12px + env(safe-area-inset-bottom))!important}
+  #enrollModal #emStep2 .review-session-date,#enrollModal #emStep2 #selectedSessionNote{display:none!important}
+  #enrollModal .em-card{margin:4px 0 12px!important;border-radius:10px!important}
+  #enrollModal .em-card-b{padding:12px 14px!important}
+  #enrollModal .em-cname{font-size:14px!important;margin-bottom:6px!important}
+  #enrollModal .em-cl{font-size:13px!important;margin-bottom:3px!important}
+  #enrollModal .em-cl.gap{margin-top:3px!important}
+  #enrollModal .em-band{padding:11px 14px!important}
+  #enrollModal .em-promo{margin-bottom:12px!important}
+  #enrollModal #emStep2 .em-lb[for="emPromo"]{font-weight:600!important;color:#5A6472!important}
+  #enrollModal #emStep2 .em-go{position:sticky;bottom:0;margin-bottom:0}
+  #enrollModal #emStep2::after{content:"";display:block;height:calc(12px + env(safe-area-inset-bottom))}
+
+  /* pay screen */
+  #ckScreen .ck-head{min-height:0!important;padding:8px 14px!important;row-gap:4px!important}
+  #ckScreen .ck-head .ck-logo img{width:104px!important}
+  #ckScreen .ck-stepper-in{height:22px!important}
+  #ckScreen .ck-dot{width:22px!important;height:22px!important;font-size:12px!important}
+  #ckScreen #ckSt3 .ck-dot{background:#006EFF!important;border-color:#006EFF!important;color:#fff!important}
+  #ckScreen #ckBar2{background:#006EFF!important}
+  #ckScreen .ck-wrap{padding:12px 12px 40px!important}
+  #ckScreen .ck-backrow{margin:0 0 10px!important;font-size:13px!important;gap:6px 12px!important}
+  #ckScreen .ck-backrow a{min-height:36px!important}
+  #ckScreen .ck-cols{display:flex!important;flex-direction:column!important;gap:14px!important}
+  #ckScreen .ck-cols>div:first-child{display:flex;flex-direction:column}
+  #ckScreen .ck-cols>div:first-child>.ck-card:first-of-type{order:2;margin-top:14px}
+  #ckScreen .ck-cols>div:first-child>.ck-foot-note{order:3;margin:10px 0 0!important}
+  #ckScreen .ck-cols>div:first-child>.ck-card:nth-of-type(2){order:1}
+  #ckScreen .ck-card-pad{padding:12px 14px!important}
+  #ckScreen .ck-ln{font-size:13.5px!important;margin-bottom:3px!important}
+  #ckScreen .ck-tband{padding:11px 14px!important}
+  #ckScreen .ck-pay-tab{padding:11px 8px!important}
+  #ckScreen .ck-pay-body{padding:14px!important}
+  #ckScreen #ckCardBox>p{margin-bottom:8px}
+  #ckScreen .ck-voices{margin-top:18px!important}
+}
