@@ -1198,7 +1198,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-standard .pk-btn{background:#006EFF!important;color:#fff!important;border:0!important;box-shadow:0 8px 20px rgba(0,110,255,.28)!important}
 
   #pricing .pk-vip{padding-top:58px!important;background:linear-gradient(170deg,#0A2A5E 0%,#0B4BB5 60%,#0A6BFF 100%)!important;border:1px solid rgba(255,255,255,.18)!important;overflow:hidden}
-  #pricing .pk-vip::before{content:"Most chosen · includes a private Q&A with Julie";position:absolute;left:0;right:0;top:0;height:38px;display:flex;align-items:center;justify-content:center;font:700 13px/1 'Inter',sans-serif;letter-spacing:.02em;color:#0B1B33;background:#BFE3FF;z-index:1}
+  #pricing .pk-vip::before{content:"Most chosen · includes a private Q&A with Julie"!important;position:absolute!important;left:0!important;right:0!important;top:0!important;bottom:auto!important;width:auto!important;height:38px!important;border:0!important;border-radius:0!important;opacity:1!important;filter:none!important;transform:none!important;display:flex!important;align-items:center;justify-content:center;font:700 13px/1 'Inter',sans-serif!important;letter-spacing:.02em;color:#0B1B33!important;-webkit-text-fill-color:#0B1B33!important;background:#BFE3FF!important;z-index:1;pointer-events:none}
   #pricing .pk-vip .pk-tier{color:#BFE3FF!important}
   #pricing .pk-vip .pk-title,#pricing .pk-vip .pk-title em{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:none!important}
   #pricing .pk-vip .pk-price{color:#fff!important;text-shadow:none!important}
@@ -1209,5 +1209,6 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-vip .pk-spec>div:nth-child(3) dd::after{content:", plus:"}
   #pricing .pk-vip .pk-spec>div:nth-child(1){border-top:1px solid rgba(255,255,255,.18)!important}
   #pricing .pk-vip .pk-btn{background:#fff!important;color:#0B1B33!important;border:0!important;box-shadow:0 10px 24px rgba(0,0,0,.25)!important}
-  #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important}
+  #pricing .pk-vip .pk-btn span,#pricing .pk-vip .pk-btn{color:#0B1B33!important;-webkit-text-fill-color:#0B1B33!important}
+  #pricing .pk-vip .pk-btn .pk-arr{color:#006EFF!important;-webkit-text-fill-color:#006EFF!important}
 }
