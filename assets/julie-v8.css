@@ -1075,9 +1075,12 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #pricing .pk-tier::before{display:none!important}
   #pricing .pk-tier{font-size:12.5px!important;letter-spacing:.14em!important;text-transform:uppercase!important;font-weight:800!important}
   #pricing .pk-top{margin:0 0 6px!important}
-  #pricing .pk-price{font-size:52px!important;line-height:1!important;margin:0!important;float:right;margin-left:14px!important}
-  #pricing .pk-title{font-size:24px!important;line-height:1.15!important;margin:4px 0 0!important;min-height:52px;display:flex;align-items:center}
-  #pricing .pk-spec{margin:16px 0 16px!important;clear:both}
+  #pricing .pk-card{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"top top" "title price" "spec spec" "btn btn"!important;column-gap:14px;align-items:start}
+  #pricing .pk-top{grid-area:top}
+  #pricing .pk-title{grid-area:title;font-size:24px!important;line-height:1.12!important;margin:0!important;align-self:center}
+  #pricing .pk-price{grid-area:price;font-size:52px!important;line-height:1!important;margin:0!important;align-self:center}
+  #pricing .pk-spec{grid-area:spec;margin:14px 0 14px!important}
+  #pricing .pk-btn{grid-area:btn}
   #pricing .pk-spec>div{padding:9px 0!important;gap:2px!important}
   #pricing .pk-standard .pk-spec>div:nth-child(1),#pricing .pk-standard .pk-spec>div:nth-child(2),#pricing .pk-standard .pk-spec>div:nth-child(4){display:none!important}
   #pricing .pk-vip .pk-spec>div:nth-child(2),#pricing .pk-vip .pk-spec>div:nth-child(3){display:none!important}
@@ -1108,6 +1111,18 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #enrollModal .em-cc{min-height:48px}
   #enrollModal .em-consent{margin:2px 0 4px!important}
   #enrollModal .em-consent label{font-size:12px!important;line-height:1.35!important}
+  #enrollModal #emStep1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:10px}
+  #enrollModal #emStep1>*{grid-column:1/-1}
+  #enrollModal #emStep1>.em-lb[for="emCountry"]{grid-column:1;grid-row:5}
+  #enrollModal #emStep1>#emCountry{grid-column:1;grid-row:6}
+  #enrollModal #emStep1>#emStateField{grid-column:2;grid-row:5/7}
+  #enrollModal #emStep1>.em-lb[for="emPhone"]{grid-row:7}
+  #enrollModal #emStep1>.em-phone{grid-row:8}
+  #enrollModal #emStep1>.em-consent{grid-row:9}
+  #enrollModal #emStep1>#emErr{grid-row:10}
+  #enrollModal #emStep1>#emGo1{grid-row:11}
+  #enrollModal #emStep1>#emRefundNote{grid-row:12}
+  #enrollModal #emStep1:has(#emStateField[hidden]) #emCountry,#enrollModal #emStep1:has(#emStateField[style*="none"]) #emCountry,#enrollModal #emStep1:has(#emStateField[hidden]) .em-lb[for="emCountry"],#enrollModal #emStep1:has(#emStateField[style*="none"]) .em-lb[for="emCountry"]{grid-column:1/-1}
   #enrollModal .em-go{min-height:52px!important;font-size:16.5px!important;border-radius:10px!important;margin-top:8px!important}
   #enrollModal #emErr{bottom:66px}
   #enrollModal .em-refund{margin:10px 0 0!important;font-size:12px!important;padding-bottom:calc(12px + env(safe-area-inset-bottom))!important}
@@ -1143,6 +1158,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
   #ckScreen .ck-tband{padding:11px 14px!important}
   #ckScreen .ck-pay-tab{padding:11px 8px!important}
   #ckScreen .ck-pay-body{padding:14px!important}
-  #ckScreen #ckCardBox>p{margin-bottom:8px}
+  #ckScreen #ckCardBox>p{display:none}
+  #ckScreen .ck-f-lbl{margin-bottom:10px!important}
   #ckScreen .ck-voices{margin-top:18px!important}
 }
