@@ -1215,7 +1215,7 @@ html:has(#enrollModal.open){overflow:hidden!important}
 @media(max-width:760px){
   /* v9.19k: contrast and light (Omri: "not lit or pro, inert contrast"). Flat solid CTAs without gradient/shine, crisp white Standard card
      in navy, VIP with a lit top-right light source, white band, bright cyan labels, brighter dividers. CSS only. */
-  #pricing .pk-card::before{display:none!important;content:none!important}
+  #pricing .pk-standard::before{display:none!important;content:none!important}
   #pricing .pk-shell .pk-btn,#pricing .pk-shell .pk-btn:hover{background-image:none!important;text-shadow:none!important;font-weight:800!important;font-size:17.5px!important;letter-spacing:-.01em}
   #pricing .pk-btn::after,#pricing .pk-btn::before{display:none!important;content:none!important;animation:none!important}
 
