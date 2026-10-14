@@ -1985,7 +1985,8 @@ try{
     gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.2});
     gsap.from('.hero-copy .hero-desc, .hero-copy .hero-dates, .hero-copy .hero-actions',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.5});
     gsap.from('.h-under .hu',{opacity:0,y:40,duration:.9,stagger:.12,ease:'power3.out',delay:.75});
-    document.querySelectorAll('section .anton, .band-inner p').forEach(el=>{
+    /* phones: section headlines render instantly (the y:52 slide read as smeared/overlapping text on scroll) */
+    if(!(window.matchMedia&&matchMedia('(max-width:760px)').matches)) document.querySelectorAll('section .anton, .band-inner p').forEach(el=>{
       gsap.from(el,{opacity:0,y:52,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});
     });
     document.querySelectorAll('.rm-card, .art, .pcard, .pr-card').forEach(el=>{
@@ -3664,7 +3665,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
 <link rel="stylesheet" href="assets/julie-v7.css?v=1">
 <link rel="stylesheet" href="assets/julie-v8.css?v=11">
-<link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1835">
+<link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1845">
 <script>/* phone: hide the floating Enroll pill while the pricing cards (which carry their own buttons) are on screen */(function(){try{if(!matchMedia("(max-width:760px)").matches||!("IntersectionObserver" in window))return;var t=document.getElementById("pricing");if(!t)return;new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle("pricing-in-view",e.isIntersecting);});},{threshold:0.05}).observe(t);}catch(e){}})();</script>
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
