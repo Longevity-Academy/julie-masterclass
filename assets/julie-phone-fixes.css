@@ -16,3 +16,8 @@
   html body .nav{overflow:hidden!important;align-items:center!important}
   html body .nav .nav-logo{display:flex!important;align-items:center!important;max-height:100%!important;overflow:hidden!important}
 }
+/* 18:05 IDT — nav never transparent over light sections on phones (lockup was bleeding into headlines); floating Enroll pill hides while the pricing cards are on screen */
+@media (max-width:760px){
+  html body .nav{background:#050d1c!important;background-image:none!important;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  html body.pricing-in-view .lla-float-cta{opacity:0!important;pointer-events:none!important;transform:translateY(20px)!important;transition:opacity .2s,transform .2s}
+}
