@@ -274,4 +274,9 @@
   html body .band-inner p{font-size:32px!important}
   html body .foot-about,html body footer .foot-cols a{font-size:16px!important}
   html body .feat{font-size:13px!important}
+
+  /* 18:15 IDT — section headlines never slide under the 64px nav */
+  html body .fold,html body .pricing-fold,html body .hp-about,html body #press,html body #school,html body .dev-fold{padding-top:84px!important}
+  html body section[id],html body div[id].fold{scroll-margin-top:72px!important}
+  html body .shead h2,html body .pk-head h2{position:relative;z-index:1}
 }
