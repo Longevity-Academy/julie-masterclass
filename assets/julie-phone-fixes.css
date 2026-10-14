@@ -1,0 +1,18 @@
+/* Phone fixes only (under 760px). 2026-10-14 17:50 IDT, Omri. Layout, folds, animations and the brand lockup are the original site. */
+@media (max-width:760px){
+  /* Enrol steps 1–2: the Continue button follows the form instead of floating over it (keyboard-safe) */
+  html body #enrollModal .em-go,html body #enrollModal #emGo1,html body #enrollModal #emGo2{position:static!important;bottom:auto!important;margin-top:16px!important}
+  html body #enrollModal #emErr,html body #enrollModal #emErr2{position:static!important;bottom:auto!important}
+  html body #enrollModal .em-dialog{padding-bottom:28px!important}
+  /* Pricing = the sign-up fold: bigger headline and card titles, one instruction line */
+  html body #pricing .pk-head h2{font-size:42px!important;line-height:1.02!important}
+  html body #pricing .pk-head .pk-sub{font-size:18px!important;line-height:1.35!important}
+  html body #pricing .pk-head::after{content:"Reserve your seat below — 2 minutes, 14-day full refund.";display:block;margin-top:10px;font:600 14px/1.3 'Inter',sans-serif;letter-spacing:.02em;color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
+  html body #pricing .pk-title{font-size:30px!important;line-height:1.08!important}
+  html body #pricing .pk-btn{min-height:58px!important;font-size:18px!important}
+  /* Checkout step 3: card logos never collapse */
+  html body #ckScreen .ck-pay-tab img{width:40px!important;height:26px!important;object-fit:contain;display:inline-block!important}
+  /* Nav: the brand lockup (incl. "by eTeacher Group") stays inside the bar while scrolling */
+  html body .nav{overflow:hidden!important;align-items:center!important}
+  html body .nav .nav-logo{display:flex!important;align-items:center!important;max-height:100%!important;overflow:hidden!important}
+}

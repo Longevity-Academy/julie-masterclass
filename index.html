@@ -10,6 +10,11 @@
 <meta property="og:image" content="https://d2ol7oe51mr4n9.cloudfront.net/user_3B2TkzjFQaqg6v69LxXPlh5VT9f/0a8c890d-cd5f-4a62-9aac-3689ac31f75f.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://checkout.airwallex.com" crossorigin>
+<link rel="preconnect" href="https://eteacher-leads-proxy.gitter-omri.workers.dev" crossorigin>
+<link rel="preconnect" href="https://www.paypal.com" crossorigin>
+<link rel="dns-prefetch" href="https://checkout.airwallex.com">
+<link rel="dns-prefetch" href="https://eteacher-leads-proxy.gitter-omri.workers.dev">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
 <link rel="preload" href="https://fonts.cdnfonts.com/s/31902/CodecPro-Regular.woff" as="font" type="font/woff" crossorigin>
@@ -1973,10 +1978,9 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 try{
-  var __phone=window.matchMedia&&matchMedia('(max-width:760px)').matches;
-  if(window.Lenis&&!__phone){const lenis=window.__lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+  if(window.Lenis){const lenis=window.__lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
     if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
-  if(window.gsap&&window.ScrollTrigger&&!__phone){
+  if(window.gsap&&window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.2});
     gsap.from('.hero-copy .hero-desc, .hero-copy .hero-dates, .hero-copy .hero-actions',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.5});
@@ -2679,6 +2683,9 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card";t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
 if(document.readyState==='complete')window.JULIE_LOAD_PAYPAL();else window.addEventListener('load',window.JULIE_LOAD_PAYPAL);
 window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
+/* perf-v2 (2026-10-14): Airwallex is initialised once, right after its SDK loads, so step 3 only has to mount the card form. Same env rule as the checkout (staging CRM -> demo, production -> prod). */
+window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'});window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){return Promise.reject(e);}};
+window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.init)window.JULIE_AWX_INIT();}catch(e){}});
 </script>
 <script defer src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0" onload="window.__awxReady&&window.__awxReady()" onerror="window.__awxReady&&window.__awxReady()"></script>
 
@@ -3434,6 +3441,7 @@ var LLA_AC = (function(){
       var selectedPlan = LLA_PLAN.get();
       var ids = await ensureLiveOrder();
       setStatus('Preparing your secure payment\u2026');
+      try{ if(window.Airwallex&&window.Airwallex.init&&window.JULIE_AWX_INIT) window.JULIE_AWX_INIT(); }catch(e){}
 
       /* Must hit the SAME environment the order was created in, else "Order and student did not match". */
       var envPrefix = (window.LLA_ECOMM_CONFIG.env === 'staging') ? '/staging' : '';
@@ -3489,7 +3497,7 @@ var LLA_AC = (function(){
          staging CRM -> "eTeacher Demo PA" (demo), production CRM -> "ETEACHER EU LIMITED" (prod). */
       var awxEnv = (window.LLA_ECOMM_CONFIG.env === 'staging') ? 'demo' : 'prod';
       setStatus('Loading secure card entry\u2026');
-      await awx.init({ env: awxEnv, origin: window.location.origin, locale: 'en' });
+      await (window.JULIE_AWX_INIT ? window.JULIE_AWX_INIT(awxEnv) : awx.init({ env: awxEnv, origin: window.location.origin, locale: 'en' }));
       if(generation !== checkoutGeneration) return;
 
       var mountEl = document.getElementById('awx-dropin');
@@ -3656,7 +3664,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
 <link rel="stylesheet" href="assets/julie-v7.css?v=1">
 <link rel="stylesheet" href="assets/julie-v8.css?v=11">
-<link rel="stylesheet" href="assets/julie-mobile.css?v=1">
+<link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1750">
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
