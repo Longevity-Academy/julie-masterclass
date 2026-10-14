@@ -162,8 +162,10 @@
   .copyright{font-size:12px!important}
 
   /* floating button and chat bubble */
-  .lla-float-cta{left:12px!important;right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;border-radius:14px!important;min-height:56px}
+  .lla-float-cta{left:12px!important;right:78px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;border-radius:14px!important;min-height:56px}
   .lla-cta-text{display:none!important}
   .lla-cta-pill{flex:1;display:flex!important;justify-content:center;align-items:center;font-size:17px!important;padding:16px!important}
-  #et-bumpyard-widget{bottom:calc(80px + env(safe-area-inset-bottom))!important;right:12px!important}
+  html body #et-bumpyard-widget{bottom:calc(12px + env(safe-area-inset-bottom))!important;right:12px!important;padding:0!important}
+  html body #et-bumpyard-widget .widget-trigger-btn{width:56px!important;height:56px!important;min-width:56px!important;min-height:56px!important;padding:0!important;display:flex!important;align-items:center;justify-content:center;border-radius:14px!important}
+  html body #et-bumpyard-widget .widget-trigger-btn img{width:26px!important;height:26px!important;margin:0!important}
 }
