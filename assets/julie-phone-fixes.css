@@ -237,4 +237,41 @@
   html body #ckScreen .ck-pay-tab img{width:40px!important;height:26px!important;object-fit:contain;display:inline-block!important}
   /* floating pill hidden while pricing cards are on screen */
   html body.pricing-in-view .lla-float-cta{opacity:0!important;pointer-events:none!important;transition:opacity .2s}
+
+  /* 18:10 IDT — type scale up, no smear: reveals are a plain fade, no text shadows, crisp rendering */
+  html body{font-size:18px!important}
+  html body .reveal,html body .dev-fold .reveal,html body .dev-fold .fn-reveal{transform:none!important;transition:opacity .45s ease!important}
+  html body h1,html body h2,html body h3,html body .anton,html body .serif-i{text-shadow:none!important;-webkit-font-smoothing:antialiased;filter:none!important}
+  html body #top.hero .hero-head{font-size:50px!important}
+  html body #top.hero .hero-head .serif-i{font-size:40px!important}
+  html body #top.hero .hero-desc{font-size:20px!important;line-height:1.55!important}
+  h2.anton,.fold .shead h2,.pk-head h2,.dv-pdp-value-h2,#faq h2{font-size:42px!important;line-height:1.02!important}
+  html body .shead p,html body .shead-sub,html body .pk-sub{font-size:19px!important;line-height:1.45!important}
+  html body .eyebrow{font-size:14px!important}
+  html body .tbody h3{font-size:26px!important;line-height:1.1!important}
+  html body .tlead,html body .tcard p{font-size:18px!important;line-height:1.45!important}
+  html body #julie .jb-photo-body h3,html body #julie .jb-wide-body h3{font-size:28px!important}
+  html body #julie .jb-photo-body p,html body #julie .jb-wide-body p,html body #julie .jb-photo-body .serif-i,html body #julie .jb-photo-body em{font-size:19px!important;line-height:1.45!important}
+  html body .jstats b{font-size:34px!important}
+  html body .jstats span{font-size:14px!important}
+  html body .jstats i{font-size:16px!important}
+  html body .dev-fold .dv-pdp-value-card h3{font-size:24px!important}
+  html body .dev-fold .dv-pdp-value-card p{font-size:18px!important;line-height:1.45!important}
+  html body #how .how-step h3{font-size:22px!important}
+  html body #how .how-step p{font-size:17.5px!important;line-height:1.45!important}
+  html body #how .how-step .how-when{font-size:13px!important}
+  html body .acc-head{font-size:19px!important}
+  html body .acc-body,html body .acc-body p{font-size:17.5px!important;line-height:1.5!important}
+  html body #pricing .pk-head h2{font-size:44px!important}
+  html body #pricing .pk-head .pk-sub{font-size:19px!important}
+  html body #pricing .pk-title{font-size:32px!important}
+  html body #pricing .pk-title::after{font-size:18px!important}
+  html body #pricing .pk-price{font-size:56px!important}
+  html body #pricing .pk-price::after{font-size:16px!important}
+  html body #pricing .pk-ul li,html body #pricing .pk-spec dd{font-size:18px!important;line-height:1.4!important}
+  html body #pricing .pk-spec::before,html body #pricing .pk-vip .pk-spec::before{font-size:14px!important}
+  html body #pricing .pk-btn{font-size:19px!important;min-height:60px!important}
+  html body .band-inner p{font-size:32px!important}
+  html body .foot-about,html body footer .foot-cols a{font-size:16px!important}
+  html body .feat{font-size:13px!important}
 }
