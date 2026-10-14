@@ -1,0 +1,169 @@
+/* Phone layer. Loaded last, applies only under 760px. Desktop untouched. */
+@media (max-width:760px){
+  html{-webkit-text-size-adjust:100%}
+  body{font-size:16px!important;display:flex;flex-direction:column}
+  body>*{order:50}
+  body>nav#nav{order:0}
+  body>#mobileMenu{order:1}
+  body>header.hero{order:2}
+  body>#pricing{order:3}
+  body>#reveal{order:4}
+  body>#julie{order:5}
+  body>#dv-live-wrap{order:6}
+  body>#how{order:7}
+  body>.mq-band{order:8}
+  body>#faq{order:9}
+  body>.band{order:10}
+  body>footer{order:11}
+  body>#press,body>#school,body>.grain{display:none!important}
+
+  /* content visible at once, no scroll-in animation */
+  .reveal,.reveal>*{opacity:1!important;transform:none!important;visibility:visible!important}
+
+  /* nav */
+  .nav{height:60px!important;padding:0 16px!important}
+  .nav.solid{height:56px!important}
+  .nav-logo img{height:38px!important}
+  .nav .btn{font-size:13px!important;padding:9px 14px!important;white-space:nowrap}
+
+  /* shared rhythm and type */
+  .fold,.pricing-fold,.hp-about{padding:44px 0!important}
+  .container,.wrap,#julie .container,.pk-shell{padding:0 18px!important;max-width:100%!important}
+  .eyebrow{font-size:12px!important;letter-spacing:.14em!important;margin-bottom:8px!important}
+  h2.anton,.fold .shead h2,.pk-head h2,.dv-pdp-value-h2,#faq h2{font-size:30px!important;line-height:1.08!important;letter-spacing:-.02em}
+  .shead{margin-bottom:22px!important}
+  .shead p,.shead-sub,.pk-sub{font-size:15.5px!important;line-height:1.5!important;margin-top:10px!important}
+  .btn{white-space:normal!important}
+
+  /* hero */
+  .hero{background:#04070e url(film/julie-film-poster.jpg) center 28%/cover no-repeat!important}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,7,14,.62) 0%,rgba(4,7,14,.9) 42%,#04070e 100%)}
+  .hero-media,.hero-sound,.hero-actions .btn-ghost{display:none!important}
+  .hero-inner{min-height:0!important;padding:84px 0 30px!important;display:block!important}
+  .hero-copy{max-width:100%!important}
+  .hero-year{font-size:12px!important;letter-spacing:.14em!important;margin-bottom:12px!important}
+  .hero-head{font-size:36px!important;line-height:1.02!important;margin-bottom:14px!important}
+  .hero-head .serif-i{font-size:30px!important;display:block;margin-top:4px}
+  .hero-desc{font-size:16px!important;line-height:1.5!important;margin:0 0 18px!important;max-width:100%!important}
+  .hero-actions{display:block!important;margin:0!important}
+  .hero-actions .btn-blue{display:flex!important;justify-content:center;width:100%;font-size:17px!important;padding:16px 18px!important;border-radius:14px!important}
+  .hero-dates-line{font-size:14.5px!important;margin-top:14px!important;line-height:1.6!important}
+  .hero-dates-line span{display:block}
+
+  /* swipe hints off (cards are stacked on phones) */
+  #reveal .shead::after,#dv-live .dv-pdp-value-h2::after,#press .shead::after{display:none!important;content:none!important}
+  .hero-dates-line{font-size:0!important}
+  .hero-dates-line span{font-size:14.5px!important}
+
+  /* pricing */
+  .pk-head{text-align:center}
+  .pk-dates{display:flex!important;flex-wrap:wrap;gap:8px!important;margin-top:16px!important;justify-content:center}
+  .pk-date{flex:1 1 40%;padding:10px 10px!important;font-size:14px!important;text-align:center}
+  .pk-date b,.pk-date i{display:block;font-size:14px!important}
+  .pk-or{display:none!important}
+  .pk-datenote{flex:0 0 100%;font-size:13px!important;margin-top:4px!important}
+  #pricing .pk-grid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;margin:22px 0 0!important}
+  .pk-card{padding:20px 18px 18px!important;border-radius:20px!important}
+  .pk-card:hover{transform:none!important}
+  .pk-top{font-size:12px!important}
+  html body #pricing .pk-price{font-size:40px!important;line-height:1!important;margin:6px 0 2px!important}
+  html body #pricing .pk-price sup{font-size:18px!important;margin-top:.1em!important}
+  html body #pricing .pk-title{font-size:20px!important;line-height:1.15!important;margin:0 0 10px!important}
+  html body #pricing .pk-spec{margin:0 0 12px!important;display:block!important}
+  html body #pricing .pk-spec>div{padding:7px 0!important;display:block!important;border:0!important}
+  html body #pricing .pk-spec dt{font-size:11px!important;letter-spacing:.12em!important;margin-bottom:2px!important}
+  html body #pricing .pk-spec dd,html body #pricing .pk-standard .pk-spec dd,html body #pricing .pk-vip .pk-spec dd{font-size:14.5px!important;line-height:1.45!important;margin:0!important}
+  html body #pricing .pk-ul{padding-left:0!important;margin:0!important}
+  html body #pricing .pk-card .pk-spec dd .pk-ul li,html body #pricing .pk-standard .pk-spec dd .pk-ul li:nth-child(3){margin:0 0 4px!important;font-size:14.5px!important;line-height:1.4!important;padding-left:16px!important;padding-right:0!important;letter-spacing:0!important;word-spacing:0!important}
+  html body #pricing .pk-ul li::before{top:7px!important;width:6px!important;height:6px!important}
+  html body #pricing .pk-standard .pk-spec>div:nth-child(1),html body #pricing .pk-standard .pk-spec>div:nth-child(2),html body #pricing .pk-standard .pk-spec>div:nth-child(4){display:none!important}
+  html body #pricing .pk-vip .pk-spec>div:nth-child(2),html body #pricing .pk-vip .pk-spec>div:nth-child(5),html body #pricing .pk-vip .pk-spec>div:nth-child(6){display:none!important}
+  html body #pricing .pk-vip .pk-spec::before,html body #pricing .pk-vip .pk-spec::after,html body #pricing .pk-standard .pk-spec::before,html body #pricing .pk-standard .pk-spec::after{display:none!important;content:none!important}
+  html body #pricing .pk-standard{animation:none!important}
+  html body #pricing .pk-btn{display:flex!important;justify-content:center;align-items:center;gap:8px;width:100%;font-size:16px!important;padding:15px 16px!important;border-radius:14px!important;margin-top:4px!important;white-space:nowrap}
+  html body #pricing .pk-btn span{display:inline!important}
+  .pk-foot{font-size:13px!important;margin-top:16px!important;text-align:center}
+
+  /* what you'll learn */
+  #reveal .tgrid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important;padding:0!important;margin:0!important;overflow:visible!important}
+  .tcard{border-radius:18px!important;scroll-snap-align:none!important;min-width:0!important;width:auto!important;flex:none!important}
+  .tmedia{height:150px!important;max-height:150px!important;overflow:hidden}
+  .tmedia img,.tmedia video{width:100%;height:100%;object-fit:cover}
+  .tbody{padding:18px 18px 18px!important}
+  .tcard .tn{font-size:56px!important;top:4px!important;right:16px!important;opacity:.35}
+  .tbody h3{font-size:22px!important;line-height:1.12!important;margin:0 0 8px!important}
+  .tlead{font-size:15px!important;line-height:1.45!important;margin:0!important}
+  .tbody hr,.tbody ul{display:none!important}
+
+  /* about julie */
+  .jbento{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;padding:0!important;margin:0!important;overflow:visible!important}
+  .jb-vid{display:none!important}
+  .jb-wide video{display:none!important}
+  .jb{min-width:0!important;width:auto!important;border-radius:18px!important}
+  .jb-photo img{height:300px!important;object-fit:cover;object-position:50% 20%}
+  .jb-photo-body,.jb-wide-body{padding:18px!important}
+  .jb-photo-body h3,.jb-wide-body h3{font-size:22px!important;line-height:1.12!important}
+  .jb-photo-body p,.jb-wide-body p{font-size:15px!important;line-height:1.5!important}
+  .jb-wide-body blockquote,.jb-wide-body q,.jb-wide-body .jq,.jb-wide-body em{font-size:15px!important;line-height:1.45!important}
+  html body #julie .jb-wide-body p{font-size:15px!important;line-height:1.5!important}
+  .jb .btn,.jb-wide-body .btn{display:flex!important;justify-content:center;width:100%;white-space:normal!important;font-size:16px!important;padding:14px!important}
+  .jstats{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;margin:18px 0 0!important}
+  .jstats>div{padding:16px 10px!important;border-radius:14px!important}
+  .jstats b{font-size:28px!important}
+  .jstats span{font-size:11.5px!important;margin-top:6px!important;letter-spacing:.06em!important}
+  .jstats i{font-size:12px!important}
+
+  /* live on zoom */
+  .dev-fold .dv-lla-value-layout{display:block!important}
+  .dev-fold .dv-lla-zoom-shot{margin:0 0 14px!important}
+  .dev-fold .dv-lla-zoom-shot img{width:100%;height:auto;border-radius:14px}
+  .dev-fold .dv-lla-zoom-shot figcaption{font-size:13px!important}
+  html body #dv-live-wrap.dev-fold #dv-live .dv-pdp-value-grid.dv-rail{display:grid!important;grid-template-columns:1fr!important;grid-auto-flow:row!important;gap:10px!important;overflow:visible!important;padding:0!important;margin:0!important}
+  html body #dv-live-wrap.dev-fold #dv-live .dv-pdp-value-grid.dv-rail>.dv-pdp-value-card{flex:none!important;min-width:0!important;width:100%!important;max-width:none!important;padding:16px!important;border-radius:14px!important;scroll-snap-align:none!important;min-height:0!important}
+  .dev-fold .dv-pdp-value-card[data-vc="2"],.dev-fold .dv-pdp-value-card[data-vc="3"]{display:none!important}
+  .dev-fold .dv-pdp-value-card h3{font-size:18px!important;line-height:1.2!important;margin:0 0 6px!important}
+  .dev-fold .dv-pdp-value-card p{font-size:14.5px!important;line-height:1.45!important;margin:0!important}
+  html body #dv-live-wrap .dv-rail-dots,html body #dv-live-wrap [class*="rail-dots"]{display:none!important}
+
+  /* how it works */
+  .how-layout{display:block!important}
+  .how-phone{display:none!important}
+  .how-steps{margin:0!important;padding:0!important}
+  html body #how .how-steps{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;overflow:visible!important;padding:0!important}
+  html body #how .how-step{flex:none!important;width:100%!important;padding:16px 16px 16px 64px!important;border-radius:16px!important}
+  html body #how .how-step::before{left:14px!important;top:16px!important;width:36px!important;height:36px!important;font-size:16px!important}
+  html body #how .how-step .how-when{font-size:11px!important;letter-spacing:.12em!important}
+  html body #how .how-step h3{font-size:18px!important;line-height:1.2!important;margin:2px 0 0!important}
+  html body #how .how-step p{font-size:14.5px!important;line-height:1.45!important;margin-top:6px!important}
+
+  /* press band */
+  .mq-band{padding:22px 0!important}
+  .feat{font-size:11px!important}
+
+  /* faq */
+  .acc-head{font-size:16px!important;padding:14px 0!important}
+  .acc-body,.acc-body p{font-size:14.5px!important;line-height:1.5!important}
+
+  /* band */
+  .band{padding:48px 0!important}
+  .band video{display:none!important}
+  .band-inner{padding:0 18px!important}
+  .band-inner p{font-size:28px!important;margin-bottom:20px!important}
+  .band .btn{display:flex!important;justify-content:center;width:100%;font-size:17px!important;padding:16px!important;border-radius:14px!important}
+
+  /* footer */
+  footer{padding:36px 0 110px!important}
+  .foot-cols{display:grid!important;grid-template-columns:1fr!important;gap:22px!important;margin-bottom:22px!important}
+  footer .foot-cols img{height:40px!important}
+  .foot-about{font-size:14px!important;line-height:1.5!important}
+  footer .foot-cols h4{font-size:12px!important;margin-bottom:6px!important}
+  footer .foot-cols a{font-size:15px!important;padding:4px 0!important}
+  .disclaimer,.disclaimer a{font-size:12px!important;line-height:1.5!important}
+  .copyright{font-size:12px!important}
+
+  /* floating button and chat bubble */
+  .lla-float-cta{left:12px!important;right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;border-radius:14px!important;min-height:56px}
+  .lla-cta-text{display:none!important}
+  .lla-cta-pill{flex:1;display:flex!important;justify-content:center;align-items:center;font-size:17px!important;padding:16px!important}
+  #et-bumpyard-widget{bottom:calc(80px + env(safe-area-inset-bottom))!important;right:12px!important}
+}

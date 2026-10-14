@@ -1973,9 +1973,10 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 <script>
 document.addEventListener('DOMContentLoaded',function(){
 try{
-  if(window.Lenis){const lenis=window.__lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+  var __phone=window.matchMedia&&matchMedia('(max-width:760px)').matches;
+  if(window.Lenis&&!__phone){const lenis=window.__lenis=new Lenis({lerp:.1});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
     if(window.gsap){lenis.on('scroll',()=>ScrollTrigger.update())}}
-  if(window.gsap&&window.ScrollTrigger){
+  if(window.gsap&&window.ScrollTrigger&&!__phone){
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-head',{opacity:0,y:44,duration:1.1,ease:'power4.out',delay:.2});
     gsap.from('.hero-copy .hero-desc, .hero-copy .hero-dates, .hero-copy .hero-actions',{opacity:0,y:30,duration:.9,stagger:.14,ease:'power3.out',delay:.5});
@@ -3655,6 +3656,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
 <link rel="stylesheet" href="assets/julie-v7.css?v=1">
 <link rel="stylesheet" href="assets/julie-v8.css?v=11">
+<link rel="stylesheet" href="assets/julie-mobile.css?v=1">
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
