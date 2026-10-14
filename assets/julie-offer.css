@@ -1,36 +1,67 @@
-/* 36% offer strip, countdown and was-prices. Appearance only. */
-.lla-strip{position:fixed;top:0;left:0;right:0;z-index:210;height:40px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px;background:linear-gradient(90deg,#0051CC,#006EFF 50%,#0051CC);color:#fff;font:600 14px/1 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.01em;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 6px 18px rgba(0,0,0,.25)}
-.lla-strip b{font-weight:800;color:#fff}
-.lla-strip .lla-cd{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(4,13,36,.35);font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:.04em}
-.lla-strip .lla-cd::before{content:"";width:8px;height:8px;border-radius:50%;background:#FFD166;box-shadow:0 0 0 0 rgba(255,209,102,.7);animation:llaPulse 1.4s infinite}
-@keyframes llaPulse{0%{box-shadow:0 0 0 0 rgba(255,209,102,.7)}70%{box-shadow:0 0 0 8px rgba(255,209,102,0)}100%{box-shadow:0 0 0 0 rgba(255,209,102,0)}}
+/* 36% offer: top strip with countdown, was-prices, bottom enrol bar, phone pricing hierarchy. Appearance only. */
+.lla-strip{position:fixed;top:0;left:0;right:0;z-index:210;height:40px;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 14px;background:#0051CC;color:#fff;font:600 14px/1 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.01em;box-shadow:0 1px 0 rgba(255,255,255,.14) inset}
+.lla-strip b{font-weight:800}
+.lla-strip .lla-cd{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:8px;background:rgba(2,10,30,.38);font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:.05em}
+.lla-strip .lla-cd::before{content:"";width:7px;height:7px;border-radius:50%;background:#FFD166;animation:llaPulse 1.4s infinite}
+@keyframes llaPulse{0%,100%{opacity:1}50%{opacity:.25}}
 html body .nav{top:40px}
 html body #top.hero{padding-top:40px}
-.pk-was{display:flex;align-items:center;gap:10px;margin:14px 0 -6px;font:600 17px/1 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-.pk-was s{color:#7F8CA6;text-decoration-thickness:2px}
+/* was-price row */
+.pk-was{display:flex;align-items:center;gap:10px;font:600 18px/1 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.pk-was s{color:#8A96AE;text-decoration-thickness:2px}
 .pk-vip .pk-was s{color:#A9C4E8}
-.pk-was .pk-off{display:inline-block;padding:5px 10px;border-radius:999px;background:#FFD166;color:#1B2A44;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
-@media (max-width:760px){
-  .lla-strip{height:44px;font-size:13.5px;gap:8px;padding:0 10px;text-align:center}
-  .lla-strip .lla-long{display:none}
-  html body .nav{top:44px}
-  html body #top.hero{padding-top:calc(112px + 44px)!important}
-  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "was was" "price price" "btn btn" "spec spec"!important}
-  html body #pricing .pk-was{grid-area:was;margin:16px 0 -8px;font-size:18px}
-  html body #pricing .pk-was .pk-off{font-size:13px}
-  html body #pricing .pk-title{font-size:29px!important}
-  html body #pricing .pk-title::after{font-size:18px!important;line-height:1.45!important}
-  html body #pricing .pk-price{font-size:54px!important}
-  html body #pricing .pk-price::after{font-size:15px!important}
-  html body #pricing .pk-spec dd,html body #pricing .pk-standard .pk-spec dd,html body #pricing .pk-vip .pk-spec dd,html body #pricing .pk-ul li{font-size:17px!important;line-height:1.45!important}
-  html body #pricing .pk-spec::before,html body #pricing .pk-vip .pk-spec::before{font-size:13px!important}
-  html body #pricing .pk-head .pk-sub{font-size:18px!important}
-  .lla-cta-text{display:flex!important}
-  .lla-cta-eyebrow{font-size:11px!important}
-  .lla-cta-title{font-size:14px!important}
-}
+.pk-was .pk-off{display:inline-block;padding:6px 10px;border-radius:6px;background:#FFD166;color:#1B2A44;font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+/* bottom bar (same pattern as the Blueprint site) */
+.lla-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;height:64px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 14px 0 20px;background:#fff;border-top:1px solid #DCE3EE;box-shadow:0 -10px 30px -16px rgba(10,20,40,.35);color:#0A1428;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;transform:translateY(100%);transition:transform .35s ease}
+.lla-bar.on{transform:none}
+.lla-bar .l{display:flex;align-items:baseline;gap:10px;white-space:nowrap;min-width:0;overflow:hidden}
+.lla-bar .l i{font-style:normal;font-weight:700;font-size:17px;color:#0A1428}
+.lla-bar .l b{font-weight:800;font-size:22px;color:#006EFF}
+.lla-bar .l s{font-weight:600;font-size:15px;color:#8A96AE}
+.lla-bar .l em{font-style:normal;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:6px;background:#FFD166;color:#1B2A44}
+.lla-bar a{flex:0 0 auto;background:#006EFF;color:#fff;text-decoration:none;font-weight:800;font-size:17px;padding:13px 22px;border-radius:999px;box-shadow:0 12px 28px -12px rgba(0,110,255,.9)}
+html body .lla-float-cta{display:none!important}
+html body #et-bumpyard-widget{bottom:84px!important}
 @media (min-width:761px){
   html body #pricing .pk-card{grid-template-areas:"top top" "was was" "price title" "spec spec" "btn btn"!important;grid-template-rows:auto auto auto auto 1fr!important}
-  html body #pricing .pk-was{grid-area:was;margin:0 0 6px;font-size:18px}
-  html body #pricing .pk-was .pk-off{font-size:13px}
+  html body #pricing .pk-was{grid-area:was;margin:0 0 8px}
+  html body #pricing .pk-spec dd{font-size:18px!important}
+  html body #pricing .pk-ul li{font-size:17px!important}
+}
+@media (max-width:760px){
+  .lla-strip{height:44px;font-size:13.5px;gap:10px;padding:0 10px}
+  .lla-strip .lla-long{display:none}
+  html body .nav,html body .nav.solid{top:44px;height:76px!important}
+  html body .nav-logo img{height:34px!important}
+  html body #top.hero{padding-top:calc(76px + 44px + 28px)!important}
+  .lla-bar .l i{display:none}
+  .lla-bar .l b{font-size:21px}
+  .lla-bar a{font-size:16px;padding:12px 18px}
+  /* pricing cards: hierarchy */
+  html body #pricing .pk-card{grid-template-areas:"top top" "title title" "was was" "price price" "btn btn" "spec spec"!important;padding:26px 22px 26px!important;border-radius:24px!important}
+  html body #pricing .pk-vip{background:linear-gradient(180deg,#0B2A5B 0%,#0A2240 100%)!important}
+  html body #pricing .pk-top{margin:0 0 10px!important}
+  html body #pricing .pk-tier{font:800 12.5px/1 'Inter',sans-serif!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#006EFF!important}
+  html body #pricing .pk-vip .pk-tier{color:#7DE5FF!important}
+  html body #pricing .pk-len{display:none!important}
+  html body #pricing .pk-title{font-family:'Playfair Display',Georgia,serif!important;font-weight:600!important;font-size:32px!important;line-height:1.1!important;letter-spacing:-.01em!important}
+  html body #pricing .pk-title em{font-style:italic;font-weight:500}
+  html body #pricing .pk-title::after{font:400 18px/1.45 'Inter',sans-serif!important;margin-top:10px;color:#4A5873}
+  html body #pricing .pk-vip .pk-title::after{color:#C9DCF5!important;-webkit-text-fill-color:#C9DCF5!important}
+  html body #pricing .pk-standard .pk-title::after{content:"60 minutes live on Zoom. Julie's complete protocol, taught by Julie."}
+  html body #pricing .pk-vip .pk-title::after{content:"90 minutes with Julie. The masterclass, then 30 private minutes for your questions."}
+  html body #pricing .pk-was{grid-area:was;margin:18px 0 0;font-size:18px}
+  html body #pricing .pk-price{font-size:58px!important;margin:6px 0 0!important;font-weight:800!important}
+  html body #pricing .pk-price::after{font:500 15px/1.3 'Inter',sans-serif!important}
+  html body #pricing .pk-btn{width:100%!important;min-height:60px!important;font-size:18px!important;font-weight:700!important;border-radius:14px!important;margin-top:18px!important}
+  html body #pricing .pk-standard .pk-btn{background:#0A2240!important;color:#fff!important}
+  html body #pricing .pk-vip .pk-btn{background:#fff!important;color:#0A2240!important}
+  html body #pricing .pk-spec{margin:22px 0 0!important;padding:18px 0 0!important}
+  html body #pricing .pk-spec::before,html body #pricing .pk-vip .pk-spec::before{font:800 13px/1 'Inter',sans-serif!important;letter-spacing:.14em!important;color:#006EFF!important;-webkit-text-fill-color:#006EFF!important;margin-bottom:14px!important}
+  html body #pricing .pk-vip .pk-spec::before{color:#7DE5FF!important;-webkit-text-fill-color:#7DE5FF!important}
+  html body #pricing .pk-spec dd,html body #pricing .pk-standard .pk-spec dd,html body #pricing .pk-vip .pk-spec dd,html body #pricing .pk-ul li{font-size:18px!important;line-height:1.4!important;font-weight:500!important;margin-bottom:12px!important;padding-left:30px!important}
+  html body #pricing .pk-standard .pk-spec dd,html body #pricing .pk-ul li{color:#0A1E3F!important;-webkit-text-fill-color:#0A1E3F!important}
+  html body #pricing .pk-vip .pk-spec dd{color:#fff!important;-webkit-text-fill-color:#fff!important}
+  html body #pricing .pk-spec dd::before,html body #pricing .pk-ul li::before{width:20px!important;height:20px!important;top:2px!important;background-size:11px!important}
+  html body #pricing .pk-head .pk-sub{font-size:18px!important}
 }
