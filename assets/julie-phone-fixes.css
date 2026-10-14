@@ -279,4 +279,11 @@
   html body .fold,html body .pricing-fold,html body .hp-about,html body #press,html body #school,html body .dev-fold{padding-top:84px!important}
   html body section[id],html body div[id].fold{scroll-margin-top:72px!important}
   html body .shead h2,html body .pk-head h2{position:relative;z-index:1}
+
+  /* 18:25 IDT — checkout header: logo and phone number never overlap on any phone width/zoom */
+  html body #ckScreen .ck-head{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px 12px!important;padding:10px 14px!important;min-height:0!important}
+  html body #ckScreen .ck-head .ck-logo{flex:0 0 auto!important;max-width:150px!important}
+  html body #ckScreen .ck-head .ck-logo img{width:140px!important;height:auto!important;display:block!important}
+  html body #ckScreen .ck-head .ck-callus{flex:1 1 auto!important;text-align:right!important;font-size:14px!important;white-space:nowrap!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  html body #ckScreen .ck-head .ck-stepper{flex:0 0 100%!important;order:3!important;margin-top:4px!important}
 }
