@@ -44,20 +44,26 @@
 
   /* hero: portrait first, words under it */
   html body #top.hero{background:#04070e!important}
-  html body #top.hero::before{content:"";display:block;position:absolute;left:0;right:0;top:0;height:330px;background:url(film/julie-film-poster-m.jpg) center top/cover no-repeat;z-index:0}
-  html body #top.hero::after{content:"";position:absolute;left:0;right:0;top:0;height:330px;z-index:1;background:linear-gradient(180deg,rgba(4,7,14,.35) 0%,rgba(4,7,14,0) 30%,rgba(4,7,14,0) 55%,#04070e 100%)}
+  html body #top.hero::before{content:"";display:block;position:absolute;left:0;right:0;bottom:0;height:320px;background:url(film/julie-film-poster-m.jpg) center 18%/cover no-repeat;z-index:0}
+  html body #top.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:320px;z-index:1;background:linear-gradient(180deg,#04070e 0%,rgba(4,7,14,.55) 32%,rgba(4,7,14,0) 60%,rgba(4,7,14,.25) 100%)}
   .hero-media,.hero-sound,.hero-actions .btn-ghost{display:none!important}
-  html body #top.hero .hero-inner.container{min-height:0!important;padding:290px 18px 28px!important;display:block!important;position:relative;z-index:2}
+  html body #top.hero .hero-inner.container{min-height:0!important;padding:88px 18px 300px!important;display:block!important;position:relative;z-index:2}
   html body #top.hero .hero-copy{max-width:100%!important}
   html body #top.hero .hero-year{font-size:11.5px!important;letter-spacing:.16em!important;text-transform:uppercase;margin-bottom:10px!important;color:#8AD2FF!important}
-  html body #top.hero .hero-head{font-size:38px!important;line-height:1!important;margin-bottom:12px!important}
-  html body #top.hero .hero-head .serif-i{font-size:30px!important;display:block;margin-top:6px;line-height:1.1!important}
-  html body #top.hero .hero-desc{font-size:15.5px!important;line-height:1.5!important;margin:0 0 18px!important;max-width:100%!important;color:#C9D6EA!important}
+  html body #top.hero .hero-head{font-size:46px!important;line-height:.98!important;margin-bottom:14px!important}
+  html body #top.hero .hero-head .serif-i{font-size:36px!important;display:block;margin-top:8px;line-height:1.08!important}
+  html body #top.hero .hero-desc{font-size:17px!important;line-height:1.5!important;margin:0 0 20px!important;max-width:100%!important;color:#DCE6F5!important}
   html body #top.hero .hero-actions{display:block!important;margin:0!important}
   html body #top.hero .hero-actions .btn-blue{display:flex!important;justify-content:center;width:100%;font-size:17px!important;padding:16px 18px!important;border-radius:14px!important;background:#FFFFFF!important;background-image:none!important;color:#0A1E3F!important;-webkit-text-fill-color:#0A1E3F!important;box-shadow:0 10px 28px rgba(0,0,0,.35)!important}
   html body #top.hero .hero-actions .btn-blue::after,html body #top.hero .hero-actions .btn-blue::before{display:none!important;content:none!important}
   html body #top.hero .hero-dates-line{font-size:0!important;margin-top:12px!important;display:flex!important;gap:8px!important;flex-wrap:nowrap!important}
   html body #top.hero .hero-dates-line span{display:block!important;flex:1 1 0!important;white-space:normal!important;font-size:13.5px!important;line-height:1.3!important;text-align:center;padding:10px 6px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.04);color:#DCE6F5;font-style:normal;font-family:'Inter',sans-serif;font-weight:600}
+
+  /* no tiny text anywhere */
+  html body .tcard p,html body .jb p,html body .dv-pdp-value-card p,html body .how-step p,html body .acc-body p,html body .pk-sub,html body .shead p,html body .shead-sub,html body figcaption{font-size:16px!important;line-height:1.5!important}
+  html body .jstats i{font-size:14px!important}
+  html body .jstats span{font-size:13px!important}
+  html body .tlead{font-size:16px!important}
 
   /* pricing: one module, two tickets */
   .pricing-fold{padding:40px 0 36px!important}
@@ -75,14 +81,14 @@
   html body #pricing .pk-tier{font-size:12px!important;letter-spacing:.14em!important}
   html body #pricing .pk-len{font-size:12px!important;padding:6px 10px!important;border-radius:999px!important}
   html body #pricing .pk-price{grid-area:price;display:flex!important;align-items:baseline;gap:8px;font-size:44px!important;line-height:1!important;margin:14px 0 0!important}
-  html body #pricing .pk-price::after{content:"per seat, one payment";font:500 13px/1.3 'Inter',sans-serif;letter-spacing:0;color:#56627A;-webkit-text-fill-color:#56627A;margin-left:2px}
+  html body #pricing .pk-price::after{content:"one payment, 14-day full refund";font:500 13px/1.3 'Inter',sans-serif;letter-spacing:0;color:#56627A;-webkit-text-fill-color:#56627A;margin-left:2px}
   html body #pricing .pk-vip .pk-price::after{color:#BFE3FF;-webkit-text-fill-color:#BFE3FF}
   html body #pricing .pk-price sup{font-size:20px!important;margin:0!important;align-self:flex-start;line-height:1.2!important}
   html body #pricing .pk-price{gap:4px}
   html body #pricing .pk-title{grid-area:title;font-size:24px!important;line-height:1.12!important;margin:0!important}
   html body #pricing .pk-title::after{display:block;margin-top:8px;font:400 15px/1.45 'Inter',sans-serif;letter-spacing:0;color:#56627A;-webkit-text-fill-color:#56627A;text-shadow:none}
-  html body #pricing .pk-standard .pk-title::after{content:"The 60-minute live masterclass with Julie Gibson Clark on Zoom."}
-  html body #pricing .pk-vip .pk-title::after{content:"The masterclass, then 30 private minutes with Julie for your own questions.";color:#DCE9FA;-webkit-text-fill-color:#DCE9FA}
+  html body #pricing .pk-standard .pk-title::after{content:"Julie's complete protocol, taught live. The exact routine behind the second slowest pace of aging ever measured, in one focused hour."}
+  html body #pricing .pk-vip .pk-title::after{content:"Everything in Standard, then the room is yours: 30 private minutes to put your own questions to Julie, plus $249 toward her full course.";color:#DCE9FA;-webkit-text-fill-color:#DCE9FA}
   html body #pricing .pk-spec{grid-area:spec;margin:16px 0 0!important;padding:14px 0 0!important;display:block!important;border-top:1px solid rgba(127,160,210,.22)!important}
   html body #pricing .pk-spec::before{content:"What's included"!important;display:block!important;font:700 11.5px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#56627A;-webkit-text-fill-color:#56627A;margin:0 0 10px!important;padding:0!important;background:none!important;border:0!important}
   html body #pricing .pk-vip .pk-spec,html body #pricing .pk-standard .pk-spec{display:block!important}
@@ -103,7 +109,8 @@
   html body #pricing .pk-vip .pk-spec>div:nth-child(2),html body #pricing .pk-vip .pk-spec>div:nth-child(5){display:none!important}
   html body #pricing .pk-vip .pk-spec::after,html body #pricing .pk-standard .pk-spec::after{display:none!important;content:none!important}
   html body #pricing .pk-standard{animation:none!important}
-  html body #pricing .pk-btn{grid-area:btn;display:flex!important;justify-content:center;align-items:center;gap:8px;width:100%;font-size:16px!important;padding:15px 16px!important;border-radius:14px!important;margin:16px 0 0!important;white-space:nowrap}
+  html body #pricing .pk-btn{grid-area:btn;display:flex!important;justify-content:center;align-items:center;gap:8px;width:86%;justify-self:center;font-size:16.5px!important;padding:16px 18px!important;border-radius:999px!important;margin:18px 0 2px!important;white-space:nowrap;box-shadow:0 14px 30px rgba(0,0,0,.35),0 2px 0 rgba(255,255,255,.35) inset!important;transform:translateY(-2px)}
+  html body #pricing .pk-vip .pk-btn{box-shadow:0 16px 34px rgba(0,20,70,.55),0 0 0 4px rgba(255,255,255,.12)!important}
   html body #pricing .pk-standard .pk-btn{background:#0A1E3F!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-color:#0A1E3F!important}
   html body #pricing .pk-standard .pk-btn *{color:#fff!important;-webkit-text-fill-color:#fff!important}
   html body #pricing .pk-btn span{display:inline!important}
@@ -123,20 +130,19 @@
   .tbody hr,.tbody ul{display:none!important}
 
   /* about julie */
-  .jbento{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;padding:0!important;margin:0!important;overflow:visible!important}
-  .jb-vid{display:none!important}
-  .jb-wide video{display:none!important}
-  .jb{min-width:0!important;width:auto!important;border-radius:18px!important}
-  .jb-photo img{height:300px!important;object-fit:cover;object-position:50% 20%;aspect-ratio:auto!important}
-  .jb-photo-body,.jb-wide-body{padding:18px!important}
-  .jb-photo-body h3,.jb-wide-body h3{font-size:22px!important;line-height:1.12!important}
-  .jb-photo-body p,.jb-wide-body p{font-size:15px!important;line-height:1.5!important}
-  html body #julie .jb-wide-body p{font-size:16.5px!important;line-height:1.5!important;margin:8px 0 0!important}
+  html body #julie .jbento{display:flex!important;flex-wrap:nowrap!important;gap:12px!important;overflow-x:auto!important;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 18px 14px!important;margin:0 -18px!important}
+  html body #julie .jbento::-webkit-scrollbar{display:none}
+  html body #julie .jb{flex:0 0 84%!important;min-width:0!important;width:auto!important;border-radius:18px!important;scroll-snap-align:center;grid-column:auto!important;grid-row:auto!important}
+  html body #julie .jb-vid{display:none!important}
+  html body #julie .jb-wide video{display:none!important}
+  html body #julie .jb-photo img{height:280px!important;object-fit:cover;object-position:50% 20%;aspect-ratio:auto!important}
+  html body #julie .jb-photo-body,html body #julie .jb-wide-body{padding:18px!important}
+  html body #julie .jb-photo-body h3,html body #julie .jb-wide-body h3{font-size:24px!important;line-height:1.12!important}
+  html body #julie .jb-photo-body p,html body #julie .jb-wide-body p,html body #julie .jb-photo-body .serif-i,html body #julie .jb-photo-body em{font-size:17px!important;line-height:1.45!important}
+  html body #julie .jb-wide-body p{margin:8px 0 0!important}
   html body #julie .jb-wide-body .jb-quote,html body #julie .jcta-note{display:none!important}
   html body #julie .jb-wide-body .anton{font-size:26px!important}
   html body #julie .jcta{margin-top:16px!important}
-  html body #julie .jb-photo-body p{font-size:15.5px!important}
-  .jb-wide-body blockquote,.jb-wide-body q,.jb-wide-body em{font-size:15px!important;line-height:1.45!important}
   .jb .btn,.jb-wide-body .btn{display:flex!important;justify-content:center;width:100%;white-space:normal!important;font-size:16px!important;padding:14px!important}
   .jstats{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;margin:18px 0 0!important}
   .jstats>div{padding:16px 10px!important;border-radius:14px!important}
