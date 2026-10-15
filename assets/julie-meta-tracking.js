@@ -47,11 +47,14 @@
  *   'test' ?meta_test=TESTnnnnn -> server copies only, flagged with test_event_code, no Pixel.
  *   'live' Pixel + Conversions API.
  *
- * Release: julie-meta-20260927-4
+ * 2026-10-15 (julie-meta-20261015-1): _fbp written first-party when the Pixel has not set it yet; first-party
+ * visitor id as external_id on anonymous events; remembered buyer (7 days, localStorage) on return-visit
+ * PageView/ViewContent; cleared on accepted Purchase. fbc handling, event ids, relay, modes: unchanged.
+ * Release: julie-meta-20261015-1
  */
 (function (root) {
   'use strict';
-  var RELEASE = 'julie-meta-20260927-4';
+  var RELEASE = 'julie-meta-20261015-1';
   var PIXEL_ID = '1440305917310328';
   var RELAY_URL = 'https://lla-ac-events.vercel.app/api/meta/capi';
   var SOURCE = 'julie-masterclass';
@@ -217,6 +220,41 @@
     } catch (e) { return ''; }
   }
   function fbp() { var v = ck('_fbp'); return FBP_RE.test(v) ? v : ''; }
+  /* 2026-10-15 coverage: the Pixel base code loads fbevents.js only after window 'load', so on this
+   * media-heavy page the deferred PageView/ViewContent server copies (1.5-2 s) went out before the
+   * Pixel had written _fbp (Events Manager: fbp on 66-68% of those events). If no valid _fbp cookie
+   * exists yet, write one here in Meta's documented format (fb.1.<ms>.<random>); fbevents.js reuses
+   * an existing valid _fbp, so browser and server copies carry the same value. Nothing else changes. */
+  function setCookie(n, v, maxAge) {
+    try { doc.cookie = n + '=' + v + '; domain=.' + COOKIE_DOMAIN + '; path=/; max-age=' + maxAge + '; SameSite=Lax; Secure'; } catch (e) {}
+  }
+  function ensureFbp() {
+    var v = fbp(); if (v) return v;
+    v = 'fb.1.' + Date.now() + '.' + String(Math.floor(Math.random() * 9e9) + 1e9);
+    setCookie('_fbp', v, 90 * 86400);
+    return fbp() || v;
+  }
+  /* First-party visitor id -> external_id on anonymous events (Events Manager: external_id on 12% of
+   * PageView, 0% of ViewContent). Order-bound events keep the CRM student id as before. */
+  function visitorId() {
+    var v = ls('julie_vid_v1') || ck('julie_vid');
+    if (!/^[a-z0-9]{12,40}$/.test(v || '')) { v = Date.now().toString(36) + Math.random().toString(36).slice(2, 12); }
+    lsSet('julie_vid_v1', v); setCookie('julie_vid', v, 365 * 86400);
+    return v;
+  }
+  /* Returning buyer: the checkout-validated contact (sessionStorage, this tab only) is mirrored to
+   * localStorage for 7 days so a return visit's anonymous PageView/ViewContent carries the same
+   * email/phone/name the commerce events already carry. Cleared when a Purchase is accepted. */
+  var KNOWN_MAX_AGE = 7 * 86400000;
+  function rememberContact(c) {
+    try { if (c && normEmail(c.email)) lsSet('julie_known_contact_v1', JSON.stringify({ email: normEmail(c.email), phone: String(c.phone || ''), fullName: String(c.fullName || ''), ts: Date.now() })); } catch (e) {}
+  }
+  function knownContact() {
+    var k = json(ls('julie_known_contact_v1'));
+    if (!k || !normEmail(k.email) || !fresh(k.ts, KNOWN_MAX_AGE)) return null;
+    return k;
+  }
+  function forgetContact() { try { root.localStorage.removeItem('julie_known_contact_v1'); } catch (e) {} }
 
   /* ---------- buyer identity (this event's buyer only; nothing persisted) ---------- */
   function normEmail(v) { var s = String(v || '').trim().toLowerCase(); return EMAIL_RE.test(s) ? s : ''; }
@@ -322,6 +360,7 @@
     var explicit = normEmail(emailArg);
     var formEmail = normEmail(val('emEmail'));
     var c = json(ss('lla_ac_contact'));                          /* checkout-validated contact (E.164 phone) */
+    if (c && normEmail(c.email)) rememberContact(c);             /* 2026-10-15: mirror for return visits (7 days) */
     if (b && b.email) {                                          /* CRM-link buyer of THIS order: a stale form never overrides */
       out.email = b.email; out.phone = b.phone; out.fn = b.fn; out.ln = b.ln; out.st = b.st; out.country = b.country;
       out.external_id = b.stid; out.source = 'order_bound';
@@ -348,6 +387,15 @@
       out.phone = b.phone; out.fn = b.fn; out.ln = b.ln; out.st = b.st; out.country = b.country;   /* CRM fields only */
       out.external_id = b.stid; out.source = 'order_bound';
     }                                                            /* a form email with an email-less CRM record is never mixed with CRM PII */
+    if (!b && !out.email) {                                      /* 2026-10-15: anonymous event on a return visit -> the remembered buyer (same rules as the session contact, never over a form or bound order) */
+      var k = knownContact();
+      if (k) {
+        out.email = k.email; out.source = 'returning';
+        var kp = digits(k.phone); if (kp.length >= 7) out.phone = kp;
+        nameInto(out, k.fullName);
+      }
+    }
+    if (!out.external_id) out.external_id = visitorId();          /* 2026-10-15: first-party visitor id when no CRM student id */
     return out;
   }
 
@@ -430,7 +478,7 @@
     if (flushed) return; flushed = true;
     var q = deferred; deferred = [];
     q.forEach(function (item) {
-      item.payload.fbp = fbp() || item.payload.fbp;
+      item.payload.fbp = ensureFbp() || item.payload.fbp;
       item.payload.fbc = fbc() || item.payload.fbc;
       post(item.payload, 1, item.done);
     });
@@ -475,7 +523,7 @@
       url: String(loc.href || ''), referrer: String((doc && doc.referrer) || ''),
       email: i.email, phone: i.phone, fn: i.fn, ln: i.ln, st: i.st, country: i.country, external_id: i.external_id,
       identity_source: i.source || 'anonymous',                 /* diagnostic only: anonymous | form | order_bound */
-      fbp: fbp(), fbc: fbc(), fbclid: urlClickId()
+      fbp: ensureFbp(), fbc: fbc(), fbclid: urlClickId()
     };
   }
   var purchaseConfirmed = json(ss('julie_meta_purchase_confirmed')) || {};
@@ -516,7 +564,7 @@
       var opts = { onResult: null };
       if (name === 'Purchase') {
         opts.onResult = function (row) {
-          if (row.status === 'accepted') { purchaseConfirmed[order] = { event_id: eventId, ts: Date.now() }; ssSet('julie_meta_purchase_confirmed', JSON.stringify(purchaseConfirmed)); }
+          if (row.status === 'accepted') { purchaseConfirmed[order] = { event_id: eventId, ts: Date.now() }; ssSet('julie_meta_purchase_confirmed', JSON.stringify(purchaseConfirmed)); forgetContact(); }
         };
       }
       return dispatch(name, pixelData, payload, opts);
@@ -542,10 +590,11 @@
     } catch (e) {}
   }
 
+  try { if (mode() !== 'off') { ensureFbp(); visitorId(); } } catch (e) {}   /* 2026-10-15: cookie/id exist before the Pixel base code and before the deferred flush */
   root.LLA_META = {
-    track: track, release: RELEASE, mode: mode, fbc: fbc, fbp: fbp, identity: identity,
+    track: track, release: RELEASE, mode: mode, fbc: fbc, fbp: fbp, identity: identity, visitorId: visitorId,
     captureCheckoutIdentity: captureCheckoutIdentity, boundOrder: boundOrder,
     receipts: receipts, plans: PLANS, pageEvents: pageEvents, pageViewId: pageViewId,
-    _flushDeferred: flushDeferred
+    _flushDeferred: flushDeferred, _ensureFbp: ensureFbp
   };
 })(typeof window !== 'undefined' ? window : globalThis);
