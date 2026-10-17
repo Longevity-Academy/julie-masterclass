@@ -71,28 +71,47 @@ html body #mobileMenu{top:0!important}
   .pf-price{font-size:64px}
 }
 
-/* ---------- Standard vs VIP: two different neon worlds. Standard burns champagne GOLD, VIP burns electric BLUE. Both dark, both lit, impossible to confuse. ---------- */
-:root{--gold:#F2C877;--gold2:#D9A741;--goldhi:#FFE3A6}
-.pf-plan.is-standard{background:linear-gradient(180deg,rgba(242,200,119,.16),rgba(24,18,7,.42));box-shadow:0 0 0 1px rgba(255,214,138,.6) inset,0 0 0 1px rgba(242,200,119,.28),0 0 60px -10px rgba(217,167,65,.55),0 30px 70px -30px rgba(217,167,65,.45)}
-.pf-plan.is-standard::before{background:radial-gradient(70% 50% at 0% 0%,rgba(255,227,166,.28),transparent 70%),radial-gradient(60% 40% at 100% 100%,rgba(217,167,65,.3),transparent 70%)}
-.pf-plan.is-standard .pf-tier{color:var(--goldhi);text-shadow:0 0 14px rgba(242,200,119,.6)}
-.pf-plan.is-standard .pf-price{color:#fff;text-shadow:0 0 30px rgba(242,200,119,.4)}
-.pf-plan.is-standard .pf-was{color:#A79469}
-.pf-plan.is-standard .pf-offer{color:#F3E9D4}
-.pf-plan.is-standard .pf-offer .v9-clock{color:var(--goldhi);text-shadow:0 0 12px rgba(242,200,119,.65)}
-.pf-plan.is-standard .pf-note{color:#C9BA98}
-.pf-plan.is-standard .pf-list li{color:#FBF4E4}
-.pf-plan.is-standard .pf-list li::before{background:var(--gold);box-shadow:0 0 10px rgba(242,200,119,.9)}
-.pf-plan.is-standard .v9-btn-ghost{color:#1D1504;background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,var(--goldhi) 100%);box-shadow:0 0 0 1px rgba(255,227,166,.55),0 10px 30px -6px rgba(217,167,65,.7),0 0 28px rgba(217,167,65,.45);text-shadow:none;font-weight:700}
-.pf-plan.is-standard .v9-btn-ghost:hover{transform:translateY(-1px);filter:brightness(1.05);background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,var(--goldhi) 100%)}
+/* ---------- Standard vs VIP: crisp WHITE card vs light BLUE card with neon lighting. Dark navy ink on both, maximum readability on the dark section. ---------- */
+:root{--navy:#0A1428;--navy2:#13233E;--royalblue:#0A6CFF}
+.pf-plan.is-standard{background:linear-gradient(176deg,#FFFFFF 0%,#FAFCFF 60%,#EFF4FB 100%);box-shadow:0 0 0 1px rgba(255,255,255,.9) inset,0 0 44px -6px rgba(255,255,255,.35),0 34px 70px -32px rgba(2,8,20,.85)}
+.pf-plan.is-standard::before{background:radial-gradient(70% 45% at 0% 0%,rgba(255,255,255,.9),transparent 70%)}
+.pf-plan.is-standard .pf-tier{color:#44557A;text-shadow:none}
+.pf-plan.is-standard .pf-price{color:var(--navy);text-shadow:none}
+.pf-plan.is-standard .pf-was{color:#8795AD}
+.pf-plan.is-standard .pf-offer{color:#2C3C5C}
+.pf-plan.is-standard .pf-offer .v9-clock{color:var(--royalblue);text-shadow:none}
+.pf-plan.is-standard .pf-note{color:#66748F}
+.pf-plan.is-standard .pf-name{color:var(--navy)}
+.pf-plan.is-standard .pf-list li{color:var(--navy2)}
+.pf-plan.is-standard .pf-list li::before{background:var(--royalblue);box-shadow:none}
+.pf-plan.is-standard .v9-btn-ghost{color:#fff;background:linear-gradient(180deg,#17294A,#0A1428);box-shadow:0 18px 36px -14px rgba(7,18,37,.8);text-shadow:none;font-weight:700}
+.pf-plan.is-standard .v9-btn-ghost:hover{transform:translateY(-1px);filter:brightness(1.12);background:linear-gradient(180deg,#17294A,#0A1428)}
 
-/* ---------- Live date, large, top-right corner of every card ---------- */
-.pf-date{position:absolute;top:26px;right:22px;display:grid;gap:5px;justify-items:end;text-align:right;font-family:'Inter',sans-serif;line-height:1.12;z-index:2}
-.pf-date b{font-weight:700;font-size:16px;letter-spacing:-.01em;white-space:nowrap;color:#EAF3FF}
-.pf-plan.is-standard .pf-date b{color:var(--goldhi);text-shadow:0 0 16px rgba(242,200,119,.55)}
-.pf-plan.is-vip .pf-date b{color:#DFF2FF;text-shadow:0 0 16px rgba(125,229,255,.55)}
-.pf-tier{max-width:52%}
-@media (min-width:900px){.pf-date{top:42px;right:40px;gap:6px}.pf-date b{font-size:21px}}
+/* VIP: gorgeous light blue, neon lit, dark ink */
+.pf-plan.is-vip{background:linear-gradient(176deg,#F0F8FF 0%,#D9ECFF 48%,#BBDCFF 100%);box-shadow:0 0 0 1.5px rgba(125,229,255,.95) inset,0 0 0 1px rgba(10,108,255,.35),0 0 70px -8px rgba(10,108,255,.8),0 34px 80px -28px rgba(10,108,255,.55);animation:none}
+.pf-plan.is-vip::before{background:radial-gradient(70% 50% at 100% 0%,rgba(125,229,255,.5),transparent 70%),radial-gradient(60% 40% at 0% 100%,rgba(10,108,255,.22),transparent 70%)}
+.pf-plan.is-vip .pf-tier{color:#0A55D6;text-shadow:none}
+.pf-plan.is-vip .pf-price{color:#07234A;text-shadow:none}
+.pf-plan.is-vip .pf-was{color:#6C84AC}
+.pf-plan.is-vip .pf-offer{color:#1B3258}
+.pf-plan.is-vip .pf-offer .v9-clock{color:#0A55D6;text-shadow:none}
+.pf-plan.is-vip .pf-note{color:#4E648C}
+.pf-plan.is-vip .pf-name{color:#07234A}
+.pf-plan.is-vip .pf-list li{color:#13233E}
+.pf-plan.is-vip .pf-list li:first-child{color:#13233E}
+.pf-plan.is-vip .pf-list li::before{background:#0A6CFF;box-shadow:0 0 10px rgba(10,108,255,.55)}
+.pf-plan.is-vip .pf-list li.pf-hi{color:#0A55D6;text-shadow:none}
+.pf-plan.is-vip .pf-list li.pf-sub{color:#3E5478}
+.pf-plan.is-vip .pf-list li.pf-sub::before{background:#6C84AC}
+
+/* ---------- Live date, LARGE, top-right corner of every card ---------- */
+.pf-date{position:absolute;top:24px;right:20px;display:grid;gap:5px;justify-items:end;text-align:right;font-family:'Inter',sans-serif;line-height:1.12;z-index:2}
+.pf-date b{font-weight:800;font-size:19px;letter-spacing:-.015em;white-space:nowrap}
+.pf-plan.is-standard .pf-date b{color:#0A1428;text-shadow:none}
+.pf-plan.is-vip .pf-date b{color:#0A55D6;text-shadow:none}
+.pf-tier{max-width:46%}
+@media (min-width:900px){.pf-date{top:40px;right:38px;gap:7px}.pf-date b{font-size:27px}}
+@media (max-width:374px){.pf-date b{font-size:17px}}
 
 /* ---------- Blueprint credit sub-items on the VIP card ---------- */
 .pf-list li.pf-sub{margin-left:20px;padding-left:22px;font-size:16.5px;color:#C7D4EA}

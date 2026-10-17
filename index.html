@@ -125,7 +125,10 @@ h2.anton{font-size:clamp(42px,4.2vw,74px)}
 .hero-year{text-shadow:0 2px 18px rgba(2,8,20,.6)}
 .hero-head{text-shadow:0 2px 26px rgba(2,8,20,.55)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px}
-.hero-dates-line{margin-top:24px;font-size:20px;font-style:italic;font-family:'Instrument Serif',Georgia,serif;color:#EAF1FB;text-shadow:0 2px 18px rgba(2,8,20,.6)}
+.hero-dates-line{margin-top:26px;font-size:24px;font-style:italic;font-family:'Instrument Serif',Georgia,serif;color:#EAF1FB;text-shadow:0 2px 18px rgba(2,8,20,.6)}
+.hero-dates-line .hd-1{color:#7DE5FF;font-weight:600;font-size:24px}
+.hero-dates-line .hd-2{color:#FFD98A;font-weight:600;font-size:24px}
+.hero-dates-line .hd-or{color:#9FB2D2;font-size:20px}
 
 /* v73: hero sound toggle */
 .hero-sound{position:absolute;right:44px;bottom:44px;z-index:3;display:flex;align-items:center;gap:9px;padding:12px 20px;border-radius:999px;border:1px solid rgba(138,210,255,.45);background:rgba(4,10,20,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#cfe6ff;font:600 14.5px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;cursor:pointer;transition:border-color .25s,box-shadow .25s,color .25s}
@@ -1016,7 +1019,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
         <a class="btn btn-blue" href="#packages">Enroll now &middot; From $49</a>
         <a class="btn btn-ghost openFilm" href="#" id="trailerLink">Watch with sound</a>
       </div>
-      <p class="hero-dates-line"><span style="white-space:nowrap">Tue, October 27 &middot; 7:00 PM ET</span> &nbsp;or&nbsp; <span style="white-space:nowrap">Sat, November 14 &middot; 1:00 PM ET</span></p>
+      <p class="hero-dates-line"><span class="hd-1" style="white-space:nowrap">Tue, October 27 &middot; 7:00 PM ET</span> <span class="hd-or">or</span> <span class="hd-2" style="white-space:nowrap">Sat, November 14 &middot; 1:00 PM ET</span></p>
     </div>
   </div>
   <button class="hero-sound" id="heroSound" type="button" aria-label="Play the hero film with sound"></button>
@@ -1266,10 +1269,9 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
         <p class="pf-name">The Longevity Masterclass</p>
         <ul class="pf-list">
           <li>Live on Zoom with Julie Gibson Clark</li>
-          <li>Julie's protocol and daily longevity habits</li>
-          <li>Which habits slow aging, which waste money</li>
+          <li>Her complete daily protocol: food, sleep and movement</li>
+          <li>The habits behind her measured pace of aging</li>
           <li>Her one-page schedule and supplement list</li>
-          <li>October 27 or November 14</li>
         </ul>
         <a class="v9-btn v9-btn-ghost" href="#apply" data-plan="standard">Reserve My Seat</a>
       </article>
@@ -1287,7 +1289,6 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
           <li class="pf-sub">18 live sessions across 18 weeks</li>
           <li class="pf-sub">Lingo continuous glucose monitor, shipped to you by lesson 5</li>
           <li class="pf-sub">Full access to the eTeacher learning platform and community</li>
-          <li>Four VIP follow-up emails</li>
         </ul>
         <a class="v9-btn v9-btn-neon" href="#apply" data-plan="vip">Reserve My VIP Seat</a>
       </article>
@@ -2002,7 +2003,7 @@ try{
 });
 </script>
 <!-- ===== LONGEVITY MASTERCLASS SELF-SERVICE CHECKOUT (3 screens, same as LLA ecommerce) ===== -->
-<link rel="stylesheet" href="assets/julie-v9-cards.css?v=4">
+<link rel="stylesheet" href="assets/julie-v9-cards.css?v=5">
 <script defer src="assets/julie-v9-cards.js?v=1"></script>
 <script src="assets/julie-payment-safety.js?v=20260924-1"></script>
 <script>
@@ -3711,7 +3712,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-production-v6.css?v=20260923-7">
 <link rel="stylesheet" href="assets/julie-v7.css?v=1">
 <link rel="stylesheet" href="assets/julie-v8.css?v=11">
-<link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261017-1">
+<link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261017-2">
 <script>/* phone: hide the floating Enroll pill while the pricing cards (which carry their own buttons) are on screen */(function(){try{if(!matchMedia("(max-width:760px)").matches||!("IntersectionObserver" in window))return;var t=document.getElementById("pricing");if(!t)return;new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle("pricing-in-view",e.isIntersecting);});},{threshold:0.05}).observe(t);}catch(e){}})();</script>
 
 <script src="assets/julie-international-checkout.js?v=20260924-1"></script>
