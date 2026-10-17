@@ -1,0 +1,89 @@
+/* v9 cards and strip layer. Scope: top strip, pricing cards, card buttons. Checkout, forms, tracking untouched. */
+
+:root{--neon:#0A6CFF;--neon2:#2E8BFF;--cyan:#7DE5FF;--ink:#071225}
+@keyframes v9Sweep{0%{transform:translateX(-160%) skewX(-18deg)}60%,100%{transform:translateX(260%) skewX(-18deg)}}
+@keyframes v9Glow{0%,100%{box-shadow:0 0 0 1px rgba(125,229,255,.45),0 10px 30px -6px rgba(10,108,255,.75),0 0 28px rgba(10,108,255,.45)}50%{box-shadow:0 0 0 1px rgba(125,229,255,.7),0 14px 36px -6px rgba(10,108,255,.9),0 0 46px rgba(46,139,255,.75)}}
+@keyframes v9Dot{0%,100%{box-shadow:0 0 8px var(--cyan),0 0 14px rgba(125,229,255,.7)}50%{box-shadow:0 0 14px var(--cyan),0 0 26px rgba(125,229,255,1)}}
+
+/* ---------- Card buttons ---------- */
+.v9-btn{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;min-height:64px;padding:0 26px;border-radius:16px;font-family:'Inter',sans-serif;font-weight:600;font-size:19px;letter-spacing:-.005em;text-decoration:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .22s cubic-bezier(.2,.7,.2,1),filter .22s ease;white-space:nowrap;line-height:1;overflow:hidden}
+.v9-btn:active{transform:translateY(1px) scale(.995)}
+.v9-btn-neon{color:#fff;background:linear-gradient(135deg,var(--neon) 0%,var(--neon2) 55%,#4FA6FF 100%);box-shadow:0 0 0 1px rgba(125,229,255,.45),0 10px 30px -6px rgba(10,108,255,.75),0 0 28px rgba(10,108,255,.45);animation:v9Glow 3s ease-in-out infinite;text-shadow:0 1px 0 rgba(0,30,80,.35)}
+.v9-btn-neon::after{content:"";position:absolute;top:-30%;bottom:-30%;left:0;width:38%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.42),rgba(255,255,255,0));animation:v9Sweep 3.4s ease-in-out infinite;pointer-events:none}
+.v9-btn-neon:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.v9-btn-ghost{color:#fff;background:rgba(255,255,255,.03);box-shadow:0 0 0 1.5px rgba(125,229,255,.55) inset,0 0 24px -8px rgba(10,108,255,.6)}
+.v9-btn-ghost:hover{background:rgba(125,229,255,.08)}
+.v9-btn .v9-btn-price{font-weight:500;opacity:.85}
+
+/* ---------- Top strip, lit, always on ---------- */
+:root{--v9-strip:46px}
+html body{padding-top:var(--v9-strip)}
+html body #v9strip{position:fixed;top:0;left:0;right:0;height:var(--v9-strip);z-index:210;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px;background:linear-gradient(90deg,#0A6CFF 0%,#2E8BFF 50%,#0A6CFF 100%);color:#fff;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;letter-spacing:.01em;text-decoration:none;white-space:nowrap;overflow:hidden;box-shadow:0 1px 0 rgba(125,229,255,.6) inset,0 6px 30px rgba(10,108,255,.6),0 0 40px rgba(46,139,255,.45);text-shadow:0 1px 0 rgba(0,30,80,.35)}
+html body #v9strip::after{content:"";position:absolute;top:-40%;bottom:-40%;left:0;width:26%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.35),rgba(255,255,255,0));animation:v9Sweep 3.2s ease-in-out infinite;pointer-events:none}
+html body #v9strip .v9-strip-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan),0 0 20px rgba(125,229,255,.8);animation:v9Dot 2.2s ease-in-out infinite;flex:none}
+html body #v9strip .v9-clock{font-variant-numeric:tabular-nums;color:#DFF6FF;letter-spacing:.05em;text-shadow:0 0 14px rgba(125,229,255,.9)}
+html body #v9strip .v9-strip-cta{display:none}
+html body #nav{top:var(--v9-strip)!important}
+html body #mobileMenu{top:0!important}
+@media (max-width:420px){html body #v9strip{font-size:15px;gap:8px}html body #v9strip .v9-strip-cta{display:none}}
+
+/* ---------- Pricing cards, two lit cards ---------- */
+.pf-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin:40px 0 0}
+.pf-plan{position:relative;min-width:0;display:flex;flex-direction:column;padding:30px 24px 26px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));box-shadow:0 0 0 1px rgba(125,229,255,.18) inset,0 30px 70px -40px rgba(0,0,0,.8);overflow:hidden}
+.pf-plan::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 40% at 0% 0%,rgba(10,108,255,.22),transparent 70%);pointer-events:none}
+.pf-plan.is-vip{background:linear-gradient(180deg,rgba(10,108,255,.22),rgba(7,18,37,.4));box-shadow:0 0 0 1px rgba(125,229,255,.55) inset,0 0 0 1px rgba(125,229,255,.25),0 0 60px -10px rgba(10,108,255,.7),0 30px 70px -30px rgba(10,108,255,.6)}
+.pf-plan.is-vip::before{background:radial-gradient(70% 50% at 100% 0%,rgba(125,229,255,.3),transparent 70%),radial-gradient(60% 40% at 0% 100%,rgba(10,108,255,.35),transparent 70%)}
+.pf-plan>*{position:relative}
+.pf-tier{font-family:'Inter',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#9FB2D2;margin:0}
+.pf-plan.is-vip .pf-tier{color:var(--cyan);text-shadow:0 0 14px rgba(125,229,255,.6)}
+.pf-pricerow{display:flex;align-items:baseline;gap:14px;margin:18px 0 0}
+.pf-price{font-family:'Inter',sans-serif;font-weight:600;font-size:76px;line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.045em;display:flex;align-items:flex-start;gap:1px}
+.pf-plan.is-vip .pf-price{text-shadow:0 0 30px rgba(125,229,255,.35)}
+.pf-price sup{font-size:30px;line-height:1;margin-top:9px;font-weight:500;letter-spacing:0}
+.pf-was{font-family:'Inter',sans-serif;font-size:24px;font-weight:400;color:#6B7D9E;text-decoration:line-through;text-decoration-thickness:1.5px;font-variant-numeric:tabular-nums}
+.pf-offer{font-family:'Inter',sans-serif;font-size:17px;color:#DCE6F5;margin:14px 0 0}
+.pf-offer .v9-clock{font-variant-numeric:tabular-nums;font-weight:600;color:var(--cyan);letter-spacing:.03em;text-shadow:0 0 12px rgba(125,229,255,.6)}
+.pf-note{font-family:'Inter',sans-serif;font-size:16px;color:#8FA3C4;margin:4px 0 0}
+.pf-name{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;font-size:36px;line-height:1.15;color:#fff;margin:24px 0 0}
+.pf-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:11px}
+.pf-list li{position:relative;padding-left:26px;font-family:'Inter',sans-serif;font-size:18px;line-height:1.4;color:#EAF1FF}
+.pf-list li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(125,229,255,.9)}
+.pf-plan.is-vip .pf-list li:first-child{color:#BFD0EA}
+.pf-list li.pf-hi{color:var(--cyan);font-weight:600;text-shadow:0 0 12px rgba(125,229,255,.45)}
+.pf-plan .v9-btn{margin-top:26px;width:100%}
+
+@media (min-width:900px){
+  .pf-plans{grid-template-columns:1fr 1fr;gap:26px;margin-top:60px}
+  .pf-plan{padding:42px 40px 36px;border-radius:32px}
+  .pf-price{font-size:96px}
+  .pf-price sup{font-size:36px;margin-top:12px}
+  .pf-was{font-size:28px}
+  .pf-name{font-size:40px}
+  .pf-list{gap:15px}
+  .pf-list li{font-size:19px}
+  .pf-plan .v9-btn{margin-top:auto;min-height:68px}
+  .pf-plan .pf-list{margin-bottom:32px}
+}
+@media (max-width:360px){
+  .pf-price{font-size:64px}
+}
+
+/* ---------- Standard vs VIP: silver glass vs neon blue ---------- */
+.pf-plan.is-standard{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 30px 70px -40px rgba(0,0,0,.8)}
+.pf-plan.is-standard::before{background:radial-gradient(60% 40% at 0% 0%,rgba(255,255,255,.09),transparent 70%)}
+.pf-plan.is-standard .pf-tier{color:#C9D6EA}
+.pf-plan.is-standard .pf-list li::before{background:#C9D6EA;box-shadow:0 0 8px rgba(201,214,234,.65)}
+
+/* ---------- Blueprint credit sub-items on the VIP card ---------- */
+.pf-list li.pf-sub{margin-left:20px;padding-left:22px;font-size:16.5px;color:#C7D4EA}
+.pf-list li.pf-sub::before{width:6px;height:6px;top:.62em;background:#9FB2D2;box-shadow:none}
+@media (min-width:900px){.pf-list li.pf-sub{font-size:17px}}
+
+/* ---------- Hero buttons always visible: the reveal animation can strand them at opacity 0 on phones ---------- */
+html body #top.hero .hero-actions{opacity:1!important;transform:none!important}
+
+/* ---------- Larger logo on phones ---------- */
+@media (max-width:900px){
+  html body .nav-logo img,html body .nav-logo .bm-v7-lockup{height:56px!important;max-height:56px!important;width:auto!important}
+  html body .nav-logo .bm-v7-lockup>.bm-v7-original{max-height:56px!important}
+}

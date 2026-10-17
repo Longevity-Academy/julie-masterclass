@@ -971,6 +971,8 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
+<a id="v9strip" href="#packages" aria-label="36% off, limited time"><span class="v9-strip-dot" aria-hidden="true"></span><span class="v9-strip-text">36% off ends in <span class="v9-clock">72:00:00</span></span><span class="v9-strip-cta">Reserve a seat</span></a>
+
 
 <nav class="nav" id="nav">
   <a class="nav-logo" href="#top" aria-label="Longevity Life Academy">
@@ -984,7 +986,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
     <a href="#faq">FAQ</a>
     <a href="support/">Support</a>
   </div>
-  <a class="btn btn-blue" href="#packages">Enroll now</a>
+  <a class="btn btn-blue" href="#apply">Enroll now</a>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -995,7 +997,7 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
   <a href="#press">Press</a>
   <a href="#faq">FAQ</a>
   <a href="support/">Support</a>
-  <a class="btn btn-ghost" href="#packages">Enroll now · From $49</a>
+  <a class="btn btn-ghost" href="#apply">Enroll now · From $49</a>
 </div>
 
 <!-- 1. HERO, dark navy -->
@@ -1259,35 +1261,38 @@ body:has(#mobileMenu.open) #et-bumpyard-widget{display:none!important}
         <span class="pk-datenote">Same masterclass, two dates. Pick yours at checkout.</span>
       </div>
     </header>
-    <div class="pk-grid reveal" id="packages" style="scroll-margin-top:96px">
-      <article class="pk-card pk-standard">
-        <div class="pk-top"><span class="pk-tier">Standard</span><span class="pk-len">60 min live</span></div>
-        <div class="pk-price"><sup>$</sup>49</div>
-        <h3 class="pk-title">The Longevity <em>Masterclass</em></h3>
-        <dl class="pk-spec">
-          <div><dt>Format</dt><dd>Live on Zoom with Julie Gibson Clark</dd></div>
-          <div><dt>Length</dt><dd>60 minutes</dd></div>
-          <div><dt>You learn</dt><dd><ul class="pk-ul">
-            <li>The daily protocol of the 2nd slowest-aging person on earth</li>
-            <li>Which longevity habits actually slow aging, and which waste your money</li>
-            <li>Her one-page daily schedule and supplement list, yours to keep</li>
-          </ul></dd></div>
-          <div><dt>Dates</dt><dd>October 27 or November 14, your choice</dd></div>
-        </dl>
-        <a class="offer-button pk-btn" href="#apply" data-plan="standard"><span>Reserve My Seat</span><span class="pk-arr" aria-hidden="true">&rarr;</span></a>
+    <div class="pf-plans" id="packages" style="scroll-margin-top:96px">
+      <article class="pf-plan is-standard">
+        <p class="pf-tier">Standard</p>
+        <div class="pf-pricerow"><div class="pf-price"><sup>$</sup>49</div><span class="pf-was">$77</span></div>
+        <p class="pf-offer">36% off, ends in <span class="v9-clock">72:00:00</span></p>
+        <p class="pf-note">14-day full refund.</p>
+        <p class="pf-name">The Longevity Masterclass</p>
+        <ul class="pf-list">
+          <li>Live on Zoom with Julie Gibson Clark</li>
+          <li>Julie's protocol and daily longevity habits</li>
+          <li>Which habits slow aging, which waste money</li>
+          <li>Her one-page schedule and supplement list</li>
+          <li>October 27 or November 14</li>
+        </ul>
+        <a class="v9-btn v9-btn-ghost" href="#apply" data-plan="standard">Reserve My Seat</a>
       </article>
-      <article class="pk-card pk-vip">
-        <div class="pk-top"><span class="pk-tier">VIP</span><span class="pk-len">90 min with Julie</span></div>
-        <div class="pk-price"><sup>$</sup>79</div>
-        <h3 class="pk-title">The Masterclass + <em>private Q&amp;A</em></h3>
-        <dl class="pk-spec">
-          <div><dt>Format</dt><dd>Live on Zoom, then a private 30-minute Q&amp;A with Julie</dd></div>
-          <div><dt>Length</dt><dd>90 minutes with Julie in total</dd></div>
-          <div><dt>Includes</dt><dd>Everything in Standard</dd></div>
-          <div><dt>Credit</dt><dd>$249 toward The Longevity Blueprint, valid until December 31, 2026</dd></div>
-          <div><dt>After class</dt><dd>Four VIP follow-up emails from Longevity Life Academy</dd></div>
-        </dl>
-        <a class="offer-button pk-btn" href="#apply" data-plan="vip"><span>Reserve My VIP Seat</span><span class="pk-arr" aria-hidden="true">&rarr;</span></a>
+      <article class="pf-plan is-vip">
+        <p class="pf-tier">VIP, recommended</p>
+        <div class="pf-pricerow"><div class="pf-price"><sup>$</sup>79</div><span class="pf-was">$124</span></div>
+        <p class="pf-offer">36% off, ends in <span class="v9-clock">72:00:00</span></p>
+        <p class="pf-note">14-day full refund.</p>
+        <p class="pf-name">The Masterclass + private Q&amp;A</p>
+        <ul class="pf-list">
+          <li>Everything in Standard</li>
+          <li>Private 30-minute Q&amp;A with Julie after class</li>
+          <li class="pf-hi">$249 credit toward The Longevity Blueprint course:</li>
+          <li class="pf-sub">18 live sessions across 18 weeks</li>
+          <li class="pf-sub">Lingo continuous glucose monitor, shipped to you by lesson 5</li>
+          <li class="pf-sub">Full access to the eTeacher learning platform and community</li>
+          <li>Four VIP follow-up emails</li>
+        </ul>
+        <a class="v9-btn v9-btn-neon" href="#apply" data-plan="vip">Reserve My VIP Seat</a>
       </article>
     </div>
     <p class="pk-foot reveal">14-day full refund on both seats. Secure checkout.</p>
@@ -2001,6 +2006,8 @@ try{
 });
 </script>
 <!-- ===== LONGEVITY MASTERCLASS SELF-SERVICE CHECKOUT (3 screens, same as LLA ecommerce) ===== -->
+<link rel="stylesheet" href="assets/julie-v9-cards.css?v=2">
+<script defer src="assets/julie-v9-cards.js?v=1"></script>
 <script src="assets/julie-payment-safety.js?v=20260924-1"></script>
 <script>
 /* ===== 3-TIER PLAN RESOLVER =====
@@ -2681,11 +2688,12 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 </script>
 <script>
 /* perf-v1: payment SDKs no longer compete with the hero. PayPal SDK is injected on window load or when the checkout opens (whichever comes first); the checkout already waits for it. */
-window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card";t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
+window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card,sepa";t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
 if(document.readyState==='complete')window.JULIE_LOAD_PAYPAL();else window.addEventListener('load',window.JULIE_LOAD_PAYPAL);
 window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 /* perf-v2 (2026-10-14): Airwallex is initialised once, right after its SDK loads, so step 3 only has to mount the card form. Same env rule as the checkout (staging CRM -> demo, production -> prod). */
-window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'});window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){return Promise.reject(e);}};
+window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=Promise.resolve(window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'}));window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){window.__awxInit=null;return Promise.reject(e);}};
+window.JULIE_AWX_RELOAD=function(){return new Promise(function(res){var s=document.createElement('script');s.src='https://checkout.airwallex.com/assets/elements.bundle.min.js?r='+Date.now();s.onload=s.onerror=function(){res();};document.head.appendChild(s);});};
 window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.init)window.JULIE_AWX_INIT();}catch(e){}});
 </script>
 <script defer src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0" onload="window.__awxReady&&window.__awxReady()" onerror="window.__awxReady&&window.__awxReady()"></script>
@@ -3352,6 +3360,7 @@ var LLA_AC = (function(){
     t.addEventListener('click', function(){ setPayTab(t.getAttribute('data-tab')); });
     t.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); setPayTab(t.getAttribute('data-tab')); } });
   });
+  window.JULIE_SET_PAY_TAB=setPayTab;
   window.JULIE_RENDER_PAYPAL=function(){
     if(payPalRendered) return;
     var st=document.getElementById('paypal-status');
@@ -3490,9 +3499,11 @@ var LLA_AC = (function(){
       var amtEl = document.getElementById('ckAmt');
       if (amtEl) amtEl.textContent = '$' + amount.toFixed(2);
 
+      var v9t0=Date.now();
       if(!window.Airwallex && window.JULIE_AWX_WAIT){ await Promise.race([window.JULIE_AWX_WAIT, new Promise(function(r){setTimeout(r,15000);})]); }
+      if(!(window.Airwallex&&window.Airwallex.init)&&window.JULIE_AWX_RELOAD){ setStatus('Loading secure card entry\u2026 one moment.'); await Promise.race([window.JULIE_AWX_RELOAD(), new Promise(function(r){setTimeout(r,15000);})]); }
       var awx = window.Airwallex;
-      if (!awx || !awx.init) { console.error('payment SDK not loaded', typeof window.Airwallex); throw new Error('PAYMENT_FORM_UNAVAILABLE'); }
+      if (!awx || !awx.init) { console.error('payment SDK not loaded', typeof window.Airwallex, (Date.now()-v9t0)+'ms'); throw new Error((Date.now()-v9t0>14000)?'PAYMENT_SDK_TIMEOUT':'PAYMENT_SDK_BLOCKED'); }
 
       /* Airwallex env must match the account the intent belongs to:
          staging CRM -> "eTeacher Demo PA" (demo), production CRM -> "ETEACHER EU LIMITED" (prod). */
@@ -3502,6 +3513,7 @@ var LLA_AC = (function(){
       if(generation !== checkoutGeneration) return;
 
       var mountEl = document.getElementById('awx-dropin');
+      mountEl.style.display = '';
       mountEl.innerHTML = '';
 
       /* Same gateway-owned wallet configuration as Blueprint. Only the SDK
@@ -3595,7 +3607,29 @@ var LLA_AC = (function(){
       if(generation !== checkoutGeneration) return;
       ckInited=false;
       document.getElementById('awx-dropin').innerHTML='';
-      setStatus('We could not open the payment form for your package, so nothing was charged. Please try again in a moment or contact advisor@longevitylifeacademy.com. Reference: ' + String(e && e.message || 'PAYMENT_UNAVAILABLE').replace(/[^A-Z0-9_]/gi,'_').slice(0,40), '#c33');
+      var v9ref=String(e && e.message || 'PAYMENT_UNAVAILABLE').replace(/[^A-Z0-9_]/gi,'_').slice(0,40);
+      if(v9ref.indexOf('PAYMENT_SDK_')===0){
+        /* Card SDK is blocked or stalled on this device. Hide the empty card box,
+         * try to hand the buyer to PayPal, and only promise PayPal once its button
+         * is really available. The box is shown again on any retry. */
+        var v9dp=document.getElementById('awx-dropin'); if(v9dp){ v9dp.style.display='none'; }
+        setStatus('We could not open the card form on this device, so nothing was charged. One moment, opening PayPal instead\u2026 Reference: ' + v9ref, '#c33');
+        try{ if(window.JULIE_LOAD_PAYPAL) window.JULIE_LOAD_PAYPAL(); }catch(_e){}
+        var v9w=0;
+        var v9iv=setInterval(function(){
+          v9w+=500;
+          if(window.paypal && window.paypal.Buttons){
+            clearInterval(v9iv);
+            try{ if(window.JULIE_SET_PAY_TAB) window.JULIE_SET_PAY_TAB('paypal'); }catch(_e){}
+            setStatus('The card form could not open on this device, so nothing was charged. You can pay with PayPal instead: the PayPal button is ready in the payment box above. Or contact advisor@longevitylifeacademy.com. Reference: ' + v9ref, '#c33');
+          } else if(v9w>=8000){
+            clearInterval(v9iv);
+            setStatus('We could not open the payment options on this device, so nothing was charged. Please try again in another browser or on another network, or email advisor@longevitylifeacademy.com and we will complete your enrollment directly. Reference: ' + v9ref, '#c33');
+          }
+        },500);
+      } else {
+        setStatus('We could not open the payment form for your package, so nothing was charged. Please try again in a moment or contact advisor@longevitylifeacademy.com. Reference: ' + v9ref, '#c33');
+      }
       console.error(e);
     }
   }
