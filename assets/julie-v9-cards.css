@@ -15,17 +15,20 @@
 .v9-btn-ghost:hover{background:rgba(125,229,255,.08)}
 .v9-btn .v9-btn-price{font-weight:500;opacity:.85}
 
-/* ---------- Top strip, lit, always on ---------- */
-:root{--v9-strip:46px}
+/* ---------- Top strip: executive promo bar, dark glass, big clock ---------- */
+:root{--v9-strip:58px}
 html body{padding-top:var(--v9-strip)}
-html body #v9strip{position:fixed;top:0;left:0;right:0;height:var(--v9-strip);z-index:210;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px;background:linear-gradient(90deg,#0A6CFF 0%,#2E8BFF 50%,#0A6CFF 100%);color:#fff;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;letter-spacing:.01em;text-decoration:none;white-space:nowrap;overflow:hidden;box-shadow:0 1px 0 rgba(125,229,255,.6) inset,0 6px 30px rgba(10,108,255,.6),0 0 40px rgba(46,139,255,.45);text-shadow:0 1px 0 rgba(0,30,80,.35)}
-html body #v9strip::after{content:"";position:absolute;top:-40%;bottom:-40%;left:0;width:26%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.35),rgba(255,255,255,0));animation:v9Sweep 3.2s ease-in-out infinite;pointer-events:none}
-html body #v9strip .v9-strip-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan),0 0 20px rgba(125,229,255,.8);animation:v9Dot 2.2s ease-in-out infinite;flex:none}
-html body #v9strip .v9-clock{font-variant-numeric:tabular-nums;color:#DFF6FF;letter-spacing:.05em;text-shadow:0 0 14px rgba(125,229,255,.9)}
-html body #v9strip .v9-strip-cta{display:none}
+html body #v9strip{position:fixed;top:0;left:0;right:0;height:var(--v9-strip);z-index:210;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;background:linear-gradient(90deg,#060D1D 0%,#0B1E42 50%,#060D1D 100%);color:#fff;font-family:'Inter',sans-serif;text-decoration:none;white-space:nowrap;overflow:hidden;border-bottom:1px solid rgba(125,229,255,.35);box-shadow:0 1px 0 rgba(125,229,255,.25) inset,0 14px 44px -8px rgba(10,108,255,.5)}
+html body #v9strip::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 160% at 50% 0%,rgba(10,108,255,.28),transparent 70%);pointer-events:none}
+html body #v9strip::after{content:"";position:absolute;top:-40%;bottom:-40%;left:0;width:22%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.14),rgba(255,255,255,0));animation:v9Sweep 3.6s ease-in-out infinite;pointer-events:none}
+html body #v9strip .v9s-off{position:relative;font-weight:800;font-size:17px;letter-spacing:.07em;color:#fff;padding:8px 14px;border-radius:11px;background:linear-gradient(135deg,#0A6CFF,#2E8BFF);box-shadow:0 0 0 1px rgba(125,229,255,.5),0 0 22px rgba(10,108,255,.6);flex:none}
+html body #v9strip .v9s-label{position:relative;font-weight:500;font-size:17px;color:#C9DAF5;letter-spacing:.01em}
+html body #v9strip .v9-clock{position:relative;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;color:#7DE5FF;letter-spacing:.045em;text-shadow:0 0 18px rgba(125,229,255,.85)}
+html body #v9strip .v9-strip-cta{position:relative;display:inline-flex;align-items:center;height:38px;padding:0 20px;border-radius:999px;background:#fff;color:#071225;font-weight:700;font-size:15.5px;margin-left:8px;box-shadow:0 6px 22px -6px rgba(255,255,255,.45)}
 html body #nav{top:var(--v9-strip)!important}
 html body #mobileMenu{top:0!important}
-@media (max-width:420px){html body #v9strip{font-size:15px;gap:8px}html body #v9strip .v9-strip-cta{display:none}}
+@media (max-width:760px){html body #v9strip .v9-strip-cta{display:none}}
+@media (max-width:560px){:root{--v9-strip:54px}html body #v9strip{gap:11px}html body #v9strip .v9s-label{display:none}html body #v9strip .v9s-off{font-size:16px;padding:7px 12px}html body #v9strip .v9-clock{font-size:24px}}
 
 /* ---------- Pricing cards, two lit cards ---------- */
 .pf-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin:40px 0 0}
@@ -68,11 +71,28 @@ html body #mobileMenu{top:0!important}
   .pf-price{font-size:64px}
 }
 
-/* ---------- Standard vs VIP: silver glass vs neon blue ---------- */
-.pf-plan.is-standard{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 30px 70px -40px rgba(0,0,0,.8)}
-.pf-plan.is-standard::before{background:radial-gradient(60% 40% at 0% 0%,rgba(255,255,255,.09),transparent 70%)}
-.pf-plan.is-standard .pf-tier{color:#C9D6EA}
-.pf-plan.is-standard .pf-list li::before{background:#C9D6EA;box-shadow:0 0 8px rgba(201,214,234,.65)}
+/* ---------- Standard vs VIP: two different neon worlds. Standard burns champagne GOLD, VIP burns electric BLUE. Both dark, both lit, impossible to confuse. ---------- */
+:root{--gold:#F2C877;--gold2:#D9A741;--goldhi:#FFE3A6}
+.pf-plan.is-standard{background:linear-gradient(180deg,rgba(242,200,119,.16),rgba(24,18,7,.42));box-shadow:0 0 0 1px rgba(255,214,138,.6) inset,0 0 0 1px rgba(242,200,119,.28),0 0 60px -10px rgba(217,167,65,.55),0 30px 70px -30px rgba(217,167,65,.45)}
+.pf-plan.is-standard::before{background:radial-gradient(70% 50% at 0% 0%,rgba(255,227,166,.28),transparent 70%),radial-gradient(60% 40% at 100% 100%,rgba(217,167,65,.3),transparent 70%)}
+.pf-plan.is-standard .pf-tier{color:var(--goldhi);text-shadow:0 0 14px rgba(242,200,119,.6)}
+.pf-plan.is-standard .pf-price{color:#fff;text-shadow:0 0 30px rgba(242,200,119,.4)}
+.pf-plan.is-standard .pf-was{color:#A79469}
+.pf-plan.is-standard .pf-offer{color:#F3E9D4}
+.pf-plan.is-standard .pf-offer .v9-clock{color:var(--goldhi);text-shadow:0 0 12px rgba(242,200,119,.65)}
+.pf-plan.is-standard .pf-note{color:#C9BA98}
+.pf-plan.is-standard .pf-list li{color:#FBF4E4}
+.pf-plan.is-standard .pf-list li::before{background:var(--gold);box-shadow:0 0 10px rgba(242,200,119,.9)}
+.pf-plan.is-standard .v9-btn-ghost{color:#1D1504;background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,var(--goldhi) 100%);box-shadow:0 0 0 1px rgba(255,227,166,.55),0 10px 30px -6px rgba(217,167,65,.7),0 0 28px rgba(217,167,65,.45);text-shadow:none;font-weight:700}
+.pf-plan.is-standard .v9-btn-ghost:hover{transform:translateY(-1px);filter:brightness(1.05);background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 55%,var(--goldhi) 100%)}
+
+/* ---------- Live date, large, top-right corner of every card ---------- */
+.pf-date{position:absolute;top:26px;right:22px;display:grid;gap:5px;justify-items:end;text-align:right;font-family:'Inter',sans-serif;line-height:1.12;z-index:2}
+.pf-date b{font-weight:700;font-size:16px;letter-spacing:-.01em;white-space:nowrap;color:#EAF3FF}
+.pf-plan.is-standard .pf-date b{color:var(--goldhi);text-shadow:0 0 16px rgba(242,200,119,.55)}
+.pf-plan.is-vip .pf-date b{color:#DFF2FF;text-shadow:0 0 16px rgba(125,229,255,.55)}
+.pf-tier{max-width:52%}
+@media (min-width:900px){.pf-date{top:42px;right:40px;gap:6px}.pf-date b{font-size:21px}}
 
 /* ---------- Blueprint credit sub-items on the VIP card ---------- */
 .pf-list li.pf-sub{margin-left:20px;padding-left:22px;font-size:16.5px;color:#C7D4EA}
