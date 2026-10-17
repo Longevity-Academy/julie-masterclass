@@ -6,16 +6,16 @@
   body>nav#nav{order:0}
   body>#mobileMenu{order:1}
   body>header.hero{order:2}
-  body>#pricing{order:3}
-  body>#reveal{order:4}
-  body>#julie{order:5}
+  body>#reveal{order:3}
+  body>#julie{order:4}
+  body>#pricing{order:5}
   body>#dv-live-wrap{order:6}
   body>#how{order:7}
   body>.mq-band{order:8}
   body>#faq{order:9}
   body>.band{order:10}
   body>footer{order:11}
-  body>#reveal{order:4}
+  body>#julie{order:4}
   body>#press{order:12}
   body>#school{order:13}
   body>.grain{display:none!important}
