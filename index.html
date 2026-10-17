@@ -2688,15 +2688,22 @@ window.LLA_ECOMM_CONFIG.crmCourse = { mainAbroadCourseId: 283, abroadCourseId: 1
 </script>
 <script>
 /* perf-v1: payment SDKs no longer compete with the hero. PayPal SDK is injected on window load or when the checkout opens (whichever comes first); the checkout already waits for it. */
-window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding=credit,card,sepa";t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
+window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var f=window.JULIE_PAYPAL_ALLOW_CARD?'credit,sepa':'credit,card,sepa';var t=document.createElement('script');t.async=true;t.src="https://www.paypal.com/sdk/js?client-id=AXL1tqJTVoHQ2RltFz9SUVu8EM5ZTKDLCviVev-lOPQEEX1ScBii9d5MSo3_dxGjemVjTQJr7hpztwkQ&currency=USD&disable-funding="+f;t.onload=function(){window.JULIE_PAYPAL_SDK_READY=true;if(window.JULIE_RENDER_PAYPAL_PENDING&&window.JULIE_RENDER_PAYPAL)window.JULIE_RENDER_PAYPAL();};document.head.appendChild(t);};
+/* Blocked-card rescue: reload the PayPal SDK with the debit/credit card button enabled, so buyers whose device blocks the card provider can still pay by card through PayPal's own form. */
+window.JULIE_PAYPAL_RELOAD_WITH_CARD=function(){if(window.JULIE_PAYPAL_ALLOW_CARD&&window.paypal&&window.paypal.Buttons)return;window.JULIE_PAYPAL_ALLOW_CARD=true;try{window.paypal=undefined;}catch(_e){}window.__jpp=0;window.JULIE_PAYPAL_SDK_READY=false;window.JULIE_LOAD_PAYPAL();};
 if(document.readyState==='complete')window.JULIE_LOAD_PAYPAL();else window.addEventListener('load',window.JULIE_LOAD_PAYPAL);
+/* QA-only drill switch: ?qablock=1 simulates a device that blocks the card provider, so the PayPal+card backup can be tested on demand. Has no effect without the explicit URL parameter. */
+window.JULIE_QA_BLOCK=false;try{window.JULIE_QA_BLOCK=new URLSearchParams(location.search).get('qablock')==='1';}catch(e){}
 window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 /* perf-v2 (2026-10-14): Airwallex is initialised once, right after its SDK loads, so step 3 only has to mount the card form. Same env rule as the checkout (staging CRM -> demo, production -> prod). */
 window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=Promise.resolve(window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'}));window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){window.__awxInit=null;return Promise.reject(e);}};
-window.JULIE_AWX_RELOAD=function(){return new Promise(function(res){var s=document.createElement('script');s.src='https://checkout.airwallex.com/assets/elements.bundle.min.js?r='+Date.now();s.onload=s.onerror=function(){res();};document.head.appendChild(s);});};
+window.JULIE_AWX_RELOAD=function(){return new Promise(function(res){if(window.JULIE_QA_BLOCK){res();return;}var s=document.createElement('script');s.src='https://checkout.airwallex.com/assets/elements.bundle.min.js?r='+Date.now();s.onload=s.onerror=function(){res();};document.head.appendChild(s);});};
 window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.init)window.JULIE_AWX_INIT();}catch(e){}});
 </script>
-<script defer src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0" onload="window.__awxReady&&window.__awxReady()" onerror="window.__awxReady&&window.__awxReady()"></script>
+<script>
+(function(){if(window.JULIE_QA_BLOCK){console.warn('QA drill: card SDK intentionally not loaded (qablock=1)');if(window.__awxReady)window.__awxReady();return;}
+var s=document.createElement('script');s.src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0";s.onload=function(){window.__awxReady&&window.__awxReady();};s.onerror=function(){window.__awxReady&&window.__awxReady();};document.head.appendChild(s);})();
+</script>
 
 <style>
 #enrollModal{position:fixed;inset:0;z-index:9999;display:none;font-family:'Inter',sans-serif}
@@ -2962,7 +2969,7 @@ window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.
         <div class="ck-pay-body">
           <div class="ck-f-lbl" id="ckPayLbl">Secure payment</div>
           <div id="ckCardBox">
-          <p style="font-size:13px;color:#5A6472">Available cards and wallets appear below after your order amount is verified.</p>
+          <p id="ckCardHint" style="font-size:13px;color:#5A6472">Available cards and wallets appear below after your order amount is verified.</p>
           <!-- Airwallex Drop-In mount (real card entry, wired to eTeacher's Airwallex account) -->
           <div id="awx-dropin" style="min-height:220px;border:1px solid #D5DCE6;border-radius:7px;padding:12px;margin-bottom:14px;background:#fff"></div>
           <div id="awx-status" style="font-size:13px;color:#5A6472;margin:6px 0 8px"></div>
@@ -3515,6 +3522,7 @@ var LLA_AC = (function(){
       var mountEl = document.getElementById('awx-dropin');
       mountEl.style.display = '';
       mountEl.innerHTML = '';
+      var v9hint0 = document.getElementById('ckCardHint'); if(v9hint0){ v9hint0.style.display=''; }
 
       /* Same gateway-owned wallet configuration as Blueprint. Only the SDK
        * renders eligible wallet buttons; no decorative site-level buttons. */
@@ -3613,18 +3621,26 @@ var LLA_AC = (function(){
          * try to hand the buyer to PayPal, and only promise PayPal once its button
          * is really available. The box is shown again on any retry. */
         var v9dp=document.getElementById('awx-dropin'); if(v9dp){ v9dp.style.display='none'; }
-        setStatus('We could not open the card form on this device, so nothing was charged. One moment, opening PayPal instead\u2026 Reference: ' + v9ref, '#c33');
-        try{ if(window.JULIE_LOAD_PAYPAL) window.JULIE_LOAD_PAYPAL(); }catch(_e){}
+        var v9hint=document.getElementById('ckCardHint'); if(v9hint){ v9hint.style.display='none'; }
+        console.error('card SDK fallback', v9ref);
+        setStatus('One moment, loading secure payment options for this device\u2026 Nothing has been charged.', '#555');
+        try{
+          if(window.JULIE_PAYPAL_RELOAD_WITH_CARD){
+            /* Re-render PayPal fresh so the debit/credit card button is included. */
+            if(!window.JULIE_PAYPAL_ALLOW_CARD){ payPalRendered=false; var v9pc=document.querySelector('#paypal-button-container'); if(v9pc) v9pc.innerHTML=''; }
+            window.JULIE_PAYPAL_RELOAD_WITH_CARD();
+          } else if(window.JULIE_LOAD_PAYPAL) window.JULIE_LOAD_PAYPAL();
+        }catch(_e){}
         var v9w=0;
         var v9iv=setInterval(function(){
           v9w+=500;
           if(window.paypal && window.paypal.Buttons){
             clearInterval(v9iv);
             try{ if(window.JULIE_SET_PAY_TAB) window.JULIE_SET_PAY_TAB('paypal'); }catch(_e){}
-            setStatus('The card form could not open on this device, so nothing was charged. You can pay with PayPal instead: the PayPal button is ready in the payment box above. Or contact advisor@longevitylifeacademy.com. Reference: ' + v9ref, '#c33');
+            setStatus('The card form can\u2019t load on this device, so we switched you to our secure backup. Pay above with PayPal, or tap \u201cDebit or Credit Card\u201d to pay by card. Nothing has been charged yet.', '#555');
           } else if(v9w>=8000){
             clearInterval(v9iv);
-            setStatus('We could not open the payment options on this device, so nothing was charged. Please try again in another browser or on another network, or email advisor@longevitylifeacademy.com and we will complete your enrollment directly. Reference: ' + v9ref, '#c33');
+            setStatus('Payment options could not load on this device and nothing was charged. Please try another browser or network, or email advisor@longevitylifeacademy.com and we will complete your enrollment directly.', '#c33');
           }
         },500);
       } else {
