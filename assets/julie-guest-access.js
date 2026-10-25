@@ -4,7 +4,7 @@
  * buyer skips the card form. No Meta events, no charge, no change to pricing. */
 (function () {
   'use strict';
-  var HASHES = ['9935ea9b347e9b14fd124cee71053a721f3fffcac6062dd16d82ca8a65f8d780'];
+  var HASHES = ['e74dc39609ebb5ece7a9f1af4bfc3cfbec7627f0c9588958b099986292073374'];
   var EXPIRES_AT = Date.UTC(2026, 9, 28, 21, 59, 59); /* 2026-10-28 23:59:59 Israel */
   var active = '';
   function $(id) { return document.getElementById(id); }
