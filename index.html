@@ -3018,7 +3018,7 @@ window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.
   var ck=document.getElementById('ckScreen');
   /* 2026-09-27: Lenis smooth scroll hijacks the wheel on desktop (Mac trackpad/mouse), so the fixed dialog could not scroll on step 2. Pause Lenis while any checkout screen is open; data-lenis-prevent on the dialogs as a second guard. */
   function lenisPause(on){try{if(window.__lenis){if(on)window.__lenis.stop();else window.__lenis.start();}}catch(e){}}
-  function open(){m.classList.add('open');document.body.style.overflow='hidden';lenisPause(true);}
+  function open(){['emErr','emErr2'].forEach(function(id){var e=document.getElementById(id);if(e){e.textContent='';e.classList.remove('on');}});m.classList.add('open');document.body.style.overflow='hidden';lenisPause(true);}
   function close(){m.classList.remove('open');if(ck.style.display!=='block'){document.body.style.overflow='';lenisPause(false);}}
   function step(n){
     document.getElementById('emStep1').classList.toggle('on',n===1);
@@ -3665,7 +3665,7 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1855">
 <script>/* phone: hide the floating Enroll pill while the pricing cards (which carry their own buttons) are on screen */(function(){try{if(!matchMedia("(max-width:760px)").matches||!("IntersectionObserver" in window))return;var t=document.getElementById("pricing");if(!t)return;new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle("pricing-in-view",e.isIntersecting);});},{threshold:0.05}).observe(t);}catch(e){}})();</script>
 
-<script src="assets/julie-international-checkout.js?v=20260924-1"></script>
+<script src="assets/julie-international-checkout.js?v=20261104-1"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
 <script src="assets/julie-brand-motion-v7.js?v=20260923-7"></script>
 <script>
