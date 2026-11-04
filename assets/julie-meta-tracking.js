@@ -55,7 +55,7 @@
  */
 (function (root) {
   'use strict';
-  var RELEASE = 'julie-meta-20261015-1';
+  var RELEASE = 'julie-meta-20261104-2';
   var PIXEL_ID = '1440305917310328';
   var RELAY_URL = 'https://lla-ac-events.vercel.app/api/meta/capi';
   var SOURCE = 'julie-masterclass';
@@ -95,9 +95,15 @@
     return String(loc.protocol || '') === 'https:' && String(loc.hostname || '') === PROD_HOST &&
       PROD_PATHS.indexOf(String(loc.pathname || '')) >= 0;
   }
+  /* 2026-11-04: tester devices. A team / test email typed into any email field flags the device
+   * (localStorage lla_tester=1, shared with the .com funnel on the same origin) -> mode 'off' for good. */
+  var TESTER_RE = /@(example\.(com|org|net)|test\.com|mailinator\.com|eteacher[a-z0-9-]*\.[a-z.]+|gita-?agency\.[a-z.]+)$/;
+  function isTesterEmail(e) { e = String(e || '').trim().toLowerCase(); return TESTER_RE.test(e) || /gitter/.test(e); }
+  function isTesterDevice() { try { return root.localStorage.getItem('lla_tester') === '1'; } catch (e) { return false; } }
   function mode() {
     if (QA_RE.test(search())) return 'off';
     if (isStaging()) return 'off';
+    if (isTesterDevice()) return 'off';
     if (testCode()) return 'test';
     return onProductionPage() ? 'live' : 'off';
   }
@@ -405,7 +411,12 @@
     var name = data && data.content_name ? String(data.content_name) : '';
     for (var k in PLANS) if (PLANS[k].content_name === name) return PLANS[k];
     try { var cur = root.LLA_PLAN && root.LLA_PLAN.get && root.LLA_PLAN.get(); if (cur && PLANS[cur.id]) return PLANS[cur.id]; } catch (e) {}
-    return null;
+    /* 2026-11-04 fallback: never emit a commerce event without content_ids. Price, then name, then standard. */
+    var v = data ? Number(data.value) : NaN;
+    if (v === PLANS.vip.value) return PLANS.vip;
+    if (v === PLANS.standard.value) return PLANS.standard;
+    if (/vip/i.test(name)) return PLANS.vip;
+    return PLANS.standard;
   }
   var pageSession = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   function pageViewId() { return 'julie_pv_' + pageSession; }
@@ -467,6 +478,7 @@
     }).then(function (row) {
       receipt(row);
       var again = (row.status === 'network_error' || row.status === 'transient') && attempt < MAX_ATTEMPTS;
+      if (!again && row.status !== 'accepted' && row.status !== 'skipped') { try { root.console.warn('[Julie Meta] ' + row.event_name + ' ' + row.status + ' after ' + attempt + ' attempt(s)', row.event_id, row.http || '', row.error || ''); } catch (e) {} }
       if (again) return new Promise(function (res) { root.setTimeout(res, RETRY_MS[attempt - 1] || RETRY_MS[RETRY_MS.length - 1]); }).then(function () { return post(payload, attempt + 1, done); });
       if (done) { try { done(row); } catch (e) {} }
       return row;
@@ -593,6 +605,13 @@
   }
 
   try { if (mode() !== 'off') { ensureFbp(); visitorId(); } } catch (e) {}   /* 2026-10-15: cookie/id exist before the Pixel base code and before the deferred flush */
+  /* Tester email typed anywhere on the page -> silence this device (same flag as the .com funnel). */
+  try {
+    doc.addEventListener('change', function (ev) {
+      var t = ev.target;
+      if (t && (t.type === 'email' || /email/i.test(t.id || '') || /email/i.test(t.name || '')) && isTesterEmail(t.value)) lsSet('lla_tester', '1');
+    }, true);
+  } catch (e) {}
   root.LLA_META = {
     track: track, release: RELEASE, mode: mode, fbc: fbc, fbp: fbp, identity: identity, visitorId: visitorId,
     captureCheckoutIdentity: captureCheckoutIdentity, boundOrder: boundOrder,
