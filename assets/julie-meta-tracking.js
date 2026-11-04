@@ -7,6 +7,7 @@
  * The three existing call sites in index.html are untouched:
  *   AddToCart        - after the CRM order exists ("Continue to payment")
  *   InitiateCheckout - when the payment screen opens
+ *   AddPaymentInfo   - first use of the card form or the PayPal button (2026-11-04)
  *   Purchase         - only after verified PayPal capture / Airwallex SUCCEEDED intent
  *
  * Event identity (browser eventID === server event_id):
@@ -414,6 +415,7 @@
     if (name === 'Purchase') return String(data.order_id);
     if (name === 'AddToCart') return 'julie_atc_' + (order || (pageSession + '_' + (plan ? plan.id : 'na')));
     if (name === 'InitiateCheckout') return 'julie_ic_' + (order || (pageSession + '_' + (plan ? plan.id : 'na')));
+    if (name === 'AddPaymentInfo') return 'julie_api_' + (order || (pageSession + '_' + (plan ? plan.id : 'na')));
     if (name === 'ViewContent') return 'julie_vc_' + pageSession;
     return 'julie_' + name.toLowerCase() + '_' + pageSession;
   }
@@ -531,7 +533,7 @@
     try {
       name = String(name || '');
       data = data || {};
-      if (name !== 'AddToCart' && name !== 'InitiateCheckout' && name !== 'Purchase') return null;
+      if (name !== 'AddToCart' && name !== 'InitiateCheckout' && name !== 'AddPaymentInfo' && name !== 'Purchase') return null; /* 2026-11-04: AddPaymentInfo added (julie_api_<order>) */
       var value = Number(data.value);
       var currency = String(data.currency || CURRENCY).toUpperCase();
       var order = '';

@@ -885,7 +885,7 @@ footer .foot-cols a:hover{color:var(--sky)}
 </style>
 <!-- Meta event helper (isolated file, loads first): one shared event_id per event for Pixel + Conversions API; Purchase id = CRM order id; QA/staging/preview/test never fire production events. -->
 <script src="assets/julie-attribution.js?v=20260927-1"></script>
-<script src="assets/julie-meta-tracking.js?v=20261015-1"></script>
+<script src="assets/julie-meta-tracking.js?v=20261104-1"></script>
 <!-- Meta Pixel Code -->
 <script>
 if(window.LLA_META?LLA_META.mode()==='live':!/[?&](llatest|qa)=1(?:&|$)/.test(location.search)){
@@ -2683,7 +2683,7 @@ window.JULIE_LOAD_PAYPAL=function(){if(window.__jpp)return;window.__jpp=1;var t=
 if(document.readyState==='complete')window.JULIE_LOAD_PAYPAL();else window.addEventListener('load',window.JULIE_LOAD_PAYPAL);
 window.JULIE_AWX_WAIT=new Promise(function(r){window.__awxReady=r;});
 /* perf-v2 (2026-10-14): Airwallex is initialised once, right after its SDK loads, so step 3 only has to mount the card form. Same env rule as the checkout (staging CRM -> demo, production -> prod). */
-window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'});window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){return Promise.reject(e);}};
+window.JULIE_AWX_INIT=function(env){try{var want=env||((window.LLA_ECOMM_CONFIG&&window.LLA_ECOMM_CONFIG.env==='staging')?'demo':'prod');if(window.__awxInit&&window.__awxInit.env===want)return window.__awxInit.p;var p=Promise.resolve(window.Airwallex.init({env:want,origin:window.location.origin,locale:'en'}));/* 2026-11-04: Airwallex.init may return undefined; wrap so .catch never throws */window.__awxInit={env:want,p:p};p.catch(function(){window.__awxInit=null;});return p;}catch(e){return Promise.reject(e);}};
 window.JULIE_AWX_WAIT.then(function(){try{if(window.Airwallex&&window.Airwallex.init)window.JULIE_AWX_INIT();}catch(e){}});
 </script>
 <script defer src="https://checkout.airwallex.com/assets/elements.bundle.min.js?version=1.160.0" onload="window.__awxReady&&window.__awxReady()" onerror="window.__awxReady&&window.__awxReady()"></script>
@@ -3358,6 +3358,7 @@ var LLA_AC = (function(){
       style:{ layout:'vertical', height:55, shape:'rect', color:'blue' },
       createOrder:function(data, actions){
         if(payPalCaptureStarted) return Promise.reject(new Error('PAYMENT_ALREADY_SUBMITTED'));
+        try{ if(window.JULIE_ADD_PAYMENT_INFO) window.JULIE_ADD_PAYMENT_INFO('paypal'); }catch(e){} /* 2026-11-04: Meta AddPaymentInfo */
         if(st){ st.style.color='#5A6472'; st.textContent='Preparing your order\u2026'; }
         return payPalOrder.then(function(o){
           if(o.generation!==checkoutGeneration) throw new Error('CHECKOUT_RESTARTED');
@@ -3507,6 +3508,10 @@ var LLA_AC = (function(){
       if (!dropIn) { console.error('payment form could not be built'); throw new Error('PAYMENT_FORM_UNAVAILABLE'); }
       activeDropIn=dropIn;
       dropIn.mount(mountEl);
+      /* 2026-11-04: Meta AddPaymentInfo once per order, the first time focus enters the Airwallex card
+         iframe (window blur with the iframe active) or the PayPal button is pressed. Measurement only. */
+      try{ window.JULIE_ADD_PAYMENT_INFO=function(method){ try{ if(window.__julieApiFired===String(ids.orderid)) return; window.__julieApiFired=String(ids.orderid); LLA_META.track('AddPaymentInfo',{value:amount,currency:currency,content_name:selectedPlan.content_name,order_id:String(ids.orderid),payment_method:method||''},document.getElementById('emEmail').value); }catch(e){} }; }catch(e){}
+      try{ if(!window.__julieApiBlur){ window.__julieApiBlur=true; window.addEventListener('blur',function(){ try{ var a=document.activeElement; var box=document.getElementById('awx-dropin'); if(a&&a.tagName==='IFRAME'&&box&&box.contains(a)&&window.JULIE_ADD_PAYMENT_INFO) window.JULIE_ADD_PAYMENT_INFO('card'); }catch(e){} }); } }catch(e){}
 
       var paymentHandled=false;
       dropIn.on('success', function(evt){
