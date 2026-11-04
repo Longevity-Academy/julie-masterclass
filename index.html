@@ -897,6 +897,7 @@ n.queue=[];var go=function(){t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)};if(b.readyState==='complete')go();else f.addEventListener('load',go)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+fbq.disablePushState = true; /* 2026-11-05: no automatic un-ID'd PageView on hash/pushState navigation (Meta SPA util); keeps PageView paired with the server copy */
 fbq('init', '1440305917310328');
 if(window.LLA_META)fbq('track', 'PageView', {}, {eventID: LLA_META.pageViewId()});else fbq('track', 'PageView');
 }
