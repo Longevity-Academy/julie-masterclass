@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   var HASHES = ['e74dc39609ebb5ece7a9f1af4bfc3cfbec7627f0c9588958b099986292073374'];
-  var EXPIRES_AT = Date.UTC(2026, 9, 28, 21, 59, 59); /* 2026-10-28 23:59:59 Israel */
+  var EXPIRES_AT = Date.UTC(2026, 10, 15, 21, 59, 59); /* 2026-11-15 23:59:59 Israel */
   var active = '';
   function $(id) { return document.getElementById(id); }
   function norm(v) { return String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, ''); }
