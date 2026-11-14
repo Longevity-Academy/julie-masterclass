@@ -3677,7 +3677,8 @@ var LLA_AC = (function(){
 <link rel="stylesheet" href="assets/julie-phone-fixes.css?v=20261014-1855">
 <script>/* phone: hide the floating Enroll pill while the pricing cards (which carry their own buttons) are on screen */(function(){try{if(!matchMedia("(max-width:760px)").matches||!("IntersectionObserver" in window))return;var t=document.getElementById("pricing");if(!t)return;new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle("pricing-in-view",e.isIntersecting);});},{threshold:0.05}).observe(t);}catch(e){}})();</script>
 
-<script src="assets/julie-international-checkout.js?v=20261104-1"></script>
+<script src="assets/vendor/libphonenumber-min.js?v=1.13.13"></script>
+<script src="assets/julie-international-checkout.js?v=20261114-2"></script>
 <script src="assets/julie-production-v6.js?v=20260923-7"></script>
 <script src="assets/julie-brand-motion-v7.js?v=20260923-7"></script>
 <script>
@@ -3695,6 +3696,6 @@ document.addEventListener('click',function(e){
 },true);
 </script>
 <script>(function(){var g=document.querySelector(".v8-pressgrid");if(!g)return;document.querySelectorAll(".v8-press-btn").forEach(function(b){b.addEventListener("click",function(){var c=g.querySelector(".dv-lla-news-card");var w=c?c.getBoundingClientRect().width+28:420;g.scrollBy({left:w*parseInt(b.dataset.dir,10),behavior:"smooth"})})})})();</script>
-<script src="assets/julie-guest-access.js?v=20261114-1" defer></script>
+<script src="assets/julie-guest-access.js?v=20261114-2" defer></script>
 </body>
 </html>

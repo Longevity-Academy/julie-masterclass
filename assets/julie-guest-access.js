@@ -160,7 +160,9 @@
       save(key, { attempted: true });
       work = LLA_ECOMM.submitLead(f).then(function (r) {
         if (!r || !r.ok || (r.body && r.body.ok === false)) {
-          if (r && r.status >= 400 && r.status < 500) save(key, null);
+          // Upstream 408/429 can follow an ambiguous accepted write; retain the
+          // attempted marker rather than allowing a new order on the next click.
+          if (r && r.status >= 400 && r.status < 500 && r.status !== 408 && r.status !== 429) save(key, null);
           throw new Error('order_failed');
         }
         var ids = idsFrom(r.body);

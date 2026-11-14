@@ -23,6 +23,41 @@
    */
   var EXTRA_COUNTRIES = [{"iso":"KP","name":"North Korea","dial":"850"},{"iso":"ST","name":"Sao Tome and Principe","dial":"239"}];
   LIST = LIST.concat(EXTRA_COUNTRIES);
+  /* Complete ISO 3166-1 coverage plus user-assigned Kosovo (XK).
+   * Names/calling-code fallback: countries-list@3.4.1 (MIT).
+   * Supported telephone metadata: libphonenumber-js@1.13.13 (MIT).
+   * Original 202 options and their phone rules are deliberately unchanged.
+   * Some remote ISO territories have no distinct telephone metadata; their
+   * sourced shared calling code uses the existing permissive E.164 fallback.
+   */
+  var TERRITORIES = [
+    ['AW','Aruba','297'],['AI','Anguilla','1'],['AX','Aland Islands','358'],
+    ['AS','American Samoa','1'],['AQ','Antarctica','672'],
+    ['TF','French Southern Territories','262'],['BQ','Bonaire, Sint Eustatius and Saba','599'],
+    ['BL','Saint Barthelemy','590'],['BV','Bouvet Island','47'],
+    ['CC','Cocos (Keeling) Islands','61'],['CK','Cook Islands','682'],['CW','Curacao','599'],
+    ['CX','Christmas Island','61'],['EH','Western Sahara','212'],
+    ['FK','Falkland Islands','500'],['FO','Faroe Islands','298'],['GG','Guernsey','44'],
+    ['GP','Guadeloupe','590'],['GL','Greenland','299'],['GF','French Guiana','594'],
+    ['GU','Guam','1'],['HM','Heard Island and McDonald Islands','61'],
+    ['IM','Isle of Man','44'],['IO','British Indian Ocean Territory','246'],['JE','Jersey','44'],
+    ['MF','Saint Martin (French part)','590'],['MP','Northern Mariana Islands','1'],
+    ['MS','Montserrat','1'],['MQ','Martinique','596'],['YT','Mayotte','262'],
+    ['NC','New Caledonia','687'],['NF','Norfolk Island','672'],['NU','Niue','683'],
+    ['PN','Pitcairn Islands','64'],['PF','French Polynesia','689'],['RE','Reunion','262'],
+    ['GS','South Georgia and the South Sandwich Islands','500'],
+    ['SH','Saint Helena, Ascension and Tristan da Cunha','290'],
+    ['SJ','Svalbard and Jan Mayen','47'],['PM','Saint Pierre and Miquelon','508'],
+    ['SX','Sint Maarten (Dutch part)','1'],['TC','Turks and Caicos Islands','1'],
+    ['TK','Tokelau','690'],['UM','United States Minor Outlying Islands','1'],
+    ['VG','British Virgin Islands','1'],['VI','U.S. Virgin Islands','1'],
+    ['WF','Wallis and Futuna','681'],['XK','Kosovo','383']
+  ];
+  var ADDED_ISO = {};
+  TERRITORIES.forEach(function (t) {
+    ADDED_ISO[t[0]] = true;
+    LIST.push({ iso: t[0], name: t[1], dial: t[2] });
+  });
   LIST.forEach(function(c) { if (c.iso === 'VA') c.dial = '39'; });
   LIST.sort(function(a,b) { if(a.iso === 'US') return -1; if(b.iso === 'US') return 1; return a.name.localeCompare(b.name); });
   var SHORT_NATIONAL = {"AC":5,"AE":5,"AT":4,"AU":5,"AX":5,"CK":5,"DE":4,"FI":5,"FK":5,"HK":5,"IR":4,"KI":5,"KR":5,"LU":4,"NL":5,"NO":5,"NU":4,"NZ":5,"SB":5,"SH":4,"SI":5,"SJ":5,"TA":4,"TK":4,"TO":5,"TV":5,"UY":4,"VU":5,"WS":5,"ZA":5};
@@ -48,6 +83,18 @@
     var c = BY_ISO[iso];
     if (!c) return { ok: false, reason: 'unknown_country' };
     var s = String(raw || '').trim();
+    // Use maintained national-length/trunk-prefix metadata for the additions
+    // only. isPossible is not a claim that a number is allocated or reachable.
+    var phoneLib = root.libphonenumber;
+    if (ADDED_ISO[iso] && phoneLib && phoneLib.isSupportedCountry(iso)) {
+      var parsed = phoneLib.parsePhoneNumberFromString(s.replace(/^00/, '+'), iso);
+      if (!parsed || !parsed.isPossible()) return { ok: false, reason: 'phone_length' };
+      // ISO SH includes Ascension, whose +247 code is separately represented
+      // as AC in libphonenumber. Accept its explicit international form too.
+      var ascension = iso === 'SH' && parsed.countryCallingCode === phoneLib.getCountryCallingCode('AC');
+      if (parsed.countryCallingCode !== c.dial && !ascension) return { ok: false, reason: 'dial_code_mismatch' };
+      return { ok: true, e164: parsed.number };
+    }
     var kept = s.replace(/[^\d+]/g, '');
     // Accept the explicit international 00 prefix without losing Italy's zero.
     if (kept.indexOf('00') === 0) kept = '+' + kept.slice(2);
